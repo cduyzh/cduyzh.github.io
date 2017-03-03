@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://www.cduyzh.com/2017/03/01/demo/</loc>
+    <lastmod>2017-03-01T11:02:35.112Z</lastmod>
+    <data>
+        <display>
+        <title>demo</title>
+        <pubTime>2017-03-01T11:02:35.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/2017/03/01/hello-world/</loc>
+    <lastmod>2017-03-01T08:15:24.506Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-03-01T08:15:24.505Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
