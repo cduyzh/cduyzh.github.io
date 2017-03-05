@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.cduyzh.com/tags/index.html</loc>
+    
+    <lastmod>2017-03-05T14:02:25.656Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.cduyzh.com/2017/03/03/test/</loc>
     
     <lastmod>2017-03-03T13:57:04.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.cduyzh.com/about/index.html</loc>
     
     <lastmod>2017-03-03T06:25:50.122Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/tags/index.html</loc>
-    
-    <lastmod>2017-03-03T04:41:44.376Z</lastmod>
     
   </url>
   
