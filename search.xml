@@ -3,23 +3,23 @@
   
     
     <entry>
+      <title><![CDATA[2017年最新基于hexo搭建个人免费博客——从零开始]]></title>
+      <url>%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[前言搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。 github pages介绍Github Pages 是 github 公司提供的免费的静态网站托管服务，用起来方便而且功能强大，不仅没有空间限制(为免费用户提供了500M空间)，还可以绑定自己的域名。到 https://pages.github.com/ 上，看到可以创建的网站有两类，一类是为自己或者是自己的组织创建站点，就是新建一个仓库，仓库的名字叫做，username.github.io 或者是 orgnizationname.github.io ，注意这里的 username 和 orgnizationname 要严格替换成你自己的用户名或者组织名，大小写也要区分，不然就会有问题。然后就往仓库里面放页面内容就行了。第二类是为项目创建网站，这个其实主要步骤都是一样的，只不过稍微比创建用户或组织网站复杂一点点。具体的可以看这个网址的讲解 地址： Github Pages]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[test]]></title>
-      <url>%2F2017%2F03%2F03%2Ftest%2F</url>
-      <content type="text"></content>
+      <url>%2Ftest%2F</url>
+      <content type="text"><![CDATA[Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server``` bash$ hexo server]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[demo]]></title>
-      <url>%2F2017%2F03%2F01%2Fdemo%2F</url>
-      <content type="text"></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F03%2F01%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <url>%2Fdemo%2F</url>
+      <content type="text"><![CDATA[Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server``` bash$ hexo server]]></content>
     </entry>
 
     

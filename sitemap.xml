@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.cduyzh.com/tags/index.html</loc>
+    <loc>http://www.cduyzh.com/hello-world/</loc>
     
-    <lastmod>2017-03-05T14:02:25.656Z</lastmod>
+    <lastmod>2017-03-07T11:26:02.876Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.cduyzh.com/2017/03/03/test/</loc>
+    <loc>http://www.cduyzh.com/demo/</loc>
     
-    <lastmod>2017-03-03T13:57:04.000Z</lastmod>
+    <lastmod>2017-03-07T08:51:34.857Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/test/</loc>
+    
+    <lastmod>2017-03-07T08:51:32.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/tags/index.html</loc>
+    
+    <lastmod>2017-03-05T14:02:25.656Z</lastmod>
     
   </url>
   
@@ -33,20 +47,6 @@
     <loc>http://www.cduyzh.com/404.html</loc>
     
     <lastmod>2017-03-03T03:47:08.564Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/2017/03/01/demo/</loc>
-    
-    <lastmod>2017-03-01T11:02:35.112Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/2017/03/01/hello-world/</loc>
-    
-    <lastmod>2017-03-01T08:15:24.506Z</lastmod>
     
   </url>
   
