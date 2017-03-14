@@ -3,14 +3,13 @@
 
 
     
-    
   <url>
-    <loc>http://www.cduyzh.com/hexo-settings-3/</loc>
-    <lastmod>2017-03-09T15:14:56.993Z</lastmod>
+    <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
+    <lastmod>2017-03-14T02:26:35.305Z</lastmod>
     <data>
         <display>
-        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式</title>
-        <pubTime>2017-03-09T14:06:28.000Z</pubTime>
+        <title>2017年最新基于hexo搭建个人免费博客——基本设置和了解</title>
+        <pubTime>2017-03-04T11:02:35.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -24,13 +23,14 @@
     </url>
 
     
+    
   <url>
-    <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
-    <lastmod>2017-03-09T14:26:06.000Z</lastmod>
+    <loc>http://www.cduyzh.com/hexo-settings-3/</loc>
+    <lastmod>2017-03-09T15:14:56.993Z</lastmod>
     <data>
         <display>
-        <title>2017年最新基于hexo搭建个人免费博客——基本设置和了解</title>
-        <pubTime>2017-03-04T11:02:35.000Z</pubTime>
+        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式</title>
+        <pubTime>2017-03-09T14:06:28.000Z</pubTime>
         
         <tag>hexo</tag>
          

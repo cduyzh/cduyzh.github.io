@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #abfef2;
+  background: #cce8b3;
 }
 .ds-top-threads li {
   display: block;
@@ -3053,4 +3053,17 @@ a {
 }
 .post-button a:hover {
   color: #7784ba;
+}
+#About {
+  font-size: 36px;
+  text-align: center;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+#Blog {
+  font-size: 24px;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+#Contact {
+  font-size: 24px;
+  font-family: 'Comic Sans MS', sans-serif;
 }
