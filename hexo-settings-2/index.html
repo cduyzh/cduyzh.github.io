@@ -111,12 +111,12 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '6224774254659896000',
-      author: 'author'
+      author: '水美眉（博主）'
     },
     algolia: {
       applicationID: '',
@@ -144,9 +144,7 @@
 </script>
 
 
-
   <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-2/"/>
-
 
 
 
@@ -196,13 +194,7 @@
       
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+  
 </div>
 
 <nav class="site-nav">
@@ -322,9 +314,40 @@
 </nav>
 
 
-
  </div>
     </header>
+   
+
+<section class="hc-banner">
+        <ol></ol>
+        <ul class="banner">
+            <li class="hc-bannerbg" style="background-image: url(img/img/banner01.jpg);">
+                <div class="hc-fly">
+                    <img class="fly-one" src="img/img/super-H.png" />
+                    <div class="fly-two">
+
+                    </div>
+                    <p class="fly-three">Innovative thinking new ideas perfect design</p>
+                    <p class="fly-four">創新思維 新穎理念 完美設計</p>
+
+                </div>
+            </li>
+            <li class="hc-bannerbg" style="background-image: url(img/img/banner02.jpg);">
+                <div class="hc-fly">
+                    <img class="fly-one" src="img/img/super-H.png" />
+                    <div class="fly-two">
+
+                    </div>
+                    <p class="fly-three">Innovative thinking new ideas perfect design</p>
+                    <p class="fly-four">創新思維 新穎理念 完美設計</p>
+
+                </div>
+            </li>
+        </ul>
+        <!--
+        <a class="btn left">&lt;</a>
+        <a class="btn right">&gt;</a>-->
+    </section>
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -848,6 +871,22 @@
 
 
 
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
 
         
 
@@ -1249,6 +1288,134 @@
   
   <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
 </body>
+<script>
+var i = -1;
+var timer = 0;
+$(document).ready(function() {
+
+	var len = $(".banner li").index();
+	var olh = '<li></li>';
+	for(var i = 0; i < (len + 2); i++) {
+		$("ol").append(olh);
+	} //根据图片的index数，加载原点
+	//	$("ol").find('li').first().addClass('red');
+
+	move();
+	timer = setInterval("move()", 4000);
+	$(".banner li").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval("move()", 4000);
+	}) //鼠标经过停止，离开运行
+
+	$('.hc-banner ol li').click(function() {
+		var ddIndex = $(this).index() - 1;
+		i = ddIndex;
+		move();
+	}) //小圆点控制
+});
+
+var screenWidth = window.screen.width;
+
+function move() {
+
+	$('#oiBtn').click(function() {
+		//var oiicn = $('#oiBtn em')
+		$('#oiBtn').toggleClass("hc-io")
+		$('#navBox').toggleClass("hc-navbox01 hc-navbox")
+		if($('#navBox').hasClass("hc-navbox01")) {
+			$(".hc-logobox img").src;
+			$(".hc-logobox img").attr('src', 'img/img/logo1.png');
+		} else {
+			$(".hc-logobox img").src;
+			$(".hc-logobox img").attr('src', 'img/img/logo.png');
+		}
+	}); //菜单按钮
+
+	i++;
+
+	if(i >= 2) {
+		i = 0;
+	}
+
+	if(screenWidth >= 1100) {
+		$('.hc-fly').css({ "height": "100vh", opacity: 0 });
+		if(i < 2) {
+			if(i == 0) {
+				//$('.fst-li').fadeIn(100).siblings().fadeOut(100);
+				$('.hc-banner ol li').eq(i).addClass('red').siblings().removeClass('red');
+				$('.hc-banner ul li').eq(i).fadeIn(100).siblings().fadeOut();
+				$('.hc-fly').animate({ "height": "45vh", opacity: 1 }, 2000);
+			}
+			if(i == 1) {
+
+				//$('.fst-li').fadeIn(100).siblings().fadeOut(100);
+				$('.hc-banner ol li').eq(i).addClass('red').siblings().removeClass('red');
+				$('.hc-banner ul li').eq(i).fadeIn(100).siblings().fadeOut();
+				$('.hc-fly').animate({ "height": "45vh", opacity: 1 }, 2000);
+
+			}
+		}
+	} else if(screenWidth <= 768) {
+		$('.fly-one').css({ "top": "-20%", opacity: 0 });
+		$('.fly-two').css({ "height": "0vh", opacity: 0 });
+		$('.fly-three').css({ "left": "-100%", opacity: 0 });
+		$('.fly-four').css({ "right": "-100%", opacity: 0 });
+		if(i < 2) {
+			if(i == 0) {
+				//$('.fst-li').fadeIn(100).siblings().fadeOut(100);
+				$('.hc-banner ol li').eq(i).addClass('red').siblings().removeClass('red');
+				$('.hc-banner ul li').eq(i).fadeIn(100).siblings().fadeOut();
+				$('.fly-one').animate({ "top": "30%", opacity: 1 }, 1000);
+				$('.fly-two').animate({ "height": "30vh", opacity: 1 }, 1000, function() {
+					$('.fly-three').animate({ "left": "0", opacity: 1 }, 1000);
+					$('.fly-four').animate({ "right": "0", opacity: 1 }, 1000);
+				})
+			}
+			if(i == 1) {
+
+				//$('.fst-li').fadeIn(100).siblings().fadeOut(100);
+				$('.hc-banner ol li').eq(i).addClass('red').siblings().removeClass('red');
+				$('.hc-banner ul li').eq(i).fadeIn(100).siblings().fadeOut();
+				$('.fly-one').animate({ "top": "30%", opacity: 1 }, 1000);
+				$('.fly-two').animate({ "height": "30vh", opacity: 1 }, 1000, function() {
+					$('.fly-three').animate({ "left": "0", opacity: 1 }, 1000);
+					$('.fly-four').animate({ "right": "0", opacity: 1 }, 1000);
+				})
+
+			}
+		}
+	} else {
+		$('.fly-one').css({ "top": "-20%", opacity: 0 });
+		$('.fly-two').css({ "height": "0vh", opacity: 0 });
+		$('.fly-three').css({ "left": "-100%", opacity: 0 });
+		$('.fly-four').css({ "right": "-100%", opacity: 0 });
+		if(i == 0) {
+			//$('.fst-li').fadeIn(100).siblings().fadeOut(100);
+			$('.hc-banner ol li').eq(i).addClass('red').siblings().removeClass('red');
+			$('.hc-banner ul li').eq(i).fadeIn(100).siblings().fadeOut();
+			$('.fly-one').animate({ "top": "30%", opacity: 1 }, 1000);
+			$('.fly-two').animate({ "height": "30vh", opacity: 1 }, 1000, function() {
+				$('.fly-three').animate({ "left": "0", opacity: 1 }, 1000);
+				$('.fly-four').animate({ "right": "0", opacity: 1 }, 1000);
+			})
+		}
+		if(i == 1) {
+
+			//$('.fst-li').fadeIn(100).siblings().fadeOut(100);
+			$('.hc-banner ol li').eq(i).addClass('red').siblings().removeClass('red');
+			$('.hc-banner ul li').eq(i).fadeIn(100).siblings().fadeOut();
+			$('.fly-one').animate({ "top": "30%", opacity: 1 }, 1000);
+			$('.fly-two').animate({ "height": "30vh", opacity: 1 }, 1000, function() {
+				$('.fly-three').animate({ "left": "0", opacity: 1 }, 1000);
+				$('.fly-four').animate({ "right": "0", opacity: 1 }, 1000);
+			})
+
+		}
+	}
+}
+
+</script>
 
 <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 
