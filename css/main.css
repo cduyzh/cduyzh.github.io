@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #14f50f;
+  background: #2590ba;
 }
 .ds-top-threads li {
   display: block;
@@ -3067,4 +3067,7 @@ a {
 #Contact {
   font-size: 24px;
   font-family: 'Comic Sans MS', sans-serif;
+}
+.post-nav-item a:hover {
+  color: #649ab6;
 }

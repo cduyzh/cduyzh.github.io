@@ -1,0 +1,1325 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言本篇文章继续讲解一些hexo下next主题博客样式的修改。主要内容为修改首页文章摘要样式，文章详情样式，以及文章阅读次数的统计深入讲解，酷炫的博客背景，在首页菜单里添加的独立的标签页，文章结尾的模版样式修改。暂时想到了这么多，欢迎大家提出新的东西，等后面有空了再讲新东西。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">
+<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-4/index.html">
+<meta property="og:site_name" content="Water Sister's Blog">
+<meta property="og:description" content="前言本篇文章继续讲解一些hexo下next主题博客样式的修改。主要内容为修改首页文章摘要样式，文章详情样式，以及文章阅读次数的统计深入讲解，酷炫的博客背景，在首页菜单里添加的独立的标签页，文章结尾的模版样式修改。暂时想到了这么多，欢迎大家提出新的东西，等后面有空了再讲新东西。">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-4.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post1.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post3.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post4.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art4.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art5.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art6.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css-post-art7.png">
+<meta property="og:updated_time" content="2017-03-16T14:37:58.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">
+<meta name="twitter:description" content="前言本篇文章继续讲解一些hexo下next主题博客样式的修改。主要内容为修改首页文章摘要样式，文章详情样式，以及文章阅读次数的统计深入讲解，酷炫的博客背景，在首页菜单里添加的独立的标签页，文章结尾的模版样式修改。暂时想到了这么多，欢迎大家提出新的东西，等后面有空了再讲新东西。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/hexo-css-4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6224774254659896000',
+      author: '水美眉（博主）'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+  
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-4/"/>
+
+
+
+
+  <title> 2017年最新基于hexo搭建个人免费博客——自定义页面样式二 | Water Sister's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Water Sister's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">生活、技术个人博客</h1>
+      
+  </div>
+
+  
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+   
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang ZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yzh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Water Sister's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                2017年最新基于hexo搭建个人免费博客——自定义页面样式二
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T18:27:38+08:00">
+                2017-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hexo-settings-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/hexo-settings-4/" class="leancloud_visitors" data-flag-title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-edit"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      2,551 字
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      10 分钟
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="http://img.cduyzh.com/images/hexo-css-4.jpg" alt="2017年最新基于hexo搭建个人免费博客——自定义页面样式"><br>本篇文章继续讲解一些hexo下next主题博客样式的修改。主要内容为修改首页文章摘要样式，文章详情样式，以及文章阅读次数的统计深入讲解，酷炫的博客背景，在首页菜单里添加的独立的标签页，文章结尾的模版样式修改。暂时想到了这么多，欢迎大家提出新的东西，等后面有空了再讲新东西。<br><a id="more"></a> </p>
+<h2 id="首页文章摘要样式修改"><a href="#首页文章摘要样式修改" class="headerlink" title="首页文章摘要样式修改"></a>首页文章摘要样式修改</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>假设看这篇文章的人是没有前端样式调试基础的，建议去看我上一篇文章——，看完后再继续看这篇。</p>
+<blockquote>
+<p>传送门：2017年最新基于hexo搭建个人免费博客——自定义页面样式一  <a href="http://www.cduyzh.com/hexo-settings-3/">http://www.cduyzh.com/hexo-settings-3/</a></p>
+</blockquote>
+<h3 id="查看对应样式"><a href="#查看对应样式" class="headerlink" title="查看对应样式"></a>查看对应样式</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post1.jpg" alt="查看对应样式"><br><strong>通过浏览器的开发者工具可以查看到首页文章摘要对应的CSS</strong><br>可以看到header标签内为文章的头部的样式，大家可以进行一些修改，但是基本没什么需要改动的，大家可以自己DIY，</p>
+<h3 id="给文章首页摘要添加阴影效果"><a href="#给文章首页摘要添加阴影效果" class="headerlink" title="给文章首页摘要添加阴影效果"></a>给文章首页摘要添加阴影效果</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post2.png" alt="查看对应样式"><br>大家看下箭头，修改对应的CSS样式，进行重写覆盖，修改的文件路径如下（以我自己的为例）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\hexo\blog\themes\next\source\css\_custom\custom.styl</div></pre></td></tr></table></figure>
+<p><strong>修改代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// Custom styles.</div><div class="line">//首页文章阴影样式</div><div class="line">.post &#123;</div><div class="line">    margin-top: 60px;</div><div class="line">    margin-bottom: 60px;</div><div class="line">    padding: 25px;</div><div class="line">    -webkit-box-shadow: 0 0 14px rgba(202, 203, 203, .5);</div><div class="line">    -moz-box-shadow: 0 0 14px rgba(202, 203, 204, .5);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="阅读文章按钮样式修改"><a href="#阅读文章按钮样式修改" class="headerlink" title="阅读文章按钮样式修改"></a>阅读文章按钮样式修改</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post3.jpg" alt="阅读文章按钮样式修改"><br>主要为三个CSS样式的修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.post-button .btn</div><div class="line">.post-button .btn a</div><div class="line">.btn:hover, .post-button .btn:hover</div></pre></td></tr></table></figure>
+<p><img src="http://img.cduyzh.com/images/hexo-css-post4.jpg" alt="阅读文章按钮样式修改"></p>
+<blockquote>
+<p><strong>最后一个为伪类</strong>，有时候查找元素的时候不能第一时间看到，多抓取几次。</p>
+</blockquote>
+<p>也可以自己在本地编辑器测试修改<strong>.btn:hover, .post-button .btn:hover</strong>样式下的属性，测试显示效果就行。<br>默认主题下把鼠标移入按钮时的样式中，按钮下方有个阴影，是主题自带的，如果不想要可以添加对应的CSS样式<br><code>border:none</code>来取消这效果，然后调整一下圆角值，居中设置，还有颜色的变化，大家自己参考下我之前发的样式表，或自己测试。</p>
+<h2 id="文章详情样式修改"><a href="#文章详情样式修改" class="headerlink" title="文章详情样式修改"></a>文章详情样式修改</h2><h3 id="文章详情头部样式"><a href="#文章详情头部样式" class="headerlink" title="文章详情头部样式"></a>文章详情头部样式</h3><p>这个样式的修改和前面首页那个的样式基本一致，所以此处跳过，但是说一点<br><img src="http://img.cduyzh.com/images/hexo-css-post-art1.png" alt="文章详情头部样式"><br>图中框内的图标元素更改CSS样式是无法更改的，我更改了字数统计和阅读市场的ICON，具体做法大家可以看我以前写过的一篇文章，要在源码中更改CSS的值。</p>
+<blockquote>
+<p>2017年最新基于hexo搭建个人免费博客——基本设置和了解<a href="http://www.cduyzh.com/hexo-settings-2/">http://www.cduyzh.com/hexo-settings-2/</a></p>
+</blockquote>
+<h3 id="文章相应底部样式修改"><a href="#文章相应底部样式修改" class="headerlink" title="文章相应底部样式修改"></a>文章相应底部样式修改</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post-art2.png" alt="文章相应底部样式修改"><br>最大的红框部分的内容都不是我编辑的文章里的，都是我更改了源代码加入的DIV样式标签形成的效果，当然还可以在每一篇文章最后加入对应的代码也可以，但是为了麻烦每次来粘贴所以我就没去这样做</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><strong>修改文章模板文件</strong><br>哪个是文章主要内容的模板文件，对应的路径<code>themes\next\layout\_macro\post.swig</code><br>文章底部的代码位置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">         &#123;&#123; content.substring(0, theme.auto_excerpt.length) &#125;&#125;</div><div class="line">          &#123;% if content.length &gt; theme.auto_excerpt.length %&#125;...&#123;% endif %&#125;</div><div class="line"></div><div class="line">          &lt;div class=&quot;post-more-link text-center&quot;&gt;</div><div class="line">            &lt;a class=&quot;btn&quot; href=&quot;&#123;&#123; url_for(post.path) &#125;&#125;&#123;% if theme.scroll_to_more %&#125;#more&#123;% endif %&#125;&quot; rel=&quot;contents&quot;&gt;</div><div class="line">              &#123;&#123; __(&apos;post.read_more&apos;) &#125;&#125; &amp;raquo;</div><div class="line">            &lt;/a&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">        &#123;% else %&#125;</div><div class="line">          &#123;% if post.type === &apos;picture&apos; %&#125;</div><div class="line">            &lt;a href=&quot;&#123;&#123; url_for(post.path) &#125;&#125;&quot;&gt;&#123;&#123; post.content &#125;&#125;&lt;/a&gt;</div><div class="line">          &#123;% else %&#125;</div><div class="line">            &#123;&#123; post.content &#125;&#125;</div><div class="line">          &#123;% endif %&#125;</div><div class="line">        &#123;% endif %&#125;</div><div class="line">      &#123;% else %&#125;</div><div class="line">        &#123;&#123; post.content &#125;&#125;</div><div class="line">		</div><div class="line">### 编辑区域</div><div class="line">		</div><div class="line">      &#123;% endif  %&#125;</div></pre></td></tr></table></figure>
+<p>那个打赏功能是主题自带的一个参数配置，大家可以去next主题官方文档上看。</p>
+<h3 id="文章底部的横线样式修改"><a href="#文章底部的横线样式修改" class="headerlink" title="文章底部的横线样式修改"></a>文章底部的横线样式修改</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post-art2.png" alt="文章底部的横线样式修改"><br>小红框里面的一条线，有些人觉得想换样式，换颜色或直接去掉。<br>直接在.post-nav下加入一个样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.post-nav &#123;</div><div class="line">    border: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="文章阅读次数的统计深入讲解"><a href="#文章阅读次数的统计深入讲解" class="headerlink" title="文章阅读次数的统计深入讲解"></a>文章阅读次数的统计深入讲解</h2><h3 id="对比分析方法"><a href="#对比分析方法" class="headerlink" title="对比分析方法"></a>对比分析方法</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post-art1.png" alt="文章详情头部样式"></p>
+<p>再次用下这张图，我这里面的阅读次数是通过leanCloud,来实现文章阅读量统计的，next主题还自带了一个不蒜子的统计参数配置，相信大家用过了，在主题的配置文件里有如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># Show PV/UV of the website/page with busuanzi.</div><div class="line"># Get more information on http://ibruce.info/2015/04/04/busuanzi/</div><div class="line">busuanzi_count:</div><div class="line">  # count values only if the other configs are false</div><div class="line">  enable: true</div><div class="line">  # custom uv span for the whole site</div><div class="line">  site_uv: true</div><div class="line">  site_uv_header: &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt; 访问用户：</div><div class="line">  site_uv_footer: 人</div><div class="line">  # custom pv span for the whole site</div><div class="line">  site_pv: true</div><div class="line">  site_pv_header: &lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt; 访问次数：</div><div class="line">  site_pv_footer: 次</div><div class="line">  # custom pv span for one page only</div><div class="line">  page_pv: false</div><div class="line">  page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt;&amp;nbsp点击量 </div><div class="line">  page_pv_footer: 次</div></pre></td></tr></table></figure>
+<p>我设置<strong>page_pv为false</strong>因为我打算用leanCloud来实现,因为用不蒜子这个来统计是没问题，但是它说了  <strong># custom pv span for one page only</strong>意思是只显示在文章相应这里，你<strong>在首页是看不到阅读次数统计的</strong>，对用户体验来说十分不好，所以打算用leanCloud，如果觉得首页不展示阅读次数什么的无所谓的，就可以用next主题的不蒜子插件，具体的查看官方文档上面有写方法。</p>
+<hr>
+<p>这里讲下官方文档上没有详细说明的leanCloud,来实现文章阅读量统计的方法</p>
+<h2 id="leanCloud来实现阅读统计"><a href="#leanCloud来实现阅读统计" class="headerlink" title="leanCloud来实现阅读统计"></a>leanCloud来实现阅读统计</h2><p>我现在版本的next主题是集成了这个插件的，并且给出了对应的参数配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Show number of visitors to each article.</div><div class="line"># You can visit https://leancloud.cn get AppID and AppKey.</div><div class="line">leancloud_visitors:</div><div class="line">  enable: true</div><div class="line">  app_id: TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz</div><div class="line">  app_key: 5rH911Nhs9V7AWFjEYqe8Bz7</div></pre></td></tr></table></figure>
+<blockquote>
+<p>过程是：<br>1.注册leancloud账户并完成验证后登录leanCloud的，创建应用并配置相关操作<br>2.获取对应的AppID和AppKey<br>3.配置相应参数完成阅读文章的数量的统计</p>
+</blockquote>
+<h3 id="注册账户"><a href="#注册账户" class="headerlink" title="注册账户"></a>注册账户</h3><p>过程省略…没啥好说的</p>
+<h3 id="创建一个应用"><a href="#创建一个应用" class="headerlink" title="创建一个应用"></a>创建一个应用</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post-art4.png" alt="leanCloud来实现阅读统计"></p>
+<h3 id="进入应用创建Class"><a href="#进入应用创建Class" class="headerlink" title="进入应用创建Class"></a>进入应用创建Class</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post-art5.png" alt="leanCloud来实现阅读统计"><br>我之前已经创建好了一个Class名为Counter,创建成功就会出来了。</p>
+<h3 id="获取AppID和AppKey"><a href="#获取AppID和AppKey" class="headerlink" title="获取AppID和AppKey"></a>获取AppID和AppKey</h3><p><img src="http://img.cduyzh.com/images/hexo-css-post-art6.png" alt="leanCloud来实现阅读统计"></p>
+<p>设置主题配置文件</p>
+<p>设置主题配置文件_config.yml相关字段，实现阅读数量的统计<br>添加以下字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">leancloud_visitors:</div><div class="line">  enable: true</div><div class="line">  app_id: #你的App ID</div><div class="line">  app_key: #你的的App Key</div></pre></td></tr></table></figure>
+<p>完成配置并重新编译。</p>
+<blockquote>
+<p>通过在本地服务器测试是看不到阅读次数的统计的，所以要发布到网上查看才行。</p>
+</blockquote>
+<hr>
+<h2 id="酷炫的博客背景"><a href="#酷炫的博客背景" class="headerlink" title="酷炫的博客背景"></a>酷炫的博客背景</h2><h3 id="添加背景特效"><a href="#添加背景特效" class="headerlink" title="添加背景特效"></a>添加背景特效</h3><blockquote>
+<p>背景的几何线条是采用的nest效果，一个基于html5<br>canvas绘制的网页背景效果，非常赞！来自github的开源项目canvas-nest 特性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">不依赖任何框架或者内库，比如不依赖jQuery，使用原生的javascript。</div><div class="line">非常小，只有1.66kb，如果开启gzip，可以更小。</div><div class="line">非常容易实现，配置简单，即使你不是web开发者，也能简单搞定。</div></pre></td></tr></table></figure>
+<p>使用非常简单</p>
+<pre><code>color: 线条颜色, 默认: ‘0,0,0’ ；三个数字分别为(R,G,B)，注意用,分割
+opacity: 线条透明度（0~1）, 默认: 0.5
+count: 线条的总数量, 默认: 150
+zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1
+</code></pre><h3 id="添加修改代码"><a href="#添加修改代码" class="headerlink" title="添加修改代码"></a>添加修改代码</h3><p><code>next/layout/_layout.swig</code>，在body标签之前添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.canvas_nest %&#125;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
+<p>打开<code>next/_config.yml</code>，添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Canvas-nest</div><div class="line">canvas_nest: true</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果是最新的next主题是集成了这段代码的，如果没手动添加，有就设置为true</p>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>重新编译配置后，在本地测试就能看到效果了。</p>
+</blockquote>
+<h2 id="在首页菜单里添加的独立的标签页"><a href="#在首页菜单里添加的独立的标签页" class="headerlink" title="在首页菜单里添加的独立的标签页"></a>在首页菜单里添加的独立的标签页</h2><p><strong>标题的意思大概是文章列表实现</strong><br>效果如图：<br><img src="http://img.cduyzh.com/images/hexo-css-post-art7.png" alt="文章列表实现"></p>
+<h3 id="实现过程思想"><a href="#实现过程思想" class="headerlink" title="实现过程思想"></a>实现过程思想</h3><blockquote>
+<p>1、修改HEXO POST模板，添加categories。以后的文章将会以此作为模板新增。<br> 2、新增一文章，并修改分类属性。分类属性如果被设置，在HEXO编译会生成对应分类目录<br>3、修改主题配置文件(config.yml),添加MENU分类字段 ,导航栏显示分类链接<br> 4、假定为中文网站，修改主题目录下的语言配置文件(zh-Hans.yml) .导航栏链接显示中文</p>
+</blockquote>
+<h3 id="修改HEXO-POST模板"><a href="#修改HEXO-POST模板" class="headerlink" title="修改HEXO POST模板"></a>修改HEXO POST模板</h3><p><strong>添加categories</strong><br>在你的HEXO根目录下，找到文件夹<code>scaffolds</code>，此文件夹下定义创建文章的基本模型，你可以修改此模板<br>实现每次进行HEXO NEW 文章名，文章会以您的模板进行对应配置属性创建。这里我们主要是新增categories<br>字段，让每次新增文章都会打上此属性字段。<br><code>scaffolds</code>里有三个文件分别对应草稿、页面、文章，建议都加上如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div><div class="line">---</div></pre></td></tr></table></figure></p>
+<p><strong>新增一文章，并修改分类属性</strong><br>新建文章后如： hexo new 你的文章名，并打开您的文章，在categories写上你的分类名字，<br>此操作后并保存文档，在你进行hexo g编译的时候会在你的PUBLIC目录下的 categories下建立以你分类名字命名的<br>文件夹，<br><strong>以后的链接将定向到此文件夹</strong>。(本文的测试分类名为：life 中文名生活)</p>
+<h3 id="修改主题配置文件添加MENU分类字段"><a href="#修改主题配置文件添加MENU分类字段" class="headerlink" title="修改主题配置文件添加MENU分类字段"></a>修改主题配置文件添加MENU分类字段</h3><p>修改代码大概如下，参考下就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  about: /about</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div><div class="line">  #commonweal: /404.html</div><div class="line">  #sitemap: /sitemap.xml</div><div class="line">  life: /categories/life</div><div class="line">  technology: /categories/technology</div></pre></td></tr></table></figure></p>
+<h3 id="修改主题目录下的语言配置文件"><a href="#修改主题目录下的语言配置文件" class="headerlink" title="修改主题目录下的语言配置文件"></a>修改主题目录下的语言配置文件</h3><p>路径为<code>themes\next\languages</code> 文件为<code>zh-Hans.yml</code><br>修改代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: 首页</div><div class="line">  archives: 归档</div><div class="line">  categories: 分类</div><div class="line">  tags: 标签</div><div class="line">  about: 关于</div><div class="line">  search: 搜索</div><div class="line">  schedule: 日程表</div><div class="line">  sitemap: 站点地图</div><div class="line">  commonweal: 公益404</div><div class="line">  life: 生活</div><div class="line">  technology: 技术</div></pre></td></tr></table></figure></p>
+<h3 id="完成-1"><a href="#完成-1" class="headerlink" title="完成"></a>完成</h3><p>重新编译预览下效果。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇写了不少小技巧，都是平时总结的，当然还有一些没讲到的点，如果有疑问的可以在下面评论说，我会在后面的文章提及。</p>
+
+
+        <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2>
+        <blockquote><p>如果你还需要了解更多技术文章信息，请继续关注我的博客</p><footer><strong>Water Sister's Blog Share For you!</strong><cite><a href="http://www.cduyzh.com"  rel="external">Welcome to Water Sister'S BLOG</a></cite></footer></blockquote>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/hexo-settings-4/" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">http://www.cduyzh.com/hexo-settings-4/</a><br/><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yang ZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Yang ZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo-settings-3/" rel="next" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">
+                <i class="fa fa-chevron-left"></i> 2017年最新基于hexo搭建个人免费博客——自定义页面样式一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="hexo-settings-4/"
+     data-title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二"
+     data-content=""
+     data-url="http://www.cduyzh.com/hexo-settings-4/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="hexo-settings-4/"
+           data-title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二" data-url="http://www.cduyzh.com/hexo-settings-4/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/yzh.jpg"
+               alt="Yang ZiHao" />
+          <p class="site-author-name" itemprop="name">Yang ZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cduyzh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3290722423/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=450311265&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.watersister.top" title="web project" target="_blank">web project</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=86 src="//music.163.com/outchain/player?type=2&id=103301&auto=0&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页文章摘要样式修改"><span class="nav-number">2.</span> <span class="nav-text">首页文章摘要样式修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看对应样式"><span class="nav-number">2.2.</span> <span class="nav-text">查看对应样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给文章首页摘要添加阴影效果"><span class="nav-number">2.3.</span> <span class="nav-text">给文章首页摘要添加阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阅读文章按钮样式修改"><span class="nav-number">2.4.</span> <span class="nav-text">阅读文章按钮样式修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章详情样式修改"><span class="nav-number">3.</span> <span class="nav-text">文章详情样式修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章详情头部样式"><span class="nav-number">3.1.</span> <span class="nav-text">文章详情头部样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章相应底部样式修改"><span class="nav-number">3.2.</span> <span class="nav-text">文章相应底部样式修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章底部的横线样式修改"><span class="nav-number">3.4.</span> <span class="nav-text">文章底部的横线样式修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章阅读次数的统计深入讲解"><span class="nav-number">4.</span> <span class="nav-text">文章阅读次数的统计深入讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对比分析方法"><span class="nav-number">4.1.</span> <span class="nav-text">对比分析方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leanCloud来实现阅读统计"><span class="nav-number">5.</span> <span class="nav-text">leanCloud来实现阅读统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册账户"><span class="nav-number">5.1.</span> <span class="nav-text">注册账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个应用"><span class="nav-number">5.2.</span> <span class="nav-text">创建一个应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入应用创建Class"><span class="nav-number">5.3.</span> <span class="nav-text">进入应用创建Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取AppID和AppKey"><span class="nav-number">5.4.</span> <span class="nav-text">获取AppID和AppKey</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#酷炫的博客背景"><span class="nav-number">6.</span> <span class="nav-text">酷炫的博客背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加背景特效"><span class="nav-number">6.1.</span> <span class="nav-text">添加背景特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加修改代码"><span class="nav-number">6.2.</span> <span class="nav-text">添加修改代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成"><span class="nav-number">6.3.</span> <span class="nav-text">完成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在首页菜单里添加的独立的标签页"><span class="nav-number">7.</span> <span class="nav-text">在首页菜单里添加的独立的标签页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现过程思想"><span class="nav-number">7.1.</span> <span class="nav-text">实现过程思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改HEXO-POST模板"><span class="nav-number">7.2.</span> <span class="nav-text">修改HEXO POST模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题配置文件添加MENU分类字段"><span class="nav-number">7.3.</span> <span class="nav-text">修改主题配置文件添加MENU分类字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题目录下的语言配置文件"><span class="nav-number">7.4.</span> <span class="nav-text">修改主题目录下的语言配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成-1"><span class="nav-number">7.5.</span> <span class="nav-text">完成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-tint"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang ZiHao</span>
+</div>
+
+
+
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i> 访问用户：<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i> 访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"cduyzh"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz", "5rH911Nhs9V7AWFjEYqe8Bz7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+</html>

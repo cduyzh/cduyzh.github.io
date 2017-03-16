@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://www.cduyzh.com/hexo-settings-4/</loc>
+    <lastmod>2017-03-16T14:37:58.096Z</lastmod>
+    <data>
+        <display>
+        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式二</title>
+        <pubTime>2017-03-16T10:27:38.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
-    <lastmod>2017-03-14T02:26:35.305Z</lastmod>
+    <lastmod>2017-03-16T11:41:45.401Z</lastmod>
     <data>
         <display>
         <title>2017年最新基于hexo搭建个人免费博客——基本设置和了解</title>
@@ -23,13 +43,32 @@
     </url>
 
     
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-1/</loc>
+    <lastmod>2017-03-16T11:41:32.509Z</lastmod>
+    <data>
+        <display>
+        <title>2017年最新基于hexo搭建个人免费博客——从零开始</title>
+        <pubTime>2017-03-06T16:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-3/</loc>
-    <lastmod>2017-03-09T15:14:56.993Z</lastmod>
+    <lastmod>2017-03-16T10:29:00.836Z</lastmod>
     <data>
         <display>
-        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式</title>
+        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式一</title>
         <pubTime>2017-03-09T14:06:28.000Z</pubTime>
         
         <tag>hexo</tag>
@@ -44,6 +83,7 @@
     </url>
 
     
+    
   <url>
     <loc>http://www.cduyzh.com/review-hexo/</loc>
     <lastmod>2017-03-07T13:20:11.000Z</lastmod>
@@ -56,26 +96,6 @@
            
              
               <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-1/</loc>
-    <lastmod>2017-03-07T13:12:50.303Z</lastmod>
-    <data>
-        <display>
-        <title>2017年最新基于hexo搭建个人免费博客——从零开始</title>
-        <pubTime>2017-03-06T16:00:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
           
         </display>
     </data>
