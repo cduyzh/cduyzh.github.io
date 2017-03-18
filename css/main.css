@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #6f995d;
 }
 .ds-top-threads li {
   display: block;
@@ -3074,7 +3074,7 @@ a {
 .post-nav-item a:hover {
   color: #649ab6;
 }
-span.this_ua {
+.duoshuo-ua-browser {
   background-color: #ccc !important;
   border-radius: 4px;
   padding: 0 5px !important;
@@ -3082,31 +3082,31 @@ span.this_ua {
   border: 1px solid #bbb !important;
   color: #fff;
 }
-.this_ua.platform.Windows {
+.duoshuo_ua-platform-Windows {
   background-color: #39b3d7 !important;
   border-color: #46b8da !important;
 }
-.this_ua.platform.Linux {
+.duoshuo_ua-platform-Linux {
   background-color: #3a3a3a !important;
   border-color: #1f1f1f !important;
 }
-.this_ua.platform.Android {
+.duoshuo_ua-platform-Android {
   background-color: #00c47d !important;
   border-color: #01b171 !important;
 }
-.this_ua.browser.Chrome {
+.duoshuo_ua-browser-Chrome {
   background-color: #5cb85c !important;
   border-color: #4cae4c !important;
 }
-.this_ua.browser.Firefox {
+.duoshuo_ua-browser-Firefox {
   background-color: #f0ad4e !important;
   border-color: #eea236 !important;
 }
-.this_ua.browser.IE {
+.duoshuo_ua-browser-IE {
   background-color: #428bca !important;
   border-color: #357ebd !important;
 }
-.this_ua.browser.Opera {
+.duoshuo_ua-browser-Opera {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
 }
