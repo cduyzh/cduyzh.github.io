@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a7d6ff;
+  background: #fff;
 }
 .ds-top-threads li {
   display: block;
@@ -2996,6 +2996,9 @@ hr {
   color: #649ab6;
 }
 .sidebar {
+  background-size: 320px 659px;
+  background-position-y: 1vh;
+  background-repeat: no-repeat;
   box-shadow: inset 2px 2px 40px #bdb2b2;
 }
 .sidebar a {

@@ -653,21 +653,19 @@
   
     
   
+
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"<%= theme.duoshuo_shortname %>"};
-   (function() {
+    var duoshuoQuery = {short_name:"cduyzh"};
+    (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-      ds = document.createElement('script');
-     ds.type = 'text/javascript';ds.async = true;
-     ds.src = 'http://faisalman.github.io/ua-parser-js/src/ua-parser.js';
-     ds.charset = 'UTF-8';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-   })();
- </script >
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
     
@@ -675,26 +673,6 @@
     <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
-
-   <script type="text/javascript">
-
-   if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
-   else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
-  function hookDUOSHUO_tp(){
-       var _D_post=DUOSHUO.templates.post
-       DUOSHUO.templates.post=function (e,t){
-           var rs=_D_post(e,t);
-           if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-           return rs;
-       }
-   }
-   function show_ua(string){
-       $.ua.set(string);
-       var sua=$.ua;
-       if(sua.os.version=='x86_64')sua.os.version='x64';
-       return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
-   }
-   </script>
 
 
 
