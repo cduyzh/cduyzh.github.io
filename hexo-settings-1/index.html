@@ -1034,18 +1034,18 @@
 
   
     
-      
-      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
     
-
-
-
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
  <script type="text/javascript">
     if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
     else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
+    var hookDUOSHUO_bl=false;
     function hookDUOSHUO_tp(){
-        var _D_post=DUOSHUO.templates.post
+        if(hookDUOSHUO_bl)return;
+        else hookDUOSHUO_bl=true;
+        var _D_post=DUOSHUO.templates.post;
         DUOSHUO.templates.post=function (e,t){
             var rs=_D_post(e,t);
             if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
@@ -1059,6 +1059,9 @@
         return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
     }
     </script>
+
+
+
 
 
 
