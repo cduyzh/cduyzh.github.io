@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff85ff;
+  background: #9effa7;
 }
 .ds-top-threads li {
   display: block;
@@ -3106,6 +3106,10 @@ a {
   background-color: #00c47d !important;
   border-color: #01b171 !important;
 }
+.duoshuo-ua-platform-ios {
+  background-color: #ccc !important;
+  border-color: #ccc !important;
+}
 .duoshuo-ua-browser-chrome {
   background-color: #5cb85c !important;
   border-color: #4cae4c !important;
@@ -3122,11 +3126,7 @@ a {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
 }
-.duoshuo-ua-platform-ios {
-  background-color: #d9534f !important;
-  border-color: #d43f3a !important;
-}
 .duoshuo-ua-browser-mobile safari {
-  background-color: #428bca !important;
-  border-color: #357ebd !important;
+  background-color: #ccc !important;
+  border-color: #ccc !important;
 }
