@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #29416e;
+  background: #36ff39;
 }
 .ds-top-threads li {
   display: block;
@@ -3074,6 +3074,18 @@ a {
 .post-nav-item a:hover {
   color: #649ab6;
 }
+.theme-next #ds-reset .duoshuo-ua-platform,
+.theme-next #ds-reset .duoshuo-ua-browser {
+  color: #fff;
+}
+.duoshuo-ua-browser {
+  background-color: #ccc !important;
+  border-radius: 4px;
+  padding: 0 5px !important;
+  margin: 0 1px !important;
+  border: 1px solid #bbb !important;
+  color: #fff;
+}
 .duoshuo-ua-platform {
   background-color: #ccc !important;
   border-radius: 4px;
@@ -3109,4 +3121,12 @@ a {
 .duoshuo-ua-browser-opera {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
+}
+.duoshuo-ua-platform-ios {
+  background-color: #d9534f !important;
+  border-color: #d43f3a !important;
+}
+.duoshuo-ua-browser-mobile safari {
+  background-color: #428bca !important;
+  border-color: #357ebd !important;
 }
