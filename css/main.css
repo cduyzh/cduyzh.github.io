@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7d50;
+  background: #e0790e;
 }
 .ds-top-threads li {
   display: block;
@@ -3076,6 +3076,11 @@ a {
 }
 #ds-recent-visitors .ds-avatar {
   float: left;
+}
+#ds-recent-visitors {
+  width: 100%;
+  height: 100px;
+  padding-inline-start: 0px;
 }
 .theme-next #ds-reset .duoshuo-ua-platform,
 .theme-next #ds-reset .duoshuo-ua-browser {

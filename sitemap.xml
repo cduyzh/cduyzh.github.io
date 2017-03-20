@@ -2,51 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.cduyzh.com/about/index.html</loc>
-    
-    <lastmod>2017-03-19T11:08:15.257Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.cduyzh.com/review-hexo/</loc>
     
-    <lastmod>2017-03-19T11:08:09.950Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-4/</loc>
-    
-    <lastmod>2017-03-19T11:08:03.481Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-3/</loc>
-    
-    <lastmod>2017-03-19T11:07:57.912Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
-    
-    <lastmod>2017-03-19T11:07:51.265Z</lastmod>
+    <lastmod>2017-03-20T06:14:13.891Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-1/</loc>
     
-    <lastmod>2017-03-19T11:07:46.433Z</lastmod>
+    <lastmod>2017-03-20T06:14:09.496Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
+    
+    <lastmod>2017-03-20T06:14:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-3/</loc>
+    
+    <lastmod>2017-03-20T06:14:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-4/</loc>
+    
+    <lastmod>2017-03-20T06:13:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-6/</loc>
+    
+    <lastmod>2017-03-20T06:13:45.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-5/</loc>
     
-    <lastmod>2017-03-19T11:07:01.189Z</lastmod>
+    <lastmod>2017-03-20T06:13:30.988Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cduyzh.com/about/index.html</loc>
+    
+    <lastmod>2017-03-19T11:08:15.257Z</lastmod>
     
   </url>
   
