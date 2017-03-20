@@ -99,7 +99,7 @@
 <meta property="og:description" content="前言简单的讲诉下如何添加最近游客，以及如何设置它到页面想要的位置，和一些样式修改。其实这个功能不是特别重要，实现起来也不是很困难，步骤很少，一下就能部署成功。">
 <meta property="og:image" content="http://img.cduyzh.com/images/duoshuo-recent-viewer-bk.jpg">
 <meta property="og:image" content="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/recent-viewers.png">
-<meta property="og:updated_time" content="2017-03-20T06:13:45.000Z">
+<meta property="og:updated_time" content="2017-03-20T07:02:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多说插件最近访客样式问题和解决方法">
 <meta name="twitter:description" content="前言简单的讲诉下如何添加最近游客，以及如何设置它到页面想要的位置，和一些样式修改。其实这个功能不是特别重要，实现起来也不是很困难，步骤很少，一下就能部署成功。">
@@ -448,7 +448,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      855 字
+                      845 字
                     </span>
               
 
@@ -494,7 +494,7 @@
 </blockquote>
 <p>完整修改后如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div><div class="line">---</div><div class="line"></div><div class="line">### 最近访客</div><div class="line"></div><div class="line">&lt;ul class=&quot;ds-recent-visitors&quot; data-num-items=&quot;26&quot; data-avatar-size=&quot;42&quot; &gt;&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<h2 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h2><h3 id="发现样式问题"><a href="#发现样式问题" class="headerlink" title="发现样式问题"></a>发现样式问题</h3><p>现在可以在本地测试看看，已经有了效果了，但是头像是竖着排的，因为默认的一个头像的a标签display为block,所以才这样。</p>
+<h2 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h2><h3 id="发现样式问题"><a href="#发现样式问题" class="headerlink" title="发现样式问题"></a>发现样式问题</h3><p>现在可以在本地测试看看，已经有了效果了，但是头像是竖着排的，因为ds-recent-visitors .ds-avatar {<br>    display: inline;}。</p>
 <h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>我试着去改了下display的属性，用了重写覆盖的方法，但是重新加载后发现，我重写的样式没有覆盖掉原先的，那就应该是我重写的样式优先级没有它引入的高，可能引入的样式在我重写之后，所以我被覆盖掉了。<br>那现在我又懒得去看源码分析CSS加载的先手顺序，所以有了一个网上流传的改法。</p>
 <h3 id="具体解决"><a href="#具体解决" class="headerlink" title="具体解决"></a>具体解决</h3><p>通过设置float: left属性来解决是可行的，因为原先的CSS里没有设置这个值，所以重写有效。<br>具体代码如下：</p>
 <blockquote>
