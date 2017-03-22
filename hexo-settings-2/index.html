@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Water Sister's Blog">
 <meta property="og:description" content="前言前面的文章已经能让大家搭建起自己的博客，并通过网络访问了，通过基础的发布文章和编辑既可以实现博客的运作了，其他的一些包括分页和标签、分类等都不用自己来操作实现，只要通过命令hexo g就可以了，如果大家看过了next主题的官网中介绍的配置，我会帮助大家对其中描述不清的地方进行讲解。">
 <meta property="og:image" content="http://img.cduyzh.com/images/next.jpg">
-<meta property="og:updated_time" content="2017-03-20T06:14:05.000Z">
+<meta property="og:updated_time" content="2017-03-22T12:46:11.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——基本设置和了解">
 <meta name="twitter:description" content="前言前面的文章已经能让大家搭建起自己的博客，并通过网络访问了，通过基础的发布文章和编辑既可以实现博客的运作了，其他的一些包括分页和标签、分类等都不用自己来操作实现，只要通过命令hexo g就可以了，如果大家看过了next主题的官网中介绍的配置，我会帮助大家对其中描述不清的地方进行讲解。">
@@ -115,8 +115,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6224774254659896000',
-      author: '水美眉（博主）'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -413,8 +413,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/hexo-settings-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-2/" itemprop="commentCount"></span>
+                <a class="cloud-tie-join-count" href="/hexo-settings-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -447,7 +447,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,188 字
+                      1,184 字
                     </span>
               
 
@@ -506,7 +506,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %&#125;</div><div class="line">           &lt;div class=&quot;post-wordcount&quot;&gt;</div><div class="line">             &#123;% if theme.post_wordcount.wordcount %&#125;</div><div class="line">               &lt;span class=&quot;post-meta-item-icon&quot;&gt;</div><div class="line">                 &lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;</div><div class="line">               &lt;/span&gt;</div><div class="line">                 &#123;% if theme.post_wordcount.item_text %&#125;</div><div class="line">                   &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&lt;/span&gt;</div><div class="line">                 &#123;% endif %&#125;</div><div class="line">                   &lt;span title=&quot;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&quot; &#125;&#125;&quot;&gt;</div><div class="line">                     &#123;&#123; wordcount(post.content) &#125;&#125; 字  ##我在这里加了一个单位上去</div><div class="line">                   &lt;/span&gt;</div><div class="line">             &#123;% endif %&#125;</div><div class="line"></div><div class="line">             &#123;% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %&#125;</div><div class="line">               &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</div><div class="line">             &#123;% endif %&#125;</div><div class="line"></div><div class="line">             &#123;% if theme.post_wordcount.min2read %&#125;</div><div class="line">               &lt;span class=&quot;post-meta-item-icon&quot;&gt;</div><div class="line">                 &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt;</div><div class="line">               &lt;/span&gt;</div><div class="line">                 &#123;% if theme.post_wordcount.item_text %&#125;</div><div class="line">                   &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&lt;/span&gt;</div><div class="line">                 &#123;% endif %&#125;</div><div class="line">                   &lt;span title=&quot;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&quot; &#125;&#125;&quot;&gt;</div><div class="line">                     &#123;&#123; min2read(post.content) &#125;&#125; 分钟   ##我在这里加了一个单位上去</div><div class="line">                   &lt;/span&gt;</div><div class="line">             &#123;% endif %&#125;</div><div class="line">           &lt;/div&gt;</div><div class="line">         &#123;% endif %&#125;</div></pre></td></tr></table></figure>
 <p>因为已经写好了代码，所以大家不用更改什么，只需要按自己需求来修改一些地方，我还对图标进行了修改在FontAwesome官网上找到一些图标替换了标签里对应的class值来实现目的。因为hexo默认引入了这个字体图标库，涉及到图标的地方都可以自行来更改。</p>
 <h2 id="其他主题配置"><a href="#其他主题配置" class="headerlink" title="其他主题配置"></a>其他主题配置</h2><p>另外评论系统推荐用多说，数据统计用不蒜子统计，搜索系统用local search,内容分享用多说分享，配置起来最简单好用。<br>next主题的官网文档上写了相关配置的设置方法都是在配置文件里进行值的设定，操作起来很简单，我就不重复讲了，如有其他问题欢迎提问，后面我会讲如何来自定义CSS样式和更改里面的一些设置。</p>
-<h3 id="最近访客"><a href="#最近访客" class="headerlink" title="最近访客"></a>最近访客</h3><ul class="ds-recent-visitors" data-num-items="26" data-avatar-size="42"></ul> 
+
       
     </div>
 
@@ -598,24 +598,32 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="hexo-settings-2/"
-     data-title="2017年最新基于hexo搭建个人免费博客——基本设置和了解"
-     data-content=""
-     data-url="http://www.cduyzh.com/hexo-settings-2/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -638,16 +646,11 @@
           </div>
           
 
-  <p>最近好评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="hexo-settings-2/"
-           data-title="2017年最新基于hexo搭建个人免费博客——基本设置和了解" data-url="http://www.cduyzh.com/hexo-settings-2/">
-      </div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -807,7 +810,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解文章和页面"><span class="nav-number">2.</span> <span class="nav-text">理解文章和页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Fork-me-on-GitHub"><span class="nav-number">3.</span> <span class="nav-text">添加Fork me on GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果"><span class="nav-number">3.1.</span> <span class="nav-text">把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加音乐"><span class="nav-number">4.</span> <span class="nav-text">添加音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现文章标题栏显示更多的文章信息"><span class="nav-number">5.</span> <span class="nav-text">实现文章标题栏显示更多的文章信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-wordcount实现"><span class="nav-number">5.1.</span> <span class="nav-text">hexo-wordcount实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装WORDCOUNT"><span class="nav-number">5.2.</span> <span class="nav-text">安装WORDCOUNT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要功能"><span class="nav-number">5.3.</span> <span class="nav-text">主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看post-swig模板"><span class="nav-number">5.4.</span> <span class="nav-text">查看post.swig模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他主题配置"><span class="nav-number">6.</span> <span class="nav-text">其他主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最近访客"><span class="nav-number">6.1.</span> <span class="nav-text">最近访客</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解文章和页面"><span class="nav-number">2.</span> <span class="nav-text">理解文章和页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Fork-me-on-GitHub"><span class="nav-number">3.</span> <span class="nav-text">添加Fork me on GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果"><span class="nav-number">3.1.</span> <span class="nav-text">把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加音乐"><span class="nav-number">4.</span> <span class="nav-text">添加音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现文章标题栏显示更多的文章信息"><span class="nav-number">5.</span> <span class="nav-text">实现文章标题栏显示更多的文章信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-wordcount实现"><span class="nav-number">5.1.</span> <span class="nav-text">hexo-wordcount实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装WORDCOUNT"><span class="nav-number">5.2.</span> <span class="nav-text">安装WORDCOUNT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要功能"><span class="nav-number">5.3.</span> <span class="nav-text">主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看post-swig模板"><span class="nav-number">5.4.</span> <span class="nav-text">查看post.swig模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他主题配置"><span class="nav-number">6.</span> <span class="nav-text">其他主题配置</span></a></li></ol></div>
             
 
           </div>
@@ -954,57 +957,30 @@
 
   
 
-  
-    
+
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cduyzh"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-   <script type="text/javascript">
-    if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
-    else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
-    var hookDUOSHUO_bl=false;
-    function hookDUOSHUO_tp(){
-        if(hookDUOSHUO_bl)return;
-        else hookDUOSHUO_bl=true;
-        var _D_post=DUOSHUO.templates.post;
-        DUOSHUO.templates.post=function (e,t){
-            var rs=_D_post(e,t);
-            if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-            return rs;
-        }
-    }
-    function show_ua(string){
-        $.ua.set(string);
-        var sua=$.ua;
-        if(sua.os.version=='x86_64')sua.os.version='x64';
-        return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
-    }
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
     </script>
-
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
-    
-      
-      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-
-
-
-
-
-
-
 
 
 

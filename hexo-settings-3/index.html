@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://img.cduyzh.com/images/hexo-css1.png">
 <meta property="og:image" content="http://img.cduyzh.com/images/hexo-css2.png">
 <meta property="og:image" content="http://img.cduyzh.com/images/hexo-css3.png">
-<meta property="og:updated_time" content="2017-03-20T06:14:00.000Z">
+<meta property="og:updated_time" content="2017-03-22T12:46:16.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">
 <meta name="twitter:description" content="前言之前答应一个评论朋友要写出这篇自定义CSS样式来修改hexo下的next主题，本来打算要写很多相关hexo下主题的一些修改方法和博客优化了，由于晚上跟朋友看了电影，导致时间不允许我写那么多，所以这篇只是来介绍一下如何自己修改一些样式并生成到博客上。">
@@ -118,8 +118,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6224774254659896000',
-      author: '水美眉（博主）'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -416,8 +416,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/hexo-settings-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-3/" itemprop="commentCount"></span>
+                <a class="cloud-tie-join-count" href="/hexo-settings-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -450,7 +450,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,739 字
+                      1,735 字
                     </span>
               
 
@@ -523,7 +523,7 @@
 <p>我大概会再出一篇文章来给大家讲解以上说的点，让大家都能实现我现在的效果。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
 <p>今天写的比较匆忙，有些地方我有机会会重新再修改下。有任何问题和建议，可以在下面评论。</p>
-<h3 id="最近访客"><a href="#最近访客" class="headerlink" title="最近访客"></a>最近访客</h3><ul class="ds-recent-visitors" data-num-items="26" data-avatar-size="42"></ul> 
+
       
     </div>
 
@@ -615,24 +615,32 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="hexo-settings-3/"
-     data-title="2017年最新基于hexo搭建个人免费博客——自定义页面样式一"
-     data-content=""
-     data-url="http://www.cduyzh.com/hexo-settings-3/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -655,16 +663,11 @@
           </div>
           
 
-  <p>最近好评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="hexo-settings-3/"
-           data-title="2017年最新基于hexo搭建个人免费博客——自定义页面样式一" data-url="http://www.cduyzh.com/hexo-settings-3/">
-      </div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -824,7 +827,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试工具"><span class="nav-number">2.</span> <span class="nav-text">调试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器下的开发者工具"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器下的开发者工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头部导航样式自定义"><span class="nav-number">3.</span> <span class="nav-text">头部导航样式自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位到对应标签位置"><span class="nav-number">3.1.</span> <span class="nav-text">定位到对应标签位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到修改地方"><span class="nav-number">3.2.</span> <span class="nav-text">找到修改地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加你修改的代码"><span class="nav-number">3.3.</span> <span class="nav-text">添加你修改的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改侧面栏"><span class="nav-number">3.4.</span> <span class="nav-text">修改侧面栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同理"><span class="nav-number">3.5.</span> <span class="nav-text">同理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意地方"><span class="nav-number">3.6.</span> <span class="nav-text">注意地方</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#福利"><span class="nav-number">4.</span> <span class="nav-text">福利</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的CSS"><span class="nav-number">4.1.</span> <span class="nav-text">我的CSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尾部修改"><span class="nav-number">5.</span> <span class="nav-text">尾部修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建议"><span class="nav-number">5.1.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾部署名LOGO"><span class="nav-number">5.2.</span> <span class="nav-text">尾部署名LOGO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他部分修改"><span class="nav-number">6.</span> <span class="nav-text">其他部分修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提醒"><span class="nav-number">6.1.</span> <span class="nav-text">提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他小修改"><span class="nav-number">6.2.</span> <span class="nav-text">其他小修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最近访客"><span class="nav-number">7.1.</span> <span class="nav-text">最近访客</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试工具"><span class="nav-number">2.</span> <span class="nav-text">调试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器下的开发者工具"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器下的开发者工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头部导航样式自定义"><span class="nav-number">3.</span> <span class="nav-text">头部导航样式自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位到对应标签位置"><span class="nav-number">3.1.</span> <span class="nav-text">定位到对应标签位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到修改地方"><span class="nav-number">3.2.</span> <span class="nav-text">找到修改地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加你修改的代码"><span class="nav-number">3.3.</span> <span class="nav-text">添加你修改的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改侧面栏"><span class="nav-number">3.4.</span> <span class="nav-text">修改侧面栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同理"><span class="nav-number">3.5.</span> <span class="nav-text">同理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意地方"><span class="nav-number">3.6.</span> <span class="nav-text">注意地方</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#福利"><span class="nav-number">4.</span> <span class="nav-text">福利</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的CSS"><span class="nav-number">4.1.</span> <span class="nav-text">我的CSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尾部修改"><span class="nav-number">5.</span> <span class="nav-text">尾部修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建议"><span class="nav-number">5.1.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾部署名LOGO"><span class="nav-number">5.2.</span> <span class="nav-text">尾部署名LOGO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他部分修改"><span class="nav-number">6.</span> <span class="nav-text">其他部分修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提醒"><span class="nav-number">6.1.</span> <span class="nav-text">提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他小修改"><span class="nav-number">6.2.</span> <span class="nav-text">其他小修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -971,57 +974,30 @@
 
   
 
-  
-    
+
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cduyzh"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-   <script type="text/javascript">
-    if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
-    else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
-    var hookDUOSHUO_bl=false;
-    function hookDUOSHUO_tp(){
-        if(hookDUOSHUO_bl)return;
-        else hookDUOSHUO_bl=true;
-        var _D_post=DUOSHUO.templates.post;
-        DUOSHUO.templates.post=function (e,t){
-            var rs=_D_post(e,t);
-            if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-            return rs;
-        }
-    }
-    function show_ua(string){
-        $.ua.set(string);
-        var sua=$.ua;
-        if(sua.os.version=='x86_64')sua.os.version='x64';
-        return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
-    }
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
     </script>
-
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
-    
-      
-      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-
-
-
-
-
-
-
 
 
 

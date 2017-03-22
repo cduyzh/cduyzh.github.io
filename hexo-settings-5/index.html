@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://img.cduyzh.com/images/duoshuo2.png">
 <meta property="og:image" content="http://img.cduyzh.com/images/duoshuo3.png">
 <meta property="og:image" content="http://img.cduyzh.com/images/duoshuo4.png">
-<meta property="og:updated_time" content="2017-03-20T06:13:30.988Z">
+<meta property="og:updated_time" content="2017-03-22T12:46:28.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo下Next主题使用多说评论插件样式优化">
 <meta name="twitter:description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
@@ -120,8 +120,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6224774254659896000',
-      author: '水美眉（博主）'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -418,8 +418,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/hexo-settings-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-5/" itemprop="commentCount"></span>
+                <a class="cloud-tie-join-count" href="/hexo-settings-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,7 +452,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,796 字
+                      1,792 字
                     </span>
               
 
@@ -516,7 +516,7 @@
 <blockquote>
 <p>关于这个next主题的优化，基本上算是讲完了，如果有网友有其他需求讲解可以私下找我。<br>我后面会出的有关文章类型，大概方向为：<br>网站seo优化——网站收录心得、站点地图使用、爬虫协议等简单介绍和使用<br>网站性能优化——用OSS对象存储来放图片等</p>
 </blockquote>
-<h3 id="最近访客"><a href="#最近访客" class="headerlink" title="最近访客"></a>最近访客</h3><ul class="ds-recent-visitors" data-num-items="26" data-avatar-size="42"></ul> 
+
       
     </div>
 
@@ -608,24 +608,32 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="hexo-settings-5/"
-     data-title="Hexo下Next主题使用多说评论插件样式优化"
-     data-content=""
-     data-url="http://www.cduyzh.com/hexo-settings-5/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -648,16 +656,11 @@
           </div>
           
 
-  <p>最近好评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="hexo-settings-5/"
-           data-title="Hexo下Next主题使用多说评论插件样式优化" data-url="http://www.cduyzh.com/hexo-settings-5/">
-      </div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -817,7 +820,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说评论功能"><span class="nav-number">2.</span> <span class="nav-text">启用多说评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码"><span class="nav-number">2.2.</span> <span class="nav-text">修改或添加代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取user-id"><span class="nav-number">2.3.</span> <span class="nav-text">获取user_id</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说分享功能"><span class="nav-number">3.</span> <span class="nav-text">启用多说分享功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-1"><span class="nav-number">3.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说热评文章功能"><span class="nav-number">4.</span> <span class="nav-text">启用多说热评文章功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-2"><span class="nav-number">4.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改评论头像样式"><span class="nav-number">5.</span> <span class="nav-text">修改评论头像样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评论模块样式"><span class="nav-number">5.1.</span> <span class="nav-text">评论模块样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改ua信息样式"><span class="nav-number">6.</span> <span class="nav-text">修改ua信息样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">6.1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改代码"><span class="nav-number">6.2.</span> <span class="nav-text">修改代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解读代码"><span class="nav-number">6.3.</span> <span class="nav-text">解读代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最近访客"><span class="nav-number">7.1.</span> <span class="nav-text">最近访客</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说评论功能"><span class="nav-number">2.</span> <span class="nav-text">启用多说评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码"><span class="nav-number">2.2.</span> <span class="nav-text">修改或添加代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取user-id"><span class="nav-number">2.3.</span> <span class="nav-text">获取user_id</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说分享功能"><span class="nav-number">3.</span> <span class="nav-text">启用多说分享功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-1"><span class="nav-number">3.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说热评文章功能"><span class="nav-number">4.</span> <span class="nav-text">启用多说热评文章功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-2"><span class="nav-number">4.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改评论头像样式"><span class="nav-number">5.</span> <span class="nav-text">修改评论头像样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评论模块样式"><span class="nav-number">5.1.</span> <span class="nav-text">评论模块样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改ua信息样式"><span class="nav-number">6.</span> <span class="nav-text">修改ua信息样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">6.1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改代码"><span class="nav-number">6.2.</span> <span class="nav-text">修改代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解读代码"><span class="nav-number">6.3.</span> <span class="nav-text">解读代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
@@ -964,57 +967,30 @@
 
   
 
-  
-    
+
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cduyzh"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-   <script type="text/javascript">
-    if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
-    else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
-    var hookDUOSHUO_bl=false;
-    function hookDUOSHUO_tp(){
-        if(hookDUOSHUO_bl)return;
-        else hookDUOSHUO_bl=true;
-        var _D_post=DUOSHUO.templates.post;
-        DUOSHUO.templates.post=function (e,t){
-            var rs=_D_post(e,t);
-            if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-            return rs;
-        }
-    }
-    function show_ua(string){
-        $.ua.set(string);
-        var sua=$.ua;
-        if(sua.os.version=='x86_64')sua.os.version='x64';
-        return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
-    }
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
     </script>
-
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
-    
-      
-      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-
-
-
-
-
-
-
 
 
 

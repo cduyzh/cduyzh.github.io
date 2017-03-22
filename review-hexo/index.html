@@ -113,8 +113,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6224774254659896000',
-      author: '水美眉（博主）'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -411,8 +411,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/review-hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="review-hexo/" itemprop="commentCount"></span>
+                <a class="cloud-tie-join-count" href="/review-hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -567,24 +567,32 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="review-hexo/"
-     data-title="结合hexo和github开发静态个人博客感想"
-     data-content=""
-     data-url="http://www.cduyzh.com/review-hexo/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -607,16 +615,11 @@
           </div>
           
 
-  <p>最近好评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="review-hexo/"
-           data-title="结合hexo和github开发静态个人博客感想" data-url="http://www.cduyzh.com/review-hexo/">
-      </div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -923,57 +926,30 @@
 
   
 
-  
-    
+
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cduyzh"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-   <script type="text/javascript">
-    if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
-    else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
-    var hookDUOSHUO_bl=false;
-    function hookDUOSHUO_tp(){
-        if(hookDUOSHUO_bl)return;
-        else hookDUOSHUO_bl=true;
-        var _D_post=DUOSHUO.templates.post;
-        DUOSHUO.templates.post=function (e,t){
-            var rs=_D_post(e,t);
-            if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-            return rs;
-        }
-    }
-    function show_ua(string){
-        $.ua.set(string);
-        var sua=$.ua;
-        if(sua.os.version=='x86_64')sua.os.version='x64';
-        return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
-    }
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
     </script>
-
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
-    
-      
-      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-
-
-
-
-
-
-
 
 
 

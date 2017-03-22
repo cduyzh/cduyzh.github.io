@@ -112,8 +112,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6224774254659896000',
-      author: '水美眉（博主）'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -410,16 +410,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/hexo-settings-6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-6/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -449,7 +439,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      845 字
+                      841 字
                     </span>
               
 
@@ -609,16 +599,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/hexo-settings-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-5/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -648,7 +628,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,796 字
+                      1,792 字
                     </span>
               
 
@@ -808,16 +788,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/hexo-settings-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -847,7 +817,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      2,555 字
+                      2,551 字
                     </span>
               
 
@@ -1007,16 +977,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/hexo-settings-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1046,7 +1006,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,739 字
+                      1,735 字
                     </span>
               
 
@@ -1206,16 +1166,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/hexo-settings-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-settings-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1245,7 +1195,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      4,426 字
+                      4,422 字
                     </span>
               
 
@@ -1261,7 +1211,7 @@
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      22 分钟
+                      21 分钟
                     </span>
               
             </div>
@@ -1609,57 +1559,30 @@
 
   
 
-  
-    
+
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cduyzh"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-   <script type="text/javascript">
-    if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
-    else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
-    var hookDUOSHUO_bl=false;
-    function hookDUOSHUO_tp(){
-        if(hookDUOSHUO_bl)return;
-        else hookDUOSHUO_bl=true;
-        var _D_post=DUOSHUO.templates.post;
-        DUOSHUO.templates.post=function (e,t){
-            var rs=_D_post(e,t);
-            if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-            return rs;
-        }
-    }
-    function show_ua(string){
-        $.ua.set(string);
-        var sua=$.ua;
-        if(sua.os.version=='x86_64')sua.os.version='x64';
-        return '<span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+' | '+sua.browser.version+'</span>'+'<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span>';
-    }
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
     </script>
-
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
-    
-      
-      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-
-
-
-
-
-
-
 
 
 
