@@ -3,14 +3,31 @@
 
 
     
-    
   <url>
-    <loc>http://www.cduyzh.com/hexo-settings-6/</loc>
-    <lastmod>2017-03-22T12:46:34.922Z</lastmod>
+    <loc>http://www.cduyzh.com/review-hexo/</loc>
+    <lastmod>2017-03-23T13:21:00.945Z</lastmod>
     <data>
         <display>
-        <title>多说插件最近访客样式问题和解决方法</title>
-        <pubTime>2017-03-20T05:05:24.000Z</pubTime>
+        <title>结合hexo和github开发静态个人博客感想</title>
+        <pubTime>2017-03-03T13:53:39.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-7/</loc>
+    <lastmod>2017-03-23T13:20:45.310Z</lastmod>
+    <data>
+        <display>
+        <title>多说评论关闭服务后迁移到网易云跟帖</title>
+        <pubTime>2017-03-23T12:58:01.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -26,11 +43,32 @@
     
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-5/</loc>
-    <lastmod>2017-03-22T12:46:28.881Z</lastmod>
+    <lastmod>2017-03-23T13:12:22.056Z</lastmod>
     <data>
         <display>
         <title>Hexo下Next主题使用多说评论插件样式优化</title>
         <pubTime>2017-03-18T07:55:33.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-6/</loc>
+    <lastmod>2017-03-22T12:46:34.922Z</lastmod>
+    <data>
+        <display>
+        <title>多说插件最近访客样式问题和解决方法</title>
+        <pubTime>2017-03-20T05:05:24.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -118,24 +156,6 @@
            
              
               <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/review-hexo/</loc>
-    <lastmod>2017-03-20T06:14:13.891Z</lastmod>
-    <data>
-        <display>
-        <title>结合hexo和github开发静态个人博客感想</title>
-        <pubTime>2017-03-03T13:53:39.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
           
         </display>
     </data>
