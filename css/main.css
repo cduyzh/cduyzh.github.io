@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6bf483;
+  background: #bb066f;
 }
 .ds-top-threads li {
   display: block;
@@ -3137,4 +3137,12 @@ a {
 .duoshuo-ua-browser-mobile safari {
   background-color: #ccc !important;
   border-color: #ccc !important;
+}
+.post-comments-count a::before {
+  content: "评论";
+}
+.post-wordcount {
+  float: left;
+  padding-left: 15px;
+  margin-right: 13px;
 }
