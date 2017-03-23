@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff98;
+  background: #3e8bd0;
 }
 .ds-top-threads li {
   display: block;
@@ -3140,7 +3140,4 @@ a {
 }
 .post-comments-count a::before {
   content: "评论";
-}
-.post-wordcount {
-  float: left;
 }
