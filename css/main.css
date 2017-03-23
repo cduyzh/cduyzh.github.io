@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #06f01c;
+  background: #ffff98;
 }
 .ds-top-threads li {
   display: block;
@@ -3143,6 +3143,4 @@ a {
 }
 .post-wordcount {
   float: left;
-  padding-left: 15px;
-  margin-right: 13px;
 }
