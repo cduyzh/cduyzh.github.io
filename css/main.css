@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff29e8;
+  background: #ffda20;
 }
 .ds-top-threads li {
   display: block;
@@ -3177,7 +3177,7 @@ rgba(255,255,255,0.6)
   transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/
   -moz-transition: -moz-transform 0.4s ease-out;
 }
-#yun-tie-sdk-wrap .input-box .tie-submit-row .user-info img:hover {
+#yun-tie-sdk-wrap .single-tie .photo img:hover {
 #fff
 rgba(255,255,255,0.6)
   -webkit-box-shadow: 0 0 10px #fff;
@@ -3190,7 +3190,7 @@ rgba(255,255,255,0.6)
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
 }
-#yun-tie-sdk-wrap .input-box .tie-submit-row .user-info img {
+#yun-tie-sdk-wrap .single-tie .photo img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -3203,7 +3203,10 @@ rgba(255,255,255,0.6)
   transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/
   -moz-transition: -moz-transform 0.4s ease-out;
 }
-.tie-author span:hover {
+.name-nick:hover {
+  border-left: 14px solid #3264b4;
+}
+.name-desp:hover {
   border-left: 14px solid #3264b4;
 }
 #yun-tie-sdk-wrap .single-tie .tie-author .name-nick {
@@ -3215,7 +3218,7 @@ rgba(255,255,255,0.6)
   transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
 }
 .tie-time:hover {
-  border-right: 10px solid #3264b4;
+  border-right: 14px solid #3264b4;
 }
 #yun-tie-sdk-wrap .single-tie .tie-time {
   cursor: pointer;
