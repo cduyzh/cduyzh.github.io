@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffda20;
+  background: #ffc9e8;
 }
 .ds-top-threads li {
   display: block;
@@ -3221,5 +3221,6 @@ rgba(255,255,255,0.6)
   border-right: 14px solid #3264b4;
 }
 #yun-tie-sdk-wrap .single-tie .tie-time {
+  transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
   cursor: pointer;
 }
