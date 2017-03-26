@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://www.cduyzh.com/img-oss/</loc>
+    <lastmod>2017-03-26T15:06:12.223Z</lastmod>
+    <data>
+        <display>
+        <title>解决博客图片存储——阿里云的OSS运用</title>
+        <pubTime>2017-03-26T12:51:25.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>optimization</tag>
+         
+        <tag>image</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.cduyzh.com/review-hexo/</loc>
     <lastmod>2017-03-26T13:09:34.000Z</lastmod>
     <data>
@@ -132,30 +156,6 @@
         <tag>optimization</tag>
          
         <tag>comment</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/img-oss/</loc>
-    <lastmod>2017-03-26T13:00:42.794Z</lastmod>
-    <data>
-        <display>
-        <title>解决博客图片存储——阿里云的OSS运用</title>
-        <pubTime>2017-03-26T12:51:25.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>optimization</tag>
-         
-        <tag>image</tag>
          
          
            
