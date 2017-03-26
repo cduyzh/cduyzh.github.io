@@ -5,12 +5,14 @@
     
   <url>
     <loc>http://www.cduyzh.com/review-hexo/</loc>
-    <lastmod>2017-03-23T13:21:00.945Z</lastmod>
+    <lastmod>2017-03-26T13:09:34.000Z</lastmod>
     <data>
         <display>
         <title>结合hexo和github开发静态个人博客感想</title>
         <pubTime>2017-03-03T13:53:39.000Z</pubTime>
         
+        <tag>review</tag>
+         
          
            
              
@@ -23,7 +25,7 @@
     
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-7/</loc>
-    <lastmod>2017-03-23T13:20:45.310Z</lastmod>
+    <lastmod>2017-03-26T13:06:16.331Z</lastmod>
     <data>
         <display>
         <title>多说评论关闭服务后迁移到网易云跟帖</title>
@@ -31,66 +33,9 @@
         
         <tag>hexo</tag>
          
+        <tag>optimization</tag>
          
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-5/</loc>
-    <lastmod>2017-03-23T13:12:22.056Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo下Next主题使用多说评论插件样式优化</title>
-        <pubTime>2017-03-18T07:55:33.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-6/</loc>
-    <lastmod>2017-03-22T12:46:34.922Z</lastmod>
-    <data>
-        <display>
-        <title>多说插件最近访客样式问题和解决方法</title>
-        <pubTime>2017-03-20T05:05:24.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-4/</loc>
-    <lastmod>2017-03-22T12:46:21.047Z</lastmod>
-    <data>
-        <display>
-        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式二</title>
-        <pubTime>2017-03-16T10:27:38.000Z</pubTime>
-        
-        <tag>hexo</tag>
+        <tag>comment</tag>
          
          
            
@@ -104,13 +49,17 @@
     
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-3/</loc>
-    <lastmod>2017-03-22T12:46:16.285Z</lastmod>
+    <lastmod>2017-03-26T13:04:33.650Z</lastmod>
     <data>
         <display>
         <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式一</title>
         <pubTime>2017-03-09T14:06:28.000Z</pubTime>
         
         <tag>hexo</tag>
+         
+        <tag>BlogCss</tag>
+         
+        <tag>optimization</tag>
          
          
            
@@ -121,6 +70,103 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-4/</loc>
+    <lastmod>2017-03-26T13:03:02.922Z</lastmod>
+    <data>
+        <display>
+        <title>2017年最新基于hexo搭建个人免费博客——自定义页面样式二</title>
+        <pubTime>2017-03-16T10:27:38.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>BlogCss</tag>
+         
+        <tag>optimization</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-5/</loc>
+    <lastmod>2017-03-26T13:01:50.111Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo下Next主题使用多说评论插件样式优化</title>
+        <pubTime>2017-03-18T07:55:33.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>optimization</tag>
+         
+        <tag>comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-6/</loc>
+    <lastmod>2017-03-26T13:01:36.300Z</lastmod>
+    <data>
+        <display>
+        <title>多说插件最近访客样式问题和解决方法</title>
+        <pubTime>2017-03-20T05:05:24.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>optimization</tag>
+         
+        <tag>comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/img-oss/</loc>
+    <lastmod>2017-03-26T13:00:42.794Z</lastmod>
+    <data>
+        <display>
+        <title>解决博客图片存储——阿里云的OSS运用</title>
+        <pubTime>2017-03-26T12:51:25.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>optimization</tag>
+         
+        <tag>image</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.cduyzh.com/hexo-settings-2/</loc>

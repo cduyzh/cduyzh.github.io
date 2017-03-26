@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9479;
+  background: #decbd0;
 }
 .ds-top-threads li {
   display: block;
@@ -3051,6 +3051,8 @@ a {
   line-height: 2;
   margin: 0 4px 8px 4px;
   padding: 0 20px;
+  transition: 0.2s ease-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .post-button a {
   border-bottom: 1px solid #666;
@@ -3223,4 +3225,45 @@ rgba(255,255,255,0.6)
 #yun-tie-sdk-wrap .single-tie .tie-time {
   transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
   cursor: pointer;
+}
+.posts-expand .post-tags a:hover {
+  background: rgba(100,154,182,0.902);
+  color: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.posts-expand .post-tags a {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  font-family: 'Comic Sans MS', sans-serif;
+  transition: 0.2s ease-out;
+}
+.posts-expand .post-tags {
+  text-align: center;
+}
+.menu .menu-item a:hover {
+  transition-duration: 0.3s;
+}
+.tag-cloud-tags {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-top: 20px;
+}
+.posts-expand .post-title:hover {
+  border-left: #649ab6 20px solid;
+  padding-left: 15px;
+  cursor: pointer;
+  transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+}
+.tag-cloud-title {
+  cursor: pointer;
+}
+.tag-cloud-title:hover {
+  color: #fff;
+  background-color: #649ab6;
+  transition: 0.5s ease-out;
+  cursor: pointer;
+}
+.tag-cloud-tags a:hover {
+  border-bottom: #649ab6 solid 3.5px;
+  transition: 0.2s ease-in-out;
+  transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }

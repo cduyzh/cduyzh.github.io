@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,BlogCss,optimization," />
+  <meta name="keywords" content="hexo,optimization,image," />
 
 
 
@@ -91,21 +91,26 @@
 
 
 
-<meta name="description" content="前言之前答应一个评论朋友要写出这篇自定义CSS样式来修改hexo下的next主题，本来打算要写很多相关hexo下主题的一些修改方法和博客优化了，由于晚上跟朋友看了电影，导致时间不允许我写那么多，所以这篇只是来介绍一下如何自己修改一些样式并生成到博客上。">
+<meta name="description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">
-<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-3/index.html">
+<meta property="og:title" content="解决博客图片存储——阿里云的OSS运用">
+<meta property="og:url" content="http://www.cduyzh.com/img-oss/index.html">
 <meta property="og:site_name" content="Water Sister's Blog">
-<meta property="og:description" content="前言之前答应一个评论朋友要写出这篇自定义CSS样式来修改hexo下的next主题，本来打算要写很多相关hexo下主题的一些修改方法和博客优化了，由于晚上跟朋友看了电影，导致时间不允许我写那么多，所以这篇只是来介绍一下如何自己修改一些样式并生成到博客上。">
-<meta property="og:image" content="http://img.cduyzh.com/images/hexo-pages3.jpg">
-<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css1.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css2.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/hexo-css3.png">
-<meta property="og:updated_time" content="2017-03-26T13:04:33.650Z">
+<meta property="og:description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-img.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss3.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss4.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss6.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss7.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss8.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss9.png">
+<meta property="og:updated_time" content="2017-03-26T13:00:42.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">
-<meta name="twitter:description" content="前言之前答应一个评论朋友要写出这篇自定义CSS样式来修改hexo下的next主题，本来打算要写很多相关hexo下主题的一些修改方法和博客优化了，由于晚上跟朋友看了电影，导致时间不允许我写那么多，所以这篇只是来介绍一下如何自己修改一些样式并生成到博客上。">
-<meta name="twitter:image" content="http://img.cduyzh.com/images/hexo-pages3.jpg">
+<meta name="twitter:title" content="解决博客图片存储——阿里云的OSS运用">
+<meta name="twitter:description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/aliyun-img.jpg">
 
 
 
@@ -147,12 +152,12 @@
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-3/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/img-oss/"/>
 
 
 
 
-  <title> 2017年最新基于hexo搭建个人免费博客——自定义页面样式一 | Water Sister's Blog </title>
+  <title> 解决博客图片存储——阿里云的OSS运用 | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +344,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-3/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/img-oss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -360,7 +365,7 @@
             
             
               
-                2017年最新基于hexo搭建个人免费博客——自定义页面样式一
+                解决博客图片存储——阿里云的OSS运用
               
             
           </h2>
@@ -375,8 +380,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T22:06:28+08:00">
-                2017-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T20:51:25+08:00">
+                2017-03-26
               </time>
             
 
@@ -416,7 +421,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/hexo-settings-3/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/img-oss/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -425,7 +430,7 @@
 
           
           
-             <span id="/hexo-settings-3/" class="leancloud_visitors" data-flag-title="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">
+             <span id="/img-oss/" class="leancloud_visitors" data-flag-title="解决博客图片存储——阿里云的OSS运用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -450,7 +455,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,735 字
+                      1,798 字
                     </span>
               
 
@@ -466,7 +471,7 @@
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      7 分钟
+                      6 分钟
                     </span>
               
             </div>
@@ -485,44 +490,28 @@
       
 
       
-        <p><img src="http://img.cduyzh.com/images/hexo-pages3.jpg" alt="hexo-css"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前答应一个评论朋友要写出这篇自定义CSS样式来修改hexo下的next主题，本来打算要写很多相关hexo下主题的一些修改方法和博客优化了，由于晚上跟朋友看了电影，导致时间不允许我写那么多，所以这篇只是来介绍一下如何自己修改一些样式并生成到博客上。<br><a id="more"></a> </p>
-<h2 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h2><h3 id="浏览器下的开发者工具"><a href="#浏览器下的开发者工具" class="headerlink" title="浏览器下的开发者工具"></a>浏览器下的开发者工具</h3><p>相信做前端的都知道每个浏览器自带了一个调试者工具一般都是按F12就能出来，基本上每个浏览器的这个调试工具都类似，所以我以360浏览器下的调试工具来演示（其实360的调试工具和谷歌是一样的，我只是觉得360用起来更流畅点）</p>
+        <p><img src="http://img.cduyzh.com/images/aliyun-img.jpg" alt="阿里云-OSS运用"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。<br><a id="more"></a></p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><h3 id="github-pages容量受限"><a href="#github-pages容量受限" class="headerlink" title="github pages容量受限"></a>github pages容量受限</h3><p>之前看过一些别人的github博客，发现只要文章多的人，基本上都用到了图床，原因有很多，毕竟github免费给你用，肯定会限制你的可使用空间的，从长远来看，你的图片资源肯定不能放到别人服务器上，大家还是要理解下。</p>
+<h3 id="图床访问速度快"><a href="#图床访问速度快" class="headerlink" title="图床访问速度快"></a>图床访问速度快</h3><p>一般用图床的，都是图片之类的静态文件非常多，把图片存储到第三方CDN，除了加快图片访问速速，还可以降低你服务器的存储压力，后续网站迁移扩容就不受影响了。</p>
+<h3 id="前瞻性"><a href="#前瞻性" class="headerlink" title="前瞻性"></a>前瞻性</h3><p>虽然我们目前做的是一个博客的小网站，但是以后无论是自己的博客还是实际的项目，都可以用图片来提供外链，方便管理，如果你的网站访问量很高啊，一天几十万几百万啊，我的天啊，这时候你考虑的就不是服务器空间够不够大，而是惊人的并发数啊，光是请求html文件（或其他）的链接就处理不过来了，哪还有多余的资源去读取图片啊，索性就把图片存另一个服务器吧，给主服务器减轻压力啊，于是图床诞生了。</p>
+<h3 id="个人原因"><a href="#个人原因" class="headerlink" title="个人原因"></a>个人原因</h3><p>本人在阿里云的外网上买了几个域名，索性就用了他们的产品，毕竟平时支付宝用的多吧，我看了一下阿里云的OSS服务，虽然性价比比不上七牛云，但是我个人来说就够用了。</p>
+<h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><h3 id="存储空间费用"><a href="#存储空间费用" class="headerlink" title="存储空间费用"></a>存储空间费用</h3><p><strong>阿里云</strong> ： 0-5GB(含)部分     免费 <strong>只限香港地区</strong><br><strong>七牛云</strong> ： 0 GB 至 10 GB      免费</p>
+<h3 id="流量费用"><a href="#流量费用" class="headerlink" title="流量费用"></a>流量费用</h3><p><strong>阿里云</strong> ：0-5GB(含)部分     免费<br><strong>七牛云</strong> ：<br>HTTP 下载流量     第 0 GB 至 10 GB     国内免费  国外免费<br>HTTPS 下载流量     第 0 GB 至 10 TB (含)     0.36 元/GB     0.58 元/GB<br>暂且可以不用考虑这个HTTPS流量，因为我博客基本都用到的是HTTP下载流量）</p>
 <hr>
-<p><strong>接着说正题</strong><br>因为考虑到一部分人是没接触过前端的，所以我会讲的比较细，有前端调试开发经验的可以看快点，找到你们需要关注的地方和问题解决方法。<br><img src="http://img.cduyzh.com/images/hexo-css1.png" alt="hexo-css"><br>大家打开调试者工具会看到红色圈里的东西，里面显示的这个网站的源代码结构，我们要修改任何东西也是要现在这方面进行样式修改看下效果，最后才去next里的一些文件进行部分的添加和修改来达到我们的目的。<br><img src="http://img.cduyzh.com/images/hexo-css2.png" alt="hexo-css"></p>
-<h2 id="头部导航样式自定义"><a href="#头部导航样式自定义" class="headerlink" title="头部导航样式自定义"></a>头部导航样式自定义</h2><h3 id="定位到对应标签位置"><a href="#定位到对应标签位置" class="headerlink" title="定位到对应标签位置"></a>定位到对应标签位置</h3><p>通过右键点击审查元素或者手动用放大镜选择，通过观察可以发现整个头部是包裹在一个header里而且大家把鼠标放上去也可以很清楚的看到标签包裹的是哪些部分，那么通过开发工具可以看到右边对应的是生成在这个标签上class里的一些样式设置.<br><img src="http://img.cduyzh.com/images/hexo-css3.png" alt="hexo-css"></p>
-<h3 id="找到修改地方"><a href="#找到修改地方" class="headerlink" title="找到修改地方"></a>找到修改地方</h3><p>通过观察右侧css样式，有前端经验的人可以自己去diy一下，设置成自己想要的值，改变布局样式之类的，我就不用多说，改好后请记得把代码copy下来。</p>
-<hr>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>所以就很尴尬，我居然会选择阿里云来做我的图床（我今年3月10日才正式上限，3月完已经跑了我6G多的流出贷款，为此我自己还交了几块钱，虽然不多，但是交的心甘情愿吧，毕竟阿里爸爸这个大公司，不会让我上传的图片出现一些问题，安全和速度绝对有保障）<br>最尴尬的是：存储容量居然目前用了不到5M（如果不传一些视频的话，全是压缩后的图片的话，一般占用不到多少，而且我也不敢放视频上去做外链，这样我的带宽按目前情况要上百G）。<br>后面给大家分享一个压缩图片的网站，之前的我很天真，想着刚开博客，跑不了多少流量出去，直到5G用完那一刻，我才意识到压缩图片的重要性。</p>
+<h2 id="使用OSS"><a href="#使用OSS" class="headerlink" title="使用OSS"></a>使用OSS</h2><p>这里我拿的阿里云OSS来讲，基本上每个地方的都类似。</p>
+<h3 id="进入控制台"><a href="#进入控制台" class="headerlink" title="进入控制台"></a>进入控制台</h3><p><img src="http://img.cduyzh.com/images/aliyun-oss1.png" alt="阿里云-OSS运用"><br>选择对象存储OSS进入到对应面板<br><img src="http://img.cduyzh.com/images/aliyun-oss2.png" alt="阿里云-OSS运用"><br>新建一个Bucket<br><strong>注意：</strong>我是用的阿里云，如果要跟我用一样的话，所属区域要选香港。不然可能产生格外的其他费用。<br><img src="http://img.cduyzh.com/images/aliyun-oss3.png" alt="阿里云-OSS运用"><br>创建完Bucket对象后，就可以上传本地需要存储文件<br><img src="http://img.cduyzh.com/images/aliyun-oss4.png" alt="阿里云-OSS运用"><br>然后就可以获取这个图片的地址，复制后在浏览器里输入试试能不能正常显示</p>
+<h2 id="图片链接地址优化"><a href="#图片链接地址优化" class="headerlink" title="图片链接地址优化"></a>图片链接地址优化</h2><p>其实这个也没什么，但是一些图片的外链和title好像是会提高搜索引擎的蜘蛛爬取。<br>比如在用MD写文章的时候引入图片的title最好这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![阿里云-OSS运用](http://img.cduyzh.com/images/aliyun-oss5.png)</div></pre></td></tr></table></figure>
+<p>细心的人可能会发现我的图片地址很简洁，这样就会让百度和其他搜索引擎的蜘蛛更快的来爬去你的图片进而检录上去。<br><img src="http://img.cduyzh.com/images/aliyun-oss6.png" alt="阿里云-OSS运用"><br><img src="http://img.cduyzh.com/images/aliyun-oss7.png" alt="阿里云-OSS运用"><br>要把图片地址改为这样的要如何来实现，其实不难。把它的地址解析到你想要的地址上，前提要先去域名解析那设置好，如果用的阿里云还可以自动设置。<br><img src="http://img.cduyzh.com/images/aliyun-oss8.png" alt="阿里云-OSS运用"><br>然后查看我自己控制台的cduyzh.com这个域名，在域名解析那我发现多了个这个，当然你也可以自己来设置的。<br><img src="http://img.cduyzh.com/images/aliyun-oss9.png" alt="阿里云-OSS运用"><br>这样后在你添加图片后，你就可以把前面那一长段换成自己想要的域名地址链接，无论是他人下载你的图片，或者搜索引擎来检索你的图片，都会方便许多。</p>
+<h2 id="图片在线压缩网站"><a href="#图片在线压缩网站" class="headerlink" title="图片在线压缩网站"></a>图片在线压缩网站</h2><p>地址：<a href="https://tinyjpg.com/" target="_blank" rel="external">图片在线压缩网站</a><br>这个网站基本上会把你的照片压缩50%以上，所以很好用。但是一次最多上传20张，最大5MB封底，如果比较多或者大的照片，只能分批次来处理压缩了。</p>
+<h2 id="OSS管理工具"><a href="#OSS管理工具" class="headerlink" title="OSS管理工具"></a>OSS管理工具</h2><p><a href="http://gosspublic.alicdn.com/oss-client-aliyun-v1.1.9.0-win.zip?spm=5176.2020520105.113.2.1f1Z3T&amp;file=oss-client-aliyun-v1.1.9.0-win.zip" target="_blank" rel="external">OSS管理工具</a><br>这个软件是阿里云官方给的OSS管理工具，如果嫌每次上网页上传麻烦，可以试试这个。</p>
 <blockquote>
-<p><strong>注意</strong>：通过观察可以发现右侧的CSS样式都来源于一个main.css里。</p>
+<p>如果照片名字重复上传，会自动覆盖掉上一次已经上传的，保留最后一次上传的。</p>
 </blockquote>
-<h3 id="添加你修改的代码"><a href="#添加你修改的代码" class="headerlink" title="添加你修改的代码"></a>添加你修改的代码</h3><p>找到你主题文件夹里的对应位置<br>以我的路径为例子<br><code>D:\hexo\blog\themes\next\source\css</code><br>里面有5个文件夹和一个styl文件，<br><strong>main.styl</strong>主要用于打包CSS代码输出成CSS样式的main.css文件,分析下其源代码。</p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">// CSS Style Guide: http://codeguide.co/#css</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">$scheme    = hexo-config(&apos;scheme&apos;) ? hexo-config(&apos;scheme&apos;) : &apos;Muse&apos;;</div><div class="line">$variables = base $scheme custom;</div><div class="line">$mixins    = base $scheme custom;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">// Variables Layer</div><div class="line">// --------------------------------------------------</div><div class="line">for $variable in $variables</div><div class="line">  @import &quot;_variables/&quot; + $variable</div><div class="line"></div><div class="line"></div><div class="line">// Mixins Layer</div><div class="line">// --------------------------------------------------</div><div class="line">for $mixin in $mixins</div><div class="line">  @import &quot;_mixins/&quot; + $mixin;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">// Common Layer</div><div class="line">// --------------------------------------------------</div><div class="line"></div><div class="line">// Scaffolding</div><div class="line">@import &quot;_common/scaffolding&quot;;</div><div class="line"></div><div class="line">// Layout</div><div class="line">@import &quot;_common/outline&quot;;</div><div class="line"></div><div class="line">// Components</div><div class="line">@import &quot;_common/components&quot;;</div><div class="line"></div><div class="line"></div><div class="line">// Schemes Layer</div><div class="line">// --------------------------------------------------</div><div class="line">@import &quot;_schemes/&quot; + $scheme;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">// Custom Layer  ##这个是关键大家注意</div><div class="line">// --------------------------------------------------</div><div class="line">@import &quot;_custom/custom&quot;;</div></pre></td></tr></table></figure>
-<hr>
-<p>大家可以看到我在代码说最后一段代码很关键，因为这是加载导出自定义设置的代码，可以覆盖到上面已经导出的CSS样式，也就是你可以覆盖掉以前生成的样式，而不用去在源文件下修改代码，如果你想换回去，你只需要将<strong>_custom/custom.styl</strong>这个里面的代码删除即可。</p>
-<blockquote>
-<p><strong>注意：</strong>本人不提倡去修改除了_custom下的其他4个文件里的源代码，可能后面出问题不好还原。</p>
-<h3 id="修改侧面栏"><a href="#修改侧面栏" class="headerlink" title="修改侧面栏"></a>修改侧面栏</h3><h3 id="同理"><a href="#同理" class="headerlink" title="同理"></a>同理</h3><p>这个的修改和头部那个差不多，你也只需要定位到对应的位置进行样式修改，比如修改背景图，颜色之类的。</p>
-<h3 id="注意地方"><a href="#注意地方" class="headerlink" title="注意地方"></a>注意地方</h3><p>在修改css的时候尽量写注释一定要记得，分模块来写，不要头部写了又写其他的部分的CSS，到时候不好维护</p>
-</blockquote>
-<hr>
-<h2 id="福利"><a href="#福利" class="headerlink" title="福利"></a>福利</h2><hr>
-<h3 id="我的CSS"><a href="#我的CSS" class="headerlink" title="我的CSS"></a>我的CSS</h3><p>我将会给大家开源我自己的CSS样式修改给大家来做参考</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div></pre></td><td class="code"><pre><div class="line">// Custom styles.</div><div class="line">//首页文章阴影样式</div><div class="line">.post &#123;</div><div class="line">    margin-top: 60px;</div><div class="line">    margin-bottom: 60px;</div><div class="line">    padding: 25px;</div><div class="line">    -webkit-box-shadow: 0 0 14px rgba(202, 203, 203, .5);</div><div class="line">    -moz-box-shadow: 0 0 14px rgba(202, 203, 204, .5);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//热评文章</div><div class="line">.ds-top-threads li a &#123;</div><div class="line">    padding-left: 5px;</div><div class="line">    transition: border-width 0.2s linear 0s, color 0.2s linear 0s;</div><div class="line">    border-bottom: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.ds-top-threads li a:hover &#123;</div><div class="line">    border-left: 8px solid #4d768c;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//首页头部样式</div><div class="line">.header &#123;</div><div class="line">    background: url(&quot;/images/header-bk.jpg&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.site-meta &#123;</div><div class="line">    float: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.menu &#123;</div><div class="line">    float: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.logo-line-before,</div><div class="line">.logo-line-after &#123;</div><div class="line">    display: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.menu .menu-item a &#123;</div><div class="line">    font-size: 14px;</div><div class="line">    color: rgb(15, 46, 65);</div><div class="line">    border-radius: 4px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.site-meta &#123;</div><div class="line">    margin-left: 0px;</div><div class="line">    text-align: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.site-meta .site-title &#123;</div><div class="line">    font-size: 28px;</div><div class="line">    font-family: &apos;Comic Sans MS&apos;, sans-serif;</div><div class="line">    color: #fff;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//首页尾部样式</div><div class="line">.footer &#123;</div><div class="line">    background: none;</div><div class="line">    font-size: 16px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.footer-inner &#123;</div><div class="line">    font-family: &apos;Comic Sans MS&apos;, sans-serif;</div><div class="line">    text-align: center;</div><div class="line">    color: #4c618f;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//侧边栏信息样式修改</div><div class="line">.site-author-name &#123;</div><div class="line">    margin: 48px 0 0;</div><div class="line">    color: #090909;</div><div class="line">    font-family: &apos;Comic Sans MS&apos;, sans-serif;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.links-of-blogroll &#123;</div><div class="line">    font-size: 14px;</div><div class="line">    margin-bottom: 42px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.links-of-author &#123;</div><div class="line">    margin-top: 30px;</div><div class="line">    margin-bottom: 58px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar-inner &#123;</div><div class="line">    color: #649ab6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar &#123;</div><div class="line">    box-shadow: inset 2px 2px 40px #bdb2b2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar a &#123;</div><div class="line">    color: #649ab6;</div><div class="line">    border-bottom-color: #649ab6;</div><div class="line">    border-bottom: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar a:hover &#123;</div><div class="line">    color: #0c0b0b;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.site-state-item &#123;</div><div class="line">    display: inline-block;</div><div class="line">    padding: 8px 28px;</div><div class="line">    border-left: 1px solid #649ab6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar-nav .sidebar-nav-active &#123;</div><div class="line">    color: #649ab6;</div><div class="line">    border-bottom-color: #649ab6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar-nav li:hover &#123;</div><div class="line">    color: #0c0b0b;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//侧栏按钮样式</div><div class="line">.sidebar-toggle &#123;</div><div class="line">    background: #649ab6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.back-to-top &#123;</div><div class="line">    background: #649ab6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//文章目录样式</div><div class="line">.post-toc .nav .active&gt;a &#123;</div><div class="line">    color: #4f7e96;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.post-toc ol a:hover &#123;</div><div class="line">    color: #7784ba;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.sidebar-nav .sidebar-nav-active:hover &#123;</div><div class="line">    color: #37596c;</div><div class="line">&#125;</div><div class="line"></div><div class="line">a &#123;</div><div class="line">    border-bottom: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//首页阅读全文样式</div><div class="line">.post-button &#123;</div><div class="line">    margin-top: 30px;</div><div class="line">    text-align: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.post-button .btn &#123;</div><div class="line">    color: #fff;</div><div class="line">    font-size: 15px;</div><div class="line">    background: #686868;</div><div class="line">    border-radius: 16px;</div><div class="line">    line-height: 2;</div><div class="line">    margin: 0 4px 8px 4px;</div><div class="line">    padding: 0 20px;</div><div class="line">&#125;</div><div class="line">.post-button a&#123;</div><div class="line">  border-bottom: 1px solid #666;</div><div class="line">&#125;</div><div class="line">.post-button a:hover &#123;</div><div class="line">    color: #7784ba;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="尾部修改"><a href="#尾部修改" class="headerlink" title="尾部修改"></a>尾部修改</h2><h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>尾部没什么好修改的，就是自定义下CSS让它好看点就行了，我用到了一个不蒜子的插件，next主题已经集成了，我在此基础上修改了一点而已，使用起来很简单。</p>
-<h3 id="尾部署名LOGO"><a href="#尾部署名LOGO" class="headerlink" title="尾部署名LOGO"></a>尾部署名LOGO</h3><p>我的是一滴水，就是简单替换了fontawsome里的一个图标而已。</p>
-<hr>
-<h2 id="其他部分修改"><a href="#其他部分修改" class="headerlink" title="其他部分修改"></a>其他部分修改</h2><h3 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h3><p>基本上会自定义CSS修改已经能让你修改出你自己想要的风格了，但是主题的框架布局是不能改变的，你只能改变微小的样式而已。</p>
-<h3 id="其他小修改"><a href="#其他小修改" class="headerlink" title="其他小修改"></a>其他小修改</h3><p>背景是用到一个JS来生成的，大家如果感兴趣可以在下面评论，我可以给一个地址给大家参考使用。</p>
-<hr>
-<p>网易云播放器也是第三方生成的添加到了生成页面框架的源代码里实现的，还有一些文章图标的DIY之类的和美化。</p>
-<hr>
-<p>还有首页的导航如何添加新的一个菜单按钮进去，我后面会说。</p>
-<hr>
-<p>我大概会再出一篇文章来给大家讲解以上说的点，让大家都能实现我现在的效果。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
-<p>今天写的比较匆忙，有些地方我有机会会重新再修改下。有任何问题和建议，可以在下面评论。</p>
+<p>这个功能可以说比较实用，因为有些时候，你会忘记去压缩图片，然后你文章什么的都发了，不可能把以前的删了重新上传，这样把上传的图片下载下来再去压缩，最后直接丢进来覆盖上传很省事。<br>因为我自己每次上传文章后，把文章用到的一些图片丢到云后，我本地要清空了，节约一些磁盘空间（大部分图片为手动截图的）。</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>虽然一个博客用到图床还不能体会到图床的一些强大之处，但是越往后就会越深入，做一些网站可能用到的静态过多后，可能会考虑用图床来解决服务器存储容量问题，以及一个网站日均访问量很大，图片的GET次数很大的时候，可以用图床来缓解请求压力，不至于影响用户体验。希望大家能了解到可以用图床来处理一些静态文件的加载。</p>
 
       
     </div>
@@ -537,7 +526,7 @@
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/hexo-settings-3/" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">http://www.cduyzh.com/hexo-settings-3/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/img-oss/" title="解决博客图片存储——阿里云的OSS运用">http://www.cduyzh.com/img-oss/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -577,9 +566,9 @@
           
             <a href="/tags/hexo/" rel="tag"># hexo</a>
           
-            <a href="/tags/BlogCss/" rel="tag"># BlogCss</a>
-          
             <a href="/tags/optimization/" rel="tag"># optimization</a>
+          
+            <a href="/tags/image/" rel="tag"># image</a>
           
         </div>
       
@@ -592,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-settings-1/" rel="next" title="2017年最新基于hexo搭建个人免费博客——从零开始">
-                <i class="fa fa-chevron-left"></i> 2017年最新基于hexo搭建个人免费博客——从零开始
+              <a href="/hexo-settings-7/" rel="next" title="多说评论关闭服务后迁移到网易云跟帖">
+                <i class="fa fa-chevron-left"></i> 多说评论关闭服务后迁移到网易云跟帖
               </a>
             
           </div>
@@ -601,10 +590,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-settings-4/" rel="prev" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">
-                2017年最新基于hexo搭建个人免费博客——自定义页面样式二 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -834,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试工具"><span class="nav-number">2.</span> <span class="nav-text">调试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器下的开发者工具"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器下的开发者工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头部导航样式自定义"><span class="nav-number">3.</span> <span class="nav-text">头部导航样式自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位到对应标签位置"><span class="nav-number">3.1.</span> <span class="nav-text">定位到对应标签位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到修改地方"><span class="nav-number">3.2.</span> <span class="nav-text">找到修改地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加你修改的代码"><span class="nav-number">3.3.</span> <span class="nav-text">添加你修改的代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改侧面栏"><span class="nav-number">3.4.</span> <span class="nav-text">修改侧面栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同理"><span class="nav-number">3.5.</span> <span class="nav-text">同理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意地方"><span class="nav-number">3.6.</span> <span class="nav-text">注意地方</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#福利"><span class="nav-number">4.</span> <span class="nav-text">福利</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的CSS"><span class="nav-number">4.1.</span> <span class="nav-text">我的CSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尾部修改"><span class="nav-number">5.</span> <span class="nav-text">尾部修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建议"><span class="nav-number">5.1.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾部署名LOGO"><span class="nav-number">5.2.</span> <span class="nav-text">尾部署名LOGO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他部分修改"><span class="nav-number">6.</span> <span class="nav-text">其他部分修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提醒"><span class="nav-number">6.1.</span> <span class="nav-text">提醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他小修改"><span class="nav-number">6.2.</span> <span class="nav-text">其他小修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-pages容量受限"><span class="nav-number">2.1.</span> <span class="nav-text">github pages容量受限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图床访问速度快"><span class="nav-number">2.2.</span> <span class="nav-text">图床访问速度快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前瞻性"><span class="nav-number">2.3.</span> <span class="nav-text">前瞻性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人原因"><span class="nav-number">2.4.</span> <span class="nav-text">个人原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比分析"><span class="nav-number">3.</span> <span class="nav-text">对比分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储空间费用"><span class="nav-number">3.1.</span> <span class="nav-text">存储空间费用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量费用"><span class="nav-number">3.2.</span> <span class="nav-text">流量费用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用OSS"><span class="nav-number">4.</span> <span class="nav-text">使用OSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入控制台"><span class="nav-number">4.1.</span> <span class="nav-text">进入控制台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片链接地址优化"><span class="nav-number">5.</span> <span class="nav-text">图片链接地址优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片在线压缩网站"><span class="nav-number">6.</span> <span class="nav-text">图片在线压缩网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSS管理工具"><span class="nav-number">7.</span> <span class="nav-text">OSS管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">8.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
