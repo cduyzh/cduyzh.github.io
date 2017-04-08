@@ -99,7 +99,7 @@
 <meta property="og:description" content="前言之前忙于做各种事情，已经很久没写过文章，最近接的一个学校的网站项目，近期被人用自动脚本攻破了（笑…），因为我们第一次做这种上线的项目，完全没有意识到一些web安全的知识，所以就开始了紧急的漏洞补救和防护措施。所以我就把近期学习的知识总结下。目前我水平有限，只能做一个初级认识，让一些刚入行做上线的实际项目的同学能有所警惕。">
 <meta property="og:image" content="http://img.cduyzh.com/images/js.jpg">
 <meta property="og:image" content="http://img.cduyzh.com/images/12306.jpg">
-<meta property="og:updated_time" content="2017-04-08T06:07:10.000Z">
+<meta property="og:updated_time" content="2017-04-08T09:44:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web安全——前端JS表单验证过滤">
 <meta name="twitter:description" content="前言之前忙于做各种事情，已经很久没写过文章，最近接的一个学校的网站项目，近期被人用自动脚本攻破了（笑…），因为我们第一次做这种上线的项目，完全没有意识到一些web安全的知识，所以就开始了紧急的漏洞补救和防护措施。所以我就把近期学习的知识总结下。目前我水平有限，只能做一个初级认识，让一些刚入行做上线的实际项目的同学能有所警惕。">
@@ -554,8 +554,8 @@
 <p>更多的是生成一个随机的token，在用户提交数据的同时提交这个token，服务器端比对后如果不正确，则拒绝执行操作。</p>
 <blockquote>
 <p>作为了解，一般前面的攻击都过了，就可以造成此类攻击。</p>
-<h2 id="点击劫持（ClickJacking）"><a href="#点击劫持（ClickJacking）" class="headerlink" title="点击劫持（ClickJacking）"></a>点击劫持（ClickJacking）</h2></blockquote>
-<p>点击劫持是从视觉上欺骗用户。攻击者使用一个透明的iframe覆盖在一个网页上，诱使用户在该网页上操作，而实际点击却是点在透明的iframe页面。</p>
+</blockquote>
+<h2 id="点击劫持（ClickJacking）"><a href="#点击劫持（ClickJacking）" class="headerlink" title="点击劫持（ClickJacking）"></a>点击劫持（ClickJacking）</h2><p>点击劫持是从视觉上欺骗用户。攻击者使用一个透明的iframe覆盖在一个网页上，诱使用户在该网页上操作，而实际点击却是点在透明的iframe页面。</p>
 <p>点击劫持延伸出了很多攻击方式，有图片覆盖攻击、拖拽劫持等。<br>点击劫持的防御</p>
 <p>针对iframe的攻击，可使用一个HTTP头：X-Frame-Options，它有三种可选值：</p>
 <pre><code>DENY： 禁止任何页面的frame加载；
