@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.cduyzh.com/hexo-settings-1/</loc>
+    
+    <lastmod>2017-04-20T08:28:57.157Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.cduyzh.com/js-validate-code/</loc>
     
     <lastmod>2017-04-08T09:44:51.000Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
     
     <lastmod>2017-03-22T12:46:11.441Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-1/</loc>
-    
-    <lastmod>2017-03-22T12:46:06.590Z</lastmod>
     
   </url>
   

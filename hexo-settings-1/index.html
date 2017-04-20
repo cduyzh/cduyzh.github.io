@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://img.cduyzh.com/images/ssh-set.jpg">
 <meta property="og:image" content="http://o6sn177if.bkt.clouddn.com/17901865820160512120704030.jpg">
 <meta property="og:image" content="http://img.cduyzh.com/images/hexo-d.png">
-<meta property="og:updated_time" content="2017-03-22T12:46:06.590Z">
+<meta property="og:updated_time" content="2017-04-20T08:28:57.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——从零开始">
 <meta name="twitter:description" content="前言搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。">
@@ -462,7 +462,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      4,422 字
+                      4,502 字
                     </span>
               
 
@@ -478,7 +478,7 @@
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      21 分钟
+                      22 分钟
                     </span>
               
             </div>
@@ -500,7 +500,10 @@
         <p><img src="http://img.cduyzh.com/images/hexo.jpg" alt="2017年最新基于hexo搭建个人免费博客——从零开始"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库<br>或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。<br><a id="more"></a> </p>
 <h3 id="github-pages介绍"><a href="#github-pages介绍" class="headerlink" title="github pages介绍"></a>github pages介绍</h3><p>Github Pages 是 github 公司提供的免费的静态网站托管服务，用起来方便而且功能强大，不仅没有空间限制(为免费用户提供了500M空间)，还可以绑定自己的域名。<br>到 <a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a> 上，看到可以创建的网站有两类，一类是为自己或者是自己的组织创建站点，就是新建一个仓库，仓库的名字叫做，<strong>username.github.io</strong> 或者是 <strong>orgnizationname.github.io</strong> ，注意这里的 <strong>username</strong> 和 <strong>orgnizationname</strong> 要严格替换成你自己的用户名或者组织名，大小写也要区分，不然就会有问题。然后就往仓库里面放页面内容就行了。第二类是为项目创建网站，这个其实主要步骤都是一样的，只不过稍微比创建用户或组织网站复杂一点点。<br><img src="http://img.cduyzh.com/images/gtihub-pages1.jpg" alt="githubpages"><br><img src="http://img.cduyzh.com/images/gtihub-pages2.jpg" alt="githubpages"><br><img src="http://img.cduyzh.com/images/gtihub-pages3.jpg" alt="githubpages"><br>具体的可以看这个网址的讲解<a href="http://book.haoduoshipin.com/gitbeijing/pages.html" target="_blank" rel="external">Github Pages</a></p>
-<h3 id="域名注册和绑定"><a href="#域名注册和绑定" class="headerlink" title="域名注册和绑定"></a>域名注册和绑定</h3><p>我是在<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>注册的域名和设置DNS解析，所以我只会讲在阿里云下的域名绑定。<br><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun.jpg" alt="域名注册和绑定"><br>进入到控制台后点击自己刚买的域名进入域名管理界面，<img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun1.jpg" alt="域名注册和绑定">然后进行添加解析操作，按照途中所给的值填写，注意将记录值改为<strong>自己的github pages地址</strong><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun2.jpg" alt="域名注册和绑定"><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun3.jpg" alt="域名注册和绑定"><br><strong>最后一步</strong>必须在所建立的github仓库的主分支里建立一个<strong>CNAME文件</strong>内容为你要解析到的目地地址<img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun4.jpg" alt="关键一步"></p>
+<h3 id="域名注册和绑定"><a href="#域名注册和绑定" class="headerlink" title="域名注册和绑定"></a>域名注册和绑定</h3><p>我是在<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>注册的域名和设置DNS解析，所以我只会讲在阿里云下的域名绑定。<br><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun.jpg" alt="域名注册和绑定"><br>进入到控制台后点击自己刚买的域名进入域名管理界面，<img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun1.jpg" alt="域名注册和绑定">然后进行添加解析操作，按照途中所给的值填写，注意将记录值改为<strong>自己的github pages地址</strong><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun2.jpg" alt="域名注册和绑定"><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun3.jpg" alt="域名注册和绑定"><br><strong>最后一步</strong>必须在所建立的github仓库的主分支里建立一个<strong>CNAME文件</strong>内容为你要解析到的目地地址<img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun4.jpg" alt="关键一步"><br><strong>注意</strong><br>这个CNAME文件要放到source文件里面我的路径为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\hexo\blog\source\</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>放到这个下面的用意为你每次hexo d的时候会把你原先仓库的所有东西清除掉，所以你的CNAME文件也会没有，这样可以避免这种情况发生</p>
+</blockquote>
 <hr>
 <h2 id="hexo安装和配置"><a href="#hexo安装和配置" class="headerlink" title="hexo安装和配置"></a>hexo安装和配置</h2><p>Hexo博客搭建的基础大致流程为：<br>安装Node.js →安装Git → 安装Hexo → 安装主题 → 本地测试运行 → 注册给github与coding并创建pages仓库 → 部署<br>Node.js和git的安装大家自己去网上搜下，当以上都安好后可以通过git bash来输入命令查看是否安装成功以及对应的版本</p>
 <p><img src="http://img.cduyzh.com/images/node.jpg" alt="hexo安装和配置"><br>随后执行下述命令来安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
