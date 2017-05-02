@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,optimization,image," />
+  <meta name="keywords" content="JS,HTML,Frame," />
 
 
 
@@ -91,26 +91,29 @@
 
 
 
-<meta name="description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
+<meta name="description" content="前言最近很久没有写文章，不忙也忙的生活节奏，博客相关的东西也没法做成文章来详细讲，最多就是SEO相关，倒也没多少人会真正用到，所以过了一段时间，就目前开发完的学院实训系统web网页项目做个回顾，整个团队就我一个前端开发，所以我负责了需求分析、原型设计、UI/UE设计等工作。团队其他成员和老师都是负责java web后台。个人从用框架开发浅谈对框架开发的效率和效果的意义。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决博客图片存储——阿里云的OSS运用">
-<meta property="og:url" content="http://www.cduyzh.com/img-oss/index.html">
+<meta property="og:title" content="web-front">
+<meta property="og:url" content="http://www.cduyzh.com/web-front/index.html">
 <meta property="og:site_name" content="Water Sister's Blog">
-<meta property="og:description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-img.jpg">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss1.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss2.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss3.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss4.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss6.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss7.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss8.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/aliyun-oss9.png">
-<meta property="og:updated_time" content="2017-03-26T15:06:12.223Z">
+<meta property="og:description" content="前言最近很久没有写文章，不忙也忙的生活节奏，博客相关的东西也没法做成文章来详细讲，最多就是SEO相关，倒也没多少人会真正用到，所以过了一段时间，就目前开发完的学院实训系统web网页项目做个回顾，整个团队就我一个前端开发，所以我负责了需求分析、原型设计、UI/UE设计等工作。团队其他成员和老师都是负责java web后台。个人从用框架开发浅谈对框架开发的效率和效果的意义。">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Bootstrap.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Materialize.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Jquery.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-3.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-4.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-5.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-6.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/Propeller-7.png">
+<meta property="og:updated_time" content="2017-05-02T07:37:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决博客图片存储——阿里云的OSS运用">
-<meta name="twitter:description" content="前言之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。">
-<meta name="twitter:image" content="http://img.cduyzh.com/images/aliyun-img.jpg">
+<meta name="twitter:title" content="web-front">
+<meta name="twitter:description" content="前言最近很久没有写文章，不忙也忙的生活节奏，博客相关的东西也没法做成文章来详细讲，最多就是SEO相关，倒也没多少人会真正用到，所以过了一段时间，就目前开发完的学院实训系统web网页项目做个回顾，整个团队就我一个前端开发，所以我负责了需求分析、原型设计、UI/UE设计等工作。团队其他成员和老师都是负责java web后台。个人从用框架开发浅谈对框架开发的效率和效果的意义。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/Propeller.png">
 
 
 
@@ -152,12 +155,12 @@
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/img-oss/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/web-front/"/>
 
 
 
 
-  <title> 解决博客图片存储——阿里云的OSS运用 | Water Sister's Blog </title>
+  <title> web-front | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -344,7 +347,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/img-oss/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/web-front/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -365,7 +368,7 @@
             
             
               
-                解决博客图片存储——阿里云的OSS运用
+                web-front
               
             
           </h2>
@@ -380,8 +383,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T20:51:25+08:00">
-                2017-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T15:21:20+08:00">
+                2017-05-02
               </time>
             
 
@@ -421,7 +424,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/img-oss/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/web-front/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -430,7 +433,7 @@
 
           
           
-             <span id="/img-oss/" class="leancloud_visitors" data-flag-title="解决博客图片存储——阿里云的OSS运用">
+             <span id="/web-front/" class="leancloud_visitors" data-flag-title="web-front">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -455,7 +458,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,798 字
+                      2,858 字
                     </span>
               
 
@@ -471,7 +474,7 @@
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      6 分钟
+                      11 分钟
                     </span>
               
             </div>
@@ -490,28 +493,59 @@
       
 
       
-        <p><img src="http://img.cduyzh.com/images/aliyun-img.jpg" alt="阿里云-OSS运用"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前打算写一篇有关个人博客SEO优化的体验和一些自身体会，但是发现自己还没完全理解SEO的一些核心知识和原理，所以就等到以后再来写，毕竟我的百度权值还是0（笑…）。接下来讲解一下博客中用的图床——阿里云对象存储（Object Storage Service，简称OSS），虽然目前大家用的比较多的是七牛云之类的，但是因为我个人原因我还是选择了阿里云，后面我会简单说明下原因。<br><a id="more"></a></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><h3 id="github-pages容量受限"><a href="#github-pages容量受限" class="headerlink" title="github pages容量受限"></a>github pages容量受限</h3><p>之前看过一些别人的github博客，发现只要文章多的人，基本上都用到了图床，原因有很多，毕竟github免费给你用，肯定会限制你的可使用空间的，从长远来看，你的图片资源肯定不能放到别人服务器上，大家还是要理解下。</p>
-<h3 id="图床访问速度快"><a href="#图床访问速度快" class="headerlink" title="图床访问速度快"></a>图床访问速度快</h3><p>一般用图床的，都是图片之类的静态文件非常多，把图片存储到第三方CDN，除了加快图片访问速速，还可以降低你服务器的存储压力，后续网站迁移扩容就不受影响了。</p>
-<h3 id="前瞻性"><a href="#前瞻性" class="headerlink" title="前瞻性"></a>前瞻性</h3><p>虽然我们目前做的是一个博客的小网站，但是以后无论是自己的博客还是实际的项目，都可以用图片来提供外链，方便管理，如果你的网站访问量很高啊，一天几十万几百万啊，我的天啊，这时候你考虑的就不是服务器空间够不够大，而是惊人的并发数啊，光是请求html文件（或其他）的链接就处理不过来了，哪还有多余的资源去读取图片啊，索性就把图片存另一个服务器吧，给主服务器减轻压力啊，于是图床诞生了。</p>
-<h3 id="个人原因"><a href="#个人原因" class="headerlink" title="个人原因"></a>个人原因</h3><p>本人在阿里云的外网上买了几个域名，索性就用了他们的产品，毕竟平时支付宝用的多吧，我看了一下阿里云的OSS服务，虽然性价比比不上七牛云，但是我个人来说就够用了。</p>
-<h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><h3 id="存储空间费用"><a href="#存储空间费用" class="headerlink" title="存储空间费用"></a>存储空间费用</h3><p><strong>阿里云</strong> ： 0-5GB(含)部分     免费 <strong>只限香港地区</strong><br><strong>七牛云</strong> ： 0 GB 至 10 GB      免费</p>
-<h3 id="流量费用"><a href="#流量费用" class="headerlink" title="流量费用"></a>流量费用</h3><p><strong>阿里云</strong> ：0-5GB(含)部分     免费<br><strong>七牛云</strong> ：<br>HTTP 下载流量     第 0 GB 至 10 GB     国内免费  国外免费<br>HTTPS 下载流量     第 0 GB 至 10 TB (含)     0.36 元/GB     0.58 元/GB<br>暂且可以不用考虑这个HTTPS流量，因为我博客基本都用到的是HTTP下载流量）</p>
-<hr>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>所以就很尴尬，我居然会选择阿里云来做我的图床（我今年3月10日才正式上限，3月完已经跑了我6G多的流出带宽，为此我自己还交了几块钱，虽然不多，但是交的心甘情愿吧，毕竟阿里爸爸这个大公司，不会让我上传的图片出现一些问题，安全和速度绝对有保障）<br>最尴尬的是：存储容量居然目前用了不到5M（如果不传一些视频的话，全是压缩后的图片的话，一般占用不到多少，而且我也不敢放视频上去做外链，这样我的带宽按目前情况要上百G）。<br>后面给大家分享一个压缩图片的网站，之前的我很天真，想着刚开博客，跑不了多少流量出去，直到5G用完那一刻，我才意识到压缩图片的重要性。</p>
-<h2 id="使用OSS"><a href="#使用OSS" class="headerlink" title="使用OSS"></a>使用OSS</h2><p>这里我拿的阿里云OSS来讲，基本上每个地方的都类似。</p>
-<h3 id="进入控制台"><a href="#进入控制台" class="headerlink" title="进入控制台"></a>进入控制台</h3><p><img src="http://img.cduyzh.com/images/aliyun-oss1.png" alt="阿里云-OSS运用"><br>选择对象存储OSS进入到对应面板<br><img src="http://img.cduyzh.com/images/aliyun-oss2.png" alt="阿里云-OSS运用"><br>新建一个Bucket<br><strong>注意：</strong>我是用的阿里云，如果要跟我用一样的话，所属区域要选香港。不然可能产生格外的其他费用。<br><img src="http://img.cduyzh.com/images/aliyun-oss3.png" alt="阿里云-OSS运用"><br>创建完Bucket对象后，就可以上传本地需要存储文件<br><img src="http://img.cduyzh.com/images/aliyun-oss4.png" alt="阿里云-OSS运用"><br>然后就可以获取这个图片的地址，复制后在浏览器里输入试试能不能正常显示</p>
-<h2 id="图片链接地址优化"><a href="#图片链接地址优化" class="headerlink" title="图片链接地址优化"></a>图片链接地址优化</h2><p>其实这个也没什么，但是一些图片的外链和title好像是会提高搜索引擎的蜘蛛爬取。<br>比如在用MD写文章的时候引入图片的title最好这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![阿里云-OSS运用](http://img.cduyzh.com/images/aliyun-oss5.png)</div></pre></td></tr></table></figure>
-<p>细心的人可能会发现我的图片地址很简洁，这样就会让百度和其他搜索引擎的蜘蛛更快的来爬去你的图片进而检录上去。<br><img src="http://img.cduyzh.com/images/aliyun-oss6.png" alt="阿里云-OSS运用"><br><img src="http://img.cduyzh.com/images/aliyun-oss7.png" alt="阿里云-OSS运用"><br>要把图片地址改为这样的要如何来实现，其实不难。把它的地址解析到你想要的地址上，前提要先去域名解析那设置好，如果用的阿里云还可以自动设置。<br><img src="http://img.cduyzh.com/images/aliyun-oss8.png" alt="阿里云-OSS运用"><br>然后查看我自己控制台的cduyzh.com这个域名，在域名解析那我发现多了个这个，当然你也可以自己来设置的。<br><img src="http://img.cduyzh.com/images/aliyun-oss9.png" alt="阿里云-OSS运用"><br>这样后在你添加图片后，你就可以把前面那一长段换成自己想要的域名地址链接，无论是他人下载你的图片，或者搜索引擎来检索你的图片，都会方便许多。</p>
-<h2 id="图片在线压缩网站"><a href="#图片在线压缩网站" class="headerlink" title="图片在线压缩网站"></a>图片在线压缩网站</h2><p>地址：<a href="https://tinyjpg.com/" target="_blank" rel="external">图片在线压缩网站</a><br>这个网站基本上会把你的照片压缩50%以上，所以很好用。但是一次最多上传20张，最大5MB封底，如果比较多或者大的照片，只能分批次来处理压缩了。</p>
-<h2 id="OSS管理工具"><a href="#OSS管理工具" class="headerlink" title="OSS管理工具"></a>OSS管理工具</h2><p><a href="http://gosspublic.alicdn.com/oss-client-aliyun-v1.1.9.0-win.zip?spm=5176.2020520105.113.2.1f1Z3T&amp;file=oss-client-aliyun-v1.1.9.0-win.zip" target="_blank" rel="external">OSS管理工具</a><br>这个软件是阿里云官方给的OSS管理工具，如果嫌每次上网页上传麻烦，可以试试这个。</p>
+        <p><img src="http://img.cduyzh.com/images/Propeller.png" alt="前端框架开发静态页面"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近很久没有写文章，不忙也忙的生活节奏，博客相关的东西也没法做成文章来详细讲，最多就是SEO相关，倒也没多少人会真正用到，所以过了一段时间，就目前开发完的学院实训系统web网页项目做个回顾，整个团队就我一个前端开发，所以我负责了需求分析、原型设计、UI/UE设计等工作。团队其他成员和老师都是负责java web后台。个人从用框架开发浅谈对框架开发的效率和效果的意义。<br><a id="more"></a></p>
+<h2 id="前端页面开发框架"><a href="#前端页面开发框架" class="headerlink" title="前端页面开发框架"></a>前端页面开发框架</h2><h3 id="常见web页面框架"><a href="#常见web页面框架" class="headerlink" title="常见web页面框架"></a>常见web页面框架</h3><p>web页面开发的框架，可能常用并且熟悉也就那几个.</p>
+<p>页面布局框架：<a href="http://v3.bootcss.com/" target="_blank" rel="external">Bootstrap</a>、<a href="http://materializecss.com/" target="_blank" rel="external">Materialize</a></p>
+<p>JS框架： <a href="http://jquery.com/" target="_blank" rel="external">Jquery</a></p>
 <blockquote>
-<p>如果照片名字重复上传，会自动覆盖掉上一次已经上传的，保留最后一次上传的。</p>
+<p>一眼看过去似乎有点少哦，其实开发web网站只要需求不是特别多的，基本就够了，有些甚至JS都用的少。</p>
 </blockquote>
-<p>这个功能可以说比较实用，因为有些时候，你会忘记去压缩图片，然后你文章什么的都发了，不可能把以前的删了重新上传，这样把上传的图片下载下来再去压缩，最后直接丢进来覆盖上传很省事。<br>因为我自己每次上传文章后，把文章用到的一些图片丢到云后，我本地要清空了，节约一些磁盘空间（大部分图片为手动截图的）。</p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>虽然一个博客用到图床还不能体会到图床的一些强大之处，但是越往后就会越深入，做一些网站可能用到的静态过多后，可能会考虑用图床来解决服务器存储容量问题，以及一个网站日均访问量很大，图片的GET次数很大的时候，可以用图床来缓解请求压力，不至于影响用户体验。希望大家能了解到可以用图床来处理一些静态文件的加载。</p>
+<p><strong>开发中</strong>前台页面开发最简单，因为需求的不多，其实如果复杂了，也就会多用到H5和CSS3的一些东西外加JS和Ajax。</p>
+<h2 id="框架浅谈"><a href="#框架浅谈" class="headerlink" title="框架浅谈"></a>框架浅谈</h2><h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p><img src="http://img.cduyzh.com/images/Bootstrap.png" alt="前端框架开发静态页面"><br>这个框架确实厉害，我也不多介绍了。就跟它的宣传语一样。</p>
+<blockquote>
+<p> Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。所有开发者、所有应用场景而设计。</p>
+<p>Bootstrap 让前端开发更快速、简单。所有开发者都能快速上手、所有设备都可以适配、所有项目都适用。</p>
+</blockquote>
+<p>确实目前很多网页都用了这个框架，确实为开发省力不少，不过一些大公司的网页都是把里面需要用的组建封装成自己的，并加以改变利用。</p>
+<p>新手可能很难上手并做到自己DIY，还是建议按着文档的方法来调用。等到有实际需求需要整合代码才去把代码独立并入到工程中。</p>
+<p>学会如何把别人框架组件的代码整合进自己项目的CSS和JS中确实很有用，因为框架下载的很多都是压缩好的，大小很大，如果只用少部分JS和CSS样式就有点大材小用了，所以得下对应的组建并入到自己的工程中。</p>
+<h3 id="Materialize"><a href="#Materialize" class="headerlink" title="Materialize"></a>Materialize</h3><p><img src="http://img.cduyzh.com/images/Materialize.png" alt="前端框架开发静态页面"><br>此框架出自谷歌可能知名度没有Bootstrap大，但是它的设计感、配色和动画效果，在目前看来是框架中最完美的！</p>
+<p>官网给出了很多组件的效果和使用方法，大家自行去看看效果吧.<a href="http://materializecss.com/" target="_blank" rel="external">Materialize</a>。</p>
+<p>此框架除去它的其他页面布局外，我最看重它的配色表和它给出的模版页面，可以极大降低前端对于网页的设计和布局的困惑，因为没有独立的平面设计师来规划整个布局，前端开发借助框架能更快开发出想要的效果并且很好看。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="http://img.cduyzh.com/images/Jquery.png" alt="前端框架开发静态页面"><br>其实没讲到Jquery，因为这个JS框架，对开发其实作用不大，主要是因为框架自身都需要Jquery来支持，它是一个必需品，因为它让JS语言更优美实用，<strong>writer less，do more</strong>。</p>
+<p>其实到最后，我都没有用上述的框架，而是发现了一个国外团队自己组建的新框架。<br>这个框架结合了<strong>Google’s Material Design Standards 和 Bootstrap.</strong></p>
+<p>用过后，我发现了将Materialize框架的一些优点结合了Bootstrap的一些布局特点，将两者共有的组件进行优化和美化，配色和动画效果主要参考的Material，让Bootstrap的一些组件更生动，提高了用户的体验。后面详细讲下这个框架。</p>
+<h2 id="Propeller前后台页面框架"><a href="#Propeller前后台页面框架" class="headerlink" title="Propeller前后台页面框架"></a>Propeller前后台页面框架</h2><p><img src="http://img.cduyzh.com/images/Propeller.png" alt="前端框架开发静态页面"></p>
+<h3 id="What-is-propeller"><a href="#What-is-propeller" class="headerlink" title="What is propeller?"></a>What is propeller?</h3><p><img src="http://img.cduyzh.com/images/Propeller-1.png" alt="前端框架开发静态页面"><br>前面提到了，就是一个极其好用的前后台结合了Materialize和Bootstrap框架。我更看重后台的一些组件效果，比如很多后台需要用到的，图表、数据表格、日历选择都有，虽然可选性不多，但足够用了。</p>
+<h3 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h3><p>登录页面<br><img src="http://img.cduyzh.com/images/Propeller-2.png" alt="前端框架开发静态页面"><br>后台主页面<br><img src="http://img.cduyzh.com/images/Propeller-3.png" alt="前端框架开发静态页面"></p>
+<p>因为Propeller提供提供了包含它组件的后台管理页面，所以开发起来难度不大。</p>
+<p>登录模块用到了验证框架后面会说，然后根据项目需求自己DIY设置了一些东西和样式。让开发效率得到了解放和提示，并利于二次开发。</p>
+<p>后台这块的难度主要在于二期开发中可能会涉及到数据的图表展示，需要用到JS插件来完成，目前还未着手开发。然后就是数据的表格、表单展示，用插件自带的数据表格，实现了对表单的排序和搜索，简化了后台开发的工作量。</p>
+<p>具体的页面效果和交互效果大家在文章最后点击访问我给出的地址查看源代码和演示页面。</p>
+<h2 id="bootstrapValidator表单验证"><a href="#bootstrapValidator表单验证" class="headerlink" title="bootstrapValidator表单验证"></a>bootstrapValidator表单验证</h2><p>表单验证的第三方插件确实有不少，bootstrapValidator这个是我在一个网站偶然发现的，由别人整理出来发表过，我就拿来用了。只是这个框架是根据查询表单的ID来定位的，但是我开发的时候用的Propeller框架，它的模版页面把项目需求的三个页面集合到了一个上，即登录、注册、找回页面，产生了三个页面，所以我在JS一共调用了3次来检测，不知道有什么更方便简洁的方法不。因为我的一个页面上面有三个表单，通过按钮点击来控制隐藏和显示。</p>
+<p>做验证这块，设计到了正则表达式，因为要验证邮箱和密码长度、强度，所以网上百度了下，这方面的正则写法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">regexp: &#123;</div><div class="line">    regexp: /(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.&#123;6,12&#125;$/,</div><div class="line">    message: &apos;必须包含数字和字母，以字母开头（长度为6-12位）&apos;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var email = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]&#123;2,3&#125;)&#123;1,2&#125;)$/;</div><div class="line">            //获取输入邮箱并用正则表达式把空格替换为空字符</div></pre></td></tr></table></figure>
+<p>邮箱检验其实bootstrapValidator中可以用正则来检验，我当时为了实现点击发送验证码的效果，所以把这块的检验又重复了一遍，因为控制其邮箱的规范来发送邮件，实现自动倒计时的效果。必须保证邮箱有效。因为不知道如何在bootstrapValidator框架中来调用自己的方法和函数，所以就这样用了个单独的JS来完成。完整代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">//  验证码js</div><div class="line">var sends = &#123;</div><div class="line">        checked: 1,</div><div class="line">        send: function() &#123;</div><div class="line">            var email = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]&#123;2,3&#125;)&#123;1,2&#125;)$/;</div><div class="line">            //获取输入邮箱并用正则表达式把空格替换为空字符</div><div class="line">            var val = $(&apos;#forgot-email&apos;).val().replace(/\s+/g, &quot;&quot;);</div><div class="line">            var vall = $(&apos;#fotgot-email&apos;).val().replace(/\s+/g, &quot;&quot;);</div><div class="line">            if ($(&apos;.div-email&apos;).find(&apos;span&apos;).length == 0 &amp;&amp; $(&apos;.div-email a&apos;).attr(&apos;class&apos;) == &apos;send1&apos;) &#123;</div><div class="line">                if (!email.test(val) || val.length == 0) &#123;</div><div class="line">                    $(&apos;.div-email&apos;).append(&apos;&lt;span class=&quot;error&quot;&gt;Error&lt;/span&gt;&apos;);</div><div class="line">                    return false;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if ($(&apos;.div-email&apos;).find(&apos;span&apos;).length == 0 &amp;&amp; $(&apos;.div-email a&apos;).attr(&apos;class&apos;) == &apos;send1&apos;) &#123;</div><div class="line">                if (!email.test(vall) || vall.length == 0) &#123;</div><div class="line">                    $(&apos;.div-email&apos;).append(&apos;&lt;span class=&quot;error&quot;&gt;Error&lt;/span&gt;&apos;);</div><div class="line">                    return false;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if (email.test(val)) &#123;</div><div class="line">                var time = 60;</div><div class="line">                $(&apos;.div-email span&apos;).remove();</div><div class="line"></div><div class="line">                function timeCountDown() &#123;</div><div class="line">                    if (time == 0) &#123;</div><div class="line">                        clearInterval(timer);</div><div class="line">                        $(&apos;.div-email a&apos;).addClass(&apos;send1&apos;).removeClass(&apos;send0&apos;).html(&quot;发送验证码&quot;);</div><div class="line">                        sends.checked = 1;</div><div class="line">                        return true;</div><div class="line">                    &#125;</div><div class="line">                    $(&apos;.div-email a&apos;).html(time + &quot;S后再次发送&quot;);</div><div class="line">                    time--;</div><div class="line">                    return false;</div><div class="line">                    sends.checked = 0;</div><div class="line">                &#125;</div><div class="line">                $(&apos;.div-email a&apos;).addClass(&apos;send0&apos;).removeClass(&apos;send1&apos;);</div><div class="line">                timeCountDown();</div><div class="line">                var timer = setInterval(timeCountDown, 1000);</div><div class="line">            &#125;</div><div class="line">            if (email.test(vall)) &#123;</div><div class="line">                var time = 60;</div><div class="line">                $(&apos;.div-email span&apos;).remove();</div><div class="line"></div><div class="line">                function timeCountDown() &#123;</div><div class="line">                    if (time == 0) &#123;</div><div class="line">                        clearInterval(timer);</div><div class="line">                        $(&apos;.div-email a&apos;).addClass(&apos;send1&apos;).removeClass(&apos;send0&apos;).html(&quot;发送验证码&quot;);</div><div class="line">                        sends.checked = 1;</div><div class="line">                        return true;</div><div class="line">                    &#125;</div><div class="line">                    $(&apos;.div-email a&apos;).html(time + &quot;S后再次发送&quot;);</div><div class="line">                    time--;</div><div class="line">                    return false;</div><div class="line">                    sends.checked = 0;</div><div class="line">                &#125;</div><div class="line">                $(&apos;.div-email a&apos;).addClass(&apos;send0&apos;).removeClass(&apos;send1&apos;);</div><div class="line">                timeCountDown();</div><div class="line">                var timer = setInterval(timeCountDown, 1000);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    // 消除重复错误样式</div><div class="line">$(&quot;.register-login&quot;).click(function() &#123;</div><div class="line">    $(&apos;.div-email span&apos;).remove();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这个验证框架还有点小问题，就是当验证失败的时候，应该要阻止表单提交的默认事件发生，框架没有做这方面处理，需要我们自己来完善，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 验证成功前提交按钮不起作用</div><div class="line">$(&quot;#defaultForm&quot;).submit(function(ev) &#123; ev.preventDefault(); &#125;);</div><div class="line">$(&quot;#defaultFormm&quot;).submit(function(ev) &#123; ev.preventDefault(); &#125;);</div><div class="line">$(&quot;#submit&quot;).on(&quot;click&quot;, function() &#123;</div><div class="line">    var bootstrapValidator = $(&quot;#defaultForm&quot;).data(&apos;bootstrapValidator&apos;);</div><div class="line">    bootstrapValidator.validate();</div><div class="line">    if (bootstrapValidator.isValid())</div><div class="line">        $(&quot;#defaultForm&quot;).submit();</div><div class="line">    else return;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><img src="http://img.cduyzh.com/images/Propeller-4.png" alt="前端框架开发静态页面"><br><img src="http://img.cduyzh.com/images/Propeller-5.png" alt="前端框架开发静态页面"><br>保证只要有表单错误，按钮不起作用，全部正确后按钮可用。</p>
+<blockquote>
+<p>注意：bootstrapValidator验证框架用的字体图标有2套(glyphicon和FontAwesome)，推荐大家使用FontAwesome，至于为什么，glyphicon在火狐浏览器会出现问题，FontAwesome目前在火狐、IE、谷歌内核浏览器不会出现问题，问题主要是加载不出来字体文件。</p>
+</blockquote>
+<p><strong>缺陷</strong>：表单验证中，我还没找到正则表达式来实现验证密码，首字母开头并要有大写，并且由数字和字母组成的正则表达式写法，因为对正则不熟悉，也算是一个遗憾了。目前的效果是只要包含了字幕和数字长度大于6位验证就通过。</p>
+<h2 id="使用其他小插件收获"><a href="#使用其他小插件收获" class="headerlink" title="使用其他小插件收获"></a>使用其他小插件收获</h2><h3 id="基于Bootstrap的导航"><a href="#基于Bootstrap的导航" class="headerlink" title="基于Bootstrap的导航"></a>基于Bootstrap的导航</h3><p>为什么想到用这个插件来实现导航，因为考虑到效率和效果，因为团队没有美工啊，我自己考虑到了兼容性问题，想做个适配手机端的首页效果，后台和登录界面没有做适配移动端的设计，所以为了快速开发并且好看用到了网上开源的一个插件，有23种基于Bootstrap设计的导航效果。</p>
+<blockquote>
+<p>现在都是框架开发，很多东西其实真的不想从底层开始写，加之原型图根本没有美工，自己来设计要浪费很多时间成本。<br>浏览器没有下拉时<br><img src="http://img.cduyzh.com/images/Propeller-6.png" alt="前端框架开发静态页面"><br>浏览器下拉后<br><img src="http://img.cduyzh.com/images/Propeller-7.png" alt="前端框架开发静态页面"></p>
+<h3 id="hover的css效果"><a href="#hover的css效果" class="headerlink" title="hover的css效果"></a>hover的css效果</h3><p>hover的CSS3动画效果，只支持IE9以上的浏览器，是为了增加用户体验而添加的效果。<br>具体的效果要自己看，我这里就不录GIF动画来展示效果了，效果主要在首页的列表新闻的更多按钮那，和顶部菜单导航也用到了动画效果。</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2></blockquote>
+<p>框架开发解放了生产力，让一个静态页面效果更逼真，也让用户体验逐渐上去，但是目前对网站的需求主要还是为了展示和宣传一些东西，反观教育机构和政府部门的网站都是偏动画少，体现了公关的严肃性。所以动画效果尽量还是分对象来使用。</p>
+<p><strong>框架和插件</strong>在计算机领域的各行业都是持续不减的话题，有人鼓励直接用框架和插件，有人赞成原生手写辅以框架。有人注重页面展示效果，却不关心底层的实现，有人重视底层实现原理，愿意自己照葫芦画瓢花大量时间自己写，还有人兼顾两者，利用完框架实现页面效果后，重新看框架实现的源代码，理解其中来龙去脉，根据自己实现选择是否深入研究。</p>
+<p>最后在这里，开源下项目代码：github地址：<a href="https://github.com/cduyzh/practiceSystem" target="_blank" rel="external">https://github.com/cduyzh/practiceSystem</a></p>
+<p>在线预览地址：<a href="http://www.cduyzh.com/practiceSystem/">http://www.cduyzh.com/practiceSystem/</a></p>
+<p>如果有任何问题欢迎联系我在博客评论、github、QQ等。谢谢！</p>
 
       
     </div>
@@ -526,7 +560,7 @@
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/img-oss/" title="解决博客图片存储——阿里云的OSS运用">http://www.cduyzh.com/img-oss/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/web-front/" title="web-front">http://www.cduyzh.com/web-front/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -564,11 +598,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
-            <a href="/tags/optimization/" rel="tag"># optimization</a>
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
           
-            <a href="/tags/image/" rel="tag"># image</a>
+            <a href="/tags/Frame/" rel="tag"># Frame</a>
           
         </div>
       
@@ -581,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-settings-7/" rel="next" title="多说评论关闭服务后迁移到网易云跟帖">
-                <i class="fa fa-chevron-left"></i> 多说评论关闭服务后迁移到网易云跟帖
+              <a href="/js-validate-code/" rel="next" title="Web安全——前端JS表单验证过滤">
+                <i class="fa fa-chevron-left"></i> Web安全——前端JS表单验证过滤
               </a>
             
           </div>
@@ -590,10 +624,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/js-validate-code/" rel="prev" title="Web安全——前端JS表单验证过滤">
-                Web安全——前端JS表单验证过滤 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -823,7 +853,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-pages容量受限"><span class="nav-number">2.1.</span> <span class="nav-text">github pages容量受限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图床访问速度快"><span class="nav-number">2.2.</span> <span class="nav-text">图床访问速度快</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前瞻性"><span class="nav-number">2.3.</span> <span class="nav-text">前瞻性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人原因"><span class="nav-number">2.4.</span> <span class="nav-text">个人原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比分析"><span class="nav-number">3.</span> <span class="nav-text">对比分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#存储空间费用"><span class="nav-number">3.1.</span> <span class="nav-text">存储空间费用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量费用"><span class="nav-number">3.2.</span> <span class="nav-text">流量费用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用OSS"><span class="nav-number">4.</span> <span class="nav-text">使用OSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入控制台"><span class="nav-number">4.1.</span> <span class="nav-text">进入控制台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片链接地址优化"><span class="nav-number">5.</span> <span class="nav-text">图片链接地址优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片在线压缩网站"><span class="nav-number">6.</span> <span class="nav-text">图片在线压缩网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSS管理工具"><span class="nav-number">7.</span> <span class="nav-text">OSS管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">8.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端页面开发框架"><span class="nav-number">2.</span> <span class="nav-text">前端页面开发框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见web页面框架"><span class="nav-number">2.1.</span> <span class="nav-text">常见web页面框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架浅谈"><span class="nav-number">3.</span> <span class="nav-text">框架浅谈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap"><span class="nav-number">3.1.</span> <span class="nav-text">Bootstrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Materialize"><span class="nav-number">3.2.</span> <span class="nav-text">Materialize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Propeller前后台页面框架"><span class="nav-number">4.</span> <span class="nav-text">Propeller前后台页面框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-propeller"><span class="nav-number">4.1.</span> <span class="nav-text">What is propeller?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用效果"><span class="nav-number">4.2.</span> <span class="nav-text">使用效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bootstrapValidator表单验证"><span class="nav-number">5.</span> <span class="nav-text">bootstrapValidator表单验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用其他小插件收获"><span class="nav-number">6.</span> <span class="nav-text">使用其他小插件收获</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Bootstrap的导航"><span class="nav-number">6.1.</span> <span class="nav-text">基于Bootstrap的导航</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hover的css效果"><span class="nav-number">6.2.</span> <span class="nav-text">hover的css效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
