@@ -1,0 +1,127 @@
+/*覆盖当行条通知的框的表头颜色*/
+.external h3{color: #32c5d2!important;}
+/*通知框列表左边的边框*/
+span.details{
+    padding: 5px 10px;
+    color: #555;
+}
+/*
+*系统消息通知 & 订单消息通知：有关成功或通过的消息颜色标识
+*/
+.border-success{
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #26c218;
+}
+/*
+*系统消息通知 & 订单消息通知：有关信息提示的消息颜色标识
+*/
+.border-info{
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #32c5d2;
+}
+/*
+*订单消息通知：有关用户评价的消息颜色标识
+*/
+.border-warning{
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #f7Ca18;
+}
+/*
+*系统消息通知 & 订单消息通知：有关不成功或不通过的消息颜色标识
+*/
+.border-danger{
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #f36a5a;
+}
+/*用户头像悬浮效果*/
+div.img-rounded{
+    border-radius: 32px !important;
+}
+
+/*改变评价用户的用户名颜色*/
+div.slogan{
+    padding: 15px 60px;
+    border-left: 1px solid #ccc;
+}
+div.btn-padding{padding: 30px 15px;}
+/*BEGIN 销量排行表单*/
+td.order{
+    padding-top: 30px!important;
+    padding-bottom: 30px!important;
+}
+td.order>span:first-child{
+    font-size: 18px!important;
+    color: #fff;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 18px!important;
+    -webkit-border-radius:5px;
+}
+.order-bgcolor-danger{
+    background-color: #f36a5a;
+    border-color: #f36a5a;
+}
+.order-bgcolor-info{
+    background-color: #32c5d2;
+    border-color: #32c5d2;
+}
+.order-bgcolor-warning{
+    background-color: #f7Ca18;
+    border-color: #f7Ca18;
+}
+/*END 销量排行表单*/
+
+
+/*
+*message_list.html
+*/
+/*BEGIN 修改tab行的字体和宽度*/
+div.tabbable-line li a{
+    font-size: 16px;
+    padding: 10px 30px!important;
+}
+td.fit span{
+    border-left-style: solid;
+    border-left-width: 5px;
+}
+/*END 修改tab行的字体和宽度*/
+
+/*
+*comment_list.html
+*/
+.table td{
+    vertical-align: middle!important;
+}
+
+/*
+*auto_reply.html
+*/
+
+
+/*
+*account_setting.html
+*/
+form#account,form#ta,form#contacts{display: none;}
+
+/*
+*order_form_detail.html
+*/
+span#total{font-size: 20px;}
+#comment img{margin-top: 3px;}
+
+
+/*
+*publish_crowdfunding.html
+*/
+span.tags{
+    margin:0 1px 5px;
+}
+span.add-tips{
+    margin-top: 1px;
+    padding-top: 7px;
+}

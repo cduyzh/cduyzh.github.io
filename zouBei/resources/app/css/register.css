@@ -1,0 +1,118 @@
+.mycontent{
+    width: 1200px;
+    min-height: 400px;
+    margin: 40px auto 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+.order-parent{
+    margin: 30px 0;
+}
+.order-parent>div span.order{
+    font-size: 22px!important;
+    color: #fff;
+    padding: 9px 15px;
+    margin: 5px;
+    border: 1px solid #32c5d2;
+    border-radius: 22px!important;
+    -webkit-border-radius:5px;
+    background-color: #32c5d2;
+}
+/*个人注册*/
+#person .order-parent>div{
+    display: inline;
+    margin: 0 150px 0 95px;
+    font-size: 18px;
+}
+#person-progress{
+    background-color: #32c5d2;
+    width: 33.3%;    
+    height: 20px;
+}
+/*组织机构注册*/
+#organization .order-parent>div{
+    display: inline;
+    margin: 0 90px 0 45px;
+    font-size: 18px;
+}
+#organization-progress{
+    background-color: #32c5d2;
+    width: 25%;    
+    height: 20px;
+}
+
+
+form.register-form{
+    padding: 20px;
+}
+.form-group{
+    margin-left:30px;
+    margin-right: 500px 
+}
+/*BEGIN 验证码*/
+input.captcha{
+    width: 150px;
+}
+img.captcha{
+    border: 1px solid #c2cad8;
+    width: 100px;
+    height: 34px;
+    margin-left: -20px;
+}
+/*END 验证码*/
+select.city{
+    width: 150px;
+}
+.preview{
+    background-color: #fff;
+    background-image: url('../../imgs/add_img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #c2cad8;
+    overflow: hidden;
+    margin-bottom: 20px; 
+}
+.upload-btn{
+    width: 85px;
+    height: 32px;
+    position: relative;
+    z-index: 2;
+}
+.upload-btn input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+#imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
+div.form-group p.hint{margin-bottom: 10px!important;}
+/*BEGIN 上传证件照的提示*/
+p.paper{margin-top: 0}
+/*END 上传证件照的提示*/
+
+/*BEGIN 证件卡片的背景颜色*/
+div.mt-card-item-bgc{background-color: #f2f2f2;}
+/*END 证件卡片的背景颜色*/
+
+/*BEGIN 证件卡片的位置偏移*/
+div.mt-card-item-bgc>:first-child{left:0;right:0;clear:both;}
+/*END 证件卡片的位置偏移*/
+input.deadline{
+    width: 200px;
+}
+a.repeal{
+    margin-left: 10px;
+    color: #555;
+}
+div.notice{
+    background-color: #2c3e50;
+    border-left: 8px solid #22313f;
+    padding: 40px 25px;
+}
+form#step2,form#step3,form#step4{
+    display: none;
+}
