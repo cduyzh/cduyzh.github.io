@@ -1,0 +1,1246 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言前面的文章已经能让大家搭建起自己的博客，并通过网络访问了，通过基础的发布文章和编辑既可以实现博客的运作了，其他的一些包括分页和标签、分类等都不用自己来操作实现，只要通过命令hexo g就可以了，如果大家看过了next主题的官网中介绍的配置，我会帮助大家对其中描述不清的地方进行讲解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017年最新基于hexo搭建个人免费博客——基本设置和了解">
+<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-2/index.html">
+<meta property="og:site_name" content="Water Sister's Blog">
+<meta property="og:description" content="前言前面的文章已经能让大家搭建起自己的博客，并通过网络访问了，通过基础的发布文章和编辑既可以实现博客的运作了，其他的一些包括分页和标签、分类等都不用自己来操作实现，只要通过命令hexo g就可以了，如果大家看过了next主题的官网中介绍的配置，我会帮助大家对其中描述不清的地方进行讲解。">
+<meta property="og:image" content="http://img.cduyzh.com/images/next.jpg">
+<meta property="og:updated_time" content="2017-03-22T12:46:11.441Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——基本设置和了解">
+<meta name="twitter:description" content="前言前面的文章已经能让大家搭建起自己的博客，并通过网络访问了，通过基础的发布文章和编辑既可以实现博客的运作了，其他的一些包括分页和标签、分类等都不用自己来操作实现，只要通过命令hexo g就可以了，如果大家看过了next主题的官网中介绍的配置，我会帮助大家对其中描述不清的地方进行讲解。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/next.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+  
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-2/"/>
+
+
+
+
+  <title> 2017年最新基于hexo搭建个人免费博客——基本设置和了解 | Water Sister's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Water Sister's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">生活、技术个人博客</h1>
+      
+  </div>
+
+  
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+   
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang ZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yzh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Water Sister's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                2017年最新基于hexo搭建个人免费博客——基本设置和了解
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T19:02:35+08:00">
+                2017-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/hexo-settings-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/hexo-settings-2/" class="leancloud_visitors" data-flag-title="2017年最新基于hexo搭建个人免费博客——基本设置和了解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-edit"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      1,184 字
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      5 分钟
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.cduyzh.com/images/next.jpg" alt="2017年最新基于hexo搭建个人免费博客——基本设置和了解"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前面的文章已经能让大家搭建起自己的博客，并通过网络访问了，通过基础的发布文章和编辑既可以实现博客的运作了，其他的一些包括分页和标签、分类等都不用自己来操作实现，只要通过命令hexo g就可以了，如果大家看过了next主题的官网中介绍的配置，我会帮助大家对其中描述不清的地方进行讲解。<br><a id="more"></a> </p>
+<h2 id="理解文章和页面"><a href="#理解文章和页面" class="headerlink" title="理解文章和页面"></a>理解文章和页面</h2><p>当你前面的做好了后，现在还需要建立三个页面：分类页categories、标签页tags、关于页about,以及一个html页面放到根目录source下，才能完善博客基本的内容。<br>在根目录配置文件中有一个设置希望设置为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Writing</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: true  ##就是这个</div></pre></td></tr></table></figure>
+<p>原因是设置后当你新建一个页面后自动生成一个同名文件夹方便管理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexp new page categories </div><div class="line">hexp new page tags</div><div class="line">hexp new page about</div></pre></td></tr></table></figure></p>
+<p>tags里index.md设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 标签</div><div class="line">date: 2017-03-01 19:31:10</div><div class="line">type: &quot;tags&quot;</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>categories里index.md设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: categories</div><div class="line">date: 2017-03-01 19:42:08</div><div class="line">type: &quot;categories&quot;</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>主题目录下的配置文件设置如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  about: /about</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div><div class="line">  commonweal: /404.html</div></pre></td></tr></table></figure>
+<p>一个文章应该包含以下属性在顶部</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">date: 2017-03-07</div><div class="line">title: xxxxxxxxx</div><div class="line">tags: xxxx  #如果不想加入标签可以为空</div><div class="line">categories: xxxxx #如果不想加入分类可以为空</div><div class="line">---</div></pre></td></tr></table></figure>
+<h2 id="添加Fork-me-on-GitHub"><a href="#添加Fork-me-on-GitHub" class="headerlink" title="添加Fork me on GitHub"></a>添加Fork me on GitHub</h2><p>去网址<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">https://github.com/blog/273-github-ribbons</a> 挑选自己喜欢的样式，并复制代码，添加到themes\next\layout_layout.swig的body标签之内即可<br>记得把里面的url换成自己的!</p>
+<h3 id="把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果"><a href="#把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果" class="headerlink" title="把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果"></a>把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果</h3><p>修改themes\next\source\css_common\components\sidebar\sidebar-author.styl：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">.site-author-image &#123;</div><div class="line">  display: block;</div><div class="line">  margin: 0 auto;</div><div class="line">  padding: $site-author-image-padding;</div><div class="line">  max-width: $site-author-image-width;</div><div class="line">  height: $site-author-image-height;</div><div class="line">  border: site-author-image-border-color;</div><div class="line">  /* start*/</div><div class="line">  border-radius: 50%</div><div class="line">  webkit-transition: 1.4s all;</div><div class="line">  moz-transition: 1.4s all;</div><div class="line">  ms-transition: 1.4s all;</div><div class="line">  transition: 1.4s all;</div><div class="line">  /* end */</div><div class="line">&#125;</div><div class="line">/* start */</div><div class="line">.site-author-image:hover &#123;</div><div class="line">  background-color: #55DAE1;</div><div class="line">  webkit-transform: rotate(360deg) scale(1.1);</div><div class="line">  moz-transform: rotate(360deg) scale(1.1);</div><div class="line">  ms-transform: rotate(360deg) scale(1.1);</div><div class="line">  transform: rotate(360deg) scale(1.1);</div><div class="line">&#125;</div><div class="line">/* end */</div></pre></td></tr></table></figure>
+<h2 id="添加音乐"><a href="#添加音乐" class="headerlink" title="添加音乐"></a>添加音乐</h2><p>去往网易云音乐搜索喜欢的音乐，点击生成外链播放器，复制代码直接放到博文末尾即可，height设为0可隐藏播放器，但仍然可以播放音乐，auto设成0可手动播放，默认是1自动播放，可把代码放到themes/next/layout/_custom/sidebar.swig文件里，播放器会显示在站点预览中</p>
+<h2 id="实现文章标题栏显示更多的文章信息"><a href="#实现文章标题栏显示更多的文章信息" class="headerlink" title="实现文章标题栏显示更多的文章信息"></a>实现文章标题栏显示更多的文章信息</h2><h3 id="hexo-wordcount实现"><a href="#hexo-wordcount实现" class="headerlink" title="hexo-wordcount实现"></a>hexo-wordcount实现</h3><p>这个是官方文档上没有提及的所以我来说下，可以让你的文章标题位置更加富含信息，本插件可以为文章标题位置添加，文章字数，文章预计阅读时间。</p>
+<h3 id="安装WORDCOUNT"><a href="#安装WORDCOUNT" class="headerlink" title="安装WORDCOUNT"></a>安装WORDCOUNT</h3><p>执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-wordcount --save</div></pre></td></tr></table></figure></p>
+<h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><p>字数统计:WordCount<br>阅读时长预计:Min2Read<br>总字数统计: TotalCount</p>
+<h3 id="查看post-swig模板"><a href="#查看post-swig模板" class="headerlink" title="查看post.swig模板"></a>查看post.swig模板</h3><p>模板位置：themes\next\layout_macro\post.swig</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %&#125;</div><div class="line">           &lt;div class=&quot;post-wordcount&quot;&gt;</div><div class="line">             &#123;% if theme.post_wordcount.wordcount %&#125;</div><div class="line">               &lt;span class=&quot;post-meta-item-icon&quot;&gt;</div><div class="line">                 &lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;</div><div class="line">               &lt;/span&gt;</div><div class="line">                 &#123;% if theme.post_wordcount.item_text %&#125;</div><div class="line">                   &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&lt;/span&gt;</div><div class="line">                 &#123;% endif %&#125;</div><div class="line">                   &lt;span title=&quot;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&quot; &#125;&#125;&quot;&gt;</div><div class="line">                     &#123;&#123; wordcount(post.content) &#125;&#125; 字  ##我在这里加了一个单位上去</div><div class="line">                   &lt;/span&gt;</div><div class="line">             &#123;% endif %&#125;</div><div class="line"></div><div class="line">             &#123;% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %&#125;</div><div class="line">               &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</div><div class="line">             &#123;% endif %&#125;</div><div class="line"></div><div class="line">             &#123;% if theme.post_wordcount.min2read %&#125;</div><div class="line">               &lt;span class=&quot;post-meta-item-icon&quot;&gt;</div><div class="line">                 &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt;</div><div class="line">               &lt;/span&gt;</div><div class="line">                 &#123;% if theme.post_wordcount.item_text %&#125;</div><div class="line">                   &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&lt;/span&gt;</div><div class="line">                 &#123;% endif %&#125;</div><div class="line">                   &lt;span title=&quot;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&quot; &#125;&#125;&quot;&gt;</div><div class="line">                     &#123;&#123; min2read(post.content) &#125;&#125; 分钟   ##我在这里加了一个单位上去</div><div class="line">                   &lt;/span&gt;</div><div class="line">             &#123;% endif %&#125;</div><div class="line">           &lt;/div&gt;</div><div class="line">         &#123;% endif %&#125;</div></pre></td></tr></table></figure>
+<p>因为已经写好了代码，所以大家不用更改什么，只需要按自己需求来修改一些地方，我还对图标进行了修改在FontAwesome官网上找到一些图标替换了标签里对应的class值来实现目的。因为hexo默认引入了这个字体图标库，涉及到图标的地方都可以自行来更改。</p>
+<h2 id="其他主题配置"><a href="#其他主题配置" class="headerlink" title="其他主题配置"></a>其他主题配置</h2><p>另外评论系统推荐用多说，数据统计用不蒜子统计，搜索系统用local search,内容分享用多说分享，配置起来最简单好用。<br>next主题的官网文档上写了相关配置的设置方法都是在配置文件里进行值的设定，操作起来很简单，我就不重复讲了，如有其他问题欢迎提问，后面我会讲如何来自定义CSS样式和更改里面的一些设置。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/hexo-settings-2/" title="2017年最新基于hexo搭建个人免费博客——基本设置和了解">http://www.cduyzh.com/hexo-settings-2/</a><br/><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yang ZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Yang ZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/review-hexo/" rel="next" title="结合hexo和github开发静态个人博客感想">
+                <i class="fa fa-chevron-left"></i> 结合hexo和github开发静态个人博客感想
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo-settings-1/" rel="prev" title="2017年最新基于hexo搭建个人免费博客——从零开始">
+                2017年最新基于hexo搭建个人免费博客——从零开始 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+          
+          </div>
+          
+
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/yzh.jpg"
+               alt="Yang ZiHao" />
+          <p class="site-author-name" itemprop="name">Yang ZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cduyzh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3290722423/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=450311265&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=86 src="//music.163.com/outchain/player?type=2&id=103301&auto=0&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解文章和页面"><span class="nav-number">2.</span> <span class="nav-text">理解文章和页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Fork-me-on-GitHub"><span class="nav-number">3.</span> <span class="nav-text">添加Fork me on GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果"><span class="nav-number">3.1.</span> <span class="nav-text">把侧边栏头像变成圆形，并且鼠标停留在上面发生旋转效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加音乐"><span class="nav-number">4.</span> <span class="nav-text">添加音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现文章标题栏显示更多的文章信息"><span class="nav-number">5.</span> <span class="nav-text">实现文章标题栏显示更多的文章信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-wordcount实现"><span class="nav-number">5.1.</span> <span class="nav-text">hexo-wordcount实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装WORDCOUNT"><span class="nav-number">5.2.</span> <span class="nav-text">安装WORDCOUNT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要功能"><span class="nav-number">5.3.</span> <span class="nav-text">主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看post-swig模板"><span class="nav-number">5.4.</span> <span class="nav-text">查看post.swig模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他主题配置"><span class="nav-number">6.</span> <span class="nav-text">其他主题配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-tint"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang ZiHao</span>
+</div>
+
+
+
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+   <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz", "5rH911Nhs9V7AWFjEYqe8Bz7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+
+</html>

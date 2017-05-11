@@ -1,0 +1,1297 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo,optimization,comment," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言2017年3月21日多说宣布将于6月1日前关闭旗下的评论服务，意味着目前使用多说的站点的评论信息必须全部迁移到其他第三方评论系统里，有些人可能正在搭建多说评论，也有搭建好了的，正准备考虑迁移到哪去，而我在分析了几个第三方评论平台后，选择了使用网易云跟帖。至于为什么，请继续往下阅读。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多说评论关闭服务后迁移到网易云跟帖">
+<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-7/index.html">
+<meta property="og:site_name" content="Water Sister's Blog">
+<meta property="og:description" content="前言2017年3月21日多说宣布将于6月1日前关闭旗下的评论服务，意味着目前使用多说的站点的评论信息必须全部迁移到其他第三方评论系统里，有些人可能正在搭建多说评论，也有搭建好了的，正准备考虑迁移到哪去，而我在分析了几个第三方评论平台后，选择了使用网易云跟帖。至于为什么，请继续往下阅读。">
+<meta property="og:image" content="http://img.cduyzh.com/images/yungentie.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/yungentie1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/yungentie2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/yungentie3.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/yungentie4.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/yungentie5.png">
+<meta property="og:updated_time" content="2017-04-04T10:21:10.373Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多说评论关闭服务后迁移到网易云跟帖">
+<meta name="twitter:description" content="前言2017年3月21日多说宣布将于6月1日前关闭旗下的评论服务，意味着目前使用多说的站点的评论信息必须全部迁移到其他第三方评论系统里，有些人可能正在搭建多说评论，也有搭建好了的，正准备考虑迁移到哪去，而我在分析了几个第三方评论平台后，选择了使用网易云跟帖。至于为什么，请继续往下阅读。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/yungentie.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+  
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-7/"/>
+
+
+
+
+  <title> 多说评论关闭服务后迁移到网易云跟帖 | Water Sister's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Water Sister's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">生活、技术个人博客</h1>
+      
+  </div>
+
+  
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+   
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang ZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yzh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Water Sister's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                多说评论关闭服务后迁移到网易云跟帖
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T20:58:01+08:00">
+                2017-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/hexo-settings-7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/hexo-settings-7/" class="leancloud_visitors" data-flag-title="多说评论关闭服务后迁移到网易云跟帖">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-edit"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      2,858 字
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      11 分钟
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.cduyzh.com/images/yungentie.png" alt="网易云跟帖"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2017年3月21日<strong>多说宣布</strong>将于6月1日前<strong>关闭</strong>旗下的评论服务，意味着目前使用多说的站点的评论信息必须全部迁移到其他第三方评论系统里，有些人可能正在搭建多说评论，也有搭建好了的，正准备考虑迁移到哪去，而我在分析了几个第三方评论平台后，选择了使用<strong>网易云跟帖</strong>。至于为什么，请继续往下阅读。<br><a id="more"></a></p>
+<h2 id="关于第三方评论插件"><a href="#关于第三方评论插件" class="headerlink" title="关于第三方评论插件"></a>关于第三方评论插件</h2><p>我是搭建博客的时候才接触到多说的，多说怎么样，我相信对于一些使用过其他的第三方评论系统的人心里都知道，我在了解过目前国内主流的<strong>畅言、来比力、网易云跟帖</strong>等后，得出了一个结论。</p>
+<blockquote>
+<p>其实我只去用过畅言和来比力，最后来总结多说。</p>
+</blockquote>
+<h3 id="畅言"><a href="#畅言" class="headerlink" title="畅言"></a>畅言</h3><p>畅言背后是属于搜狐这个大公司的，有着这种大背景下，畅言的一些安全和保密性，以及垃圾评论的减少得到保证，而且不会挂掉，很稳定。</p>
+<blockquote>
+<p>但是畅言有一点原因导致了我放弃了它</p>
+</blockquote>
+<p>那就是它必须要求所使用的站点<strong>完成备案</strong>，因为我的网站是托管在的github pages上的属于国外服务器，根本没办法去备案的，而且我也不打算自己去租用一个云服务器或云主机来托管博客。所以我就放弃了它，不然它会是目前多说倒闭后的最好选择。</p>
+<h3 id="来必力"><a href="#来必力" class="headerlink" title="来必力"></a>来必力</h3><p> 来必力是<strong>韩国</strong>的，目前该公司把业务做到了国外，支持英语、中文、韩语。</p>
+<blockquote>
+<p>先不说其他的，目前韩国在部署萨德，说什么我都不会去用韩国人的东西的！</p>
+</blockquote>
+<p>撇开政治因素来谈，它的UI设计和后台管理也比较不错，数据可视化用到了图标来展示，所以有付费和免费两个版本，博客只需要用免费的就行了，当然付费的效果主要体现在数据分析上，还可以取消掉免费版未来所带来的广告。</p>
+<h3 id="网易云跟帖"><a href="#网易云跟帖" class="headerlink" title="网易云跟帖"></a>网易云跟帖</h3><p>它是16年6月份才推出的一个新产品，选择这个评论系统有一种<strong>情节</strong>在里面，因为我本人非常爱用网易云音乐来听歌，所以我本着支持网易云音乐的原则，也来支持这个产品.<br>尽管这个产品目前有很多的不足，不过背后毕竟是网易这个大公司，相信日后会越来越好的。我在后面会详细介绍这个的。</p>
+<h3 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h3><p><strong>重点来了</strong><br>多说倒闭的原因，我暂且不谈，每个人的看法不一样，多说的各方面功能都算的上完善，有很多组件可用，最近评论、访客，最热文章，都能有效提高博客的互动性。</p>
+<blockquote>
+<p>我觉得多说唯一的缺陷就是没有采取有效的盈利方式。</p>
+</blockquote>
+<hr>
+<p>多说作为国内第一下载量的第三方评论插件提供方，它的倒闭肯定导致许多博客主焦头烂额，在这里我有几点建议。</p>
+<ol>
+<li>选择一个稳定的大公司第三方评论插件</li>
+<li>尽早导出现有的评论数据，并在新的评论系统后台导入</li>
+<li>刚搭建博客的新人小白，可以选择观望2个月后看是否多说有补救措施继续运营</li>
+<li>爱折腾的可以考虑和我一样投奔网易云跟帖怀抱（笑….）</li>
+<li>如果是用hexo开发的博客，建议时刻关注你使用的主题的官方网页，以及源项目的github仓库，看看主题作者和大家怎么解决多说评论问题</li>
+<li>小白建议选择新评论系统的时候，从官方主题文档中给出的已支持的插件中选择</li>
+</ol>
+<hr>
+<h2 id="原有数据导出"><a href="#原有数据导出" class="headerlink" title="原有数据导出"></a>原有数据导出</h2><p>这里以多说评论系统导出数据为例，其他的可以类比。</p>
+<h3 id="后台管理导出数据"><a href="#后台管理导出数据" class="headerlink" title="后台管理导出数据"></a>后台管理导出数据</h3><p>进入多说的后台管理系统，从工具——导出数据<br><img src="http://img.cduyzh.com/images/yungentie1.png" alt="网易云跟帖"></p>
+<blockquote>
+<p>一定要记得勾选<strong>包含文章数据</strong>和<strong>包含评论数据</strong></p>
+</blockquote>
+<p>导出后就是一个json文件，用于后面上传到新评论系统内的。</p>
+<h3 id="导入以往数据"><a href="#导入以往数据" class="headerlink" title="导入以往数据"></a>导入以往数据</h3><p>以网易云跟帖操作为例，注册好帐号后，进入后台管理，绑定好自己的站点网址，在数据统计——数据管理——数据导入中，上传之前导出的文件进去，就完成了<br><img src="http://img.cduyzh.com/images/yungentie2.png" alt="网易云跟帖"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>网易云跟帖的后台里可以进行一些基本设置，我这里就跳过，主要说下hexo下next主题的配置。</p>
+<blockquote>
+<p>因为最新版的主题集合了网易云跟帖所以操作起来简便</p>
+</blockquote>
+<h3 id="获取Product-Key"><a href="#获取Product-Key" class="headerlink" title="获取Product Key"></a>获取Product Key</h3><p> 登陆 网易云跟帖 获取你的 Product Key。 编辑 主题配置文件， 编辑 gentie_productKey 字段，设置如下：</p>
+<p>gentie_productKey: #your-gentie-product-key</p>
+<h3 id="配置文件修改"><a href="#配置文件修改" class="headerlink" title="配置文件修改"></a>配置文件修改</h3><p><strong>请注意</strong>，您在云跟帖管理后台设置的域名必须跟您站点的域名一致。在本地测试时，需要做两步骤前置设定：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修改 hosts 文件，将您域名的请求指向本地。例如：127.0.0.1 notes.example.com</div><div class="line">修改 Hexo 监听的端口为 80：hexo s --debug -p 80</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">我的host文件路径C:\Windows\System32\drivers\etc</div></pre></td></tr></table></figure>
+<p>测试完成后请将 hosts 文件中的域名映射删除。<br>hosts文件中记录写法一般为“tab键”→“ip地址”→“tab键”→“域名”→“回车”（最后的回车最好加上。）如图，我将百度域名解析到本地。<br><img src="http://img.cduyzh.com/images/yungentie3.png" alt="网易云跟帖"></p>
+<hr>
+<p>因为我的80端口被apache服务器占用了，而且我不想去改，其实这个也不用怎么测试的，所以大家完全可以上传到线上自己来看。</p>
+<h3 id="细节优化"><a href="#细节优化" class="headerlink" title="细节优化"></a>细节优化</h3><p>评论系统出来了，它不像多说一样，对博客进行了一些优化，比如首页的文章摘要信息里，没有了以前多说的评论数了和对应的评论icon图标,但在文章详情里它又出来了，信息的人可能发现了，样式很丑具体如下：<br><img src="http://img.cduyzh.com/images/yungentie4.png" alt="网易云跟帖"><br>我通过使用一个伪类的CSS样式添加了“评论”二字让用户体验提高。<br><img src="http://img.cduyzh.com/images/yungentie5.png" alt="网易云跟帖"><br>相关源码在最后。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果你的评论系统没有加载成功，请试着看如下几点要求和注意点。</p>
+<ol>
+<li>关闭多说评论系统或其他的第三方评论系统</li>
+<li>检查以前配置多说的参数将其注视掉或设为false等，因为next主题会优先检测多说评论是否支持</li>
+<li>网易云站点网址是否填写正确，我之前填写的地址为www.cduyzh.com，但我在域名解析那解析的是两个地方，cduyzh.com和www.cduyzh.com，导致了我评论系统加载出现问题，如果在cduyzh.com内的新评论在www.cduyzh.com是看不到的，所以大家注意下，可以把域名解析中的cduyzh.com暂停使用。</li>
+<li>网易云跟帖的小功能插件比较少，其中的热门新闻模块，我按照之前加载多说热门文章的方法添加了对应的代码进去，发现两者不能很好的兼容会出现问题，导致我评论加载不出来，只加载出来了热门文章。</li>
+</ol>
+<blockquote>
+<p>最后一点希望大家把自己的问题反馈出来，大家可以相互交流，欢迎大神给我指出哪里出现了问题。</p>
+</blockquote>
+<h2 id="福利"><a href="#福利" class="headerlink" title="福利"></a>福利</h2><p>经过折腾终于迁移到了网易云跟帖，因为本人在添加网易云的热门文章时，出现了一些未知BUG，目前无法在保证有评论的情况下有热门文章，虽然这个小功能看似不是很重要，但是对于强迫症来说有点不爽，希望大神指点。</p>
+<h3 id="评论样式开源"><a href="#评论样式开源" class="headerlink" title="评论样式开源"></a>评论样式开源</h3><p>之前我出过文章讲解多说的样式优化，现在搬到了网易云跟帖，我当时也对它做了一些优化，在查看评论的样式后，我发现网易云跟帖这方面优化做的还不错，用户头像已经设置为原型了，只是没有添加旋转的效果，我把之前的多说下的样式引入了一部分进来，然后自己设置了一些其他样式。现贴出具体的样式代码，和以前一样，重写覆盖在<code>D:\hexo\blog\themes\next\source\css\_custom\custom.styl</code><br>修改代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">//网易云跟帖评论样式增添</div><div class="line">.post-comments-count a::before &#123;</div><div class="line">    content: &quot;评论&quot;;</div><div class="line">&#125;</div><div class="line">#yun-tie-sdk-wrap .input-box .tie-submit-row .tie-submit-btn &#123;</div><div class="line">    background-color: #649ab6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#yun-tie-sdk-wrap .input-box .tie-submit-row .tie-submit-btn:hover &#123;</div><div class="line">    background-color: #4c618f;</div><div class="line">&#125;</div><div class="line">.tie-empty-tip &#123;</div><div class="line">    display: none;</div><div class="line">&#125;</div><div class="line">//即将发布消息人样式</div><div class="line">#yun-tie-sdk-wrap .input-box .tie-submit-row .user-info img:hover &#123;</div><div class="line"></div><div class="line">box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6) inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">-webkit-box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6) inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">transform: rotateZ(360deg); </div><div class="line">-webkit-transform: rotateZ(360deg);</div><div class="line">-moz-transform: rotateZ(360deg);</div><div class="line">&#125;</div><div class="line">#yun-tie-sdk-wrap .input-box .tie-submit-row .user-info img &#123;</div><div class="line">width: 32px;</div><div class="line">height: 32px;</div><div class="line">border-radius: 50%;</div><div class="line">margin: 4px 10px 4px 8px;</div><div class="line">padding: 0;</div><div class="line">cursor: pointer;</div><div class="line">box-shadow: inset 0 -1px 0 #3333sf; /*设置图像阴影效果*/</div><div class="line">-webkit-box-shadow: inset 0 -1px 0 #3333sf;</div><div class="line">-webkit-transition: 0.4s;</div><div class="line">-webkit-transition: -webkit-transform 0.4s ease-out;</div><div class="line">transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/</div><div class="line">-moz-transition: -moz-transform 0.4s ease-out;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//评论框内其他人样式</div><div class="line">#yun-tie-sdk-wrap .single-tie .photo img:hover &#123;</div><div class="line"></div><div class="line">box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6) inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">-webkit-box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6) inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">transform: rotateZ(360deg); </div><div class="line">-webkit-transform: rotateZ(360deg);</div><div class="line">-moz-transform: rotateZ(360deg);</div><div class="line">&#125;</div><div class="line">#yun-tie-sdk-wrap .single-tie .photo img &#123;</div><div class="line">width: 42px;</div><div class="line">height: 42px;</div><div class="line">border-radius: 50%;</div><div class="line">padding: 0;</div><div class="line">cursor: pointer;</div><div class="line">box-shadow: inset 0 -1px 0 #3333sf; /*设置图像阴影效果*/</div><div class="line">-webkit-box-shadow: inset 0 -1px 0 #3333sf;</div><div class="line">-webkit-transition: 0.4s;</div><div class="line">-webkit-transition: -webkit-transform 0.4s ease-out;</div><div class="line">transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/</div><div class="line">-moz-transition: -moz-transform 0.4s ease-out;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.name-nick:hover &#123;</div><div class="line">    border-left: 14px solid #3264b4;</div><div class="line">&#125;</div><div class="line">.name-desp:hover &#123;</div><div class="line">    border-left: 14px solid #3264b4;</div><div class="line">&#125;</div><div class="line">#yun-tie-sdk-wrap .single-tie .tie-author .name-nick&#123;</div><div class="line">    cursor: pointer;</div><div class="line">    transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;</div><div class="line">&#125;</div><div class="line">#yun-tie-sdk-wrap .single-tie .tie-author .name-desp &#123;</div><div class="line">    cursor: pointer;</div><div class="line">    transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;</div><div class="line">&#125;</div><div class="line">.tie-time:hover &#123;</div><div class="line">    border-right: 14px solid #3264b4;</div><div class="line">&#125;</div><div class="line">#yun-tie-sdk-wrap .single-tie .tie-time &#123;</div><div class="line">    transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;</div><div class="line">    cursor: pointer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>从多说评论系统，到优化的它的样式，优化UA（评论用户操作系统和浏览器信息）、最近访客，以及用户头像设置等，期间参考了不少其他人的博客和文章，然后在动手去修改，感概很多，多说是我心目中的国内第一的第三方评论系统，居然在前几天宣布了即将关闭服务，让我很是失落。希望在6月1日在众多独立站长的支持下能走出困境，找到属于自己发展的盈利模式以此来继续经营下去。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/hexo-settings-7/" title="多说评论关闭服务后迁移到网易云跟帖">http://www.cduyzh.com/hexo-settings-7/</a><br/><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yang ZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Yang ZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/optimization/" rel="tag"># optimization</a>
+          
+            <a href="/tags/comment/" rel="tag"># comment</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo-settings-6/" rel="next" title="多说插件最近访客样式问题和解决方法">
+                <i class="fa fa-chevron-left"></i> 多说插件最近访客样式问题和解决方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/img-oss/" rel="prev" title="解决博客图片存储——阿里云的OSS运用">
+                解决博客图片存储——阿里云的OSS运用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+          
+          </div>
+          
+
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/yzh.jpg"
+               alt="Yang ZiHao" />
+          <p class="site-author-name" itemprop="name">Yang ZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cduyzh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3290722423/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=450311265&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=86 src="//music.163.com/outchain/player?type=2&id=103301&auto=0&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于第三方评论插件"><span class="nav-number">2.</span> <span class="nav-text">关于第三方评论插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#畅言"><span class="nav-number">2.1.</span> <span class="nav-text">畅言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#来必力"><span class="nav-number">2.2.</span> <span class="nav-text">来必力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网易云跟帖"><span class="nav-number">2.3.</span> <span class="nav-text">网易云跟帖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多说"><span class="nav-number">2.4.</span> <span class="nav-text">多说</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原有数据导出"><span class="nav-number">3.</span> <span class="nav-text">原有数据导出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后台管理导出数据"><span class="nav-number">3.1.</span> <span class="nav-text">后台管理导出数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入以往数据"><span class="nav-number">3.2.</span> <span class="nav-text">导入以往数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取Product-Key"><span class="nav-number">4.1.</span> <span class="nav-text">获取Product Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件修改"><span class="nav-number">4.2.</span> <span class="nav-text">配置文件修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#细节优化"><span class="nav-number">4.3.</span> <span class="nav-text">细节优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#福利"><span class="nav-number">6.</span> <span class="nav-text">福利</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评论样式开源"><span class="nav-number">6.1.</span> <span class="nav-text">评论样式开源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-tint"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang ZiHao</span>
+</div>
+
+
+
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+   <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz", "5rH911Nhs9V7AWFjEYqe8Bz7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+
+</html>
