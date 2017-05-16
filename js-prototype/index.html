@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="review," />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -91,16 +91,18 @@
 
 
 
-<meta name="description" content="前言以前学习查资料的时候看到很多解决方法都是在博客里写的，所以一直打算建，但是传统的博客因为受到站点限制不能自由的DIY，样式也不好看，所以看到了github pages后萌生了用官方介绍的hexo来开发静态个性化博客。">
+<meta name="description" content="前言此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="结合hexo和github开发静态个人博客感想">
-<meta property="og:url" content="http://www.cduyzh.com/review-hexo/index.html">
+<meta property="og:title" content="JavaScript高级程序设计——原型和原型链">
+<meta property="og:url" content="http://www.cduyzh.com/js-prototype/index.html">
 <meta property="og:site_name" content="Water Sister's Blog">
-<meta property="og:description" content="前言以前学习查资料的时候看到很多解决方法都是在博客里写的，所以一直打算建，但是传统的博客因为受到站点限制不能自由的DIY，样式也不好看，所以看到了github pages后萌生了用官方介绍的hexo来开发静态个性化博客。">
-<meta property="og:updated_time" content="2017-03-26T13:09:34.000Z">
+<meta property="og:description" content="前言此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-prototype.jpg">
+<meta property="og:updated_time" content="2017-05-16T14:50:55.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="结合hexo和github开发静态个人博客感想">
-<meta name="twitter:description" content="前言以前学习查资料的时候看到很多解决方法都是在博客里写的，所以一直打算建，但是传统的博客因为受到站点限制不能自由的DIY，样式也不好看，所以看到了github pages后萌生了用官方介绍的hexo来开发静态个性化博客。">
+<meta name="twitter:title" content="JavaScript高级程序设计——原型和原型链">
+<meta name="twitter:description" content="前言此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/js-prototype.jpg">
 
 
 
@@ -151,12 +153,12 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/review-hexo/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/js-prototype/"/>
 
 
 
 
-  <title> 结合hexo和github开发静态个人博客感想 | Water Sister's Blog </title>
+  <title> JavaScript高级程序设计——原型和原型链 | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -343,7 +345,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/review-hexo/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/js-prototype/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -364,7 +366,7 @@ var _hmt = _hmt || [];
             
             
               
-                结合hexo和github开发静态个人博客感想
+                JavaScript高级程序设计——原型和原型链
               
             
           </h2>
@@ -379,8 +381,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T21:53:39+08:00">
-                2017-03-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T22:44:08+08:00">
+                2017-05-16
               </time>
             
 
@@ -402,8 +404,8 @@ var _hmt = _hmt || [];
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
                   </a>
                 </span>
 
@@ -420,7 +422,7 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/review-hexo/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/js-prototype/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -429,7 +431,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/review-hexo/" class="leancloud_visitors" data-flag-title="结合hexo和github开发静态个人博客感想">
+             <span id="/js-prototype/" class="leancloud_visitors" data-flag-title="JavaScript高级程序设计——原型和原型链">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -454,7 +456,7 @@ var _hmt = _hmt || [];
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      211 字
+                      1,931 字
                     </span>
               
 
@@ -470,7 +472,7 @@ var _hmt = _hmt || [];
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      1 分钟
+                      8 分钟
                     </span>
               
             </div>
@@ -489,10 +491,84 @@ var _hmt = _hmt || [];
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>以前学习查资料的时候看到很多解决方法都是在博客里写的，所以一直打算建，但是传统的博客因为受到站点限制不能自由的DIY，样式也不好看，所以看到了github pages后萌生了用官方介绍的hexo来开发静态个性化博客。<br><a id="more"></a></p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>上网查阅了很多的资料和回答，但大多数都是14，15年的版本和解决方法，虽然与17年的next主题差不多，但里面的改动也很多，所以吸收了很多博客主的经验和文章后，自己去看了hexo文档和next主题文档，大致可以进行自己的一些样式设计和DIY了。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>等日后来完善此部分….</p>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>等日后来完善此部分….</p>
+        <p><img src="http://img.cduyzh.com/images/js-prototype.jpg" alt="JS原型"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。<br><a id="more"></a></p>
+<h2 id="一切都是对象"><a href="#一切都是对象" class="headerlink" title="一切都是对象"></a>一切都是对象</h2><blockquote>
+<p>“一切都是对象”这句话的重点在于如何去理解“对象”这个概念。</p>
+</blockquote>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>JavaScript 中，万物皆对象！但对象也是有区别的。分为<strong>普通对象</strong>和<strong>函数对象</strong>，Object 、Function 是 JS 自带的函数对象。<br>当然，也不是所有的都是对象，值类型就不是对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function show(x) &#123;</div><div class="line"></div><div class="line">            console.log(typeof x);    // undefined</div><div class="line">            console.log(typeof 10);   // number</div><div class="line">            console.log(typeof &apos;abc&apos;); // string</div><div class="line">            console.log(typeof true);  // boolean</div><div class="line"></div><div class="line">            console.log(typeof function () &#123;&#125;);  //function</div><div class="line"></div><div class="line">            console.log(typeof [1, &apos;a&apos;, true]);  //object</div><div class="line">            console.log(typeof &#123; a: 10, b: 20 &#125;);  //object</div><div class="line">            console.log(typeof null);  //object</div><div class="line">            console.log(typeof new Number(10));  //object</div><div class="line">        &#125;</div><div class="line">        show();</div></pre></td></tr></table></figure>
+<p>以上代码列出了typeof输出的集中类型标识，其中上面的四种（undefined, number, string, boolean）属于简单的<strong>值类型</strong>，不是对象。剩下的几种情况——函数、数组、对象、null、new Number(10)都是对象。他们都是<strong>引用类型</strong>。</p>
+<h2 id="对象——若干属性的集合"><a href="#对象——若干属性的集合" class="headerlink" title="对象——若干属性的集合"></a>对象——若干属性的集合</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>数组是对象，函数是对象，对象还是对象。</p>
+<blockquote>
+<p>对象里面的一切都是属性，只有属性，没有方法</p>
+</blockquote>
+<p>那么这样方法如何表示呢？——方法也是一种属性。因为它的属性表示为键值对的形式。<br>而且，javascript中的对象可以任意的扩展属性，没有class的约束。这个大家应该都知道，就不再强调了。</p>
+<p>先说个最常见的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">            a: 10,</div><div class="line">            b: function(x) &#123;</div><div class="line">                alert(this.a + x)</div><div class="line">            &#125;,</div><div class="line">            c: &#123;</div><div class="line">                name: &quot;yzh&quot;,</div><div class="line">                age: 21</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>以上代码中，obj是一个自定义的对象，其中a、b、c就是它的属性，而且在c的属性值还是一个对象，它又有name、year两个属性。</p>
+<p>这个可能比较好理解，那么函数和数组也可以这样定义属性吗？——当然不行，但是它可以用另一种形式，总之函数/数组之流，只要是对象，它就是属性的集合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var fn = function () &#123;</div><div class="line">            alert(100);</div><div class="line">        &#125;;</div><div class="line">        fn.a = 10;</div><div class="line">        fn.b = function () &#123;</div><div class="line">            alert(123);</div><div class="line">        &#125;;</div><div class="line">        fn.c = &#123;</div><div class="line">            name: &quot;yzh&quot;,</div><div class="line">            age: 21</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+<p>上段代码中，函数就作为对象被赋值了a、b、c三个属性——很明显，这就是属性的集合。</p>
+<blockquote>
+<p>（引用类型）都是对象，对象是属性的集合。最需要了解的就是对象的概念。</p>
+</blockquote>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><h3 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h3><p>这块在《JS高级程序设计》也算是大章节下的一块大内容，我只把一些重要的概念写出来让大家理解，具体的深入要自己去看书中的讲解。</p>
+<h3 id="函数和对象的关系"><a href="#函数和对象的关系" class="headerlink" title="函数和对象的关系"></a>函数和对象的关系</h3><blockquote>
+<p>对象都是通过函数创建的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123;</div><div class="line">            this.name = &apos;yzh&apos;;</div><div class="line">            this.year = 1996;</div><div class="line">        &#125;</div><div class="line">        var fn1 = new Fn();</div></pre></td></tr></table></figure>
+<p>有人可能会举出如下反例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; a: 10, b: 20 &#125;;</div><div class="line">var arr = [5, &apos;x&apos;, true];</div></pre></td></tr></table></figure>
+<p>这种做法属于使用“快捷方式”，在编程语言中，一般叫做“语法糖”。<br>其实以上代码的本质是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//var obj = &#123; a: 10, b: 20 &#125;;</div><div class="line">//var arr = [5, &apos;x&apos;, true];</div><div class="line"></div><div class="line">        var obj = new Object();</div><div class="line">        obj.a = 10;</div><div class="line">        obj.b = 20;</div><div class="line"></div><div class="line">        var arr = new Array();</div><div class="line">        arr[0] = 5;</div><div class="line">        arr[1] = &apos;x&apos;;</div><div class="line">        arr[2] = true;</div></pre></td></tr></table></figure>
+<p>而其中的 Object 和 Array 都是函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(typeof (Object));  // function</div><div class="line">console.log(typeof (Array));  // function</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>总结：对象都是通过函数来创建的</p>
+</blockquote>
+<h2 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h2><p>函数也是一种对象。他也是属性的集合，你也可以对函数进行自定义属性</p>
+<blockquote>
+<p>每创建一个函数，就会同时创建函数的prototype对象。<br>这个prototype的属性值是一个对象（属性的集合，再次强调！），默认的只有一个叫做constructor的属性，指向这个函数本身。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123; &#125;</div><div class="line">        Fn.prototype.name = &apos;王福朋&apos;;</div><div class="line">        Fn.prototype.getYear = function () &#123;</div><div class="line">            return 1988;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        var fn = new Fn();</div><div class="line">        console.log(fn.name);</div><div class="line">        console.log(fn.getYear());</div></pre></td></tr></table></figure>
+<p>Fn是一个函数，fn对象是从Fn函数new出来的，这样fn对象就可以调用Fn.prototype中的属性。</p>
+<p>因为每个对象都有一个隐藏的属性——“<strong>proto</strong>”，这个属性引用了创建这个对象的函数的prototype。</p>
+<p>即：fn.<strong>proto</strong> === Fn.<strong>prototype</strong><br>这里的”<strong>proto</strong>“成为“隐式原型”</p>
+<h2 id="隐式原型"><a href="#隐式原型" class="headerlink" title="隐式原型"></a>隐式原型</h2><blockquote>
+<p>每个函数function都有一个prototype，即原型。这里再加一句话——每个对象都有一个<strong>proto</strong>，可成为隐式原型。<strong>proto</strong>用于指向创建它的构造函数的原型对象</p>
+</blockquote>
+<p>对象 person1 有一个 <strong>proto</strong>属性，创建它的构造函数是 Person，构造函数的原型对象是 Person.prototype ，所以：</p>
+<blockquote>
+<p>person1.<strong>proto</strong> == Person.prototype</p>
+</blockquote>
+<p>又比如：obj这个对象本质上是被Object函数创建的，因此obj.<strong>proto</strong>=== Object.prototype</p>
+<p>在说明“Object.prototype”之前，先说一下自定义函数的prototype。自定义函数的prototype本质上就是和 var obj = {} 是一样的，都是被Object创建，所以它的<strong>proto</strong>指向的就是Object.prototype。</p>
+<p>但是Object.prototype确是一个特例——它的<strong>proto</strong>指向的是null.<br>至于为什么简单解释下：</p>
+<blockquote>
+<p>所有的构造器都来自于 Function.prototype，甚至包括根构造器Object及Function自身。所有构造器都继承了·Function.prototype·的属性及方法。如length、call、apply、bind</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">console.log(typeof Function.prototype) // function</div><div class="line">console.log(typeof Object.prototype)   // object</div><div class="line">console.log(typeof Number.prototype)   // object</div><div class="line">console.log(typeof Boolean.prototype)  // object</div><div class="line">console.log(typeof String.prototype)   // object</div><div class="line">console.log(typeof Array.prototype)    // object</div><div class="line">console.log(typeof RegExp.prototype)   // object</div><div class="line">console.log(typeof Error.prototype)    // object</div><div class="line">console.log(typeof Date.prototype)     // object</div><div class="line">console.log(typeof Object.prototype)   // object</div></pre></td></tr></table></figure>
+<p>知道了所有构造器（含内置及自定义）的<strong>proto</strong>都是Function.prototype，</p>
+<p><strong>Function.prototype的<strong>proto</strong>是谁呢</strong>？</p>
+<p>console.log(Function.prototype.<strong>proto</strong> === Object.prototype) // true<br>这说明所有的构造器也都是一个普通 JS 对象，可以给构造器添加/删除属性等。同时它也继承了Object.prototype上的所有方法：toString、valueOf、hasOwnProperty等。</p>
+<p><strong>最后Object.prototype的proto是谁？</strong></p>
+<p>Object.prototype.<strong>proto</strong> === null  // true<br>已经到顶了，为null。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p>访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着<strong>proto</strong>这条链向上找</p>
+</blockquote>
+<p>javascript中的继承是通过原型链来体现的.</p>
+<p><strong>传统原型语法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;&#125;</div><div class="line"></div><div class="line">        Foo.prototype.a = 100;</div><div class="line">        Foo.prototype.b = 200;</div><div class="line">        var f1 = new Foo();</div><div class="line">        f1.a = 10;</div><div class="line">        alert(f1.a);  //10</div><div class="line">        alert(f1.b);  //200</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;&#125;</div><div class="line">        var f1 = new Foo();</div><div class="line">        f1.a = 10;</div><div class="line">        Foo.prototype.a = 100;</div><div class="line">        Foo.prototype.b = 200;</div><div class="line">        </div><div class="line">        alert(f1.a);  //10</div><div class="line">        alert(f1.b);  //200</div></pre></td></tr></table></figure>
+<p><strong>对象字面量方法添加属性和方法的注意事项</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;&#125;</div><div class="line"></div><div class="line">        Foo.prototype = &#123;</div><div class="line">            a: 100,</div><div class="line">            b: 200</div><div class="line">        &#125;</div><div class="line">        var f1 = new Foo();</div><div class="line">        f1.a = 10;</div><div class="line">        alert(f1.a); //10</div><div class="line">        alert(f1.b); //200</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;&#125;</div><div class="line">        var f1 = new Foo();</div><div class="line">        f1.a = 10;</div><div class="line">        Foo.prototype = &#123;</div><div class="line">            a: 100,  </div><div class="line">            b: 200</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        alert(f1.a);  //10</div><div class="line">        alert(f1.b);  //undefined</div></pre></td></tr></table></figure>
+<p>原型的属性和方法赋值要在，新建实例对象之前，不然无法获得原型的值和属性，alert返回相应的undefined</p>
+<h3 id="重写原型对象问题"><a href="#重写原型对象问题" class="headerlink" title="重写原型对象问题"></a>重写原型对象问题</h3><p>接上面的例子讲,如果在实例上添加新属性，这个属性就会屏蔽原型对象中保存的同名属性，就是阻止访问了属性，而不是修改原型的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;&#125;</div><div class="line">        var f1 = new Foo();</div><div class="line">        f1.a = 10;</div><div class="line">        Foo.prototype = &#123;</div><div class="line">            a: 100,  </div><div class="line">            b: 200</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        alert(f1.a);  //10</div><div class="line">        alert(f1.b);  //undefined</div></pre></td></tr></table></figure>
+<blockquote>
+<p>总结：重写原型对象切断了<strong>现有原型</strong>与任何之前<strong>已经存在的对象实例</strong>之间的关系，它们的引用的仍然是<strong>最初的原型</strong>。</p>
+</blockquote>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>暂时总结到此，有些知识点没有讲到，可能需要大家自己去看书或查阅资料来理解，本人理解也有限，文中若有难以理解的还望大神换个方式来阐述。</p>
+<h3 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h3><p>后续还有两篇讲解《执行上下文与作用域》和《闭包》，最后一篇闭包可能会有一些前端面试题来讲，并在文章末做个总结。</p>
 
       
     </div>
@@ -507,7 +583,7 @@ var _hmt = _hmt || [];
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/review-hexo/" title="结合hexo和github开发静态个人博客感想">http://www.cduyzh.com/review-hexo/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/js-prototype/" title="JavaScript高级程序设计——原型和原型链">http://www.cduyzh.com/js-prototype/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -545,7 +621,7 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/review/" rel="tag"># review</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
         </div>
       
@@ -558,15 +634,15 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/web-front/" rel="next" title="前端框架快速开发静态页面">
+                <i class="fa fa-chevron-left"></i> 前端框架快速开发静态页面
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-settings-2/" rel="prev" title="2017年最新基于hexo搭建个人免费博客——基本设置和了解">
-                2017年最新基于hexo搭建个人免费博客——基本设置和了解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -792,7 +868,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">1.2.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果"><span class="nav-number">1.3.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一切都是对象"><span class="nav-number">2.</span> <span class="nav-text">一切都是对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象——若干属性的集合"><span class="nav-number">3.</span> <span class="nav-text">对象——若干属性的集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">4.</span> <span class="nav-text">创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言-1"><span class="nav-number">4.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数和对象的关系"><span class="nav-number">4.2.</span> <span class="nav-text">函数和对象的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype"><span class="nav-number">5.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式原型"><span class="nav-number">6.</span> <span class="nav-text">隐式原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">7.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">7.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写原型对象问题"><span class="nav-number">7.2.</span> <span class="nav-text">重写原型对象问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">8.</span> <span class="nav-text">End</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#未完待续"><span class="nav-number">8.1.</span> <span class="nav-text">未完待续</span></a></li></ol></li></ol></div>
             
 
           </div>
