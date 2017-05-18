@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,optimization,comment," />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -91,23 +91,18 @@
 
 
 
-<meta name="description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
+<meta name="description" content="前言本来this应该放在《上下文环境和作用域》中来讲，结果发现自己整理的时候，例子越来越多，所以单独写一篇用于加深理解，以后工作或项目中发现一些this相关问题可以进一步完善文章的例子。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo下Next主题使用多说评论插件样式优化">
-<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-5/index.html">
+<meta property="og:title" content="JavaScript高级程序设计——this">
+<meta property="og:url" content="http://www.cduyzh.com/js-this/index.html">
 <meta property="og:site_name" content="Water Sister's Blog">
-<meta property="og:description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo-css-bk.png">
-<meta property="og:image" content="http://theme-next.iissnan.com/uploads/five-minutes-setup/duoshuo-create-site.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo1.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo2.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo3.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo4.png">
-<meta property="og:updated_time" content="2017-03-26T13:01:50.111Z">
+<meta property="og:description" content="前言本来this应该放在《上下文环境和作用域》中来讲，结果发现自己整理的时候，例子越来越多，所以单独写一篇用于加深理解，以后工作或项目中发现一些this相关问题可以进一步完善文章的例子。">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-this.jpg">
+<meta property="og:updated_time" content="2017-05-18T09:43:21.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo下Next主题使用多说评论插件样式优化">
-<meta name="twitter:description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
-<meta name="twitter:image" content="http://img.cduyzh.com/images/duoshuo-css-bk.png">
+<meta name="twitter:title" content="JavaScript高级程序设计——this">
+<meta name="twitter:description" content="前言本来this应该放在《上下文环境和作用域》中来讲，结果发现自己整理的时候，例子越来越多，所以单独写一篇用于加深理解，以后工作或项目中发现一些this相关问题可以进一步完善文章的例子。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/js-this.jpg">
 
 
 
@@ -158,12 +153,12 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-5/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/js-this/"/>
 
 
 
 
-  <title> Hexo下Next主题使用多说评论插件样式优化 | Water Sister's Blog </title>
+  <title> JavaScript高级程序设计——this | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -350,7 +345,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-5/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/js-this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -371,7 +366,7 @@ var _hmt = _hmt || [];
             
             
               
-                Hexo下Next主题使用多说评论插件样式优化
+                JavaScript高级程序设计——this
               
             
           </h2>
@@ -386,8 +381,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T15:55:33+08:00">
-                2017-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T17:40:53+08:00">
+                2017-05-18
               </time>
             
 
@@ -427,7 +422,7 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/hexo-settings-5/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/js-this/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -436,7 +431,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/hexo-settings-5/" class="leancloud_visitors" data-flag-title="Hexo下Next主题使用多说评论插件样式优化">
+             <span id="/js-this/" class="leancloud_visitors" data-flag-title="JavaScript高级程序设计——this">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,7 +456,7 @@ var _hmt = _hmt || [];
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,792 字
+                      1,524 字
                     </span>
               
 
@@ -477,7 +472,7 @@ var _hmt = _hmt || [];
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      8 分钟
+                      6 分钟
                     </span>
               
             </div>
@@ -496,35 +491,63 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="http://img.cduyzh.com/images/duoshuo-css-bk.png" alt="多说评论系统"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。<br><a id="more"></a> </p>
-<h2 id="启用多说评论功能"><a href="#启用多说评论功能" class="headerlink" title="启用多说评论功能"></a>启用多说评论功能</h2><p> 使用多说前需要先在 多说 创建一个站点。具体步骤如下：</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>1·登录后在首页选择 “我要安装”。</p>
-<p>2·创建站点，填写表单。多说域名 这一栏填写的即是你的 duoshuo_shortname，如图：<br><img src="http://theme-next.iissnan.com/uploads/five-minutes-setup/duoshuo-create-site.png" alt="多说评论系统"><br>3·创建站点完成后在 主题配置文件 中新增 duoshuo_shortname 字段，值设置成上一步中的值。</p>
-<h3 id="修改或添加代码"><a href="#修改或添加代码" class="headerlink" title="修改或添加代码"></a>修改或添加代码</h3><p>修改主题配置文件代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Duoshuo ShortName</div><div class="line">duoshuo_shortname: cduyzh //改为你自己的</div></pre></td></tr></table></figure>
-<p>###　启用ua<br>这个是为了显示评论者使用的系统和浏览器属性，以及是否显示博主的昵称信息。<br>修改代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">duoshuo_info:</div><div class="line">  ua_enable: true</div><div class="line">  admin_enable: true</div><div class="line">  user_id: 6224774254659896065</div><div class="line">  admin_nickname: 水美眉（博主）</div></pre></td></tr></table></figure></p>
-<h3 id="获取user-id"><a href="#获取user-id" class="headerlink" title="获取user_id"></a>获取user_id</h3><p>登录你的多说账户信息主页<br><img src="http://img.cduyzh.com/images/duoshuo1.png" alt="多说评论系统"><br>点击你的名字进入的页面后，地址最后有个ID就是它了！！！</p>
-<hr>
-<p><img src="http://img.cduyzh.com/images/duoshuo2.png" alt="多说评论系统"></p>
-<h2 id="启用多说分享功能"><a href="#启用多说分享功能" class="headerlink" title="启用多说分享功能"></a>启用多说分享功能</h2><h3 id="修改或添加代码-1"><a href="#修改或添加代码-1" class="headerlink" title="修改或添加代码"></a>修改或添加代码</h3><p>修改主题配置文件代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Share</div><div class="line">duoshuo_share: true</div></pre></td></tr></table></figure></p>
-<h2 id="启用多说热评文章功能"><a href="#启用多说热评文章功能" class="headerlink" title="启用多说热评文章功能"></a>启用多说热评文章功能</h2><h3 id="修改或添加代码-2"><a href="#修改或添加代码-2" class="headerlink" title="修改或添加代码"></a>修改或添加代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 多说热评文章 true 或者 false</div><div class="line">duoshuo_hotartical: true</div></pre></td></tr></table></figure>
-<h2 id="修改评论头像样式"><a href="#修改评论头像样式" class="headerlink" title="修改评论头像样式"></a>修改评论头像样式</h2><h3 id="评论模块样式"><a href="#评论模块样式" class="headerlink" title="评论模块样式"></a>评论模块样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/*隐藏多说底部版权*/</div><div class="line">#ds-thread #ds-reset .ds-powered-by &#123;</div><div class="line">display: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#ds-reset .ds-avatar img:hover,</div><div class="line">#ds-recent-visitors .ds-avatar img:hover &#123;</div><div class="line"></div><div class="line">/*设置鼠标悬浮在头像时的CSS样式*/ box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6), inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">-webkit-box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6), inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">transform: rotateZ(360deg); /*图像旋转360度*/</div><div class="line">-webkit-transform: rotateZ(360deg);</div><div class="line">-moz-transform: rotateZ(360deg);</div><div class="line">&#125;</div><div class="line">#ds-reset .ds-avatar img,</div><div class="line">#ds-recent-visitors .ds-avatar img &#123;</div><div class="line">width: 54px;</div><div class="line">height: 54px; /*设置图像的长和宽，这里要根据自己的评论框情况更改*/</div><div class="line">border-radius: 27px; /*设置图像圆角效果,在这里我直接设置了超过width/2的像素，即为圆形了*/</div><div class="line">-webkit-border-radius: 27px; /*圆角效果：兼容webkit浏览器*/</div><div class="line">-moz-border-radius: 27px;</div><div class="line">box-shadow: inset 0 -1px 0 #3333sf; /*设置图像阴影效果*/</div><div class="line">-webkit-box-shadow: inset 0 -1px 0 #3333sf;</div><div class="line">-webkit-transition: 0.4s;</div><div class="line">-webkit-transition: -webkit-transform 0.4s ease-out;</div><div class="line">transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/</div><div class="line">-moz-transition: -moz-transform 0.4s ease-out;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我把这段代码放在了多说的后台设置中的自定义CSS里的。<br><img src="http://img.cduyzh.com/images/duoshuo3.png" alt="多说评论系统"></p>
-<h2 id="修改ua信息样式"><a href="#修改ua信息样式" class="headerlink" title="修改ua信息样式"></a>修改ua信息样式</h2><h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><blockquote>
-<p>主要看别人博客里，别人的样式有这个，然后用了他们的方法比如引入CSS什么的，发现没用，后来发现必须要用到JS获取你的浏览器版本信息和操作系统信息，给他加上对应的标签的样式，然后通过你自己定义的CSS样式来实现对ua信息样式的美化<br>因为默认的ua样式太丑了不美观，在此我也不贴图了。大家自己第一次启用这个功能的时候能感受得到。</p>
-<h3 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h3><p>博主的next为最新的5.1.0版本不知道以前版本的情况，在我的next主题里，分析源码的时候找到了一个关于多说的文件，</p>
+        <p><img src="http://img.cduyzh.com/images/js-this.jpg" alt="js-this"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本来this应该放在《上下文环境和作用域》中来讲，结果发现自己整理的时候，例子越来越多，所以单独写一篇用于加深理解，以后工作或项目中发现一些this相关问题可以进一步完善文章的例子。<br><a id="more"></a></p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p><strong>在函数中this到底取何值，是在函数真正被调用执行的时候确定的，函数定义的时候确定不了</strong></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">我的路径为 D:\hexo\blog\themes\next\layout\_scripts\third-party\comments\duoshuo.swig</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">&#123;% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %&#125;</div><div class="line"></div><div class="line">  &#123;% if theme.duoshuo %&#125;</div><div class="line">    &#123;% set duoshuo_shortname = theme.duoshuo.shortname %&#125;</div><div class="line">  &#123;% else %&#125;</div><div class="line">    &#123;% set duoshuo_shortname = theme.duoshuo_shortname %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"></div><div class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&quot;&#123;&#123;duoshuo_shortname&#125;&#125;&quot;&#125;;</div><div class="line">    (function() &#123;</div><div class="line">      var ds = document.createElement(&apos;script&apos;);</div><div class="line">      ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">      ds.id = &apos;duoshuo-script&apos;;</div><div class="line">      ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">      ds.charset = &apos;UTF-8&apos;;</div><div class="line">      (document.getElementsByTagName(&apos;head&apos;)[0]</div><div class="line">      || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">    &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    if (typeof DUOSHUO !== &apos;undefined&apos;)hookDUOSHUO_tp();</div><div class="line">    else $(&apos;[src=&quot;http://static.duoshuo.com/embed.js&quot;]&apos;)[0].onload=hookDUOSHUO_tp;</div><div class="line">    var hookDUOSHUO_bl=false;</div><div class="line">    function hookDUOSHUO_tp()&#123;</div><div class="line">        if(hookDUOSHUO_bl)return;</div><div class="line">        else hookDUOSHUO_bl=true;</div><div class="line">        var _D_post=DUOSHUO.templates.post;</div><div class="line">        DUOSHUO.templates.post=function (e,t)&#123;</div><div class="line">            var rs=_D_post(e,t);</div><div class="line">            if(e.agent&amp;&amp;/^Mozilla/.test(e.agent))rs=rs.replace(/&lt;\/div&gt;&lt;p&gt;/,show_ua(e.agent)+&apos;&lt;/div&gt;&lt;p&gt;&apos;);</div><div class="line">            return rs;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    function show_ua(string)&#123;</div><div class="line">        $.ua.set(string);</div><div class="line">        var sua=$.ua;</div><div class="line">        if(sua.os.version==&apos;x86_64&apos;)sua.os.version=&apos;x64&apos;;</div><div class="line">        return &apos;&lt;span class=&quot;this_ua browser &apos;+sua.browser.name+&apos;&quot;&gt;&apos;+sua.browser.name+&apos; | &apos;+sua.browser.version+&apos;&lt;/span&gt;&apos;+&apos;&lt;span class=&quot;this_ua platform &apos;+sua.os.name+&apos;&quot;&gt;&apos;+sua.os.name+&apos; &apos;+sua.os.version+&apos;&lt;/span&gt;&apos;;</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line"></div><div class="line">  &#123;% if theme.duoshuo_info.ua_enable %&#125;</div><div class="line">    &#123;% if theme.duoshuo_info.admin_enable %&#125;</div><div class="line">      &#123;% set ua_parser_internal = url_for(theme.vendors._internal) + &apos;/ua-parser-js/dist/ua-parser.min.js?v=0.7.9&apos; %&#125;</div><div class="line">      &lt;script src=&quot;&#123;&#123; theme.vendors.ua_parser | default(ua_parser_internal) &#125;&#125;&quot;&gt;&lt;/script&gt;</div><div class="line">      &lt;script src=&quot;&#123;&#123; url_for(theme.js) &#125;&#125;/src/hook-duoshuo.js?v=&#123;&#123; theme.version &#125;&#125;&quot;&gt;&lt;/script&gt;</div><div class="line">    &#123;% else %&#125;</div><div class="line">    &#123;% set ua_parser_internal = url_for(theme.vendors._internal) + &apos;/ua-parser-js/dist/ua-parser.min.js?v=0.7.9&apos; %&#125;</div><div class="line">    &lt;script src=&quot;&#123;&#123; theme.vendors.ua_parser | default(ua_parser_internal) &#125;&#125;&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;&#123;&#123; url_for(theme.js) &#125;&#125;/src/hook-duoshuo.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
-<h3 id="解读代码"><a href="#解读代码" class="headerlink" title="解读代码"></a>解读代码</h3><p>这段代码是我自己的修改后的，大家对照着自己看，主要是添加了一段代码而已。<br>里面有2个script标签里闭合的是JS函数，其他的script标签都是引用JS文件，大家自己去看。<br>第一个就是多说评论系统默认的JS添加代码，多说官网有，这段代码必须要用。我这是集成了的所以没有改动。<br>第二个是我添加的，主要实现用JS<strong>获取用户的浏览器类型和操作系统</strong>，并<strong>把这些信息添加到标签内</strong>和<strong>加入对应的CSS样式名</strong>，后面就通过对CSS样式进行优化就能达到如下效果<br><img src="http://img.cduyzh.com/images/duoshuo4.png" alt="多说评论系统"><br>顺便贴出我自己对UA写的的CSS样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//多说评论样式</div><div class="line">.theme-next #ds-reset .duoshuo-ua-platform, .theme-next #ds-reset .duoshuo-ua-browser &#123;</div><div class="line">    color: #fff;</div><div class="line">&#125;</div><div class="line">.duoshuo-ua-browser&#123;background-color: #ccc!important;border-radius: 4px;padding: 0 5px!important;margin: 0 1px!important;</div><div class="line">border: 1px solid #BBB!important;color: #fff;</div><div class="line">&#125;</div><div class="line">.duoshuo-ua-platform&#123;background-color: #ccc!important;border-radius: 4px;padding: 0 5px!important;margin: 0 1px!important;</div><div class="line">border: 1px solid #BBB!important;color: #fff;&#125;</div><div class="line">.duoshuo-ua-platform-windows&#123;background-color: #39b3d7!important;border-color: #46b8da!important;&#125;</div><div class="line">.duoshuo-ua-platform-linux &#123;background-color: #3A3A3A!important;border-color: #1F1F1F!important;&#125;</div><div class="line">.duoshuo-ua-platform-android &#123;background-color: #00C47D!important;border-color: #01B171!important;&#125;</div><div class="line">.duoshuo-ua-platform-ios&#123;background-color: #ccc!important;border-color: #ccc!important;&#125;</div><div class="line">.duoshuo-ua-browser-chrome&#123;background-color: #5cb85c!important;border-color: #4cae4c!important;&#125;</div><div class="line">.duoshuo-ua-browser-firefox&#123;background-color: #f0ad4e!important;border-color: #eea236!important;&#125;</div><div class="line">.duoshuo-ua-browser-ie&#123;background-color: #428bca!important;border-color: #357ebd!important;&#125;</div><div class="line">.duoshuo-ua-browser-opera&#123;background-color: #d9534f!important;border-color: #d43f3a!important;&#125;</div><div class="line">.duoshuo-ua-browser-mobile safari&#123;background-color: #ccc!important;border-color: #ccc!important;&#125;</div></pre></td></tr></table></figure>
-<p>这段代码其实一看是没有对IOS系统和对应的safri浏览器进行CSS样式的编写，大家自己可以去定义，如果不定义有一个默认样式，会对这些无法识别的系统和浏览器有样式效果，就是灰色的背景而已。</p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>最后有什么不懂的，或者一些没讲到的，欢迎在下面评论，因为目前2017年相关的hexo下next主题教程几乎没有，所以为了大家少走弯路，希望多提出意见。</p>
-<hr>
+<p>因为this的取值是执行上下文环境的一部分，每次调用函数，都会产生一个新的执行上下文环境。</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><blockquote>
+<p>所谓构造函数就是用来new对象的函数。其实严格来说，所有的函数都可以new一个对象，但是有些函数的定义是为了new一个对象，而有些函数则不是。另外注意，构造函数的函数名第一个字母大写（规则约定）。例如：Object、Array、Function等。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;</div><div class="line">            this.name = &quot;yzh&quot;;</div><div class="line">            this.year = 1996;</div><div class="line">            console.log(this); //Object &#123; name: &quot;yzh&quot;, year: 1998 &#125;</div><div class="line">        &#125;</div><div class="line">        var f1 = new Foo();</div><div class="line">        console.log(f1.name); //yzh</div><div class="line">        console.log(f1.year); //1996</div></pre></td></tr></table></figure>
+<p>以上代码中，如果函数作为构造函数用，那么其中的this就代表它即将new出来的对象。</p>
+<p><strong>注意，以上仅限newFoo()的情况，即Foo函数作为构造函数的情况。如果直接调用Foo函数，而不是new Foo()，情况就大不一样了。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;</div><div class="line">            this.name = &quot;yzh&quot;;</div><div class="line">            this.year = 1996;</div><div class="line">            console.log(this); //Object &#123; name: &quot;yzh&quot;, year: 1998 &#125;</div><div class="line">        &#125;</div><div class="line">        Foo();  //window</div></pre></td></tr></table></figure>
+<p>这种情况下this是window。</p>
+<h3 id="函数作为对象的一个属性"><a href="#函数作为对象的一个属性" class="headerlink" title="函数作为对象的一个属性"></a>函数作为对象的一个属性</h3><p>如果函数作为对象的一个属性时，<strong>并且作为对象的一个属性被调用时</strong>，函数中的this指向该对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">            x: 10,</div><div class="line">            fn: function() &#123;</div><div class="line">                console.log(this); //Object &#123; x: 10, fn: fn() &#125;</div><div class="line">                console.log(this.x); //10</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        obj.fn();</div></pre></td></tr></table></figure>
+<p>以上代码中，fn不仅作为一个对象的一个属性，而且的确是作为对象的一个属性被调用。结果this就是obj对象。</p>
+<p><strong>如果fn函数不作为obj的一个属性被调用，会是什么结果呢？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">            x: 10,</div><div class="line">            fn: function() &#123;</div><div class="line">                console.log(this); //window</div><div class="line">                console.log(this.x); //undefined</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        var f1 = obj.fn;</div><div class="line">        f1();</div></pre></td></tr></table></figure>
+<p>如上代码，如果fn函数被赋值到了另一个变量中，并没有作为obj的一个属性被调用，那么this的值就是window，this.x为undefined。</p>
+<h2 id="函数用call或者apply调用"><a href="#函数用call或者apply调用" class="headerlink" title="函数用call或者apply调用"></a>函数用call或者apply调用</h2><p>为了防止看不懂这块先理解下基础并重要的东西</p>
+<h3 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h3><p>在函数内部，有两个特殊的对象：arguments和this.<br>主要介绍下arguments,它是类数组对象，包含传入函数的所有参数，这个对象还有一个叫callee的属性，该属性为一个指针，指向拥有这个arguments对象的函数。</p>
+<p>这个例子主要用于消除函数的执行与同名函数的紧密耦合现象。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function factorial(num) &#123;</div><div class="line">            if (num &lt;= 1) &#123;</div><div class="line">                return 1;</div><div class="line">            &#125; else &#123;</div><div class="line">               // return num * factorial(num - 1);</div><div class="line">                //1.一般的递归算法运用</div><div class="line">                return num * arguments.callee(num - 1) </div><div class="line">                //2.更好的做法</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        var trueFactorial = factorial;</div><div class="line"></div><div class="line">        factorial = function() &#123;</div><div class="line">            return 0;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        alert(trueFactorial(5)); //120</div><div class="line">        alert(factorial(5)); //0</div></pre></td></tr></table></figure>
+<h3 id="函数属性"><a href="#函数属性" class="headerlink" title="函数属性"></a>函数属性</h3><p>每个函数都包含两个属性：length和prototype.<br>length表示函数希望接受的命名参数的个数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function sayName(name)&#123;</div><div class="line">            alert(name);</div><div class="line">        &#125;      </div><div class="line">        </div><div class="line">        function sum(num1, num2)&#123;</div><div class="line">            return num1 + num2;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        function sayHi()&#123;</div><div class="line">            alert(&quot;hi&quot;);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        alert(sayName.length);  //1</div><div class="line">        alert(sum.length);      //2</div><div class="line">        alert(sayHi.length);    //0</div></pre></td></tr></table></figure>
+<p>prototype属性这里不再重复介绍。</p>
+<h3 id="函数方法"><a href="#函数方法" class="headerlink" title="函数方法"></a>函数方法</h3><p>每个函数都包含两个非继承而来的方法：apply()和call(),这两个方法的用途都是在特定的作用域中调用函数，<strong>实际上等于设置函数体内的this对象值</strong>。</p>
 <blockquote>
-<p>关于这个next主题的优化，基本上算是讲完了，如果有网友有其他需求讲解可以私下找我。<br>我后面会出的有关文章类型，大概方向为：<br>网站seo优化——网站收录心得、站点地图使用、爬虫协议等简单介绍和使用<br>网站性能优化——用OSS对象存储来放图片等</p>
+<p>apply()方法接受两个参数：一个是<strong>在其中运行函数的作用域</strong>，另一个是参数数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function sum(num1, num2)&#123;</div><div class="line">            return num1 + num2;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        function callSum1(num1, num2)&#123;</div><div class="line">            return sum.apply(this, arguments);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        function callSum2(num1, num2)&#123;</div><div class="line">            return sum.apply(this, [num1, num2]);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        alert(callSum1(10,10));   //20</div><div class="line">        alert(callSum2(10,10));   //20</div></pre></td></tr></table></figure></p>
 </blockquote>
+<p>callsSum1()执行sum()函数时传入this作为this值（在全局作用域中调用，所以传入的对象为window对象）下面的例子同理。</p>
+<blockquote>
+<p>call()方法与apply()方法差不多，区别在于接受参数的方式不同。简单来说就是：传递给函数的参数必须逐个列举出来。(如果是无参函数就不用传参数)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function sum(num1, num2)&#123;</div><div class="line">            return num1 + num2;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        function callSum(num1, num2)&#123;</div><div class="line">            return sum.call(this, num1, num2);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        alert(callSum(10,10));   //20</div></pre></td></tr></table></figure>
+<blockquote>
+<p>传递参数并非两个函数的真正用武之地，真正强大的地方是扩充函数赖以运行的作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">window.color = &quot;red&quot;;</div><div class="line">        var o = &#123; color: &quot;blue&quot; &#125;;</div><div class="line">        </div><div class="line">        function sayColor()&#123;</div><div class="line">            alert(this.color);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        sayColor();            //red</div><div class="line">        </div><div class="line">        sayColor.call(this);   //red</div><div class="line">        sayColor.call(window); //red</div><div class="line">        sayColor.call(o);      //blue</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>如下代码如果不用函数的方法来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">window.color = &quot;red&quot;;</div><div class="line">        var o = &#123; color: &quot;blue&quot; &#125;;</div><div class="line">        </div><div class="line">        function sayColor()&#123;</div><div class="line">            alert(this.color);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        sayColor();     //red</div><div class="line">        </div><div class="line">        o.sayColor = sayColor;</div><div class="line">        o.sayColor();   //blue</div></pre></td></tr></table></figure></p>
+<p>如果要输出o对象里的color属性值，必须把sayColor函数赋给对象o并调用 o.sayColor()时，this引用的对象为o</p>
+<h3 id="回归要讲的例子"><a href="#回归要讲的例子" class="headerlink" title="回归要讲的例子"></a>回归要讲的例子</h3><blockquote>
+<p>当一个函数被call和apply调用时，this的值就取传入的对象的值。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">            x: 10</div><div class="line">        &#125;;</div><div class="line">        var fn = function() &#123;</div><div class="line">            console.log(this); //Object &#123; x: 10 &#125;</div><div class="line">            console.log(this.x); //10</div><div class="line">        &#125;;</div><div class="line">        fn.call(obj);</div></pre></td></tr></table></figure>
+<h2 id="全局-amp-调用普通函数"><a href="#全局-amp-调用普通函数" class="headerlink" title="全局 &amp; 调用普通函数"></a>全局 &amp; 调用普通函数</h2><p>在全局环境下，this永远是window，这个应该没有非议。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(this === window); //true</div></pre></td></tr></table></figure>
+<p>普通函数在调用时，其中的this也都是window。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 10;</div><div class="line">        var fn = function() &#123;</div><div class="line">            console.log(this); //window</div><div class="line">            console.log(this.x); //10</div><div class="line">        &#125;</div><div class="line">        fn();</div></pre></td></tr></table></figure>
+<p><strong>注意以下的情况</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">            x: 10,</div><div class="line">            fn: function() &#123;</div><div class="line">                function f() &#123;</div><div class="line">                    console.log(this); //Window </div><div class="line">                    console.log(this.x); //undefined</div><div class="line">                &#125;</div><div class="line">                f();</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        obj.fn();</div></pre></td></tr></table></figure></p>
+<p>函数f虽然是在obj.fn内部定义的，但是它仍然是一个普通的函数，this仍然指向window。</p>
+<blockquote>
+<p>总结：this指向调用该函数的对象</p>
+</blockquote>
+<h2 id="构造函数的prototype中，this代表着什么"><a href="#构造函数的prototype中，this代表着什么" class="headerlink" title="构造函数的prototype中，this代表着什么"></a>构造函数的prototype中，this代表着什么</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123;</div><div class="line">            this.name = &quot;yzh&quot;;</div><div class="line">            this.year = 1996;</div><div class="line">        &#125;</div><div class="line">        Fn.prototype.getName = function() &#123;</div><div class="line">            console.log(this.name);</div><div class="line">        &#125;</div><div class="line">        var f1 = new Fn();</div><div class="line">        f1.getName(); //yzh</div></pre></td></tr></table></figure>
+<p>在Fn.prototype.getName函数中，this指向的是f1对象。因此可以通过this.name获取f1.name的值</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>欢迎拍砖,有更多的好的例子，欢迎提出，文中有误的地方也欢迎指正。</p>
 
       
     </div>
@@ -539,7 +562,7 @@ var _hmt = _hmt || [];
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/hexo-settings-5/" title="Hexo下Next主题使用多说评论插件样式优化">http://www.cduyzh.com/hexo-settings-5/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/js-this/" title="JavaScript高级程序设计——this">http://www.cduyzh.com/js-this/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -577,11 +600,7 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/optimization/" rel="tag"># optimization</a>
-          
-            <a href="/tags/comment/" rel="tag"># comment</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
         </div>
       
@@ -594,8 +613,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-settings-4/" rel="next" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">
-                <i class="fa fa-chevron-left"></i> 2017年最新基于hexo搭建个人免费博客——自定义页面样式二
+              <a href="/js-prototype/" rel="next" title="JavaScript高级程序设计——原型和原型链">
+                <i class="fa fa-chevron-left"></i> JavaScript高级程序设计——原型和原型链
               </a>
             
           </div>
@@ -603,10 +622,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-settings-6/" rel="prev" title="多说插件最近访客样式问题和解决方法">
-                多说插件最近访客样式问题和解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -832,7 +847,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说评论功能"><span class="nav-number">2.</span> <span class="nav-text">启用多说评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码"><span class="nav-number">2.2.</span> <span class="nav-text">修改或添加代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取user-id"><span class="nav-number">2.3.</span> <span class="nav-text">获取user_id</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说分享功能"><span class="nav-number">3.</span> <span class="nav-text">启用多说分享功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-1"><span class="nav-number">3.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说热评文章功能"><span class="nav-number">4.</span> <span class="nav-text">启用多说热评文章功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-2"><span class="nav-number">4.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改评论头像样式"><span class="nav-number">5.</span> <span class="nav-text">修改评论头像样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评论模块样式"><span class="nav-number">5.1.</span> <span class="nav-text">评论模块样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改ua信息样式"><span class="nav-number">6.</span> <span class="nav-text">修改ua信息样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">6.1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改代码"><span class="nav-number">6.2.</span> <span class="nav-text">修改代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解读代码"><span class="nav-number">6.3.</span> <span class="nav-text">解读代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">2.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数作为对象的一个属性"><span class="nav-number">2.3.</span> <span class="nav-text">函数作为对象的一个属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数用call或者apply调用"><span class="nav-number">3.</span> <span class="nav-text">函数用call或者apply调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数内部属性"><span class="nav-number">3.1.</span> <span class="nav-text">函数内部属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数属性"><span class="nav-number">3.2.</span> <span class="nav-text">函数属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数方法"><span class="nav-number">3.3.</span> <span class="nav-text">函数方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回归要讲的例子"><span class="nav-number">3.4.</span> <span class="nav-text">回归要讲的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局-amp-调用普通函数"><span class="nav-number">4.</span> <span class="nav-text">全局 & 调用普通函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数的prototype中，this代表着什么"><span class="nav-number">5.</span> <span class="nav-text">构造函数的prototype中，this代表着什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">6.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
