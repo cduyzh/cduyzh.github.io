@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,optimization,comment," />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -91,23 +91,33 @@
 
 
 
-<meta name="description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
+<meta name="description" content="前言此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo下Next主题使用多说评论插件样式优化">
-<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-5/index.html">
+<meta property="og:title" content="JavaScript高级程序设计——上下文环境和作用域">
+<meta property="og:url" content="http://www.cduyzh.com/js-context/index.html">
 <meta property="og:site_name" content="Water Sister's Blog">
-<meta property="og:description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo-css-bk.png">
-<meta property="og:image" content="http://theme-next.iissnan.com/uploads/five-minutes-setup/duoshuo-create-site.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo1.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo2.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo3.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/duoshuo4.png">
-<meta property="og:updated_time" content="2017-03-26T13:01:50.111Z">
+<meta property="og:description" content="前言此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/execution-context.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-3.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-4.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-5.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-6.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-7.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-8.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-9.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-10.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-11.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-12.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-13.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/js-context-14.png">
+<meta property="og:updated_time" content="2017-05-19T02:03:57.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo下Next主题使用多说评论插件样式优化">
-<meta name="twitter:description" content="前言因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。">
-<meta name="twitter:image" content="http://img.cduyzh.com/images/duoshuo-css-bk.png">
+<meta name="twitter:title" content="JavaScript高级程序设计——上下文环境和作用域">
+<meta name="twitter:description" content="前言此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/js-context.jpg">
 
 
 
@@ -158,12 +168,12 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-5/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/js-context/"/>
 
 
 
 
-  <title> Hexo下Next主题使用多说评论插件样式优化 | Water Sister's Blog </title>
+  <title> JavaScript高级程序设计——上下文环境和作用域 | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -350,7 +360,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-5/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/js-context/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -371,7 +381,7 @@ var _hmt = _hmt || [];
             
             
               
-                Hexo下Next主题使用多说评论插件样式优化
+                JavaScript高级程序设计——上下文环境和作用域
               
             
           </h2>
@@ -386,8 +396,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T15:55:33+08:00">
-                2017-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T09:56:25+08:00">
+                2017-05-19
               </time>
             
 
@@ -427,7 +437,7 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/hexo-settings-5/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/js-context/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -436,7 +446,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/hexo-settings-5/" class="leancloud_visitors" data-flag-title="Hexo下Next主题使用多说评论插件样式优化">
+             <span id="/js-context/" class="leancloud_visitors" data-flag-title="JavaScript高级程序设计——上下文环境和作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,7 +471,7 @@ var _hmt = _hmt || [];
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      1,792 字
+                      3,004 字
                     </span>
               
 
@@ -477,7 +487,7 @@ var _hmt = _hmt || [];
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      8 分钟
+                      11 分钟
                     </span>
               
             </div>
@@ -496,34 +506,185 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="http://img.cduyzh.com/images/duoshuo-css-bk.png" alt="多说评论系统"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为Next主题最新版也结合了多说了一些插件，只需要在主题配置文件里设置参数就可以看到效果，但我发现样式还不够好看，就从几个方面来进行了优化。也会讲解如何使用多说的评论、分享、热评文章功能。<br><a id="more"></a> </p>
-<h2 id="启用多说评论功能"><a href="#启用多说评论功能" class="headerlink" title="启用多说评论功能"></a>启用多说评论功能</h2><p> 使用多说前需要先在 多说 创建一个站点。具体步骤如下：</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>1·登录后在首页选择 “我要安装”。</p>
-<p>2·创建站点，填写表单。多说域名 这一栏填写的即是你的 duoshuo_shortname，如图：<br><img src="http://theme-next.iissnan.com/uploads/five-minutes-setup/duoshuo-create-site.png" alt="多说评论系统"><br>3·创建站点完成后在 主题配置文件 中新增 duoshuo_shortname 字段，值设置成上一步中的值。</p>
-<h3 id="修改或添加代码"><a href="#修改或添加代码" class="headerlink" title="修改或添加代码"></a>修改或添加代码</h3><p>修改主题配置文件代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Duoshuo ShortName</div><div class="line">duoshuo_shortname: cduyzh //改为你自己的</div></pre></td></tr></table></figure>
-<p>###　启用ua<br>这个是为了显示评论者使用的系统和浏览器属性，以及是否显示博主的昵称信息。<br>修改代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">duoshuo_info:</div><div class="line">  ua_enable: true</div><div class="line">  admin_enable: true</div><div class="line">  user_id: 6224774254659896065</div><div class="line">  admin_nickname: 水美眉（博主）</div></pre></td></tr></table></figure></p>
-<h3 id="获取user-id"><a href="#获取user-id" class="headerlink" title="获取user_id"></a>获取user_id</h3><p>登录你的多说账户信息主页<br><img src="http://img.cduyzh.com/images/duoshuo1.png" alt="多说评论系统"><br>点击你的名字进入的页面后，地址最后有个ID就是它了！！！</p>
-<hr>
-<p><img src="http://img.cduyzh.com/images/duoshuo2.png" alt="多说评论系统"></p>
-<h2 id="启用多说分享功能"><a href="#启用多说分享功能" class="headerlink" title="启用多说分享功能"></a>启用多说分享功能</h2><h3 id="修改或添加代码-1"><a href="#修改或添加代码-1" class="headerlink" title="修改或添加代码"></a>修改或添加代码</h3><p>修改主题配置文件代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Share</div><div class="line">duoshuo_share: true</div></pre></td></tr></table></figure></p>
-<h2 id="启用多说热评文章功能"><a href="#启用多说热评文章功能" class="headerlink" title="启用多说热评文章功能"></a>启用多说热评文章功能</h2><h3 id="修改或添加代码-2"><a href="#修改或添加代码-2" class="headerlink" title="修改或添加代码"></a>修改或添加代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 多说热评文章 true 或者 false</div><div class="line">duoshuo_hotartical: true</div></pre></td></tr></table></figure>
-<h2 id="修改评论头像样式"><a href="#修改评论头像样式" class="headerlink" title="修改评论头像样式"></a>修改评论头像样式</h2><h3 id="评论模块样式"><a href="#评论模块样式" class="headerlink" title="评论模块样式"></a>评论模块样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/*隐藏多说底部版权*/</div><div class="line">#ds-thread #ds-reset .ds-powered-by &#123;</div><div class="line">display: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#ds-reset .ds-avatar img:hover,</div><div class="line">#ds-recent-visitors .ds-avatar img:hover &#123;</div><div class="line"></div><div class="line">/*设置鼠标悬浮在头像时的CSS样式*/ box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6), inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">-webkit-box-shadow: 0 0 10px #fff;</div><div class="line">rgba(255, 255, 255, .6), inset 0 0 20px rgba(255, 255, 255, 1);</div><div class="line">transform: rotateZ(360deg); /*图像旋转360度*/</div><div class="line">-webkit-transform: rotateZ(360deg);</div><div class="line">-moz-transform: rotateZ(360deg);</div><div class="line">&#125;</div><div class="line">#ds-reset .ds-avatar img,</div><div class="line">#ds-recent-visitors .ds-avatar img &#123;</div><div class="line">width: 54px;</div><div class="line">height: 54px; /*设置图像的长和宽，这里要根据自己的评论框情况更改*/</div><div class="line">border-radius: 27px; /*设置图像圆角效果,在这里我直接设置了超过width/2的像素，即为圆形了*/</div><div class="line">-webkit-border-radius: 27px; /*圆角效果：兼容webkit浏览器*/</div><div class="line">-moz-border-radius: 27px;</div><div class="line">box-shadow: inset 0 -1px 0 #3333sf; /*设置图像阴影效果*/</div><div class="line">-webkit-box-shadow: inset 0 -1px 0 #3333sf;</div><div class="line">-webkit-transition: 0.4s;</div><div class="line">-webkit-transition: -webkit-transform 0.4s ease-out;</div><div class="line">transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/</div><div class="line">-moz-transition: -moz-transform 0.4s ease-out;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我把这段代码放在了多说的后台设置中的自定义CSS里的。<br><img src="http://img.cduyzh.com/images/duoshuo3.png" alt="多说评论系统"></p>
-<h2 id="修改ua信息样式"><a href="#修改ua信息样式" class="headerlink" title="修改ua信息样式"></a>修改ua信息样式</h2><h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><blockquote>
-<p>主要看别人博客里，别人的样式有这个，然后用了他们的方法比如引入CSS什么的，发现没用，后来发现必须要用到JS获取你的浏览器版本信息和操作系统信息，给他加上对应的标签的样式，然后通过你自己定义的CSS样式来实现对ua信息样式的美化<br>因为默认的ua样式太丑了不美观，在此我也不贴图了。大家自己第一次启用这个功能的时候能感受得到。</p>
-<h3 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h3><p>博主的next为最新的5.1.0版本不知道以前版本的情况，在我的next主题里，分析源码的时候找到了一个关于多说的文件，</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">我的路径为 D:\hexo\blog\themes\next\layout\_scripts\third-party\comments\duoshuo.swig</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">&#123;% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %&#125;</div><div class="line"></div><div class="line">  &#123;% if theme.duoshuo %&#125;</div><div class="line">    &#123;% set duoshuo_shortname = theme.duoshuo.shortname %&#125;</div><div class="line">  &#123;% else %&#125;</div><div class="line">    &#123;% set duoshuo_shortname = theme.duoshuo_shortname %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"></div><div class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&quot;&#123;&#123;duoshuo_shortname&#125;&#125;&quot;&#125;;</div><div class="line">    (function() &#123;</div><div class="line">      var ds = document.createElement(&apos;script&apos;);</div><div class="line">      ds.type = &apos;text/javascript&apos;;ds.async = true;</div><div class="line">      ds.id = &apos;duoshuo-script&apos;;</div><div class="line">      ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">      ds.charset = &apos;UTF-8&apos;;</div><div class="line">      (document.getElementsByTagName(&apos;head&apos;)[0]</div><div class="line">      || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">    &#125;)();</div><div class="line">  &lt;/script&gt;</div><div class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    if (typeof DUOSHUO !== &apos;undefined&apos;)hookDUOSHUO_tp();</div><div class="line">    else $(&apos;[src=&quot;http://static.duoshuo.com/embed.js&quot;]&apos;)[0].onload=hookDUOSHUO_tp;</div><div class="line">    var hookDUOSHUO_bl=false;</div><div class="line">    function hookDUOSHUO_tp()&#123;</div><div class="line">        if(hookDUOSHUO_bl)return;</div><div class="line">        else hookDUOSHUO_bl=true;</div><div class="line">        var _D_post=DUOSHUO.templates.post;</div><div class="line">        DUOSHUO.templates.post=function (e,t)&#123;</div><div class="line">            var rs=_D_post(e,t);</div><div class="line">            if(e.agent&amp;&amp;/^Mozilla/.test(e.agent))rs=rs.replace(/&lt;\/div&gt;&lt;p&gt;/,show_ua(e.agent)+&apos;&lt;/div&gt;&lt;p&gt;&apos;);</div><div class="line">            return rs;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    function show_ua(string)&#123;</div><div class="line">        $.ua.set(string);</div><div class="line">        var sua=$.ua;</div><div class="line">        if(sua.os.version==&apos;x86_64&apos;)sua.os.version=&apos;x64&apos;;</div><div class="line">        return &apos;&lt;span class=&quot;this_ua browser &apos;+sua.browser.name+&apos;&quot;&gt;&apos;+sua.browser.name+&apos; | &apos;+sua.browser.version+&apos;&lt;/span&gt;&apos;+&apos;&lt;span class=&quot;this_ua platform &apos;+sua.os.name+&apos;&quot;&gt;&apos;+sua.os.name+&apos; &apos;+sua.os.version+&apos;&lt;/span&gt;&apos;;</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line"></div><div class="line">  &#123;% if theme.duoshuo_info.ua_enable %&#125;</div><div class="line">    &#123;% if theme.duoshuo_info.admin_enable %&#125;</div><div class="line">      &#123;% set ua_parser_internal = url_for(theme.vendors._internal) + &apos;/ua-parser-js/dist/ua-parser.min.js?v=0.7.9&apos; %&#125;</div><div class="line">      &lt;script src=&quot;&#123;&#123; theme.vendors.ua_parser | default(ua_parser_internal) &#125;&#125;&quot;&gt;&lt;/script&gt;</div><div class="line">      &lt;script src=&quot;&#123;&#123; url_for(theme.js) &#125;&#125;/src/hook-duoshuo.js?v=&#123;&#123; theme.version &#125;&#125;&quot;&gt;&lt;/script&gt;</div><div class="line">    &#123;% else %&#125;</div><div class="line">    &#123;% set ua_parser_internal = url_for(theme.vendors._internal) + &apos;/ua-parser-js/dist/ua-parser.min.js?v=0.7.9&apos; %&#125;</div><div class="line">    &lt;script src=&quot;&#123;&#123; theme.vendors.ua_parser | default(ua_parser_internal) &#125;&#125;&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;&#123;&#123; url_for(theme.js) &#125;&#125;/src/hook-duoshuo.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
-<h3 id="解读代码"><a href="#解读代码" class="headerlink" title="解读代码"></a>解读代码</h3><p>这段代码是我自己的修改后的，大家对照着自己看，主要是添加了一段代码而已。<br>里面有2个script标签里闭合的是JS函数，其他的script标签都是引用JS文件，大家自己去看。<br>第一个就是多说评论系统默认的JS添加代码，多说官网有，这段代码必须要用。我这是集成了的所以没有改动。<br>第二个是我添加的，主要实现用JS<strong>获取用户的浏览器类型和操作系统</strong>，并<strong>把这些信息添加到标签内</strong>和<strong>加入对应的CSS样式名</strong>，后面就通过对CSS样式进行优化就能达到如下效果<br><img src="http://img.cduyzh.com/images/duoshuo4.png" alt="多说评论系统"><br>顺便贴出我自己对UA写的的CSS样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//多说评论样式</div><div class="line">.theme-next #ds-reset .duoshuo-ua-platform, .theme-next #ds-reset .duoshuo-ua-browser &#123;</div><div class="line">    color: #fff;</div><div class="line">&#125;</div><div class="line">.duoshuo-ua-browser&#123;background-color: #ccc!important;border-radius: 4px;padding: 0 5px!important;margin: 0 1px!important;</div><div class="line">border: 1px solid #BBB!important;color: #fff;</div><div class="line">&#125;</div><div class="line">.duoshuo-ua-platform&#123;background-color: #ccc!important;border-radius: 4px;padding: 0 5px!important;margin: 0 1px!important;</div><div class="line">border: 1px solid #BBB!important;color: #fff;&#125;</div><div class="line">.duoshuo-ua-platform-windows&#123;background-color: #39b3d7!important;border-color: #46b8da!important;&#125;</div><div class="line">.duoshuo-ua-platform-linux &#123;background-color: #3A3A3A!important;border-color: #1F1F1F!important;&#125;</div><div class="line">.duoshuo-ua-platform-android &#123;background-color: #00C47D!important;border-color: #01B171!important;&#125;</div><div class="line">.duoshuo-ua-platform-ios&#123;background-color: #ccc!important;border-color: #ccc!important;&#125;</div><div class="line">.duoshuo-ua-browser-chrome&#123;background-color: #5cb85c!important;border-color: #4cae4c!important;&#125;</div><div class="line">.duoshuo-ua-browser-firefox&#123;background-color: #f0ad4e!important;border-color: #eea236!important;&#125;</div><div class="line">.duoshuo-ua-browser-ie&#123;background-color: #428bca!important;border-color: #357ebd!important;&#125;</div><div class="line">.duoshuo-ua-browser-opera&#123;background-color: #d9534f!important;border-color: #d43f3a!important;&#125;</div><div class="line">.duoshuo-ua-browser-mobile safari&#123;background-color: #ccc!important;border-color: #ccc!important;&#125;</div></pre></td></tr></table></figure>
-<p>这段代码其实一看是没有对IOS系统和对应的safri浏览器进行CSS样式的编写，大家自己可以去定义，如果不定义有一个默认样式，会对这些无法识别的系统和浏览器有样式效果，就是灰色的背景而已。</p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>最后有什么不懂的，或者一些没讲到的，欢迎在下面评论，因为目前2017年相关的hexo下next主题教程几乎没有，所以为了大家少走弯路，希望多提出意见。</p>
-<hr>
+        <p><img src="http://img.cduyzh.com/images/js-context.jpg" alt="js-context"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此文章为加深对JS中重要概念进行理解，不建议没有任何JS基础的人看，只为加深对概念理解通过实际的例子，而不是看书以为自己读懂了，可能几天后就忘了，主要是为了理解核心概念，以及对重难点解释。<br><a id="more"></a></p>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>此篇在JS红宝书里其实没有特别来讲，只是穿插在其他的章节提及而已，内容不难，只为加深印象。</p>
+<h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><h3 id="函数表达式和函数声明"><a href="#函数表达式和函数声明" class="headerlink" title="函数表达式和函数声明"></a>函数表达式和函数声明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1.</div><div class="line">console.log(a); // ReferenceError: a is not defined</div><div class="line">//  ReferenceError（引用错误）对象表明一个不存在的变量被引用。</div><div class="line">2.</div><div class="line">console.log(a); // undefined</div><div class="line">var a;</div><div class="line">3.      </div><div class="line">console.log(a); // undefined </div><div class="line">var a = 10;</div><div class="line">4.</div><div class="line">var a = 10;</div><div class="line">console.log(a); // 10</div></pre></td></tr></table></figure>
+<p>第一句报错，a未定义，很正常。第二句、第三句输出都是undefined，说明浏览器在执行console.log(a)时，已经知道了a是undefined，但却不知道a是10（第三句中）。</p>
+<p>在一段js代码拿过来真正一句一句运行之前，浏览器已经做了一些“准备工作”，其中就包括对变量的声明，而不是赋值。变量赋值是在赋值语句执行的时候进行的。可用下图模拟：<br><img src="http://img.cduyzh.com/images/execution-context.png" alt="context"></p>
+<p>接下来的这段代码需要注意代码注释中的两个名词——“<strong>函数表达式”和“函数声明”</strong>。虽然两者都很常用，但是这两者在“准备工作”时，却是两种待遇。</p>
+<h3 id="“准备工作”"><a href="#“准备工作”" class="headerlink" title="“准备工作”"></a>“准备工作”</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.</div><div class="line">console.log(f1); //function f1()</div><div class="line">function f1() &#123;&#125;</div><div class="line"></div><div class="line">2.</div><div class="line">console.log(f2); //undefined</div><div class="line">var f2 = function f2() &#123;&#125;</div></pre></td></tr></table></figure>
+<p>看以上代码。“函数声明”时我们看到了第二种情况，而“函数表达式”时我们看到了第一种情况。</p>
 <blockquote>
-<p>关于这个next主题的优化，基本上算是讲完了，如果有网友有其他需求讲解可以私下找我。<br>我后面会出的有关文章类型，大概方向为：<br>网站seo优化——网站收录心得、站点地图使用、爬虫协议等简单介绍和使用<br>网站性能优化——用OSS对象存储来放图片等</p>
+<p>在“准备工作”中，对待<strong>函数表达式</strong>就像对待“ var a = 10 ”这样的变量一样，只是声明。<br>而对待<strong>函数声明</strong>时，却把函数整个赋值了。</p>
+</blockquote>
+<p>总结一下，在“准备工作”中完成了哪些工作：</p>
+<blockquote>
+<ol>
+<li>变量、函数表达式——变量声明，默认赋值为undefined；</li>
+<li>this——赋值；</li>
+<li>函数声明——把函数整个赋值；</li>
+</ol>
+</blockquote>
+<p>这三种数据的准备情况我们称之为“<strong>执行上下文</strong>”或者“<strong>执行上下文环境</strong>”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function fn(x) &#123;</div><div class="line">            console.log(arguments); //Arguments &#123; 0: 10, 等 2 项… &#125;</div><div class="line">            console.log(x); //10</div><div class="line">        &#125;</div><div class="line">        fn(10);</div></pre></td></tr></table></figure>
+<p>以上代码展示了在函数体的语句执行之前，arguments变量和函数的参数都已经被赋值。从这里可以看出，<strong>函数每被调用一次，都会产生一个新的执行上下文环境</strong>。因为不同的调用可能就会有不同的参数。</p>
+<p>另外一点不同在于，函数在定义的时候（不是调用的时候），就已经确定了函数体内部自由变量的作用域。用一个例子说明一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var a = 10;</div><div class="line"></div><div class="line">function fn() &#123;</div><div class="line">    console.log(a); //a是自由变量</div><div class="line">    //函数创建时，就确定了a要取值的作用域</div><div class="line">&#125;</div><div class="line"></div><div class="line">function bar() &#123;</div><div class="line">    var a = 20;</div><div class="line">    fn(); //打印10不是20</div><div class="line">&#125;</div><div class="line">bar(fn); //10</div></pre></td></tr></table></figure>
+<blockquote>
+<p>给执行上下文环境下一个通俗的定义——在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</p>
+</blockquote>
+<h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><p>执行全局代码时，会产生一个执行上下文环境，每次调用函数都又会产生执行上下文环境。当函数调用完成时，这个上下文环境以及其中的数据都会被消除，再重新回到全局上下文环境。处于活动状态的执行上下文环境只有一个。</p>
+<p>其实这是一个压栈出栈的过程——执行上下文栈。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-1.png" alt="js-context"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1            var a = 10, //1.进入全局上下文环境</div><div class="line">2            fn,</div><div class="line">3            bar = function(x) &#123;</div><div class="line">4                var b = 5;</div><div class="line">5                fn(x + b); //3.进入fn函数上下文环境</div><div class="line">6            &#125;;</div><div class="line">7</div><div class="line">8        fn = function(y) &#123;</div><div class="line">9            var c = 5;</div><div class="line">10            console.log(y + c);</div><div class="line">11        &#125;</div><div class="line">12</div><div class="line">13        bar(10); //2.进入bar函数上下文环境</div></pre></td></tr></table></figure></p>
+<p>在执行代码之前，首先将创建全局上下文环境。</p>
+<table>
+<thead>
+<tr>
+<th>全局</th>
+<th>上下文环境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>fn</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>this</td>
+<td>window</td>
+</tr>
+</tbody>
+</table>
+<p>然后是代码执行。代码执行到第12行之前，上下文环境中的变量都在执行过程中被赋值。</p>
+<table>
+<thead>
+<tr>
+<th>全局</th>
+<th>上下文环境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>10</td>
+</tr>
+<tr>
+<td>fn</td>
+<td>function</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>function</td>
+</tr>
+<tr>
+<td>this</td>
+<td>window</td>
+</tr>
+</tbody>
+</table>
+<p>执行到第13行，调用bar函数。</p>
+<p>跳转到bar函数内部，执行函数体语句之前，会创建一个新的执行上下文环境。<br>全局 | 上下文环境<br>—|—<br>b | undefined<br>x | 10<br>arguments | [10]<br>this | window</p>
+<p>并将这个执行上下文环境压栈，设置为活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-2.png" alt="js-context"><br>执行到第5行，又调用了fn函数。进入fn函数，在执行函数体语句之前，会创建fn函数的执行上下文环境，并压栈，设置为活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-3.png" alt="js-context"></p>
+<p>待第5行执行完毕，即fn函数执行完毕后，此次调用fn所生成的上下文环境出栈，并且被销毁（已经用完了，就要及时销毁，释放内存）。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-4.png" alt="js-context"></p>
+<p>同理，待第13行执行完毕，即bar函数执行完毕后，调用bar函数所生成的上下文环境出栈，并且被销毁（已经用完了，就要及时销毁，释放内存）。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-5.png" alt="js-context"></p>
+<p>好了，给大家介绍了一段简短代码的执行上下文环境的变化过程，一个完整的闭环。其中上下文环境的变量赋值过程我省略了许多，因为那些并不难，一看就知道。</p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><h3 id="基础认识"><a href="#基础认识" class="headerlink" title="基础认识"></a>基础认识</h3><blockquote>
+<p>“javascript没有块级作用域”。所谓“块”，就是大括号“｛｝”中间的语句。</p>
+</blockquote>
+<p>比如一个if语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var i = 10;</div><div class="line">        if (i &gt; 1) &#123;</div><div class="line">            var name = &quot;yzh&quot;;</div><div class="line">        &#125;</div><div class="line">        console.log(name); //yzh</div></pre></td></tr></table></figure>
+<p>for语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for (var i = 0; i &lt; 10; i++) &#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        console.log(i); //10</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>我们在编写代码的时候，不要在“块”里面声明变量，要在代码的一开始就声明好了。以避免发生歧义</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var i;</div><div class="line">        for (i = 0; i &lt; 10; i++) &#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        console.log(i);</div></pre></td></tr></table></figure>
+<p>你光知道“javascript没有块级作用域”是完全不够的，你需要知道的是——<strong>javascript除了全局作用域之外，只有函数可以创建的作用域。</strong></p>
+<blockquote>
+<p>我们在声明变量时，全局代码要在代码前端声明，函数中要在函数体一开始就声明好。除了这两个地方，其他地方都不要出现变量声明。而且建议用“单var”形式</p>
+</blockquote>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><img src="http://img.cduyzh.com/images/js-context-6.png" alt="js-context"></p>
+<p>如上图，全局代码和fn、bar两个函数都会形成一个作用域。而且，作用域有上下级的关系，上下级关系的确定就看函数是在哪个作用域下创建的。例如，fn作用域下创建了bar函数，那么“fn作用域”就是“bar作用域”的上级。</p>
+<p><strong>作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突</strong></p>
+<p>例如以上代码中，三个作用域下都声明了“a”这个变量，但是他们不会有冲突。各自的作用域下，用各自的“a”。</p>
+<h2 id="作用域和上下文环境"><a href="#作用域和上下文环境" class="headerlink" title="作用域和上下文环境"></a>作用域和上下文环境</h2><p><img src="http://img.cduyzh.com/images/js-context-7.png" alt="js-context"></p>
+<p>如上图，我们在上文中已经介绍了，除了全局作用域之外</p>
+<blockquote>
+<p>每个函数都会创建自己的作用域，作用域在函数定义时就已经确定了。而不是在函数调用时确定。</p>
+</blockquote>
+<p>下面我们将按照程序执行的顺序，一步一步把各个上下文环境加上</p>
+<p>第一步，在加载程序时，已经确定了全局上下文环境，并随着程序的执行而对变量就行赋值。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-8.png" alt="js-context"></p>
+<p>第二步，程序执行到第27行，调用fn(10)，此时生成此次调用fn函数时的上下文环境，压栈，并将此上下文环境设置为活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-9.png" alt="js-context"></p>
+<p>第三步，执行到第23行时，调用bar(100)，生成此次调用的上下文环境，压栈，并设置为活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-10.png" alt="js-context"></p>
+<p>第四步，执行完第23行，bar(100)调用完成。则bar(100)上下文环境被销毁。接着执行第24行，调用bar(200)，则又生成bar(200)的上下文环境，压栈，设置为活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-11.png" alt="js-context"></p>
+<p>第五步，执行完第24行，则bar(200)调用结束，其上下文环境被销毁。此时会回到fn(10)上下文环境，变为活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-12.png" alt="js-context"></p>
+<p>第六步，执行完第27行代码，fn(10)执行完成之后，fn(10)上下文环境被销毁，全局上下文环境又回到活动状态。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-13.png" alt="js-context"></p>
+<p>最后我们可以把以上这几个图片连接起来看看。</p>
+<p><img src="http://img.cduyzh.com/images/js-context-14.png" alt="js-context"></p>
+<blockquote>
+<p>作用域只是一个“地盘”，一个抽象的概念，其中没有变量。要通过作用域对应的执行上下文环境来获取变量的值。</p>
+</blockquote>
+<p>同一个作用域下，不同的调用会产生不同的执行上下文环境，继而产生不同的变量的值。<strong>所以，作用域中变量的值是在执行过程中产生的确定的，而作用域却是在函数创建时就确定了。</strong></p>
+<blockquote>
+<p>如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。</p>
+</blockquote>
+<h3 id="自由变量"><a href="#自由变量" class="headerlink" title="自由变量"></a>自由变量</h3><p>在A作用域中使用的变量x，却没有在A作用域中声明（即在其他作用域中声明的），对于A作用域来说，x就是一个自由变量。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var x = 50;</div><div class="line"></div><div class="line">        function fn() &#123;</div><div class="line">            var b = 20;</div><div class="line">            console.log(x + b);</div><div class="line">        &#125;</div><div class="line">        fn();  //70</div></pre></td></tr></table></figure>
+<p>在调用fn()函数时，函数体中第6行。取b的值就直接可以在fn作用域中取，因为b就是在这里定义的。而取x的值时，就需要到另一个作用域中取。到哪个作用域中取呢？<br><strong>有人说过要到父作用域中取，其实有时候这种解释会产生歧义</strong><br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var x = 50;</div><div class="line"></div><div class="line">        function fn() &#123;</div><div class="line">            console.log(x);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        function show(f) &#123;</div><div class="line">            var x = 20;</div><div class="line">            (function() &#123;</div><div class="line">                f(); //50 不是20</div><div class="line">            &#125;)();</div><div class="line">        &#125;</div><div class="line">        show(fn); //50 不是20</div></pre></td></tr></table></figure></p>
+<p>不要在用以上说法了。相比而言，用这句话描述会更加贴切——<strong>要到创建这个函数的那个作用域中取值——是“创建”</strong>，而不是“调用”，切记切记——其实这就是所谓的“静态作用域”。</p>
+<p>对于本文第一段代码，在fn函数中，取自由变量x的值时，要到哪个作用域中取？——要<strong>到创建fn函数的那个作用域中取</strong>——无论fn函数将在哪里<strong>调用</strong>。</p>
+<p>上面描述的只是跨一步作用域去寻找。</p>
+<p>如果跨了一步，还没找到呢？——接着跨！——一直跨到全局作用域为止。要是在全局作用域中都没有找到，那就是真的没有了。</p>
+<p>这个一步一步“跨”的路线，我们称之为——作用域链。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var color = &quot;blue&quot;;</div><div class="line"></div><div class="line">        function changeColor() &#123;</div><div class="line">            var anotherColor = &quot;red&quot;;</div><div class="line"></div><div class="line">            function swapColors() &#123;</div><div class="line">                var tempColor = anotherColor;</div><div class="line">                anotherColor = color;</div><div class="line">                color = tempColor;</div><div class="line"></div><div class="line">                //这里可以访问color,anotherColor和tempColor</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            //这里可以访问color和anotherColor,但不能访问tempColor </div><div class="line">            swapColors();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        changeColor(); //注释后alert显示为blue</div><div class="line"></div><div class="line">        //这里只能访问color</div><div class="line">        alert(&quot;Color is now &quot; + color); //red</div></pre></td></tr></table></figure>
+<p>以上代码共涉及3个执行环境：全局环境、changeColor()的局部环境和swapColors()的局部环境。</p>
+<table>
+<thead>
+<tr>
+<th>全局环境</th>
+<th>changeColor()的局部环境</th>
+<th>swapColors()的局部环境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>变量color</td>
+<td>变量anotherColor</td>
+<td>变量tempColor </td>
+</tr>
+<tr>
+<td>函数changeColor()</td>
+<td>函数swapColors()</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>内部环境可以通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。</p>
+</blockquote>
+<p>每个环境都可以向上搜索作用域链，以查询变量和函数名；<strong>但任何环境都不能通过向下搜索作用域链而进入另一个执行环境</strong>。 </p>
+<p>最后这个例子是从书上找到的，比较经典和简单。</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>后面将总结一篇关于闭包的文章</p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><blockquote>
+<p><a href="http://www.cnblogs.com/wangfupeng1988/p/3989357.html" target="_blank" rel="external">深入理解javascript原型和闭包——执行上下文栈</a></p>
+<p><a href="http://www.cnblogs.com/wangfupeng1988/p/3991995.html" target="_blank" rel="external">深入理解javascript原型和闭包-作用域和上下文环境</a></p>
 </blockquote>
 
       
@@ -539,7 +700,7 @@ var _hmt = _hmt || [];
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/hexo-settings-5/" title="Hexo下Next主题使用多说评论插件样式优化">http://www.cduyzh.com/hexo-settings-5/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/js-context/" title="JavaScript高级程序设计——上下文环境和作用域">http://www.cduyzh.com/js-context/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -577,11 +738,7 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/optimization/" rel="tag"># optimization</a>
-          
-            <a href="/tags/comment/" rel="tag"># comment</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
         </div>
       
@@ -594,8 +751,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-settings-4/" rel="next" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式二">
-                <i class="fa fa-chevron-left"></i> 2017年最新基于hexo搭建个人免费博客——自定义页面样式二
+              <a href="/js-this/" rel="next" title="JavaScript高级程序设计——this">
+                <i class="fa fa-chevron-left"></i> JavaScript高级程序设计——this
               </a>
             
           </div>
@@ -603,10 +760,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-settings-6/" rel="prev" title="多说插件最近访客样式问题和解决方法">
-                多说插件最近访客样式问题和解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -832,7 +985,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说评论功能"><span class="nav-number">2.</span> <span class="nav-text">启用多说评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码"><span class="nav-number">2.2.</span> <span class="nav-text">修改或添加代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取user-id"><span class="nav-number">2.3.</span> <span class="nav-text">获取user_id</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说分享功能"><span class="nav-number">3.</span> <span class="nav-text">启用多说分享功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-1"><span class="nav-number">3.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用多说热评文章功能"><span class="nav-number">4.</span> <span class="nav-text">启用多说热评文章功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改或添加代码-2"><span class="nav-number">4.1.</span> <span class="nav-text">修改或添加代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改评论头像样式"><span class="nav-number">5.</span> <span class="nav-text">修改评论头像样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评论模块样式"><span class="nav-number">5.1.</span> <span class="nav-text">评论模块样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改ua信息样式"><span class="nav-number">6.</span> <span class="nav-text">修改ua信息样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动机"><span class="nav-number">6.1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改代码"><span class="nav-number">6.2.</span> <span class="nav-text">修改代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解读代码"><span class="nav-number">6.3.</span> <span class="nav-text">解读代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文"><span class="nav-number">2.</span> <span class="nav-text">执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数表达式和函数声明"><span class="nav-number">2.1.</span> <span class="nav-text">函数表达式和函数声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“准备工作”"><span class="nav-number">2.2.</span> <span class="nav-text">“准备工作”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文栈"><span class="nav-number">3.</span> <span class="nav-text">执行上下文栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">4.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础认识"><span class="nav-number">4.1.</span> <span class="nav-text">基础认识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">4.2.</span> <span class="nav-text">概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域和上下文环境"><span class="nav-number">5.</span> <span class="nav-text">作用域和上下文环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自由变量"><span class="nav-number">5.1.</span> <span class="nav-text">自由变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">6.</span> <span class="nav-text">End</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">6.1.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
             
 
           </div>
