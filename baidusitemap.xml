@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.cduyzh.com/js-closure/</loc>
+    <lastmod>2017-05-21T14:06:32.092Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript高级程序设计——闭包</title>
+        <pubTime>2017-05-21T14:05:20.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.cduyzh.com/js-context/</loc>
     <lastmod>2017-05-19T02:03:57.757Z</lastmod>
     <data>
@@ -141,9 +161,9 @@
         
         <tag>hexo</tag>
          
-        <tag>optimization</tag>
-         
         <tag>comment</tag>
+         
+        <tag>optimization</tag>
          
          
            
@@ -209,9 +229,9 @@
         
         <tag>hexo</tag>
          
-        <tag>BlogCss</tag>
-         
         <tag>optimization</tag>
+         
+        <tag>BlogCss</tag>
          
          
            
@@ -233,9 +253,9 @@
         
         <tag>hexo</tag>
          
-        <tag>BlogCss</tag>
-         
         <tag>optimization</tag>
+         
+        <tag>BlogCss</tag>
          
          
            
@@ -257,9 +277,9 @@
         
         <tag>hexo</tag>
          
-        <tag>optimization</tag>
-         
         <tag>comment</tag>
+         
+        <tag>optimization</tag>
          
          
            
@@ -281,9 +301,9 @@
         
         <tag>hexo</tag>
          
-        <tag>optimization</tag>
-         
         <tag>comment</tag>
+         
+        <tag>optimization</tag>
          
          
            
