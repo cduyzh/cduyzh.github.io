@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://img.cduyzh.com/images/js-closure-2.png">
 <meta property="og:image" content="http://img.cduyzh.com/images/js-closure-3.png">
 <meta property="og:image" content="http://img.cduyzh.com/images/js-closure-4.png">
-<meta property="og:updated_time" content="2017-05-21T14:06:32.092Z">
+<meta property="og:updated_time" content="2017-05-22T14:02:33.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript高级程序设计——闭包">
 <meta name="twitter:description" content="前言有很多人搞不清匿名函数和闭包这两个概念，经常混用。闭包是指有权访问另一个函数作用域中的变量的函数。匿名函数就是没有实际名字的函数。">
@@ -519,7 +519,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>可以拿本文的之前代码（只做注释修改）来分析一下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1//全局作用域</div><div class="line">2        function fn() &#123;</div><div class="line">3            var max = 10;</div><div class="line">4            // fn作用域</div><div class="line">5            return function bar(x) &#123;</div><div class="line">6                if (x &gt; max) &#123;</div><div class="line">7                    console.log(x);</div><div class="line">8                &#125;</div><div class="line">9            &#125;; //bar作用域</div><div class="line">10        &#125;</div><div class="line">11       var f1 = fn();</div><div class="line">12        f1(15);</div></pre></td></tr></table></figure>
-<p>全局作用域为：代码1-12行；fn作用域为：代码2-10行；bar作用域为：代码5-8行。</p>
+<p>全局作用域为：代码1-12行；fn作用域为：代码2-10行；bar作用域为：代码5-9行。</p>
 <hr>
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>第一步，代码执行前生成全局上下文环境，并在执行时对其中的变量进行赋值。此时全局上下文环境是活动状态。</p>
 <p><img src="http://img.cduyzh.com/images/js-closure-1.png" alt="js-closure"></p>
