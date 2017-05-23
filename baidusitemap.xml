@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
+    <lastmod>2017-05-23T13:17:10.280Z</lastmod>
+    <data>
+        <display>
+        <title>2017年最新基于hexo搭建个人免费博客——基本设置和了解</title>
+        <pubTime>2017-03-04T11:02:35.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.cduyzh.com/js-closure/</loc>
     <lastmod>2017-05-22T14:02:33.390Z</lastmod>
     <data>
@@ -315,26 +335,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
-    <lastmod>2017-03-22T12:46:11.441Z</lastmod>
-    <data>
-        <display>
-        <title>2017年最新基于hexo搭建个人免费博客——基本设置和了解</title>
-        <pubTime>2017-03-04T11:02:35.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
     
