@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Water Sister's Blog">
 <meta property="og:description" content="前言偶然看到W3Cschool上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解">
 <meta property="og:image" content="http://img.cduyzh.com/images/JS-train.png">
-<meta property="og:updated_time" content="2017-06-08T02:19:29.142Z">
+<meta property="og:updated_time" content="2017-06-08T02:26:38.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="W3Cschool——初级脚本算法题">
 <meta name="twitter:description" content="前言偶然看到W3Cschool上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解">
@@ -492,7 +492,7 @@ var _hmt = _hmt || [];
 
       
         <p><img src="http://img.cduyzh.com/images/JS-train.png" alt="JS-train"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>偶然看到W3Cschool上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解法和思路与大家共享。<br><a id="more"></a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>偶然看到<a href="http://www.w3cschool.cn/codecamp" target="_blank" rel="external">W3Cschool</a>上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解法和思路与大家共享。<br><a id="more"></a></p>
 <h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br>你的结果必须得是一个字符串</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function reverseString(str) &#123;</div><div class="line">            var arr = [];</div><div class="line">            arr = str.split(&quot;&quot;);</div><div class="line">            arr.reverse();</div><div class="line">            str = arr.join(&quot;&quot;);</div><div class="line">            return str;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        console.log(reverseString(&quot;hello&quot;));</div></pre></td></tr></table></figure>
 <p>知识点：</p>
