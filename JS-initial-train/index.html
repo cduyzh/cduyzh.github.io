@@ -1,0 +1,1280 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JS,programming," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言偶然看到W3Cschool上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="W3Cschool——初级脚本算法题">
+<meta property="og:url" content="http://www.cduyzh.com/JS-initial-train/index.html">
+<meta property="og:site_name" content="Water Sister's Blog">
+<meta property="og:description" content="前言偶然看到W3Cschool上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解">
+<meta property="og:image" content="http://img.cduyzh.com/images/JS-train.png">
+<meta property="og:updated_time" content="2017-06-08T04:13:10.192Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="W3Cschool——初级脚本算法题">
+<meta name="twitter:description" content="前言偶然看到W3Cschool上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/JS-train.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+  
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <link rel="canonical" href="http://www.cduyzh.com/JS-initial-train/"/>
+
+
+
+
+  <title> W3Cschool——初级脚本算法题 | Water Sister's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Water Sister's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">生活、技术个人博客</h1>
+      
+  </div>
+
+  
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+   
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/JS-initial-train/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang ZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yzh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Water Sister's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                W3Cschool——初级脚本算法题
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T10:16:40+08:00">
+                2017-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/JS-initial-train/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/JS-initial-train/" class="leancloud_visitors" data-flag-title="W3Cschool——初级脚本算法题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-edit"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      2,675 字
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      12 分钟
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.cduyzh.com/images/JS-train.png" alt="JS-train"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>偶然看到<a href="http://www.w3cschool.cn/codecamp" target="_blank" rel="external">W3Cschool</a>上有个编程挑战，里面的题目前是面向前端方面的，也有一些算法和数据结构的题在，我花了两天的时间把16道初级脚本算法的题完成并做一个思路分享，从中有一定的收获，题目从实际出发，需要灵活运用各个JS对象的属性和方法才能完成，反复的加深了我对这些方法的认识和理解以及运用，也锻炼了我的逻辑思维能力。做这些题确实很有帮助，以后有时间每天再去做一两道中级的，最后再整理出来把我的解法和思路与大家共享。<br><a id="more"></a></p>
+<h3 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h3><p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。<br>你的结果必须得是一个字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function reverseString(str) &#123;</div><div class="line">            var arr = [];</div><div class="line">            arr = str.split(&quot;&quot;);</div><div class="line">            arr.reverse();</div><div class="line">            str = arr.join(&quot;&quot;);</div><div class="line">            return str;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        console.log(reverseString(&quot;hello&quot;));</div></pre></td></tr></table></figure>
+<p>知识点：</p>
+<ol>
+<li>split()    把字符串分割为字符串数组。</li>
+<li>reverse()    反转数组的元素顺序。</li>
+<li>toString()    把数组转换为字符串，并返回结果。</li>
+</ol>
+<h3 id="阶乘算法挑战"><a href="#阶乘算法挑战" class="headerlink" title="阶乘算法挑战"></a>阶乘算法挑战</h3><p>计算一个整数的阶乘<br>如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">// //for循环</div><div class="line">        // function factorialize(num) &#123;</div><div class="line">        //     var i = 1</div><div class="line">        //     var sum = 1;</div><div class="line">        //     for (; i &lt; num + 1; i++) &#123;</div><div class="line">        //         sum = sum * i;</div><div class="line">        //     &#125;</div><div class="line">        //     return sum;</div><div class="line">        // &#125;</div><div class="line">        // 递归实现  </div><div class="line">        function factorialize(num) &#123;</div><div class="line">            if (num == 1 || num == 0)</div><div class="line">                return 1;</div><div class="line">            else &#123;</div><div class="line">                return factorialize(num - 1) * num;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        console.log(factorialize(0));</div></pre></td></tr></table></figure></p>
+<h3 id="回文算法挑战"><a href="#回文算法挑战" class="headerlink" title="回文算法挑战"></a>回文算法挑战</h3><p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。</p>
+<ol>
+<li>你需要去掉字符串多余的标点符号和空格</li>
+<li>然后把字符串转化成小写来验证此字符串是否为回文。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">function palindrome(str) &#123;</div><div class="line">            //传入字符串处理</div><div class="line">            var newstr = str.replace(/[^0-9a-z]/gi, &quot;&quot;);</div><div class="line">            newstr = newstr.toLowerCase();</div><div class="line">            // // 方法一</div><div class="line">            // //转换成数组并进行反向排序</div><div class="line">            // var arr = newstr.split(&quot;&quot;);</div><div class="line">            // arr.reverse();</div><div class="line">            // //把排序后的转换为字符串进行全等判断</div><div class="line">            // arr = arr.join(&quot;&quot;);</div><div class="line">            // if (newstr === arr) &#123;</div><div class="line">            //     return true;</div><div class="line">            // &#125; else &#123;</div><div class="line">            //     return false;</div><div class="line">            // &#125;</div><div class="line">            //方法二 从字符串头部和尾部，逐次向中间检测</div><div class="line">            for (var i = 0, j = newstr.length - 1; i &lt; j; i++, j--) &#123;</div><div class="line">                //这里注意下，for循环内部只判断不符合要求的，</div><div class="line">                //如果循环后都没返回false就在for外部返回true，不要在内部直接返回true或提前出来</div><div class="line">                if (newstr.charAt(i) !== newstr.charAt(j)) &#123;</div><div class="line">                    return false;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        console.log(palindrome(&quot;assa&quot;));</div></pre></td></tr></table></figure>
+<h3 id="寻找最长的单词算法挑战"><a href="#寻找最长的单词算法挑战" class="headerlink" title="寻找最长的单词算法挑战"></a>寻找最长的单词算法挑战</h3><p>找到提供的句子中最长的单词，并计算它的长度。<br>函数的返回值应该是一个数字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">function findLongestWord(str) &#123;</div><div class="line">            var arr = str.split(&quot; &quot;),</div><div class="line">                i = 0,</div><div class="line">                lengthNum,</div><div class="line">                maxLengthNum = 0;</div><div class="line">            // var index = i + 1;</div><div class="line">            //方法一：复杂化方法：冒泡排序解法（直接第一个想到就是这个，就顺着来做了，发现复杂化，</div><div class="line">            //只需要把数组长度和最大值取出来做比较就行了）</div><div class="line">            //     for (; i &lt; arr.length - 1; i++) &#123;</div><div class="line">            //         for (; index &lt; arr.length; index++) &#123;</div><div class="line">            //             if (arr[i].length &lt; arr[index].length) &#123;</div><div class="line">            //                 var temp = arr[i];</div><div class="line">            //                 arr[i] = arr[index];</div><div class="line">            //                 arr[index] = temp;</div><div class="line">            //             &#125;</div><div class="line">            //         &#125;</div><div class="line">            //     &#125;</div><div class="line">            //     return arr[0].length;</div><div class="line"></div><div class="line">            //方法二：取出数组长度值与历史最大值比较，第一个默认为起始最大值</div><div class="line">            for (; i &lt; arr.length; i++) &#123;</div><div class="line">                lengthNum = arr[i].length;</div><div class="line">                if (lengthNum &gt; maxLengthNum) &#123;</div><div class="line">                    maxLengthNum = lengthNum;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            return maxLengthNum;</div><div class="line">        &#125;</div><div class="line">        findLongestWord(&quot;The quick brown fox jumped over the lazy dog&quot;);</div></pre></td></tr></table></figure>
+<h3 id="设置首字母大写算法挑战"><a href="#设置首字母大写算法挑战" class="headerlink" title="设置首字母大写算法挑战"></a>设置首字母大写算法挑战</h3><p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//方法一：复杂化，没有使用charAt+replace、map() + slice()</div><div class="line"></div><div class="line">        // function titleCase(str) &#123;</div><div class="line">        //     var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">        //     var newArr = new Array();</div><div class="line">        //     var i = 0;</div><div class="line">        //     for (; i &lt; arr.length; i++) &#123;</div><div class="line">        //         newArr[i] = arr[i].split(&quot;&quot;);</div><div class="line">        //         newArr[i][0] = newArr[i][0].toUpperCase();</div><div class="line">        //         newArr[i] = newArr[i].join(&quot;&quot;);</div><div class="line">        //     &#125;</div><div class="line">        //     arr = newArr.join(&quot; &quot;);</div><div class="line">        //     console.log(arr);</div><div class="line">        //     return arr;</div><div class="line">        // &#125;</div><div class="line">        //方法二：简单化用replace替换首字母大写</div><div class="line">        // function titleCase(str) &#123;</div><div class="line">        //     var arr = str.toLowerCase().split(&quot; &quot;);</div><div class="line">        //     var i = 0;</div><div class="line">        //     for (; i &lt; arr.length; i++) &#123;</div><div class="line">        //         var Up = arr[i].charAt(0).toUpperCase();</div><div class="line">        //         arr[i] = arr[i].replace(arr[i].charAt(0), Up);</div><div class="line">        //     &#125;</div><div class="line">        //     return arr.join(&quot; &quot;);</div><div class="line">        // &#125;</div><div class="line">        //方法三:map() + replace()</div><div class="line">        function titleCase(str) &#123;</div><div class="line">            var arr = str.toLowerCase().split(&quot; &quot;).map(function(word) &#123;</div><div class="line">                return (word.charAt(0).toUpperCase() +</div><div class="line">                    word.slice(1));</div><div class="line">            &#125;).join(&quot; &quot;);</div><div class="line">            console.log(arr);</div><div class="line">            return arr;</div><div class="line">        &#125;</div><div class="line">        titleCase(&quot;I&apos;m a little tea pot&quot;);</div></pre></td></tr></table></figure>
+<h3 id="寻找数组中的最大值算法挑战"><a href="#寻找数组中的最大值算法挑战" class="headerlink" title="寻找数组中的最大值算法挑战"></a>寻找数组中的最大值算法挑战</h3><p>右边大数组中包含了4个小数组，分别找到每个小数组中的最大值，然后把它们串联起来，形成一个新数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function largestOfFour(arr) &#123;</div><div class="line">            var i = 0,</div><div class="line">                j = 0,</div><div class="line">                maxArr = [];</div><div class="line">            for (; i &lt; arr.length; i++) &#123;</div><div class="line">                var max = 0; //内部循环后，比较值要清空一次。</div><div class="line">                for (; j &lt; arr[i].length; j++) &#123;</div><div class="line">                    if (arr[i][j] &gt; max) &#123;</div><div class="line">                        max = arr[i][j];</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                maxArr.push(max);</div><div class="line">            &#125;</div><div class="line">            console.log(maxArr);</div><div class="line">            return maxArr;</div><div class="line">        &#125;</div><div class="line">        largestOfFour([</div><div class="line">            [13, 27, 18, 26],</div><div class="line">            [4, 5, 1, 3],</div><div class="line">            [32, 35, 37, 39],</div><div class="line">            [1000, 1001, 857, 1]</div><div class="line">        ]);</div></pre></td></tr></table></figure>
+<h3 id="确认末尾字符算法挑战"><a href="#确认末尾字符算法挑战" class="headerlink" title="确认末尾字符算法挑战"></a>确认末尾字符算法挑战</h3><p>检查一个字符串(str)是否以指定的字符串(target)结尾。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//方法一：使用lastIndexOf从最后开始查找，并返回对应的起始位置到其索引，再做比较，indexOf也可实现返回索引</div><div class="line">      // function confirmEnding(str, target) &#123;</div><div class="line">      //     var index = str.lastIndexOf(target);</div><div class="line">      //     return index == str.length - target.length;</div><div class="line">      // &#125;</div><div class="line">      //方法二：使用substr抽取出字符，用负数来实现从末尾抽对应的查询字符的长度</div><div class="line">      //如果查找的字符实在最后出现，则抽取出来的应该和需要查找的一样，同理slice也可以实现提取</div><div class="line">      function confirmEnding(str, target) &#123;</div><div class="line">          var endingPart = str.substr(-(target.length));</div><div class="line">          return target === endingPart;</div><div class="line">      &#125;</div><div class="line">      console.log(confirmEnding(&quot;Walking on water and developing software from a are easy if both are frozen specification&quot;, &quot;specification&quot;));</div></pre></td></tr></table></figure>
+<h3 id="重复操作算法挑战"><a href="#重复操作算法挑战" class="headerlink" title="重复操作算法挑战"></a>重复操作算法挑战</h3><p>重复一个指定的字符串 num次，如果num是一个负数则返回一个空字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function repeat(str, num) &#123;</div><div class="line">          var temp = str,</div><div class="line">              i = 0;</div><div class="line">          if (num &lt; 0) &#123;</div><div class="line">              return &quot;&quot;;</div><div class="line">          &#125; else &#123;</div><div class="line">              for (; i &lt; num - 1; i++) &#123;</div><div class="line">                  str = str.concat(temp);</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">          return str;</div><div class="line">      &#125;</div><div class="line">      console.log(repeat(&quot;abc&quot;, 3));</div></pre></td></tr></table></figure>
+<h3 id="字符串截取算法挑战"><a href="#字符串截取算法挑战" class="headerlink" title="字符串截取算法挑战"></a>字符串截取算法挑战</h3><p>如果字符串的长度比指定的参数num长，则把多余的部分用…来表示。切记，插入到字符串尾部的三个点号也会计入字符串的长度。但是，如果指定的参数num小于或等于3，则添加的三个点号不会计入字符串的长度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function truncate(str, num) &#123;</div><div class="line">    var more = &quot;...&quot;;</div><div class="line">    // Clear out that junk in your trunk</div><div class="line">    if (str.length &lt;= num) &#123;</div><div class="line">        if (num &lt;= 3) &#123;</div><div class="line">            var newStr = str.substr(0, num);</div><div class="line">            str = newStr.concat(more);</div><div class="line">        &#125; else</div><div class="line">            return str;</div><div class="line">    &#125; else &#123;</div><div class="line">        if (num &lt;= 3) &#123;</div><div class="line">            var newStr = str.substr(0, num);</div><div class="line">            str = newStr.concat(more);</div><div class="line">        &#125; else &#123;</div><div class="line">            var newStr = str.substr(0, num - 3);</div><div class="line">            str = newStr.concat(more);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    return str;</div><div class="line">&#125;</div><div class="line">console.log(truncate(&quot;Absolutely Longer&quot;, 2));</div></pre></td></tr></table></figure></p>
+<h3 id="数组分割算法挑战"><a href="#数组分割算法挑战" class="headerlink" title="数组分割算法挑战"></a>数组分割算法挑战</h3><p>猴子吃香蕉可是掰成好几段来吃哦！<br>把一个数组arr按照指定的数组大小size分割成若干个数组块。<br>例如:chunk([1,2,3,4],2)=[[1,2],[3,4]];<br>chunk([1,2,3,4,5],2)=[[1,2],[3,4],[5]];</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function chunk(arr, size) &#123;</div><div class="line">    // Break it up.</div><div class="line">    var newArr = [];</div><div class="line">    var index = 0,</div><div class="line">        end = size,</div><div class="line">        i = 0;</div><div class="line">    var count = arr.length / size;</div><div class="line">    console.log(count);</div><div class="line">    for (; i &lt; count; index += size) &#123;</div><div class="line">        newArr[i] = arr.slice(index, end);</div><div class="line">        end = end + end;</div><div class="line">        i++;</div><div class="line">    &#125;</div><div class="line">    return newArr;</div><div class="line">&#125;</div><div class="line"> console.log(chunk([0, 1, 2, 3, 4, 5, 6], 3));</div></pre></td></tr></table></figure>
+<h3 id="数组截断算法挑战"><a href="#数组截断算法挑战" class="headerlink" title="数组截断算法挑战"></a>数组截断算法挑战</h3><p>返回一个数组被截断n个元素后还剩余的元素，截断从索引0开始。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  function slasher(arr, howMany) &#123;</div><div class="line">    if (arr.length &gt; howMany) &#123;</div><div class="line">        arr = arr.slice(-(arr.length - howMany));</div><div class="line">        return arr;</div><div class="line">    &#125; else return [];</div><div class="line"></div><div class="line">&#125;</div><div class="line">console.log(slasher([1, 2, 3], 4));</div></pre></td></tr></table></figure></p>
+<h3 id="数组查询算法挑战"><a href="#数组查询算法挑战" class="headerlink" title="数组查询算法挑战"></a>数组查询算法挑战</h3><p>蛤蟆可以吃队友，也可以吃对手。<br>如果数组第一个字符串元素包含了第二个字符串元素的所有字符，函数返回true。<br>举例，[“hello”, “Hello”]应该返回true，因为在忽略大小写的情况下，第二个字符串的所有字符都可以在第一个字符串找到。[“hello”, “hey”]应该返回false，因为字符串”hello”并不包含字符”y”。[“Alien”, “line”]应该返回true，因为”line”中所有字符都可以在”Alien”找到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function mutation(arr) &#123;</div><div class="line">         var count = 0,</div><div class="line">             newArr, i = 0;</div><div class="line">         newArr = arr.join(&quot; &quot;);</div><div class="line">         newArr = newArr.toLowerCase().split(&quot; &quot;);</div><div class="line">         newArr[0] = newArr[0].split(&quot;&quot;);</div><div class="line">         newArr[1] = newArr[1].split(&quot;&quot;);</div><div class="line">         console.log(newArr);</div><div class="line">         for (; i &lt; newArr[1].length; i++) &#123;</div><div class="line">             var index = 0;</div><div class="line">             for (; index &lt; newArr[0].length; index++) &#123;</div><div class="line">                 if (newArr[1][i] == newArr[0][index]) &#123;</div><div class="line">                     count++;</div><div class="line">                     index = newArr[0].length;</div><div class="line">                 &#125;</div><div class="line">             &#125;</div><div class="line">             console.log(count);</div><div class="line">         &#125;</div><div class="line">         return count === arr[1].length;</div><div class="line">     &#125;</div><div class="line">     console.log(mutation([&quot;floor&quot;, &quot;for&quot;]));</div></pre></td></tr></table></figure>
+<h3 id="删除数组中特定值算法挑战"><a href="#删除数组中特定值算法挑战" class="headerlink" title="删除数组中特定值算法挑战"></a>删除数组中特定值算法挑战</h3><p>删除数组中的所有假值。<br>在JavaScript中，假值有false、null、0、””、undefined 和 NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function bouncer(arr) &#123;</div><div class="line">           var index = 0;</div><div class="line">           // Don&apos;t show a false ID to this bouncer.</div><div class="line">           for (; index &lt; arr.length; index++) &#123;</div><div class="line">               if (!arr[index]) &#123;</div><div class="line">                   arr.splice(index, 1);</div><div class="line">                   //保证删除数组元素后，索引不跳过下一个</div><div class="line">                   index--; </div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           return arr;</div><div class="line">       &#125;</div><div class="line">       console.log(bouncer([7, &quot;ate&quot;, &quot;&quot;, false, 9]));</div></pre></td></tr></table></figure></p>
+<h3 id="去除数组中任意多个值算法挑战"><a href="#去除数组中任意多个值算法挑战" class="headerlink" title="去除数组中任意多个值算法挑战"></a>去除数组中任意多个值算法挑战</h3><p>实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function destroyer(arr, del1, del2, del3) &#123;</div><div class="line">          var newDel = [del1, del2, del3],</div><div class="line">              index = 0;</div><div class="line">          for (; index &lt; newDel.length; index++) &#123;</div><div class="line">              var i = 0;</div><div class="line">              for (; i &lt; arr.length; i++) &#123;</div><div class="line">                  if (arr[i] == newDel[index]) &#123;</div><div class="line">                      arr.splice(i, 1);</div><div class="line">                      i--;</div><div class="line">                  &#125;</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">          return arr;</div><div class="line">      &#125;</div><div class="line">      console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));</div></pre></td></tr></table></figure></p>
+<h3 id="数组排序并插入值算法挑战"><a href="#数组排序并插入值算法挑战" class="headerlink" title="数组排序并插入值算法挑战"></a>数组排序并插入值算法挑战</h3><p>先给数组排序，然后找到指定的值在数组的位置，最后返回位置对应的索引。<br>举例：where([1,2,3,4], 1.5) 应该返回 1。因为1.5插入到数组[1,2,3,4]后变成[1,1.5,2,3,4]，而1.5对应的索引值就是1。<br>同理，where([20,3,5], 19) 应该返回 2。因为数组会先排序为 [3,5,20]，19插入到数组[3,5,20]后变成[3,5,19,20]，而19对应的索引值就是2。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function where(arr, num) &#123;</div><div class="line">         arr.push(num);</div><div class="line">         var i = 0,</div><div class="line">             index = 0;</div><div class="line">         for (; i &lt; arr.length - 1; i++) &#123;</div><div class="line">             var j = i + 1;</div><div class="line">             for (; j &lt; arr.length; j++) &#123;</div><div class="line">                 if (arr[i] &gt; arr[j]) &#123;</div><div class="line">                     var temp = arr[i];</div><div class="line">                     arr[i] = arr[j];</div><div class="line">                     arr[j] = temp;</div><div class="line">                 &#125;</div><div class="line">             &#125;</div><div class="line">         &#125;</div><div class="line">         for (; index &lt; arr.length; index++) &#123;</div><div class="line">             if (arr[index] == num) &#123;</div><div class="line">                 return index;</div><div class="line">             &#125;</div><div class="line">         &#125;</div><div class="line">     &#125;</div><div class="line">     console.log(where([2, 20, 10], 19));</div></pre></td></tr></table></figure></p>
+<h3 id="位移密码算法挑战"><a href="#位移密码算法挑战" class="headerlink" title="位移密码算法挑战"></a>位移密码算法挑战</h3><p>下面我们来介绍风靡全球的凯撒密码Caesar cipher，又叫移位密码。<br>移位密码也就是密码中的字母会按照指定的数量来做移位。<br>一个常见的案例就是ROT13密码，字母会移位13个位置。由’A’ ↔ ‘N’, ‘B’ ↔’O’，以此类推。<br>写一个ROT13函数，实现输入加密字符串，输出解密字符串。<br>所有的字母都是大写，不要转化任何非字母形式的字符(例如：空格，标点符号)，遇到这些特殊字符，跳过它们。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function rot13(str) &#123; // LBH QVQ VG!</div><div class="line">    var arr = [];</div><div class="line">    for (var index = 0; index &lt; str.length; index++) &#123;</div><div class="line">        arr[index] = str.charCodeAt(index);</div><div class="line">        if (arr[index] &gt;= 65 &amp;&amp; arr[index] &lt;= 77) &#123;</div><div class="line">            arr[index] += 13;</div><div class="line">        &#125;</div><div class="line">        //字母为26个当在字母末13个位，右移13位不是字母，应该进行左移、保证在字母26位里。</div><div class="line">        else if (arr[index] &gt; 77 &amp;&amp; arr[index] &lt; 91)</div><div class="line">            arr[index] -= 13;</div><div class="line">    &#125;</div><div class="line">    console.log(arr);</div><div class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">        arr[i] = String.fromCharCode(arr[i]);</div><div class="line">    &#125;</div><div class="line">    return arr.join(&quot;&quot;);</div><div class="line">&#125;</div><div class="line">// Change the inputs below to test</div><div class="line">console.log(rot13(&quot;SERR PBQR PNZC&quot;));</div></pre></td></tr></table></figure>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>大家如果有更好的方法或者其他解法欢迎补充和交流，可与我直接联系。如需转载请注明出处，谢谢！！！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/JS-initial-train/" title="W3Cschool——初级脚本算法题">http://www.cduyzh.com/JS-initial-train/</a><br/><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yang ZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Yang ZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/programming/" rel="tag"># programming</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js-closure/" rel="next" title="JavaScript高级程序设计——闭包">
+                <i class="fa fa-chevron-left"></i> JavaScript高级程序设计——闭包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/css-layout/" rel="prev" title="CSS原生布局方式">
+                CSS原生布局方式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+          
+          </div>
+          
+
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/yzh.jpg"
+               alt="Yang ZiHao" />
+          <p class="site-author-name" itemprop="name">Yang ZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cduyzh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/cduyzh" target="_blank" title="segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/5a63ae89baa9" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=450311265&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3290722423/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=86 src="//music.163.com/outchain/player?type=2&id=103301&auto=0&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#翻转字符串"><span class="nav-number">1.1.</span> <span class="nav-text">翻转字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阶乘算法挑战"><span class="nav-number">1.2.</span> <span class="nav-text">阶乘算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回文算法挑战"><span class="nav-number">1.3.</span> <span class="nav-text">回文算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找最长的单词算法挑战"><span class="nav-number">1.4.</span> <span class="nav-text">寻找最长的单词算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置首字母大写算法挑战"><span class="nav-number">1.5.</span> <span class="nav-text">设置首字母大写算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寻找数组中的最大值算法挑战"><span class="nav-number">1.6.</span> <span class="nav-text">寻找数组中的最大值算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确认末尾字符算法挑战"><span class="nav-number">1.7.</span> <span class="nav-text">确认末尾字符算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复操作算法挑战"><span class="nav-number">1.8.</span> <span class="nav-text">重复操作算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串截取算法挑战"><span class="nav-number">1.9.</span> <span class="nav-text">字符串截取算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组分割算法挑战"><span class="nav-number">1.10.</span> <span class="nav-text">数组分割算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组截断算法挑战"><span class="nav-number">1.11.</span> <span class="nav-text">数组截断算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组查询算法挑战"><span class="nav-number">1.12.</span> <span class="nav-text">数组查询算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数组中特定值算法挑战"><span class="nav-number">1.13.</span> <span class="nav-text">删除数组中特定值算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除数组中任意多个值算法挑战"><span class="nav-number">1.14.</span> <span class="nav-text">去除数组中任意多个值算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组排序并插入值算法挑战"><span class="nav-number">1.15.</span> <span class="nav-text">数组排序并插入值算法挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位移密码算法挑战"><span class="nav-number">1.16.</span> <span class="nav-text">位移密码算法挑战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">2.</span> <span class="nav-text">End</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-tint"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang ZiHao</span>
+</div>
+
+
+
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+   <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz", "5rH911Nhs9V7AWFjEYqe8Bz7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+
+</html>

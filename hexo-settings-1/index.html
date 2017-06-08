@@ -1,0 +1,1319 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017年最新基于hexo搭建个人免费博客——从零开始">
+<meta property="og:url" content="http://www.cduyzh.com/hexo-settings-1/index.html">
+<meta property="og:site_name" content="Water Sister's Blog">
+<meta property="og:description" content="前言搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/gtihub-pages1.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/gtihub-pages2.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/gtihub-pages3.jpg">
+<meta property="og:image" content="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun.jpg">
+<meta property="og:image" content="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun1.jpg">
+<meta property="og:image" content="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun2.jpg">
+<meta property="og:image" content="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun3.jpg">
+<meta property="og:image" content="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun4.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/node.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-localhost.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/next-theme.jpg">
+<meta property="og:image" content="http://o6sn177if.bkt.clouddn.com/17901865820160512115222052.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/ssh-set.jpg">
+<meta property="og:image" content="http://o6sn177if.bkt.clouddn.com/17901865820160512120704030.jpg">
+<meta property="og:image" content="http://img.cduyzh.com/images/hexo-d.png">
+<meta property="og:updated_time" content="2017-04-20T08:28:57.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017年最新基于hexo搭建个人免费博客——从零开始">
+<meta name="twitter:description" content="前言搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/hexo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+  
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <link rel="canonical" href="http://www.cduyzh.com/hexo-settings-1/"/>
+
+
+
+
+  <title> 2017年最新基于hexo搭建个人免费博客——从零开始 | Water Sister's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Water Sister's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">生活、技术个人博客</h1>
+      
+  </div>
+
+  
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+   
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/hexo-settings-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang ZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yzh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Water Sister's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                2017年最新基于hexo搭建个人免费博客——从零开始
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T00:00:00+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/hexo-settings-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/hexo-settings-1/" class="leancloud_visitors" data-flag-title="2017年最新基于hexo搭建个人免费博客——从零开始">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-edit"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      4,502 字
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      22 分钟
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.cduyzh.com/images/hexo.jpg" alt="2017年最新基于hexo搭建个人免费博客——从零开始"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建此博客是因为通过github上了解到github pages进而知道了可以把静态网页博客托管给github仓库<br>或许您已经通Git + Hexo 搭建个人博客网站了解到如何通过HEXO + GIT 实现个人博客网站的建立。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。<br><a id="more"></a> </p>
+<h3 id="github-pages介绍"><a href="#github-pages介绍" class="headerlink" title="github pages介绍"></a>github pages介绍</h3><p>Github Pages 是 github 公司提供的免费的静态网站托管服务，用起来方便而且功能强大，不仅没有空间限制(为免费用户提供了500M空间)，还可以绑定自己的域名。<br>到 <a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a> 上，看到可以创建的网站有两类，一类是为自己或者是自己的组织创建站点，就是新建一个仓库，仓库的名字叫做，<strong>username.github.io</strong> 或者是 <strong>orgnizationname.github.io</strong> ，注意这里的 <strong>username</strong> 和 <strong>orgnizationname</strong> 要严格替换成你自己的用户名或者组织名，大小写也要区分，不然就会有问题。然后就往仓库里面放页面内容就行了。第二类是为项目创建网站，这个其实主要步骤都是一样的，只不过稍微比创建用户或组织网站复杂一点点。<br><img src="http://img.cduyzh.com/images/gtihub-pages1.jpg" alt="githubpages"><br><img src="http://img.cduyzh.com/images/gtihub-pages2.jpg" alt="githubpages"><br><img src="http://img.cduyzh.com/images/gtihub-pages3.jpg" alt="githubpages"><br>具体的可以看这个网址的讲解<a href="http://book.haoduoshipin.com/gitbeijing/pages.html" target="_blank" rel="external">Github Pages</a></p>
+<h3 id="域名注册和绑定"><a href="#域名注册和绑定" class="headerlink" title="域名注册和绑定"></a>域名注册和绑定</h3><p>我是在<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>注册的域名和设置DNS解析，所以我只会讲在阿里云下的域名绑定。<br><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun.jpg" alt="域名注册和绑定"><br>进入到控制台后点击自己刚买的域名进入域名管理界面，<img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun1.jpg" alt="域名注册和绑定">然后进行添加解析操作，按照途中所给的值填写，注意将记录值改为<strong>自己的github pages地址</strong><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun2.jpg" alt="域名注册和绑定"><img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun3.jpg" alt="域名注册和绑定"><br><strong>最后一步</strong>必须在所建立的github仓库的主分支里建立一个<strong>CNAME文件</strong>内容为你要解析到的目地地址<img src="http://yzhblog.oss-cn-hongkong.aliyuncs.com/images/aliyun4.jpg" alt="关键一步"><br><strong>注意</strong><br>这个CNAME文件要放到source文件里面我的路径为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\hexo\blog\source\</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>放到这个下面的用意为你每次hexo d的时候会把你原先仓库的所有东西清除掉，所以你的CNAME文件也会没有，这样可以避免这种情况发生</p>
+</blockquote>
+<hr>
+<h2 id="hexo安装和配置"><a href="#hexo安装和配置" class="headerlink" title="hexo安装和配置"></a>hexo安装和配置</h2><p>Hexo博客搭建的基础大致流程为：<br>安装Node.js →安装Git → 安装Hexo → 安装主题 → 本地测试运行 → 注册给github与coding并创建pages仓库 → 部署<br>Node.js和git的安装大家自己去网上搜下，当以上都安好后可以通过git bash来输入命令查看是否安装成功以及对应的版本</p>
+<p><img src="http://img.cduyzh.com/images/node.jpg" alt="hexo安装和配置"><br>随后执行下述命令来安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<h3 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h3><p>安装完成后要先提前建好一个文件夹，所以我在自己D盘建立了一个hexo文件夹，里面随后剪了一个blog文件夹，用命令cd到blog这个目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo/blog</div></pre></td></tr></table></figure></p>
+<p><strong>执行命令</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init  # hexo会在目标文件夹建立网站所需要的所有文件</div><div class="line">npm install  # 安装依赖包</div></pre></td></tr></table></figure></p>
+<p><strong>本地启动</strong></p>
+<p>有了必要的各种配置文件之后就可以在本地预览效果了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g # 等同于hexo generate，生成静态文件到public文件夹</div><div class="line">hexo s # 等同于hexo server，在本地服务器运行</div></pre></td></tr></table></figure></p>
+<p> 还有个命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean #作用为清除静态文件夹的内容并删掉，主要用于更改变更了某些地方导致页面显示不完善</div></pre></td></tr></table></figure>
+<p>之后打开浏览器并输入IP地址 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 查看，效果如下<br><img src="http://img.cduyzh.com/images/hexo-localhost.png" alt="hexo安装和配置"></p>
+<h3 id="新建页面和文章"><a href="#新建页面和文章" class="headerlink" title="新建页面和文章"></a>新建页面和文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;title&quot;  # 生成新文章：\source\_posts\title.md</div><div class="line">hexo new page &quot;title&quot;  # 生成新的页面，后面可在主题配置文件中配置页面</div></pre></td></tr></table></figure>
+<p>生成文章或页面的模板放在博客文件夹根目录下的 scaffolds/ 文件夹里面，文章对应的是 post.md ，页面对应的是page.md，草稿的是draft.md</p>
+<h3 id="编辑文章"><a href="#编辑文章" class="headerlink" title="编辑文章"></a>编辑文章</h3><p>打开新建的文章\source_posts\postName.md，其中postName是hexo new “title”中的title</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Start My Blog Trip — Power By Hexo  # 文章页面上的显示名称，可以任意修改，不会出现在URL中</div><div class="line">date: 2017-2-10 23:49:28  # 文章生成时间，一般不改</div><div class="line">categories: diary  # 文章分类目录，多个分类使用[a,b,c]这种格式</div><div class="line">tags: [Hexo,diary]  # 文章标签</div><div class="line">---</div><div class="line">#这里开始使用markdown格式输入你的正文。</div><div class="line">&lt;!--more--&gt; </div><div class="line">#more标签以下的内容要点击“阅读全文”才能看见，#more标签以上的内容为你首页显示文章的摘要部分</div></pre></td></tr></table></figure>
+<h3 id="MD文章编辑"><a href="#MD文章编辑" class="headerlink" title="MD文章编辑"></a>MD文章编辑</h3><p>如果你对MD语法不熟悉，推荐你去马克飞象使用它的在线网页编辑，可以实现一边打字一边查看效果，很方便。<br>地址：<a href="https://maxiang.io/" target="_blank" rel="external">https://maxiang.io/</a></p>
+<h3 id="常用命令总结"><a href="#常用命令总结" class="headerlink" title="常用命令总结"></a>常用命令总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo init [folder] # 初始化一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站</div><div class="line">hexo new [layout] &lt;title&gt; # 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来</div><div class="line">hexo version # 查看版本</div><div class="line">hexo clean # 清除缓存文件 (db.json) 和已生成的静态文件 (public)</div><div class="line">hexo g # 等于hexo generate # 生成静态文件</div><div class="line">hexo s # 等于hexo server # 本地预览</div><div class="line">hexo d # 等于hexo deploy # 部署，可与hexo g合并为 hexo d -g</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><h3 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h3><p>截止2017年，hexo和next都在更新，现今网上的版本和其对应的配置文件都已经发生了巨大的变化，所以我把官网最新的17年的版本配置文件的详情给大家来讲解，大家可以下最新的版本和看我的配置进行修改。</p>
+<h3 id="主题下载"><a href="#主题下载" class="headerlink" title="主题下载"></a>主题下载</h3><p>hexo主题有很多，这里我自己使用的next主题所以就以它来讲。我的版本为v5.1.0（目前最新）<br>下载地址：<br><a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/releases</a><br>把下来的文件夹解压和更名为next，并复制到theme目录下<img src="http://img.cduyzh.com/images/next-theme.jpg" alt="主题下载"></p>
+<h3 id="HEXO网站的配置文件"><a href="#HEXO网站的配置文件" class="headerlink" title="HEXO网站的配置文件"></a>HEXO网站的配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在根目录下的_config.yml主要是对网站的总属性进行设置</div><div class="line">如：网站标题，网站logo,网站插件使用等全局的属性</div><div class="line">主题目录下的_config.yml主要是针对网站的布局，导航等特性设置进行设置</div></pre></td></tr></table></figure>
+<p>我的根目录配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: https://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"></div><div class="line"># Site</div><div class="line">title: Water Sister&apos;s Blog</div><div class="line">subtitle: 生活、技术个人博客</div><div class="line">description: 思考中.....</div><div class="line">author: Yang ZiHao</div><div class="line">language: zh-Hans</div><div class="line">timezone:</div><div class="line"></div><div class="line"># URL</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://www.cduyzh.com</div><div class="line">root: /</div><div class="line">permalink: :title/</div><div class="line">permalink_defaults:</div><div class="line"></div><div class="line"># Directory</div><div class="line">source_dir: source</div><div class="line">public_dir: public</div><div class="line">tag_dir: tags</div><div class="line">archive_dir: archives</div><div class="line">category_dir: categories</div><div class="line">code_dir: downloads/code</div><div class="line">i18n_dir: :lang</div><div class="line">skip_render: </div><div class="line"> - baidu_verify_n9RJHacKra.html</div><div class="line"> - google5caece7c800b9ce3.html</div><div class="line"># Writing</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: true</div><div class="line">relative_link: false</div><div class="line">future: true</div><div class="line">highlight:</div><div class="line">  enable: true</div><div class="line">  line_number: true</div><div class="line">  auto_detect: false</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line"># Category &amp; Tag</div><div class="line">default_category: uncategorized</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line"># Date / Time format</div><div class="line">## Hexo uses Moment.js to parse and display date</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div><div class="line"></div><div class="line"># Pagination</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 10</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line"># Extensions</div><div class="line">Plugins: </div><div class="line">  - hexo-generator-sitemap</div><div class="line">  - hexo-generator-baidu-sitemap</div><div class="line"></div><div class="line"></div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">theme: next</div><div class="line"></div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    github: git@github.com:cduyzh/cduyzh.github.io.git,master    </div><div class="line">index_generator:</div><div class="line">  per_page: 5</div><div class="line"></div><div class="line">archive_generator:</div><div class="line">  per_page: 20</div><div class="line">  yearly: true</div><div class="line">  monthly: true</div><div class="line"></div><div class="line">tag_generator:</div><div class="line">  per_page: 10</div><div class="line"></div><div class="line">menu:</div><div class="line">  about: /about</div><div class="line">  </div><div class="line">	</div><div class="line">#头像设置</div><div class="line">avatar: /images/yzh.jpg</div><div class="line"></div><div class="line"># 多说热评文章 true 或者 false</div><div class="line">duoshuo_hotartical: true</div><div class="line"></div><div class="line">#sitemap</div><div class="line"># hexo sitemap</div><div class="line">sitemap:</div><div class="line">  path: sitemap.xml</div><div class="line">baidusitemap:</div><div class="line">  path: baidusitemap.xml</div><div class="line">  </div><div class="line">#local search</div><div class="line">search:</div><div class="line">  path: search.xml</div><div class="line">  field: post</div><div class="line">  format: html</div><div class="line">  limit: 1000</div></pre></td></tr></table></figure>
+<p>我的主题目录配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div><div class="line">373</div><div class="line">374</div><div class="line">375</div><div class="line">376</div><div class="line">377</div><div class="line">378</div><div class="line">379</div><div class="line">380</div><div class="line">381</div><div class="line">382</div><div class="line">383</div><div class="line">384</div><div class="line">385</div><div class="line">386</div><div class="line">387</div><div class="line">388</div><div class="line">389</div><div class="line">390</div><div class="line">391</div><div class="line">392</div><div class="line">393</div><div class="line">394</div><div class="line">395</div><div class="line">396</div><div class="line">397</div><div class="line">398</div><div class="line">399</div><div class="line">400</div><div class="line">401</div><div class="line">402</div><div class="line">403</div><div class="line">404</div><div class="line">405</div><div class="line">406</div><div class="line">407</div><div class="line">408</div><div class="line">409</div><div class="line">410</div><div class="line">411</div><div class="line">412</div><div class="line">413</div><div class="line">414</div><div class="line">415</div><div class="line">416</div><div class="line">417</div><div class="line">418</div><div class="line">419</div><div class="line">420</div><div class="line">421</div><div class="line">422</div><div class="line">423</div><div class="line">424</div><div class="line">425</div><div class="line">426</div><div class="line">427</div><div class="line">428</div><div class="line">429</div><div class="line">430</div><div class="line">431</div><div class="line">432</div><div class="line">433</div><div class="line">434</div><div class="line">435</div><div class="line">436</div><div class="line">437</div><div class="line">438</div><div class="line">439</div><div class="line">440</div><div class="line">441</div><div class="line">442</div><div class="line">443</div><div class="line">444</div><div class="line">445</div><div class="line">446</div><div class="line">447</div><div class="line">448</div><div class="line">449</div><div class="line">450</div><div class="line">451</div><div class="line">452</div><div class="line">453</div><div class="line">454</div><div class="line">455</div><div class="line">456</div><div class="line">457</div><div class="line">458</div><div class="line">459</div><div class="line">460</div><div class="line">461</div><div class="line">462</div><div class="line">463</div><div class="line">464</div><div class="line">465</div><div class="line">466</div><div class="line">467</div><div class="line">468</div><div class="line">469</div><div class="line">470</div><div class="line">471</div><div class="line">472</div><div class="line">473</div><div class="line">474</div><div class="line">475</div><div class="line">476</div><div class="line">477</div><div class="line">478</div><div class="line">479</div><div class="line">480</div><div class="line">481</div><div class="line">482</div><div class="line">483</div><div class="line">484</div><div class="line">485</div><div class="line">486</div><div class="line">487</div><div class="line">488</div><div class="line">489</div><div class="line">490</div><div class="line">491</div><div class="line">492</div><div class="line">493</div><div class="line">494</div><div class="line">495</div><div class="line">496</div><div class="line">497</div><div class="line">498</div><div class="line">499</div><div class="line">500</div><div class="line">501</div><div class="line">502</div><div class="line">503</div><div class="line">504</div><div class="line">505</div><div class="line">506</div><div class="line">507</div><div class="line">508</div><div class="line">509</div><div class="line">510</div><div class="line">511</div><div class="line">512</div><div class="line">513</div><div class="line">514</div><div class="line">515</div><div class="line">516</div><div class="line">517</div><div class="line">518</div><div class="line">519</div><div class="line">520</div><div class="line">521</div><div class="line">522</div><div class="line">523</div><div class="line">524</div><div class="line">525</div><div class="line">526</div><div class="line">527</div><div class="line">528</div><div class="line">529</div><div class="line">530</div><div class="line">531</div><div class="line">532</div><div class="line">533</div><div class="line">534</div><div class="line">535</div></pre></td><td class="code"><pre><div class="line"># ---------------------------------------------------------------</div><div class="line"># Site Information Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># Put your favicon.ico into `hexo-site/source/` directory.</div><div class="line">favicon: /images/favicon.ico</div><div class="line"></div><div class="line"># Set default keywords (Use a comma to separate)</div><div class="line">keywords: &quot;cduyzh前端开发博客&quot;</div><div class="line"></div><div class="line"># Set rss to false to disable feed link.</div><div class="line"># Leave rss as empty to use site&apos;s feed link.</div><div class="line"># Set rss to specific value if you have burned your feed already.</div><div class="line">rss:</div><div class="line"></div><div class="line"># Specify the date when the site was setup</div><div class="line">#since: 2015</div><div class="line"></div><div class="line"># icon between year and author @Footer</div><div class="line">authoricon: tint</div><div class="line"></div><div class="line"># Footer `powered-by` and `theme-info` copyright</div><div class="line">copyright: false</div><div class="line"></div><div class="line"># Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.</div><div class="line"># See: https://support.google.com/webmasters/answer/139066</div><div class="line"># Tips: Before you open this tag, remember set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )</div><div class="line">canonical: true</div><div class="line"></div><div class="line"># Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.</div><div class="line">seo: true</div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Menu Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -&gt; archives)</div><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  about: /about</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div><div class="line">  #commonweal: /404.html</div><div class="line">  #sitemap: /sitemap.xml</div><div class="line">  life: /categories/life</div><div class="line">  technology: //categories/technology</div><div class="line"></div><div class="line"></div><div class="line"># Enable/Disable menu icons.</div><div class="line"># Icon Mapping:</div><div class="line">#   Map a menu item to a specific FontAwesome icon name.</div><div class="line">#   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.</div><div class="line">#   When an question mask icon presenting up means that the item has no mapping icon.</div><div class="line">menu_icons:</div><div class="line">  enable: true</div><div class="line">  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome</div><div class="line">  home: home</div><div class="line">  about: user</div><div class="line">  categories: th</div><div class="line">  schedule: calendar</div><div class="line">  tags: tags</div><div class="line">  archives: archive</div><div class="line">  sitemap: sitemap</div><div class="line">  commonweal: heart</div><div class="line">  life: coffee</div><div class="line">  technology: cog</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Scheme Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># Schemes</div><div class="line">#scheme: Muse</div><div class="line">scheme: Mist</div><div class="line">#scheme: Pisces</div><div class="line"></div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Font Settings</div><div class="line"># - Find fonts on Google Fonts (https://www.google.com/fonts)</div><div class="line"># - All fonts set here will have the following styles:</div><div class="line">#     light, light italic, normal, normal italic, bold, bold italic</div><div class="line"># - Be aware that setting too much fonts will cause site running slowly</div><div class="line"># - Introduce in 5.0.1</div><div class="line"># ---------------------------------------------------------------</div><div class="line">font:</div><div class="line">  enable: true</div><div class="line"></div><div class="line">  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)</div><div class="line">  host:</div><div class="line"></div><div class="line">  # Global font settings used on &lt;body&gt; element.</div><div class="line">  global:</div><div class="line">    # external: true will load this font family from host.</div><div class="line">    external: true</div><div class="line">    family: Lato</div><div class="line"></div><div class="line">  # Font settings for Headlines (h1, h2, h3, h4, h5, h6)</div><div class="line">  # Fallback to `global` font settings.</div><div class="line">  headings:</div><div class="line">    external: true</div><div class="line">    family:</div><div class="line"></div><div class="line">  # Font settings for posts</div><div class="line">  # Fallback to `global` font settings.</div><div class="line">  posts:</div><div class="line">    external: true</div><div class="line">    family:</div><div class="line"></div><div class="line">  # Font settings for Logo</div><div class="line">  # Fallback to `global` font settings.</div><div class="line">  # The `size` option use `px` as unit</div><div class="line">  logo:</div><div class="line">    external: true</div><div class="line">    family:</div><div class="line">    size:</div><div class="line"></div><div class="line">  # Font settings for &lt;code&gt; and code blocks.</div><div class="line">  codes:</div><div class="line">    external: true</div><div class="line">    family:</div><div class="line">    size:</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Sidebar Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"></div><div class="line"># Social Links</div><div class="line"># Key is the link label showing to end users.</div><div class="line"># Value is the target link (E.g. GitHub: https://github.com/iissnan)</div><div class="line">social:</div><div class="line">  #LinkLabel: Link</div><div class="line">   GitHub: https://github.com/cduyzh</div><div class="line">   知乎: https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue</div><div class="line">   Weibo: http://weibo.com/3290722423/</div><div class="line">   QQ: http://wpa.qq.com/msgrd?v=3&amp;uin=450311265&amp;site=qq&amp;menu=yes</div><div class="line"></div><div class="line"># Social Links Icons</div><div class="line"># Icon Mapping:</div><div class="line">#   Map a menu item to a specific FontAwesome icon name.</div><div class="line">#   Key is the name of the item and value is the name of FontAwesome icon. Key is case-senstive.</div><div class="line">#   When an globe mask icon presenting up means that the item has no mapping icon.</div><div class="line">social_icons:</div><div class="line">  enable: true</div><div class="line">  # Icon Mappings.</div><div class="line">  # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome</div><div class="line">  GitHub: github</div><div class="line">  #Twitter: twitter</div><div class="line">  Weibo: weibo</div><div class="line">  QQ: qq</div><div class="line"></div><div class="line"># Sidebar Avatar</div><div class="line"># in theme directory(source/images): /images/avatar.jpg</div><div class="line"># in site  directory(source/uploads): /uploads/avatar.jpg</div><div class="line">#avatar:</div><div class="line"></div><div class="line"></div><div class="line"># Table Of Contents in the Sidebar</div><div class="line">toc:</div><div class="line">  enable: true</div><div class="line"></div><div class="line">  # Automatically add list number to toc.</div><div class="line">  number: true</div><div class="line"></div><div class="line"></div><div class="line"># Creative Commons 4.0 International License.</div><div class="line"># http://creativecommons.org/</div><div class="line"># Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</div><div class="line">#creative_commons: by-nc-sa</div><div class="line">#creative_commons:</div><div class="line"></div><div class="line"></div><div class="line">sidebar:</div><div class="line">  # Sidebar Position, available value: left | right</div><div class="line">  position: left</div><div class="line">  #position: right</div><div class="line"></div><div class="line">  # Sidebar Display, available value:</div><div class="line">  #  - post    expand on posts automatically. Default.</div><div class="line">  #  - always  expand for all pages automatically</div><div class="line">  #  - hide    expand only when click on the sidebar toggle icon.</div><div class="line">  #  - remove  Totally remove sidebar including sidebar toggle.</div><div class="line">  #display: post</div><div class="line">  display: always</div><div class="line">  #display: hide</div><div class="line">  #display: remove</div><div class="line"></div><div class="line">  # Sidebar offset from top menubar in pixels.</div><div class="line">  offset: 12</div><div class="line">  offset_float: 0</div><div class="line"></div><div class="line">  # Back to top in sidebar</div><div class="line">  b2t: false</div><div class="line"></div><div class="line">  # Scroll percent label in b2t button</div><div class="line">  scrollpercent: false</div><div class="line"></div><div class="line"></div><div class="line"># Blog rolls</div><div class="line">links_title: Links</div><div class="line">#links_layout: block</div><div class="line">#links_layout: inline</div><div class="line">links:</div><div class="line">  hexo: https://hexo.io/zh-cn/</div><div class="line">  next: http://theme-next.iissnan.com/</div><div class="line">  web project: http://www.watersister.top</div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Post Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># Automatically scroll page to section which is under &lt;!-- more --&gt; mark.</div><div class="line">scroll_to_more: true</div><div class="line"></div><div class="line"># Automatically excerpt description in homepage as preamble text.</div><div class="line">excerpt_description: true</div><div class="line"></div><div class="line"># Automatically Excerpt. Not recommend.</div><div class="line"># Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</div><div class="line">auto_excerpt:</div><div class="line">  enable: true</div><div class="line">  length: 400</div><div class="line"></div><div class="line"># Post meta display settings</div><div class="line">post_meta:</div><div class="line">  item_text: true</div><div class="line">  created_at: true</div><div class="line">  updated_at: false</div><div class="line">  categories: true</div><div class="line"></div><div class="line"># Post wordcount display settings</div><div class="line"># Dependencies: https://github.com/willin/hexo-wordcount</div><div class="line">post_wordcount:</div><div class="line">  item_text: true</div><div class="line">  wordcount: true</div><div class="line">  min2read: true</div><div class="line"></div><div class="line">#Wechat Subscriber</div><div class="line">#wechat_subscriber:</div><div class="line"># enabled: true</div><div class="line"># qcode:  /images/wechatpay.jpg</div><div class="line"># description: subscribe to my blog by scanning my public wechat account</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Misc Theme Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># Custom Logo.</div><div class="line"># !!Only available for Default Scheme currently.</div><div class="line"># Options:</div><div class="line">#   enabled: [true/false] - Replace with specific image</div><div class="line">#   image: url-of-image   - Images&apos;s url</div><div class="line">custom_logo:</div><div class="line">  enabled: false</div><div class="line">  image: </div><div class="line"></div><div class="line"></div><div class="line"># Code Highlight theme</div><div class="line"># Available value:</div><div class="line">#    normal | night | night eighties | night blue | night bright</div><div class="line"># https://github.com/chriskempson/tomorrow-theme</div><div class="line">highlight_theme: night</div><div class="line"></div><div class="line"></div><div class="line"># ---------------------------------------------------------------</div><div class="line"># Third Party Services Settings</div><div class="line"># ---------------------------------------------------------------</div><div class="line"></div><div class="line"># MathJax Support</div><div class="line">mathjax:</div><div class="line">  enable: false</div><div class="line">  per_page: false</div><div class="line">  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</div><div class="line"></div><div class="line"></div><div class="line"># Swiftype Search API Key</div><div class="line">#swiftype_key:</div><div class="line"></div><div class="line"># Baidu Analytics ID</div><div class="line">#baidu_analytics:</div><div class="line"></div><div class="line"># Duoshuo ShortName</div><div class="line">duoshuo_shortname: cduyzh</div><div class="line"></div><div class="line"># Disqus</div><div class="line">#disqus_shortname:</div><div class="line"></div><div class="line"># Hypercomments</div><div class="line">#hypercomments_id:</div><div class="line"></div><div class="line"># Gentie productKey</div><div class="line">#gentie_productKey:</div><div class="line"></div><div class="line"># Support for youyan comments system.</div><div class="line"># You can get your uid from http://www.uyan.cc</div><div class="line">#youyan_uid: your uid</div><div class="line"></div><div class="line"># Support for LiveRe comments system.</div><div class="line"># You can get your uid from https://livere.com/insight/myCode (General web site)</div><div class="line">#livere_uid: your uid</div><div class="line"></div><div class="line"># Baidu Share</div><div class="line"># Available value:</div><div class="line">#    button | slide</div><div class="line"># Warning: Baidu Share does not support https.</div><div class="line">#baidushare:</div><div class="line">##  type: button</div><div class="line"></div><div class="line"># Share</div><div class="line">#jiathis:</div><div class="line"># Warning: JiaThis does not support https.</div><div class="line">#add_this_id:</div><div class="line"></div><div class="line"># Share</div><div class="line">duoshuo_share: true</div><div class="line"></div><div class="line"># Google Webmaster tools verification setting</div><div class="line"># See: https://www.google.com/webmasters/</div><div class="line">#google_site_verification:</div><div class="line"></div><div class="line"># Google Analytics</div><div class="line">#google_analytics:</div><div class="line"></div><div class="line"># Yandex Webmaster tools verification setting</div><div class="line"># See: https://webmaster.yandex.ru/</div><div class="line">#yandex_site_verification:</div><div class="line"></div><div class="line"># CNZZ count</div><div class="line">#cnzz_siteid:</div><div class="line"></div><div class="line"># Application Insights</div><div class="line"># See https://azure.microsoft.com/en-us/services/application-insights/</div><div class="line"># application_insights:</div><div class="line"></div><div class="line"># Make duoshuo show UA</div><div class="line"># user_id must NOT be null when admin_enable is true!</div><div class="line"># you can visit http://dev.duoshuo.com get duoshuo user id.</div><div class="line">duoshuo_info:</div><div class="line">  ua_enable: true</div><div class="line">  admin_enable: false</div><div class="line">  user_id: 6224774254659896065</div><div class="line">  admin_nickname: author</div><div class="line"></div><div class="line"></div><div class="line"># Facebook SDK Support.</div><div class="line"># https://github.com/iissnan/hexo-theme-next/pull/410</div><div class="line">facebook_sdk:</div><div class="line">  enable: false</div><div class="line">  app_id:       #&lt;app_id&gt;</div><div class="line">  fb_admin:     #&lt;user_id&gt;</div><div class="line">  like_button:  #true</div><div class="line">  webmaster:    #true</div><div class="line"></div><div class="line"># Facebook comments plugin</div><div class="line"># This plugin depends on Facebook SDK.</div><div class="line"># If facebook_sdk.enable is false, Facebook comments plugin is unavailable.</div><div class="line">facebook_comments_plugin:</div><div class="line">  enable: false</div><div class="line">  num_of_posts: 10  # min posts num is 1</div><div class="line">  width: 100%       # default width is 550px</div><div class="line">  scheme: light     # default scheme is light (light or dark)</div><div class="line"></div><div class="line"># VKontakte API Support.</div><div class="line"># To get your AppID visit https://vk.com/editapp?act=create</div><div class="line">vkontakte_api:</div><div class="line">  enable: false</div><div class="line">  app_id:       #&lt;app_id&gt;</div><div class="line">  like:         true</div><div class="line">  comments:     true</div><div class="line">  num_of_posts: 10</div><div class="line"></div><div class="line"></div><div class="line"># Show number of visitors to each article.</div><div class="line"># You can visit https://leancloud.cn get AppID and AppKey.</div><div class="line">leancloud_visitors:</div><div class="line">  enable: true</div><div class="line">  app_id: TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz</div><div class="line">  app_key: 5rH911Nhs9V7AWFjEYqe8Bz7</div><div class="line"></div><div class="line"># Show PV/UV of the website/page with busuanzi.</div><div class="line"># Get more information on http://ibruce.info/2015/04/04/busuanzi/</div><div class="line">busuanzi_count:</div><div class="line">  # count values only if the other configs are false</div><div class="line">  enable: true</div><div class="line">  # custom uv span for the whole site</div><div class="line">  site_uv: true</div><div class="line">  site_uv_header: &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt; 访问用户：</div><div class="line">  site_uv_footer: 人</div><div class="line">  # custom pv span for the whole site</div><div class="line">  site_pv: true</div><div class="line">  site_pv_header: &lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt; 访问次数：</div><div class="line">  site_pv_footer: 次</div><div class="line">  # custom pv span for one page only</div><div class="line">  page_pv: false</div><div class="line">  page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt;&amp;nbsp点击量 </div><div class="line">  page_pv_footer: 次</div><div class="line"></div><div class="line"></div><div class="line"># Tencent analytics ID</div><div class="line"># tencent_analytics:</div><div class="line"></div><div class="line"># Tencent MTA ID</div><div class="line"># tencent_mta:</div><div class="line"></div><div class="line"></div><div class="line"># Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO</div><div class="line">baidu_push: true</div><div class="line"></div><div class="line"># Google Calendar</div><div class="line"># Share your recent schedule to others via calendar page</div><div class="line">#</div><div class="line"># API Documentation:</div><div class="line"># https://developers.google.com/google-apps/calendar/v3/reference/events/list</div><div class="line">calendar:</div><div class="line">  enable: false</div><div class="line">  calendar_id: &lt;required&gt;</div><div class="line">  api_key: &lt;required&gt;</div><div class="line">  orderBy: startTime</div><div class="line">  offsetMax: 24</div><div class="line">  offsetMin: 4</div><div class="line">  timeZone:</div><div class="line">  showDeleted: false</div><div class="line">  singleEvents: true</div><div class="line">  maxResults: 250</div><div class="line"></div><div class="line"># Algolia Search</div><div class="line">algolia_search:</div><div class="line">  enable: false</div><div class="line">  hits:</div><div class="line">    per_page: 10</div><div class="line">  labels:</div><div class="line">    input_placeholder: Search for Posts</div><div class="line">    hits_empty: &quot;We didn&apos;t find any results for the search: $&#123;query&#125;&quot;</div><div class="line">    hits_stats: &quot;$&#123;hits&#125; results found in $&#123;time&#125; ms&quot;</div><div class="line"></div><div class="line"></div><div class="line"># Local search</div><div class="line">local_search:</div><div class="line">  enable: true</div><div class="line"></div><div class="line"># External URL with BASE64 encrypt &amp; decrypt</div><div class="line"># Usage: &#123;% exturl text url &quot;title&quot; %&#125;</div><div class="line"># Alias: &#123;% extlink text url &quot;title&quot; %&#125;</div><div class="line">exturl: false</div><div class="line"></div><div class="line"></div><div class="line">#! ---------------------------------------------------------------</div><div class="line">#! DO NOT EDIT THE FOLLOWING SETTINGS</div><div class="line">#! UNLESS YOU KNOW WHAT YOU ARE DOING</div><div class="line">#! ---------------------------------------------------------------</div><div class="line"></div><div class="line"># Motion</div><div class="line">use_motion: true</div><div class="line"></div><div class="line"># Fancybox</div><div class="line">fancybox: true</div><div class="line"></div><div class="line"># Canvas-nest</div><div class="line">canvas_nest: true</div><div class="line"></div><div class="line"># Script Vendors.</div><div class="line"># Set a CDN address for the vendor you want to customize.</div><div class="line"># For example</div><div class="line">#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js</div><div class="line"># Be aware that you should use the same version as internal ones to avoid potential problems.</div><div class="line"># Please use the https protocol of CDN files when you enable https on your site.</div><div class="line">vendors:</div><div class="line">  # Internal path prefix. Please do not edit it.</div><div class="line">  _internal: lib</div><div class="line"></div><div class="line">  # Internal version: 2.1.3</div><div class="line">  jquery: //cdn.bootcss.com/jquery/2.1.3/jquery.min.js</div><div class="line"></div><div class="line">  # Internal version: 2.1.5</div><div class="line">  # Fancybox: http://fancyapps.com/fancybox/</div><div class="line">  fancybox: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js</div><div class="line">  fancybox_css: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css</div><div class="line"></div><div class="line">  # Internal version: 1.0.6</div><div class="line">  fastclick: //cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js</div><div class="line"></div><div class="line">  # Internal version: 1.9.7</div><div class="line">  # See: https://github.com/tuupola/jquery_lazyload</div><div class="line">  lazyload: //cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js</div><div class="line"></div><div class="line">  # Internal version: 1.2.1</div><div class="line">  velocity: </div><div class="line"></div><div class="line">  # Internal version: 1.2.1</div><div class="line">  velocity_ui: </div><div class="line"></div><div class="line"></div><div class="line">  # Internal version: 0.7.9</div><div class="line">  # See: https://faisalman.github.io/ua-parser-js/</div><div class="line">  ua_parser:</div><div class="line"></div><div class="line">  # Internal version: 4.6.2</div><div class="line">  # See: http://fontawesome.io/</div><div class="line">  fontawesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css</div><div class="line"></div><div class="line">  # Internal version: 1</div><div class="line">  # https://www.algolia.com</div><div class="line">  algolia_instant_js:</div><div class="line">  algolia_instant_css:</div><div class="line"></div><div class="line">  # Internal version: 1.0.0</div><div class="line">  # https://github.com/hustcc/canvas-nest.js</div><div class="line">  canvas_nest: //cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># Assets</div><div class="line">css: css</div><div class="line">js: js</div><div class="line">images: images</div><div class="line"></div><div class="line"># Theme version</div><div class="line">version: 5.1.0</div><div class="line"></div><div class="line"># 多说热评文章 true 或者 false</div><div class="line">duoshuo_hotartical: true</div><div class="line"></div><div class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</div><div class="line">wechatpay: /images/wechatpay.jpg</div><div class="line">alipay: /images/alipay.jpg</div></pre></td></tr></table></figure>
+<p><strong>PS:</strong>可以不用一次性看完，理解下各个属性即可，官网也没有对所有配置的中文解释，只有一些例子配置对应的参数而已。</p>
+<hr>
+<p>相信绝大数人都没看完，大家可以后面自己配置的时候再来看。</p>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>打开站点配置文件， 找到 theme 字段，并将其值更改为 next<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: next</div></pre></td></tr></table></figure></p>
+<p><strong>注意:后有个空格必须要有空格哦</strong><br>然后 hexo s 即可在localshost:4000地址里预览主题效果</p>
+<h3 id="更换主题外观"><a href="#更换主题外观" class="headerlink" title="更换主题外观"></a>更换主题外观</h3><p>next有三个主题样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Schemes</div><div class="line">#scheme: Muse</div><div class="line">scheme: Mist</div><div class="line">#scheme: Pisces</div></pre></td></tr></table></figure>
+<p>我用的是第二个</p>
+<p>更换语言为中文，在根目录配置文件下配置language: zh-Hans</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Site</div><div class="line">title: Water Sister&apos;s Blog</div><div class="line">subtitle: 生活、技术个人博客</div><div class="line">description: 思考中.....</div><div class="line">author: Yang ZiHao</div><div class="line">language: zh-Hans</div><div class="line">timezone:</div></pre></td></tr></table></figure>
+<h3 id="添加网站小图标"><a href="#添加网站小图标" class="headerlink" title="添加网站小图标"></a>添加网站小图标</h3><p>在主题目录配置文件下设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Put your favicon.ico into `hexo-site/source/` directory.</div><div class="line">favicon: /images/favicon.ico</div></pre></td></tr></table></figure>
+<p>大部分的设定都能在NexT的官方文档 里面找到，如侧栏、头像、打赏、评论、订阅、连接、分享、数据统计等等，在此就不多讲了，照着文档走就行了，接下只是个性定制的问题。<br>所以给个官方文档大家可以自己去看一遍：<br><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">http://theme-next.iissnan.com/theme-settings.html</a></p>
+<h2 id="部署发行项目"><a href="#部署发行项目" class="headerlink" title="部署发行项目"></a>部署发行项目</h2><h3 id="前言-2"><a href="#前言-2" class="headerlink" title="前言"></a>前言</h3><p>假设前面已经注册了github帐号和创建了对应的仓库，通过配置SSH来建立连接。</p>
+<h3 id="生成SSH"><a href="#生成SSH" class="headerlink" title="生成SSH"></a>生成SSH</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车&gt;</div></pre></td></tr></table></figure>
+<p>系统会要求你输入密码，这里设置的密码主要是在你提交Git时弹出密码认证，不想输入直接回车</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure>
+<p>成功后如图：<br><img src="http://o6sn177if.bkt.clouddn.com/17901865820160512115222052.jpg" alt="生成SSH"></p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p><strong>找到id_rsa.pub 并复制文件内容</strong><br>id_rsa.pub文件一般位于电脑用户配置文件夹下的一个.ssh文件下C:\Users\你的用户名.ssh<br><strong>登录Github并添加密钥</strong><br>进入github首页在右上角选择settings设置。<br><img src="http://img.cduyzh.com/images/ssh-set.jpg" alt="生成SSH"><br>创建一个新的SSH key，图中显示我已经创建好了。<br>title可以随便取<br><img src="http://o6sn177if.bkt.clouddn.com/17901865820160512120704030.jpg" alt="生成SSH"></p>
+<h3 id="测试通过git-bash链接到Git"><a href="#测试通过git-bash链接到Git" class="headerlink" title="测试通过git bash链接到Git"></a>测试通过git bash链接到Git</h3><p><strong>链接Git</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p><strong>提示如下：yes</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity of host &apos;github.com (207.65.227.44)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:42:18:60:1d:7b:13:d2:b5:c4:20:7e:56:86:d8:71:f3</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure></p>
+<p><strong>以下为成功链接到Git</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi XXXX! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
+<p><strong>使用Git bash简单的设置一下用户信息：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name your name</div><div class="line">git config --global user.email your_email@youremail.com</div></pre></td></tr></table></figure>
+<h3 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h3><p>在此之前，先安装Git部署插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>打开根目录配置文件，拉到底部，修改部署配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    github: git@github.com:cduyzh/cduyzh.github.io.git,master</div></pre></td></tr></table></figure>
+<p>注意冒号后面是网站对应的用户名，接着就是/，然后再是你的项目名加上 .git,master</p>
+<p>保存后终端执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>结果如下为成功上传<br><img src="http://img.cduyzh.com/images/hexo-d.png" alt="部署到Github"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里基本上完成了hexo的配置和项目的上传，后面我会讲一些文章的编辑，分类，标签的运用，还会对next主题进行一些分析，如果想自己设置主题和样式建议先把next主题的官方中文文档看一下，我会对其中的一些进行解释。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/hexo-settings-1/" title="2017年最新基于hexo搭建个人免费博客——从零开始">http://www.cduyzh.com/hexo-settings-1/</a><br/><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yang ZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Yang ZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo-settings-2/" rel="next" title="2017年最新基于hexo搭建个人免费博客——基本设置和了解">
+                <i class="fa fa-chevron-left"></i> 2017年最新基于hexo搭建个人免费博客——基本设置和了解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo-settings-3/" rel="prev" title="2017年最新基于hexo搭建个人免费博客——自定义页面样式一">
+                2017年最新基于hexo搭建个人免费博客——自定义页面样式一 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+          
+          </div>
+          
+
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/yzh.jpg"
+               alt="Yang ZiHao" />
+          <p class="site-author-name" itemprop="name">Yang ZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cduyzh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/cduyzh" target="_blank" title="segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/5a63ae89baa9" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=450311265&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3290722423/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=86 src="//music.163.com/outchain/player?type=2&id=103301&auto=0&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github-pages介绍"><span class="nav-number">1.1.</span> <span class="nav-text">github pages介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名注册和绑定"><span class="nav-number">1.2.</span> <span class="nav-text">域名注册和绑定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo安装和配置"><span class="nav-number">2.</span> <span class="nav-text">hexo安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo初始化"><span class="nav-number">2.1.</span> <span class="nav-text">hexo初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面和文章"><span class="nav-number">2.2.</span> <span class="nav-text">新建页面和文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑文章"><span class="nav-number">2.3.</span> <span class="nav-text">编辑文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD文章编辑"><span class="nav-number">2.4.</span> <span class="nav-text">MD文章编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令总结"><span class="nav-number">2.5.</span> <span class="nav-text">常用命令总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装主题"><span class="nav-number">3.</span> <span class="nav-text">安装主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言-1"><span class="nav-number">3.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题下载"><span class="nav-number">3.2.</span> <span class="nav-text">主题下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HEXO网站的配置文件"><span class="nav-number">3.3.</span> <span class="nav-text">HEXO网站的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">3.4.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换主题外观"><span class="nav-number">3.5.</span> <span class="nav-text">更换主题外观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加网站小图标"><span class="nav-number">3.6.</span> <span class="nav-text">添加网站小图标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署发行项目"><span class="nav-number">4.</span> <span class="nav-text">部署发行项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言-2"><span class="nav-number">4.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成SSH"><span class="nav-number">4.2.</span> <span class="nav-text">生成SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH"><span class="nav-number">4.3.</span> <span class="nav-text">配置SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试通过git-bash链接到Git"><span class="nav-number">4.4.</span> <span class="nav-text">测试通过git bash链接到Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到Github"><span class="nav-number">4.5.</span> <span class="nav-text">部署到Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-tint"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang ZiHao</span>
+</div>
+
+
+
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+   <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz", "5rH911Nhs9V7AWFjEYqe8Bz7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+
+</html>
