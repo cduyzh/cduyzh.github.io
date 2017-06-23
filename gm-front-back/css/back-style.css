@@ -1,0 +1,216 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+
+.sidebar-menu {
+    transition: .8s all;
+}
+
+.custom-btn button {
+    margin-top: 2rem;
+    float: right;
+}
+
+.sidebar-menu {
+    width: 240px;
+}
+
+.page-container .main-content .page-title {
+    background: none;
+    box-shadow: none;
+}
+
+.xe-widget.xe-counter .xe-icon,
+.xe-widget.xe-counter .xe-label,
+.xe-widget.xe-counter-block .xe-upper .xe-icon,
+.xe-widget.xe-counter-block .xe-upper .xe-label,
+.xe-widget.xe-progress-counter .xe-upper .xe-icon,
+.xe-widget.xe-progress-counter .xe-upper .xe-label {
+    padding: 9px;
+}
+
+.xe-widget.xe-counter .xe-label .num,
+.xe-widget.xe-counter-block .xe-upper .xe-label .num,
+.xe-widget.xe-progress-counter .xe-upper .xe-label .num {
+    font-size: 26px;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    vertical-align: middle;
+    text-align: left;
+}
+
+.progress {
+    overflow: hidden;
+    height: 18px;
+    margin-bottom: 18px;
+    background-color: #eeeeee;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.table a {
+    color: #49586E;
+}
+
+.table a:hover {
+    color: #606161;
+}
+
+.btn {
+    padding: 6px;
+}
+
+
+/*!
+ * Propeller v1.1.0 (http://propeller.in): radio.css
+ * Copyright 2016-2017 Digicorp, Inc.
+ * Licensed under MIT (http://propeller.in/LICENSE)
+ */
+
+.pmd-radio span.pmd-radiobutton {
+    margin-bottom: 0;
+}
+
+
+/*Radio input Hide*/
+
+.pmd-radio input {
+    display: none;
+}
+
+
+/*Custamize Radio*/
+
+.pmd-radio>span.pmd-radio-label {
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.pmd-radio>span.pmd-radio-label:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 2px;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+    border-radius: 18px;
+}
+
+.pmd-radio>span.pmd-radio-label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    background: rgba(0, 0, 0, 0.54);
+    border-radius: 4px;
+    transition: .2s ease-in-out;
+    height: 8px;
+    width: 8px;
+    margin-top: -5px;
+    left: 5px;
+    -ms-transform: scale(0);
+    transform: scale(0)
+}
+
+
+/*Select Radio*/
+
+.pmd-radio :checked+span.pmd-radio-label:after {
+    -ms-transform: scale(1);
+    transform: scale(1)
+}
+
+
+/*Radio Layput*/
+
+.radio-inline.pmd-radio {
+    padding-left: 0;
+}
+
+.pmd-radio .ink {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.radio .pmd-radio {
+    padding-left: 0;
+}
+
+.pmd-radio {
+    position: relative;
+}
+
+
+/* Disabled Radio */
+
+.radio.disabled label,
+fieldset[disabled] .radio label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.radio.disabled .pmd-radio>span.pmd-radio-label::before {
+    border-color: rgba(0, 0, 0, 0.26);
+    cursor: not-allowed;
+}
+
+
+/* Card Inverse Radio */
+
+.pmd-card-inverse .pmd-radio>span.pmd-radio-label::before {
+    border-color: #fff;
+}
+
+.pmd-card-inverse .pmd-radio>span.pmd-radio-label::after {
+    background-color: #fff
+}
+
+
+/* Card Inverse Disabled Radio */
+
+.pmd-card-inverse .radio.disabled label,
+fieldset[disabled] .radio label {
+    color: rgba(255, 255, 255, 0.26);
+}
+
+.pmd-card-inverse .radio.disabled .pmd-radio>span.pmd-radio-label::before {
+    border-color: rgba(255, 255, 255, 0.26);
+}
+
+.form-group.pmd-textfield {
+    margin-bottom: 16px;
+    line-height: 22px;
+    height: 46px;
+}
+
+.pmd-textfield label {
+    color: rgba(21, 19, 19, 0.65);
+}
+
+form .help-block {
+    color: #737575;
+}
+
+@media (max-width:766px) {
+    .form-group.pmd-textfield {
+        margin-bottom: 32px;
+    }
+}
