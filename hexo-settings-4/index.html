@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,optimization,BlogCss," />
+  <meta name="keywords" content="hexo,BlogCss,optimization," />
 
 
 
@@ -180,6 +180,16 @@ var _hmt = _hmt || [];
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -429,16 +439,6 @@ var _hmt = _hmt || [];
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a class="cloud-tie-join-count" href="/hexo-settings-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -634,9 +634,9 @@ zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认
           
             <a href="/tags/hexo/" rel="tag"># hexo</a>
           
-            <a href="/tags/optimization/" rel="tag"># optimization</a>
-          
             <a href="/tags/BlogCss/" rel="tag"># BlogCss</a>
+          
+            <a href="/tags/optimization/" rel="tag"># optimization</a>
           
         </div>
       
@@ -731,7 +731,7 @@ zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认
           
   <div class="comments" id="comments">
     
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+      <div id="lv-container" data-id="city" data-uid="your uid"></div>
     
   </div>
 
@@ -1049,21 +1049,29 @@ zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认
 
 
   
-    
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "1a700fef2ad947cdb2ca429dc3cf6963",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-   <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+
+
+
+
+
   
 
 
 
 
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
