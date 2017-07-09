@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://www.cduyzh.com/axure/</loc>
+    <lastmod>2017-07-09T16:07:53.112Z</lastmod>
+    <data>
+        <display>
+        <title>个人业务爱好作品——Axure原型设计（项目开源）</title>
+        <pubTime>2017-07-09T16:07:06.000Z</pubTime>
+        
+        <tag>Axure</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.cduyzh.com/review-hexo/</loc>
+    <lastmod>2017-07-09T08:46:23.225Z</lastmod>
+    <data>
+        <display>
+        <title>结合hexo和github开发静态个人博客感想</title>
+        <pubTime>2017-07-09T08:53:39.000Z</pubTime>
+        
+        <tag>review</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.cduyzh.com/livere/</loc>
     <lastmod>2017-07-08T11:39:30.039Z</lastmod>
     <data>
@@ -279,26 +319,6 @@
            
              
               <breadCrumb title="technology" url="http://www.cduyzh.com/categories/technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.cduyzh.com/review-hexo/</loc>
-    <lastmod>2017-03-26T13:09:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>结合hexo和github开发静态个人博客感想</title>
-        <pubTime>2017-03-03T13:53:39.000Z</pubTime>
-        
-        <tag>review</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="http://www.cduyzh.com/categories/life/"/>
           
         </display>
     </data>
