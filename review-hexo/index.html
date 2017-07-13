@@ -332,7 +332,25 @@ var _hmt = _hmt || [];
   
 </nav>
 
-
+<script>
+<!--崩溃欺骗-->
+var OriginTitile = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="shortcut icon"]').attr('href', "/images/favicon-error.ico");
+         document.title = ' 页面崩溃啦  | 快回来！';
+         clearTimeout(titleTime);
+     }
+     else {
+          $('[rel="shortcut icon"]').attr('href', "/images/favicon.ico");
+         document.title = ' 我们又见面了 ' + OriginTitile;
+         titleTime = setTimeout(function () {
+             document.title = OriginTitile;
+         }, 2000);
+     }
+ });
+</script>
  </div>
     </header>
    
@@ -750,7 +768,7 @@ var _hmt = _hmt || [];
               <span class="links-of-author-item">
                 <a href="https://segmentfault.com/u/cduyzh" target="_blank" title="segmentfault">
                   
-                    <i class="fa fa-fw fa-globe"></i>
+                    <i class="fa fa-fw fa-scribd"></i>
                   
                   segmentfault
                 </a>
