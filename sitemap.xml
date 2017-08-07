@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.cduyzh.com/js-closure/</loc>
+    
+    <lastmod>2017-08-07T03:05:02.494Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.cduyzh.com/myVideo/</loc>
     
     <lastmod>2017-07-16T14:49:39.750Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://www.cduyzh.com/hexo-settings-2/</loc>
     
     <lastmod>2017-05-23T13:17:10.281Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.cduyzh.com/js-closure/</loc>
-    
-    <lastmod>2017-05-22T14:02:33.391Z</lastmod>
     
   </url>
   
