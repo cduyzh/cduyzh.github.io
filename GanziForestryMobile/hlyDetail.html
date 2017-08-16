@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>护林员详情</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/adapt.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        .modal-success {
+            height: auto;
+            padding-bottom: 0.1rem;
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 0.13rem;
+            top: 0.03rem;
+            font-size: 0.136rem;
+            color: #999999;
+            letter-spacing: 0.01rem;
+        }
+        
+        .modal-success-content>img {
+            width: 0.8rem;
+            margin: 0 auto;
+            padding-bottom: 0.1rem;
+        }
+        
+        .modal-success-content>p {
+            text-align: center;
+            color: #333;
+        }
+        
+        .zm-hly>p {
+            margin: 0.1rem 0;
+            font-size: .136rem;
+            border-left: .03rem solid #096;
+            padding-left: .09rem;
+            line-height: 0.15rem;
+        }
+        
+        .hly-photo-head {
+            height: 1.53rem;
+            margin-top: 0.14rem;
+        }
+        
+        .hly-photo-l {
+            width: 1.1rem;
+            height: 1.53rem;
+            display: inline-block;
+            float: left;
+        }
+        
+        .hly-photo-r {
+            display: inline-block;
+            float: left;
+            padding: 0.22rem;
+        }
+        
+        .hly-photo-r>p {
+            font-size: .136rem;
+        }
+        
+        .dj-vote {
+            font-size: .15rem;
+            padding: .06rem .13rem;
+            border-radius: .017rem;
+        }
+        
+        .col-xs-12>p {
+            font-size: .136rem;
+            letter-spacing: 0.01rem;
+        }
+        
+        .table-tr {
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            border-bottom: 0.01rem solid #f0f0f0;
+            font-size: .132rem;
+            vertical-align: middle;
+            line-height: 0.26rem;
+        }
+        
+        .gray {
+            color: #666666;
+        }
+        
+        .mb-30 {
+            margin-bottom: 0.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay" id="overlay" style="display: none">
+    </div>
+    <div style="display: none" class="modal-success" id="modal-success">
+        <img src="./imgaes/ok.png" alt="">
+        <div class="modal-success-content">
+            <h2>投票成功!</h2>
+            <img src="./imgaes/文明甘孜.png" alt="">
+            <p>长按二维码关注“文明甘孜”可</p>
+            <p>再获得投票机会一次哦</p>
+        </div>
+        <span class="close-modal">关闭</span>
+    </div>
+    <div style="display: none" class="modal-success" id="modal-success1">
+        <img src="./imgaes/ok.png" alt="">
+        <div class="modal-success-content">
+            <h2>投票成功!</h2>
+            <img src="./imgaes/甘孜林业.png" alt="">
+            <p>长按二维码关注“甘孜林业”可</p>
+            <p>再获得投票机会一次哦</p>
+        </div>
+        <span class="close-modal">关闭</span>
+    </div>
+    <div id="wrap1">
+        <div class="detail-head">
+            <div class="row">
+                <div class="return-icon">
+                    <a href="javascript:history.go(-1)">
+                        <img src="./imgaes/return.png" alt="">
+                    </a>
+                </div>
+                <p>最美生态护林员评选活动</p>
+            </div>
+        </div>
+        <div class="hly-index-new">
+            <div class="row hly-photo-head bg-f0">
+                <div class="hly-photo-l"><img src="./imgaes/hly-1.jpg" alt=""></div>
+                <div class="hly-photo-r">
+                    <p><span>姓</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>名：</span> <span>李晓明</span></p>
+                    <p> <span>目前排名：</span><span>01</span></p>
+                    <p class="count"> <span>已获票数：</span><span class="total">234</span><span>票</span></p>
+                    <span class="dj-vote dj-tp fl">给Ta投票</span>
+                </div>
+            </div>
+        </div>
+        <div class="index-new">
+            <div class="row zm-hly">
+                <p>基本信息</p>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">性别</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>男</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">民族</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>汉族</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">出生年月</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>1985.05.21</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">籍贯</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>四川甘孜</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">政治面貌</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>党员</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">学历学位</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>本科学士</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">参加工作时间</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>2007.05.23</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">工作单位</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>甘孜林业局</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">职务/职称</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>护林员</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">所在单位性质</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>国营</p>
+                    </div>
+                </div>
+                <div class="table-tr">
+                    <div class="col-xs-6">
+                        <p class="gray">从事护林工作时间</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <span>2007.05-2017.08 </span><span>共10年</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-30">
+            <div class="index-new">
+                <div class="row zm-hly">
+                    <p>个人简历</p>
+                    <div class="col-xs-12">
+                        <p>曾经任农技员四年配合领导抗旱；抗洪抢险等工作；生态护林八年；积极配合领导森林防火等各项工作。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="index-new">
+                <div class="row zm-hly">
+                    <p>优秀事迹</p>
+                    <div class="col-xs-12">
+                        <p>2015年5月9日，该同志在巡查过程中发现受伤大熊猫并带回基地治疗，大熊猫康复返回大自然。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="index-new">
+                <div class="row zm-hly">
+                    <p>何时何地受过何种奖励</p>
+                    <div class="col-xs-12">
+                        <p>2017年5月15日荣获：“最勤奋上进护林员”称号！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="#" class="go-top" style="display: inline;"><img class="angle-up" src="./imgaes/top.png" alt=" "></a>
+            <div class="foot">
+                <p>主办：甘孜藏族自治州林业局</p>
+                <p>地址：康定市炉城镇光明路9号</p>
+                <p>邮编：626000</p>
+                <p>蜀ICP备12023640号</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="./js/main.js "></script>
+    <script src="./layer/layer.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // 阻止弹窗时候页面滑动
+            $('.overlay').bind("touchmove", function(e) {
+                e.preventDefault();
+            });
+            $('#modal-success').bind("touchmove", function(e) {
+                e.preventDefault();
+            });
+            $('#modal-success1').bind("touchmove", function(e) {
+                e.preventDefault();
+            });
+            // 弹出模态框事件
+            var type = 0; //0 代表都没有关注，1代表关注了文明甘孜，2代表管住了甘孜林业，3代表两个都关注了
+            var cookies = true; //cookies为true代表今日未投票
+            $(".dj-vote").on("click", function() {
+                    var count = parseInt($(this).siblings(".count").find(".total").html());
+                    // $(this).siblings(".count").find(".total").html(count + 1);
+                    if (type == 0 && cookies == true) {
+                        $(this).siblings(".count").find(".total").html(count + 1);
+                        $("#modal-success").show(); //弹出文明甘孜
+                        $(".overlay").show();
+                        cookies = false;
+                        type = 1; //为了模拟默认已关注,后续对type的赋值都是模拟
+                    } else if (type == 1) {
+                        $("#modal-success1").show(); //弹出甘孜林业
+                        $(".overlay").show();
+                        $(this).siblings(".count").find(".total").html(count + 1);
+                        type = 2;
+                    } else if (type == 2) {
+                        $(this).siblings(".count").find(".total").html(count + 1);
+                        layer.msg('投票成功', {
+                            time: 1600,
+                        });
+                        type = 3;
+                    } else if (type == 3 && cookies == false) {
+                        layer.msg('您今天已投票，请明天再来吧~', {
+                            time: 1600,
+                        });
+                    } else {
+                        $(this).siblings(".count").find(".total").html(count + 1);
+                        layer.msg('投票成功', {
+                            time: 1600,
+                        });
+                    }
+                })
+                // 关闭弹窗模拟事件
+            $(".close-modal").on("click", function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                $(".overlay").hide();
+                $("#modal-success").hide();
+                $("#modal-success1").hide();
+            })
+            $(".overlay").on("click", function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                $(".overlay").hide();
+                $(".modal-success").hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

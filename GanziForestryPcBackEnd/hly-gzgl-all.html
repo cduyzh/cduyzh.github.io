@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="  navbar-fixed-top pmd-navbar z-depth">
+
+        <div class="logo fl">
+            <img style="float: left;padding:10px 0 0 10px;width: 80px;" src="./images/反白.png" alt="">
+            <p>甘孜林业综合管控云平台</p>
+        </div>
+
+        <div class="fr tools-menu tc">
+            <ul>
+
+                <li><i><img src="./images/user.png" alt=""></i> admin，欢迎您登陆</li>
+                <li>
+                    <a href="">
+                        <i><img src="./images/code.png" alt=""></i> 修改密码
+                    </a>
+
+                </li>
+                <li>
+                    <a href="">
+                        <i><img src="./images/download.png" alt=""></i> 下载使用手册
+                    </a>
+
+                </li>
+                <li>
+                    <a href="">
+                        <i><img src="./images/exit.png" alt=""></i> 安全退出
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/森林防火.png" alt=""></i> <span>防火监控</span> <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 县林业局</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 隶属森工</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 主要林区</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/树.png" alt=""></i>
+                            <span>业态管理</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 森林公园</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 湿地公园</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/人员.png" alt=""></i>
+                            <span>护林员管理</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul style="display: block" class="treeview-menu menu-open">
+                            <li><a href="./hly-xxgl.html"><i class="fa fa-circle-o"></i> 信息管理</a></li>
+                            <li><a class="active" href="./hly-gzgl.html"><i class="fa fa-circle-o"></i> 工作管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/统计.png" alt=""></i>
+                            <span>统计分析</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./tjfx-1.html"><i class="fa fa-circle-o"></i> 护林工作</a></li>
+                            <li><a href="./tjfx-2.html"><i class="fa fa-circle-o"></i> 新媒体</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/设置.png" alt=""></i>
+                            <span>系统设置</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 管理员管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="admin-content">
+            <div class="admin-container">
+                <div class="bread-crumb">
+                    <ul>
+                        <li>首页</li><span>></span>
+                        <li>护林员管理</li><span>></span>
+                        <li class="active">工作管理</li>
+                    </ul>
+                </div>
+                <form class="layui-form" action="./hly-gzgl-all.html">
+                    <div class="w100">
+
+                        <div class="content-title">
+                            <span>护林员工作管理</span>
+                        </div>
+                    </div>
+
+                    <div class="w100 bg-f0">
+
+                        <div class="checkbox-group">
+
+                            <div class="checkbox-title-area">
+                                <span class="checkbox-title">林区：</span>
+                            </div>
+                            <div class="checkbox-area">
+                                <div class="mb10">
+                                    <div class="w120">
+                                        <input type="checkbox" name="lq" value="0" title="海子山" lay-skin="primary">
+                                    </div>
+                                    <div class="w250">
+                                        <input type="checkbox" name="lq" value="1" title="鲜水河大峡谷国家森林公园" lay-skin="primary">
+                                    </div>
+                                    <div class="w250">
+                                        <input type="checkbox" name="lq" value="2" title="格西沟国家自然保护区" lay-skin="primary">
+
+                                    </div>
+                                    <div class="w250">
+                                        <input type="checkbox" name="lq" value="3" title="庆大沟森林公园" lay-skin="primary">
+
+                                    </div>
+                                </div>
+                                <div class="mb10">
+                                    <div class="w120">
+                                        <input type="checkbox" name="lq" value="4" title="稻城亚丁" lay-skin="primary">
+
+                                    </div>
+                                    <div class="w250">
+                                        <input type="checkbox" name="lq" value="5" title="海螺沟国家森林公园" lay-skin="primary">
+
+                                    </div>
+                                    <div class="w250">
+                                        <input type="checkbox" name="lq" value="6" title="格西沟国家自然保护区" lay-skin="primary">
+
+                                    </div>
+                                    <div class="w250">
+                                        <input type="checkbox" name="lq" value="7" title="贡嘎山国家级自然保护区" lay-skin="primary">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-title-area">
+                                <span class="checkbox-title">区域：</span>
+                            </div>
+                            <div class="checkbox-area">
+                                <div class="mb10">
+                                    <div class="w128">
+                                        <input type="checkbox" name="qy" value="0" title="0231区块" lay-skin="primary">
+
+                                        <!-- <input name="1" type="checkbox" value="" lay-skin="primary" /> <span>0231区块</span> -->
+                                    </div>
+                                    <div class="w128">
+                                        <input type="checkbox" name="qy" value="1" title="0232区块" lay-skin="primary">
+                                    </div>
+                                    <div class="w128">
+                                        <input type="checkbox" name="qy" value="2" title="0233区块" lay-skin="primary">
+                                    </div>
+                                    <div class="w128">
+                                        <input type="checkbox" name="qy" value="3" title="0233区块" lay-skin="primary">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-title-area">
+                                <span class="checkbox-title">时间：</span>
+                            </div>
+
+                            <div class="checkbox-area">
+                                <div class="fl">
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-inline">
+                                            <input lay-verify="required" name="ks" style="    padding-left: 0;" class="layui-input" placeholder="开始日" id="LAY_demorange_s">
+                                        </div>
+                                        <span style="float: left;line-height: 38px;width: 10px;padding-right: 16px;color: #999999">--</span>
+                                        <div class="layui-input-inline">
+                                            <input lay-verify="required" name="jz" style="    padding-left: 0;" class="layui-input" placeholder="截止日" id="LAY_demorange_e">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fl" style="width: 250px">
+                                    <div class="layui-form-item">
+                                        <label style="width: 50px;" class="layui-form-label">人员：</label>
+                                        <div style="display: block;margin-left: 80px;" class="layui-input-block">
+                                            <select name="city">
+                                                <option value=""></option>
+                                                <option name="name" value="0">张三</option>
+                                                <option value="1">李四</option>
+                                                <option value="2">张三</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fl" style="width: 140px">
+                                    <div class="layui-form-item srk">
+                                        <div style="margin-left: 28px;" class="layui-input-block">
+                                            <input style="padding-left: 0;" type="text" name="gjc" placeholder="请输入关键词" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-title-area">
+                            </div>
+                            <div style="padding-bottom: 20px;" class="checkbox-area">
+                                <button lay-submit lay-filter="*" style="width: 90px;" class="layui-btn btn-green">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索结果 -->
+            <div class="row layui-inline">
+                <div class="search-result">
+                    <div class="cxjg">
+                        <div class="ms-title">
+                            查询结果
+                        </div>
+                        <div class="result-content">
+                            <p><span> 起始时间：</span>2017年6月1日</p>
+                            <p><span>结束时间：</span> 2017年6月30日</p>
+                            <p><span>时间跨度：</span>30天</p>
+                            <p><span>查询区域：</span>格希沟国家自然保护区</p>
+                            <p><span>护林员人数：</span>3人</p>
+                            <p><span>累计巡护次数：</span>84次</p>
+                            <div class="result-li-group">
+                                <ul>
+                                    <li class="">[多加 27次]</li>
+                                    <li>[张三 22次]</li>
+                                    <li>[王柳 23次]</li>
+                                </ul>
+                            </div>
+                            <p><span>图文信息：</span> <span style=" width: 130px;   padding-left: 14px;text-align: left;" class="green">[200条]</span> </p>
+
+                        </div>
+                    </div>
+                    <div class="twxx">
+                        <div class="ms-title">
+                            图文信息 <span>全部200条，点击左侧人名可分别查看。</span>
+                        </div>
+                        <div class="tw-1">
+                            <div class="tw-content">
+                                <div class="tw-title">
+                                    <div class="layui-inline">
+                                        <img src="./images/头像.png" alt="">
+                                    </div>
+
+                                    <div class="tw-title-info">
+                                        <strong>多加</strong>
+                                        <p>2016-6-19 17：45</p>
+                                    </div>
+                                </div>
+
+                                <div class="tw-article">
+                                    <h4>0232区域30公里处开始有病虫害，为XXX品种害虫。</h4>
+                                    <img src="./images/img1.png" alt="">
+                                </div>
+
+
+                            </div>
+                            <div class="tw-content">
+                                <div class="tw-title">
+                                    <div class="layui-inline">
+                                        <img src="./images/头像2.png" alt="">
+                                    </div>
+
+                                    <div class="tw-title-info">
+                                        <strong>张三</strong>
+                                        <p>2016-6-19 17：45</p>
+                                    </div>
+                                </div>
+
+                                <div class="tw-article">
+                                    <h4>0232区域30公里处开始有病虫害，为XXX品种害虫。</h4>
+                                    <img src="./images/img2.png" alt="">
+                                </div>
+
+
+                            </div>
+                            <div class="tw-content">
+                                <div class="tw-title">
+                                    <div class="layui-inline">
+                                        <img src="./images/头像3.png" alt="">
+                                    </div>
+
+                                    <div class="tw-title-info">
+                                        <strong>王柳</strong>
+                                        <p>2016-6-19 17：45</p>
+                                    </div>
+                                </div>
+
+                                <div class="tw-article">
+                                    <h4>0232区域30公里处开始有病虫害，为XXX品种害虫。</h4>
+                                    <img src="./images/img3.png" alt="">
+                                </div>
+
+
+                            </div>
+                            <div class="tw-content">
+                                <div class="tw-title">
+                                    <div class="layui-inline">
+                                        <img src="./images/头像.png" alt="">
+                                    </div>
+
+                                    <div class="tw-title-info">
+                                        <strong>多加</strong>
+                                        <p>2016-6-19 17：45</p>
+                                    </div>
+                                </div>
+
+                                <div class="tw-article">
+                                    <h4>0232区域30公里处开始有病虫害，为XXX品种害虫。</h4>
+                                    <img src="./images/img1.png" alt="">
+                                </div>
+
+
+                            </div>
+                            <div class="tw-content">
+                                <div class="tw-title">
+                                    <div class="layui-inline">
+                                        <img src="./images/头像2.png" alt="">
+                                    </div>
+
+                                    <div class="tw-title-info">
+                                        <strong>张三</strong>
+                                        <p>2016-6-19 17：45</p>
+                                    </div>
+                                </div>
+
+                                <div class="tw-article">
+                                    <h4>0232区域30公里处开始有病虫害，为XXX品种害虫。</h4>
+                                    <img src="./images/img2.png" alt="">
+                                </div>
+
+
+                            </div>
+                            <div class="tw-content">
+                                <div class="tw-title">
+                                    <div class="layui-inline">
+                                        <img src="./images/头像3.png" alt="">
+                                    </div>
+
+                                    <div class="tw-title-info">
+                                        <strong>王柳</strong>
+                                        <p>2016-6-19 17：45</p>
+                                    </div>
+                                </div>
+
+                                <div class="tw-article">
+                                    <h4>0232区域30公里处开始有病虫害，为XXX品种害虫。</h4>
+                                    <img src="./images/img3.png" alt="">
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fenye-gzgl" class="fr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="    position: relative;" class="admin-foot">
+        <div class="container foot tc">
+            <ul style="margin-bottom: 10px;">
+                <li> <a href="#">关于我们</a></li><span>|</span>
+                <a href="#">
+                    <li>联系我们</li>
+                </a> <span>|</span>
+                <a href="#">
+                    <li>甘孜州林业局政务网</li>
+                </a>
+                <span>|</span>
+                <a href="#">
+                    <li>手机门户</li>
+                </a>
+                <span>|</span>
+                <a href="#">
+                    <li>甘孜林业微信</li>
+                </a>
+            </ul>
+            <ul>
+                <li style="margin-right: 16px;">甘孜藏族自治州版权所有</li>
+                <li>办案号：川CP备11011050号-2</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./layui/layui.js" charset="utf-8"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/fenye.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>"最美生态护林员"评选活动</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/adapt.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        .modal-success {
+            height: auto;
+            padding-bottom: 0.1rem;
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 0.13rem;
+            top: 0.03rem;
+            font-size: 0.136rem;
+            color: #999999;
+            letter-spacing: 0.01rem;
+        }
+        
+        .modal-success-content>img {
+            width: 0.8rem;
+            margin: 0 auto;
+            padding-bottom: 0.1rem;
+        }
+        
+        .modal-success-content>p {
+            text-align: center;
+            color: #333;
+        }
+        
+        a:hover {
+            color: #ff9900;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: #ff9900;
+        }
+        
+        .zm-hly>p {
+            margin: 0.1rem 0;
+            font-size: .136rem;
+            border-left: .03rem solid #096;
+            padding-left: .09rem;
+            line-height: 0.15rem;
+        }
+        
+        .col-xs-12>p {
+            font-size: .12rem;
+            text-indent: 0.24rem;
+            line-height: 0.23rem;
+            letter-spacing: 0.01rem;
+        }
+        
+        .zbdw>p {
+            font-size: .12rem;
+            line-height: 0.2rem;
+            letter-spacing: 0.01rem;
+        }
+        
+        .zbdw>p:first-child {
+            margin-top: 0.1rem;
+        }
+        
+        .col-xs-12>span {
+            margin: 0.14rem 0.07rem 0 0;
+            font-size: 0.12rem;
+        }
+        
+        .zmly-content {
+            margin-top: 0.18rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay" id="overlay" style="display: none">
+    </div>
+    <div style="display: none" class="modal-success" id="modal-success">
+        <img src="./imgaes/ok.png" alt="">
+        <div class="modal-success-content">
+            <h2>投票成功!</h2>
+            <img src="./imgaes/文明甘孜.png" alt="">
+            <p>长按二维码关注“文明甘孜”可</p>
+            <p>再获得投票机会一次哦</p>
+        </div>
+        <span class="close-modal">关闭</span>
+    </div>
+    <div style="display: none" class="modal-success" id="modal-success1">
+        <img src="./imgaes/ok.png" alt="">
+        <div class="modal-success-content">
+            <h2>投票成功!</h2>
+            <img src="./imgaes/甘孜林业.png" alt="">
+            <p>长按二维码关注“甘孜林业”可</p>
+            <p>再获得投票机会一次哦</p>
+        </div>
+        <span class="close-modal">关闭</span>
+    </div>
+    <div id="wrap1">
+        <div class="detail-head">
+            <div class="row">
+                <div class="return-icon">
+                    <a href="javascript:history.go(-1)">
+                        <img src="./imgaes/return.png" alt="">
+                    </a>
+                </div>
+                <p>最美生态护林员评选活动</p>
+            </div>
+        </div>
+        <div class="zmly-hd-head">
+            <img src="./imgaes/zuimei_headimg.jpg" alt="">
+        </div>
+        <div class="index-new">
+            <div class="row zm-hly">
+                <p>活动介绍</p>
+                <div class="col-xs-12">
+                    <p>本次选拔旨在深入挖掘、评选一批最基层、最敬业、最感人、群众最认同的生态护林员先进典型，以牢固绿色发展理念，助推生态文明建设，促进林区和谐，为建设美丽生态和谐小康甘孜汇聚强大正能量。本投票环节结果将作为最终评选的参考依据。请您为心目中“最美生态护林员”投上珍贵一票！</p>
+                </div>
+            </div>
+        </div>
+        <div class="index-new">
+            <div class="row zm-hly">
+                <p>活动时间</p>
+                <div class="col-xs-12">
+                    <span class="green">8月21日--8月31日</span><span>每人每天可投票1次</span>
+                </div>
+            </div>
+        </div>
+        <div class="index-new">
+            <div class="row zm-hly">
+                <p>主办单位</p>
+                <div class="zbdw">
+                    <p>甘孜州精神文明建设办公室</p>
+                    <p>甘孜州人力资源和社会保障局</p>
+                    <p>甘孜州总工会</p>
+                    <p>甘孜州林业局</p>
+                </div>
+            </div>
+        </div>
+        <div class="zmly-content row">
+            <div class="people-vote">
+                <div class="w48 fl">
+                    <img src="./imgaes/hly-1.jpg" alt="">
+                    <div class="people-info">
+                        <b class="vote-num green">01</b><span>李晓明</span><span class="green fr">票</span><span class="vote-sum green fr">245</span>
+
+                    </div>
+                    <div class="vote-area">
+                        <a href="./hlyDetail.html" class="dj-vote dj-xq fl">查看详情</a>
+                        <span class="dj-vote dj-tp fr">给Ta投票</span>
+                    </div>
+                </div>
+                <div class="w48 fr">
+                    <img src="./imgaes/hly-2.jpg" alt="">
+                    <div class="people-info">
+                        <b class="vote-num green">02</b><span>李晓明</span><span class="vote-sum green fr">245票</span>
+
+                    </div>
+                    <div class="vote-area">
+                        <a href="./hlyDetail.html" class="dj-vote dj-xq fl">查看详情</a>
+                        <span class="dj-vote dj-tp fr">给Ta投票</span>
+                    </div>
+                </div>
+                <div class="w48 fl">
+                    <img src="./imgaes/hly-3.jpg" alt="">
+                    <div class="people-info">
+                        <b class="vote-num green">03</b><span>李晓明</span><span class="vote-sum green fr">245票</span>
+
+                    </div>
+                    <div class="vote-area">
+                        <a href="./hlyDetail.html" class="dj-vote dj-xq fl">查看详情</a>
+                        <span class="dj-vote dj-tp fr">给Ta投票</span>
+                    </div>
+                </div>
+                <div class="w48 fr">
+                    <img src="./imgaes/hly-4.jpg" alt="">
+                    <div class="people-info">
+                        <b class="vote-num green">04</b><span>李晓明</span><span class="vote-sum green fr">245票</span>
+
+                    </div>
+                    <div class="vote-area">
+                        <a href="./hlyDetail.html" class="dj-vote dj-xq fl">查看详情</a>
+                        <span class="dj-vote dj-tp fr">给Ta投票</span>
+                    </div>
+                </div>
+                <div class="w48 fl">
+                    <img src="./imgaes/hly-5.jpg" alt="">
+                    <div class="people-info">
+                        <b class="vote-num green">05</b><span>李晓明</span><span class="vote-sum green fr">245票</span>
+
+                    </div>
+                    <div class="vote-area">
+                        <a href="./hlyDetail.html" class="dj-vote dj-xq fl">查看详情</a>
+                        <span class="dj-vote dj-tp fr">给Ta投票</span>
+                    </div>
+                </div>
+                <div class="w48 fr">
+                    <img src="./imgaes/hly-1.jpg" alt="">
+                    <div class="people-info">
+                        <b class="vote-num green">06</b><span>李晓明</span><span class="vote-sum green fr">245票</span>
+
+                    </div>
+                    <div class="vote-area">
+                        <a href="./hlyDetail.html" class="dj-vote dj-xq fl">查看详情</a>
+                        <span class="dj-vote dj-tp fr">给Ta投票</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="#" class="go-top" style="display: inline;"><img class="angle-up" src="./imgaes/top.png" alt=" "></a>
+            <div class="foot">
+                <p>主办：甘孜藏族自治州林业局</p>
+                <p>地址：康定市炉城镇光明路9号</p>
+                <p>邮编：626000</p>
+                <p>蜀ICP备12023640号</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./js/main.js "></script>
+    <script src="./layer/layer.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // 阻止弹窗时候页面滑动
+            $('.overlay').bind("touchmove", function(e) {
+                e.preventDefault();
+            });
+            $('#modal-success').bind("touchmove", function(e) {
+                e.preventDefault();
+            });
+            $('#modal-success1').bind("touchmove", function(e) {
+                e.preventDefault();
+            });
+            // 弹出模态框事件
+            var type = 0; //0 代表都没有关注，1代表关注了文明甘孜，2代表管住了甘孜林业，3代表两个都关注了
+            var cookies = true; //cookies为true代表今日未投票
+            $(".dj-tp").on("click", function() {
+                    var count = parseInt($(this).parent().siblings(".people-info").find(".vote-sum").html());
+                    // $(this).siblings(".count").find(".total").html(count + 1);
+                    if (type == 0 && cookies == true) {
+                        $(this).parent().siblings(".people-info").find(".vote-sum").html(count + 1);
+                        $("#modal-success").show(); //弹出文明甘孜
+                        $(".overlay").show();
+                        cookies = false;
+                        type = 1; //为了模拟默认已关注,后续对type的赋值都是模拟
+                    } else if (type == 1) {
+                        $("#modal-success1").show(); //弹出甘孜林业
+                        $(".overlay").show();
+                        $(this).parent().siblings(".people-info").find(".vote-sum").html(count + 1);
+                        type = 2;
+                    } else if (type == 2) {
+                        $(this).parent().siblings(".people-info").find(".vote-sum").html(count + 1);
+                        layer.msg('投票成功', {
+                            time: 1600,
+                        });
+                        type = 3;
+                    } else if (type == 3 && cookies == false) {
+                        layer.msg('您今天已投票，请明天再来吧~', {
+                            time: 1600,
+                        });
+                    } else {
+                        $(this).parent().siblings(".people-info").find(".vote-sum").html(count + 1);
+                        layer.msg('投票成功', {
+                            time: 1600,
+                        });
+                    }
+                })
+                // 关闭弹窗模拟事件
+            $(".close-modal").on("click", function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                $(".overlay").hide();
+                $("#modal-success").hide();
+                $("#modal-success1").hide();
+            })
+            $(".overlay").on("click", function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                $(".overlay").hide();
+                $(".modal-success").hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

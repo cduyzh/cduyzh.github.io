@@ -1,0 +1,16 @@
+@import "reset";
+$color: #999;
+body {
+    background-color: $color;
+    -webkit-transform: all .1s;
+    -ms-transform: all .1s;
+    transform: all .1s;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+h5 {
+    color: $color;
+}

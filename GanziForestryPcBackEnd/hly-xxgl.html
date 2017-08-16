@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="  navbar-fixed-top pmd-navbar z-depth">
+
+        <div class="logo fl">
+            <img style="float: left;padding:10px 0 0 10px;width: 80px;" src="./images/反白.png" alt="">
+            <p>甘孜林业综合管控云平台</p>
+        </div>
+
+        <div class="fr tools-menu tc">
+            <ul>
+
+                <li><i><img src="./images/user.png" alt=""></i> admin，欢迎您登陆</li>
+                <li>
+                    <a href="">
+                        <i><img src="./images/code.png" alt=""></i> 修改密码
+                    </a>
+
+                </li>
+                <li>
+                    <a href="">
+                        <i><img src="./images/download.png" alt=""></i> 下载使用手册
+                    </a>
+
+                </li>
+                <li>
+                    <a href="">
+                        <i><img src="./images/exit.png" alt=""></i> 安全退出
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/森林防火.png" alt=""></i> <span>防火监控</span> <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 县林业局</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 隶属森工</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 主要林区</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/树.png" alt=""></i>
+                            <span>业态管理</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu" style="display: none;">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 森林公园</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 湿地公园</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/人员.png" alt=""></i>
+                            <span>护林员管理</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul style="display: block" class="treeview-menu menu-open">
+                            <li><a class="active" href="#"><i class="fa fa-circle-o"></i> 信息管理</a></li>
+                            <li><a href="./hly-gzgl.html"><i class="fa fa-circle-o"></i> 工作管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/统计.png" alt=""></i>
+                            <span>统计分析</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 护林工作</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 新媒体</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i> <img src="./images/设置.png" alt=""></i>
+                            <span>系统设置</span>
+                            <i class="angle-right pull-right"><img src="./images/右箭头.png" alt=""></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 管理员管理</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="admin-content">
+            <div class="admin-container">
+                <div class="bread-crumb">
+                    <ul>
+                        <li>首页</li><span>></span>
+                        <li>护林员管理</li><span>></span>
+                        <li class="active">信息管理</li>
+                    </ul>
+                </div>
+                <form action="./hly-xxgl.html" class="layui-form">
+                    <div style="position: relative;" class="w100">
+
+                        <div class="content-title">
+                            <span>护林员信息管理</span>
+                        </div>
+                        <a class="layui-btn btn-green fr" href="./hly-add.html">添加护林员</a>
+
+
+                    </div>
+
+                    <div class="w100 bg-f0">
+
+                        <div class="checkbox-group">
+
+                            <div class="checkbox-title-area checkbox-title-area-xxgl">
+                                <span class="checkbox-title">所在县区：</span>
+                            </div>
+                            <div class="checkbox-area checkbox-area-xxgl fxk">
+                                <div class="mb10">
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="0" title="全部县区" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="1" title="康定县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="2" title="泸定县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="3" title="丹巴县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="4" title="炉霍县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="5" title="九龙县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="6" title="甘孜县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="7" title="雅江县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="8" title="新龙县" lay-skin="primary">
+                                    </div>
+                                </div>
+                                <div class="mb10">
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="9" title="得荣县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="10" title="道孚县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="11" title="白玉县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="12" title="理塘县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="13" title="德格县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="14" title="乡城县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="15" title="稻城县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="16" title="色达县" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xq" value="17" title="巴塘县" lay-skin="primary">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+
+                            <div class="checkbox-title-area checkbox-title-area-xxgl">
+                                <span class="checkbox-title">所属乡镇：</span>
+                            </div>
+                            <div class="checkbox-area checkbox-area-xxgl fxk">
+                                <div class="mb10">
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="18" title="全部县区" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="19" title="河口乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="20" title="八角楼乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="21" title="祝桑乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="22" title="米龙乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="23" title="八衣绒乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="24" title="波斯河乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="25" title="牙衣河乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="26" title="恶古乡" lay-skin="primary">
+                                    </div>
+                                </div>
+                                <div class="mb10">
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="27" title="麻郎措乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="28" title="西俄洛乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="29" title="德差乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="30" title="红龙乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="31" title="柯拉乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="32" title="呷拉乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="33" title="瓦多乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="34" title="木绒乡" lay-skin="primary">
+                                    </div>
+                                    <div class="w120">
+                                        <input type="checkbox" name="xz" value="35" title="普巴绒乡" lay-skin="primary">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+
+                            <div style="width: 131px;" class="checkbox-title-area checkbox-title-area-xxgl">
+                                <!-- <span class="checkbox-title">人员性别：</span> -->
+                                <label style="padding: 9px 28px;" class="layui-form-label checkbox-title">人员性别：</label>
+                            </div>
+                            <div class="checkbox-area checkbox-area-xxgl">
+                                <div class="mb10">
+                                    <div class="w90">
+                                        <input type="radio" name="sex" value="所有" title="所有">
+                                    </div>
+                                    <div class="w90">
+                                        <input type="radio" name="sex" value="男" title="男">
+                                    </div>
+                                    <div class="w90">
+                                        <input type="radio" name="sex" value="女" title="女">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 131px;" class="checkbox-title-area checkbox-title-area-xxgl">
+                                <!-- <span class="checkbox-title">人员性别：</span> -->
+                                <label style="padding: 9px 28px;" class="layui-form-label checkbox-title">就职状态：</label>
+                            </div>
+                            <div class="checkbox-area checkbox-area-xxgl">
+                                <div class="mb10">
+                                    <div class="w90">
+                                        <input type="radio" name="gzzt" value="所有" title="所有">
+                                    </div>
+                                    <div class="w90">
+                                        <input type="radio" name="gzzt" value="在职" title="在职">
+                                    </div>
+                                    <div class="w90">
+                                        <input type="radio" name="gzzt" value="解聘" title="解聘">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 131px;" class="checkbox-title-area checkbox-title-area-xxgl">
+                                <!-- <span class="checkbox-title">人员性别：</span> -->
+                                <label style="padding: 9px 28px;" class="layui-form-label checkbox-title">工种选择：</label>
+                            </div>
+                            <div class="checkbox-area checkbox-area-xxgl">
+                                <div class="mb10">
+                                    <div class="w90">
+                                        <input type="radio" name="zw" value="所有" title="所有">
+                                    </div>
+                                    <div class="w102">
+                                        <input type="radio" name="zw" value="正式工" title="正式工">
+                                    </div>
+                                    <div class="w102">
+                                        <input type="radio" name="zw" value="临时工" title="临时工">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <div style="width: 131px;" class="checkbox-title-area checkbox-title-area-xxgl">
+                                <span class="checkbox-title">加入时间：</span>
+                            </div>
+
+                            <div class="checkbox-area">
+                                <div class="fl">
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-inline">
+                                            <input lay-verify="required" name="ks" style="    padding-left: 0;" class="layui-input" placeholder="开始日" id="LAY_demorange_s">
+                                        </div>
+                                        <span style="float: left;line-height: 38px;width: 10px;padding-right: 16px;color: #999999">--</span>
+                                        <div class="layui-input-inline">
+                                            <input lay-verify="required" name="jz" style="    padding-left: 0;" class="layui-input" placeholder="截止日" id="LAY_demorange_e">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <div class="checkbox-title-area">
+                            </div>
+                            <div style="padding-bottom: 20px;" class="checkbox-area">
+                                <button lay-filter="*" lay-submit style="width: 90px;" class="layui-btn btn-green">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索结果 -->
+            <div class="row layui-box">
+                <div class="search-result">
+                    <!-- 表格结果 -->
+                    <div class="layui-form">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="143">
+                                <col width="186">
+                                <col width="230">
+                                <col width="200">
+                                <col width="264">
+                                <col width="216">
+                                <col width="485">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th><input name="" lay-skin="primary" lay-filter="allChoose" type="checkbox">
+                                        <span>序号</span>
+                                    </th>
+                                    <th>姓名</th>
+                                    <th>联系方式</th>
+                                    <th>所在县乡</th>
+                                    <th>负责区域</th>
+                                    <th>就职状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>1</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td>在职</td>
+                                    <td> <a href="./hly-xxxg.html">[ 详情 ]</a><a href="">[ 解聘 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>2</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td>在职</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 解聘 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>3</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td>在职</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 解聘 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>4</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td>在职</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 解聘 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>5</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td class="jiepin">解聘</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 续约 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>6</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td class="jiepin">解聘</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 续约 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>7</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td class="jiepin">解聘</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 续约 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>8</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td class="jiepin">解聘</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 续约 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>9</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td class="jiepin">解聘</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 续约 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input name="" lay-skin="primary" type="checkbox"><span>10</span></td>
+                                    <td>张三加扎</td>
+                                    <td>15928065375</td>
+                                    <td>所在县乡</td>
+                                    <td>雅江县 河口镇</td>
+                                    <td class="jiepin">解聘</td>
+                                    <td> <a href="">[ 详情 ]</a><a href="">[ 续约 ]</a><a href="">[ 工作检查 ]</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="fenye"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="    position: relative;" class="admin-foot">
+        <div class="container foot tc">
+            <ul style="margin-bottom: 10px;">
+                <li> <a href="#">关于我们</a></li><span>|</span>
+                <a href="#">
+                    <li>联系我们</li>
+                </a> <span>|</span>
+                <a href="#">
+                    <li>甘孜州林业局政务网</li>
+                </a>
+                <span>|</span>
+                <a href="#">
+                    <li>手机门户</li>
+                </a>
+                <span>|</span>
+                <a href="#">
+                    <li>甘孜林业微信</li>
+                </a>
+            </ul>
+            <ul>
+                <li style="margin-right: 16px;">甘孜藏族自治州版权所有</li>
+                <li>办案号：川CP备11011050号-2</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./layui/layui.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/fenye.js"></script>
+</body>
+
+</html>
