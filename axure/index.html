@@ -1,503 +1,1299 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-    <title>无标题文档</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link type="text/css" href="resources/css/reset.css" rel="Stylesheet" />
-    <link type="text/css" href="resources/css/default.css" rel="Stylesheet" />
-    <!--<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>-->
-
-    <script type="text/javascript">
-        if (location.href.toString().indexOf('file://localhost/') == 0) {
-            location.href = location.href.toString().replace('file://localhost/', 'file:///');
-        }
-    </script>
-
-    <script type="text/javascript" src="resources/scripts/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="resources/scripts/player/splitter.js"></script>
-    <script type="text/javascript" src="resources/scripts/axutils.js"></script>
-    <script type="text/javascript" src="resources/scripts/player/axplayer.js"></script>
-    <script type="text/javascript" src="resources/scripts/messagecenter.js"></script>
-    <script type="text/javascript" src="data/document.js"></script>
-    <style type="text/css">
-
-#outerContainer {
-	width:1000px;
-	height:1500px;
-}
-
-.vsplitbar {
-    width: 3px;
-    /*background: #B9B9B9;*/
-    border-right: 1px solid #8f949a;
-}
-
-.vsplitbar:hover, .vsplitbar.active {
-    background: #8f949a;
-}
-
-#rightPanel {
-    background-color: White;
-}
-
-/*#leftPanel {
-    min-width: 120px;
-}*/
-
-.splitterMask {
-   position:absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
-   background-image: url(resources/images/transparent.gif);
-   z-index: 20000;
-}
-
-    </style>
-    <script type="text/javascript" language="JavaScript"><!--
-        var SITEMAP_COLLAPSE_VAR_NAME = 'c';
-        var PLUGIN_VAR_NAME = 'g';
-        var FOOTNOTES_VAR_NAME = 'fn';
-        var ADAPTIVE_VIEW_VAR_NAME = 'view';
-        var lastLeftPanelWidth = 295;
-        var toolBarOnly = true;
-
-        // isolate scope
-        (function() {
-            setUpController();
-            
-            var configuration = $axure.document.configuration;
-            var _settings = {};
-            _settings.projectId = configuration.prototypeId;
-            _settings.isAxshare = configuration.isAxshare;
-            _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
-            var cHash = getHashStringVar(SITEMAP_COLLAPSE_VAR_NAME);
-            _settings.startCollapsed = cHash == "1";
-            if(cHash == "2") closePlayer();
-            var gHash = getHashStringVar(PLUGIN_VAR_NAME);
-            if(gHash == "") gHash = 1;
-            _settings.startPluginGid = gHash;
-
-            $axure.player.settings = _settings;
-
-            $(window).bind('load', function() {
-                if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
-                    window.location = 'resources/chrome/chrome.html';
-                }
-            });
-
-            $(document).ready(function() {
-                $axure.page.bind('load.start', mainFrame_onload);
-                $axure.messageCenter.addMessageListener(messageCenter_message);
-
-                $(document).on('pluginShown', function (event, data) {
-                    setVarInCurrentUrlHash('g', data ? data : '');
-                });
-
-                $(document).on('pluginCreated', function(event, data) {
-                    if($axure.player.settings.startPluginGid == data) {
-                        $axure.player.showPlugin(data);
-                    }
-                });
-
-                if($axure.player.settings.loadFeedbackPlugin) {
-                    if($axure.player.settings.isAxshare) {
-                        $axure.utils.loadJS('/Scripts/plugins/feedback/feedback8.js');
-                    } else {
-                        $axure.utils.loadJS('http://share.axure.com/Scripts/plugins/feedback/feedback8.js');
-                    }
-                }
-
-                if(navigator.userAgent.indexOf("MSIE") >= 0) $('#outerContainer').width('100%');
-                initialize();
-                if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
-                else $('#outerContainer').splitter({ sizeLeft: lastLeftPanelWidth });
-                $('#leftPanel').width(lastLeftPanelWidth);
-                
-                $(window).resize(function() { resizeContent(); });
-
-                $('#maximizePanelContainer').hide();
-
-                initializeLogo();
-
-                $(window).resize();
-                resizeContent();
-                
-                $axure.player.collapseToBar();
-
-                if($axure.player.settings.startCollapsed) {
-                    collapse();
-                    $('#leftPanel').width(0);
-                }
-
-                if(MOBILE_DEVICE) {
-                    $('#interfaceControlFrameMinimizeContainer').height('45px');
-                    $('#interfaceControlFrameMinimizeContainer a').height('45px');
-                    $('#interfaceControlFrameHeaderContainer').css('margin-top','45px');
-                    $('#interfaceControlFrameCloseContainer a').css('padding','10px 0px');
-                    $('#maximizePanelContainer').height('45px');//.css('top','inherit').css('bottom','0px');
-
-                    $('body').removeClass('hashover');
-
-                    if(IOS) {
-                        $('#rightPanel').css('overflow', 'auto').css('-webkit-overflow-scrolling', 'touch').css('-ms-overflow-x', 'hidden');
-
-                        window.addEventListener("orientationchange", function() {
-                            var viewport = document.querySelector("meta[name=viewport]");
-                            //so iOS doesn't zoom when switching back to portrait
-                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
-                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-                            resizeContent();
-                        }, false);
-
-                        $axure.page.bind('load.start', function() {
-                            resizeContent();
-                        });
-                    }
-                }
-
-            });
-
-            function initialize() {
-                var legacyQString = getQueryString("Page");
-                if (legacyQString.length > 0) {
-                    location.href = location.href.substring(0, location.href.indexOf("?")) + "#p=" + legacyQString;
-                    return;
-                }
-
-                var mainFrame = document.getElementById("mainFrame");
-                mainFrame.contentWindow.location.href = getInitialUrl();
-            }
-
-            function initializeLogo() {
-                if($axure.document.configuration.logoImagePath) {
-                    var image = new Image();
-                    image.onload = function() {
-                        $('#logoImage').css('max-width', this.width + 'px');
-                        $axure.player.resizeContent();
-                    };
-                    image.src = $axure.document.configuration.logoImagePath;
-                
-                    $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
-                    $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
-                } else $('#interfaceControlFrameLogoImageContainer').hide();
-
-                if ($axure.document.configuration.logoImageCaption) {
-                    $('#interfaceControlFrameLogoCaptionContainer').html($axure.document.configuration.logoImageCaption);
-                } else $('#interfaceControlFrameLogoCaptionContainer').hide();
-
-                if(!$('#interfaceControlFrameLogoImageContainer').is(':visible') && !$('#interfaceControlFrameLogoCaptionContainer').is(':visible')) {
-                    $('#interfaceControlFrameLogoContainer').hide();
-                }
-            }
-
-            var resizeContent = $axure.player.resizeContent = function() {
-                var newHeight = $(window).height();
-                var newWidth = $(window).width();
-
-                var controlContainerHeight = newHeight;// - 30;
-                if($('#interfaceControlFrameLogoContainer').is(':visible')) controlContainerHeight -= $('#interfaceControlFrameLogoContainer').outerHeight();// + 16;
-
-                $('#outerContainer').height(newHeight).width(newWidth);
-                $('.vsplitbar').height(newHeight);
-                $('#leftPanel').height(newHeight);
-                $('#interfaceControlFrame').height(newHeight);
-                $('#interfaceControlFrameContainer').height(newHeight);
-                $('#interfaceControlFrameHostContainer').height(controlContainerHeight);
-
-                $('#rightPanel').height(newHeight);
-                $('#mainFrame').height(newHeight);
-
-                if($('#leftPanel').is(':visible')) $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
-                else $('#rightPanel').width($(window).width());
-
-                $(document).trigger('ContainerHeightChange',[controlContainerHeight]);
-
-                if(MOBILE_DEVICE) {
-                    if(!(getHashStringVar(ADAPTIVE_VIEW_VAR_NAME).length > 0)) $axure.messageCenter.postMessage('setAdaptiveViewForSize', {'width':newWidth, 'height':$('#rightPanel').height()});
-                }
-            }
-
-            var collapseToBar = $axure.player.collapseToBar = function() {
-                lastLeftPanelWidth = $('#leftPanel').width();
-                $('#leftPanel').width('55px');
-                $('.vsplitbar').hide();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width());
-                $(window).resize();
-                $('#outerContainer').trigger('resize');
-                toolBarOnly = true;
-            }
-
-            var expandFromBar = $axure.player.expandFromBar = function() {
-                if($('.vsplitbar').is(':visible')) return;
-
-                $('#leftPanel').width(lastLeftPanelWidth);
-                $('.vsplitbar').show();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
-                $(window).resize();
-                $('#outerContainer').trigger('resize');
-                toolBarOnly = false;
-            }
-
-        })();
-
-        function messageCenter_message(message, data) {
-            if(message == 'expandFrame') expand();
-            else if(message == 'getCollapseFrameOnLoad' && $axure.player.settings.startCollapsed && !MOBILE_DEVICE) $axure.messageCenter.postMessage('collapseFrameOnLoad');
-        }
-
-        
-        function getInitialUrl() {
-            var pageName = getHashStringVar("p");
-            if(pageName.length > 0) return pageName + ".html";
-            else {
-                var url = getFirstPageUrl($axure.document.sitemap.rootNodes);
-                return (url ? url : "about:blank");
-            }
-        }
-
-        function getFirstPageUrl(nodes) {
-            for (var i = 0; i < nodes.length; i++) {
-                var node = nodes[i];
-                if (node.url) return node.url;
-                else {
-                    var hasChildren = (node.children && node.children.length > 0);
-                    if (hasChildren) {
-                        var url = getFirstPageUrl(node.children);
-                        if (url) return url;
-                    }
-                }
-            }
-            return null;
-        }
-
-        function closePlayer() {
-            if($axure.page.location) window.location.href = $axure.page.location;
-            else {
-                var pageFile = getInitialUrl();
-                var currentLocation = window.location.toString();
-                window.location.href = currentLocation.substr(0, currentLocation.lastIndexOf("/") + 1) + pageFile;
-            }
-        }
-
-        function replaceHash(newHash) {
-            var currentLocWithoutHash = window.location.toString().split('#')[0];
-
-            //We use replace so that every hash change doesn't get appended to the history stack.
-            //We use replaceState in browsers that support it, else replace the location
-            if(typeof window.history.replaceState != 'undefined') {
-                try {
-                    //Chrome 45 (Version 45.0.2454.85 m) started throwing an error here when generated locally (this only happens with sitemap open) which broke all interactions.
-                    //try catch breaks the url adjusting nicely when the sitemap is open, but all interactions and forward and back buttons work.
-                    //Uncaught SecurityError: Failed to execute 'replaceState' on 'History': A history state object with URL 'file:///C:/Users/Ian/Documents/Axure/HTML/Untitled/start.html#p=home' cannot be created in a document with origin 'null'.
-                    window.history.replaceState(null, null, currentLocWithoutHash + newHash);
-                } catch(ex) {}
-            } else {
-                window.location.replace(currentLocWithoutHash + newHash);
-            }
-        }
-
-        function collapse() {
-            setVarInCurrentUrlHash('c', 1);
-            if(!toolBarOnly) lastLeftPanelWidth = $('#leftPanel').width();
-
-            $('#maximizePanelContainer').show();
-            $('#leftPanel').hide();
-            $('.vsplitbar').hide();
-            $('#rightPanel').width($(window).width());
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-
-            $(document).trigger('sidebarCollapse');
-
-            if(MOBILE_DEVICE) {
-                $('#maximizePanelContainer').animate({
-                    top:$('#rightPanel').height() - $('#maximizePanelContainer').height()
-                }, 300, 'swing', function() {
-                    $('#maximizePanelContainer').css('top', 'inherit').css('bottom', '0px');
-                });
-            }
-        }
-
-        function expand() {
-            if(MOBILE_DEVICE) {
-                $('#maximizePanelContainer').css('top', '0px').css('bottom', 'inherit');
-            }
-
-            deleteVarFromCurrentUrlHash('c');
-            $('#maximizePanelContainer').hide();
-            $('#leftPanel').width(lastLeftPanelWidth);
-            $('#leftPanel').show();
-            if(!toolBarOnly) {
-                $('.vsplitbar').show();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);
-            } else {
-                $axure.player.collapseToBar();
-            }
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-
-            $(document).trigger('sidebarExpanded');
-        }
-
-
-        function mainFrame_onload() {
-            if($axure.page.pageName) document.title = $axure.page.pageName;
-        }
-
-        function getQueryString(query) {
-            var qstring = self.location.href.split("?");
-            if(qstring.length < 2) return "";
-            return GetParameter(qstring, query);
-        }
-        
-        function GetParameter(qstring, query) {
-            var prms = qstring[1].split("&");
-            var frmelements = new Array();
-            var currprmeter, querystr = "";
-
-            for(var i = 0; i < prms.length; i++) {
-                currprmeter = prms[i].split("=");
-                frmelements[i] = new Array();
-                frmelements[i][0] = currprmeter[0];
-                frmelements[i][1] = currprmeter[1];
-            }
-
-            for(j = 0; j < frmelements.length; j++) {
-                if(frmelements[j][0].toLowerCase() == query.toLowerCase()) {
-                    querystr = frmelements[j][1];
-                    break;
-                }
-            }
-            return querystr;
-        }
-        
-        function getHashStringVar(query) {
-            var qstring = self.location.href.split("#");
-            if(qstring.length < 2) return "";
-            return GetParameter(qstring, query);
-        }
-
-        function setHashStringVar(currentHash, varName, varVal) {
-            var varWithEqual = varName + '=';
-            var poundVarWithEqual = varVal === '' ? '' :  '#' + varName + '=' + varVal;
-            var ampVarWithEqual = varVal === '' ? '' :  '&' + varName + '=' + varVal;
-            var hashToSet = '';
-
-            var pageIndex = currentHash.indexOf('#' + varWithEqual);
-            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
-            if(pageIndex != -1) {
-                var newHash = currentHash.substring(0, pageIndex);
-
-                newHash = newHash == '' ? poundVarWithEqual : newHash + ampVarWithEqual;
-
-                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
-                if(ampIndex != -1) {
-                    newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
-                }
-                hashToSet = newHash;
-            } else if(currentHash.indexOf('#') != -1) {
-                hashToSet = currentHash + ampVarWithEqual;
-            } else {
-                hashToSet = poundVarWithEqual;
-            }
-
-            if(hashToSet != '' || varVal == '') {
-                return hashToSet;
-            }
-
-            return null;
-        }
-
-        function setVarInCurrentUrlHash(varName, varVal) {
-            var newHash = setHashStringVar(window.location.hash, varName, varVal);
-
-            if(newHash != null) {
-                replaceHash(newHash);
-            }
-        }
-
-        function deleteHashStringVar(currentHash, varName) {
-            var varWithEqual = varName + '=';
-
-            var pageIndex = currentHash.indexOf('#' + varWithEqual);
-            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
-            if(pageIndex != -1) {
-                var newHash = currentHash.substring(0, pageIndex);
-
-                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
-
-                //IF begin of string....if none blank, ELSE # instead of & and rest
-                //IF in string....prefix + if none blank, ELSE &-rest
-                if(newHash == '') { //beginning of string
-                    newHash = ampIndex != -1 ? '#' + currentHash.substring(ampIndex + 1) : '';
-                } else { //somewhere in the middle
-                    newHash = newHash + (ampIndex != -1 ? currentHash.substring(ampIndex) : '');
-                }
-
-                return newHash;
-            }
-
-            return null;
-        }
-
-        function deleteVarFromCurrentUrlHash(varName) {
-            var newHash = deleteHashStringVar(window.location.hash, varName);
-
-            if(newHash != null) {
-                replaceHash(newHash);
-            }
-        }
-    --></script>
-
-    <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
-    <script type="text/javascript" src="plugins/sitemap/sitemap.js"></script>
-    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
-    <script type="text/javascript" src="plugins/page_notes/page_notes.js"></script>
-    <!--<link type="text/css" rel="Stylesheet" href="plugins/recordplay/styles/recordplay.css" />
-    <script type="text/javascript" src="plugins/recordplay/recordplay.js"></script>-->
-    <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
-    <script type="text/javascript" src="plugins/debug/debug.js"></script>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Axure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前言这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。">
+<meta name="keywords" content="Axure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人业余爱好作品——Axure原型设计（项目开源）">
+<meta property="og:url" content="http://www.cduyzh.com/axure/index.html">
+<meta property="og:site_name" content="Water Sister&#39;s Blog">
+<meta property="og:description" content="前言这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-1.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/%E5%8E%9F%E5%9E%8B%E8%8D%89%E5%9B%BE.JPG">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-2.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-3.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-4.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-5.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-6.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-7.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-8.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-9.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-10.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-11.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/axure-12.png">
+<meta property="og:updated_time" content="2017-07-10T14:23:59.908Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人业余爱好作品——Axure原型设计（项目开源）">
+<meta name="twitter:description" content="前言这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/axure-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+  
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <link rel="canonical" href="http://www.cduyzh.com/axure/"/>
+
+
+
+
+  <title> 个人业余爱好作品——Axure原型设计（项目开源） | Water Sister's Blog </title>
 </head>
-<body scroll="no" class="hashover">
-    <div id="outerContainer">
 
-        <div id="leftPanel">
-            <div id="interfaceControlFrame">
-                <div id="interfaceControlFrameMinimizeContainer">
-                    <a title="收起工具栏" id="interfaceControlFrameMinimizeButton" onclick="collapse();">&nbsp;</a>
-                </div>
-                <div id="interfaceControlFrameHeaderContainer">
-                    <ul id="interfaceControlFrameHeader"></ul>
-                </div>
-                <div id="interfaceControlFrameContainer">
-                    <div id="interfaceControlFrameLogoContainer">
-                        <div id="interfaceControlFrameLogoImageContainer"></div>
-                        <div id="interfaceControlFrameLogoCaptionContainer"></div>
-                    </div>
-                    <div id="interfaceControlFrameHostContainer">
-                    </div>
-                </div>
-                <div id="interfaceControlFrameCloseContainer">
-                    <a title="关闭工具栏" id="interfaceControlFrameCloseButton" onclick="closePlayer();">关闭</a>
-                </div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?406ea8c7e36eef42ed8c72422065fb05";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Water Sister's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">生活、技术个人博客</h1>
+      
+  </div>
+
+  
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/categories/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-coffee"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cog"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+<script>
+<!--崩溃欺骗-->
+var OriginTitile = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="shortcut icon"]').attr('href', "/images/favicon-error.ico");
+         document.title = ' 页面崩溃啦  | 快回来！';
+         clearTimeout(titleTime);
+     }
+     else {
+          $('[rel="shortcut icon"]').attr('href', "/images/favicon.ico");
+         document.title = ' 我们又见面了 ' + OriginTitile;
+         titleTime = setTimeout(function () {
+             document.title = OriginTitile;
+         }, 2000);
+     }
+ });
+</script>
+<script src="https://og6593g2z.qnssl.com/fundebug.0.1.7.min.js"
+        apikey="2ce71f62c9757500d44e81e7892b6a8aa9ed2c99781a04927104f084fae802d9"></script>
+ </div>
+    </header>
+   
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/axure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang ZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/yzh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Water Sister's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                个人业余爱好作品——Axure原型设计（项目开源）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:07:06+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">life</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/axure/" class="leancloud_visitors" data-flag-title="个人业余爱好作品——Axure原型设计（项目开源）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-edit"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      654 字
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      2 分钟
+                    </span>
+              
             </div>
-        </div>
-        <div id="rightPanel">
-            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" src="" frameborder="0" style="display: block;"></iframe>
-        </div>
+          
 
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.cduyzh.com/images/axure-1.png" alt="axure"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。<br><a id="more"></a></p>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="github仓库"><a href="#github仓库" class="headerlink" title="github仓库"></a>github仓库</h3><p>因为为了方便查看，也为了照顾没有装axure的人，所以导成了html的文件，如果有需要源文件的可以联系我。<br>github仓库链接：<a href="https://github.com/cduyzh/AxureProject-WebApp" target="_blank" rel="external">AxureProject-WebApp</a></p>
+<h3 id="在线预览"><a href="#在线预览" class="headerlink" title="在线预览"></a>在线预览</h3><p>我把项目也托管在我博客的服务器上，也可以预览，如果没法预览就请自行前去仓库下载到本地浏览。</p>
+<p>在线浏览地址<a href="http://www.cduyzh.com/Axure-project">AxureProject-WebApp-online</a></p>
+<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>我是直接把作品地址和在线查看地址放出来了，作品简介放后面，因为我不想让伸手党方便点。</p>
+<p>项目是从草稿原型，再到最后的高保真原型界面交互。</p>
+<p><img src="http://img.cduyzh.com/images/%E5%8E%9F%E5%9E%8B%E8%8D%89%E5%9B%BE.JPG" alt="axure"></p>
+<h3 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h3><p>登录注册在原型中，用到了数据的判断不过是写死的，顶多就是拿来做做原型效果，用处不大。<br><img src="http://img.cduyzh.com/images/axure-2.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-3.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-4.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-5.png" alt="axure"><br>可以看到我设置了判断的，所以axure确实能做出很多很棒的效果，这在开发中能节省技术和产品的沟通时间。</p>
+<h3 id="其他页面"><a href="#其他页面" class="headerlink" title="其他页面"></a>其他页面</h3><p>我发现页面是真的多，我就节选几个，大家觉得感兴趣就去前面提供的地址浏览和下载。<br><img src="http://img.cduyzh.com/images/axure-6.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-7.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-8.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-9.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-10.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-11.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-12.png" alt="axure"></p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>其实只是为了展示作品，而且使用这个软件大多都是产品经理、运营等，当时为了参加比赛临时学的，还好有团队有UI来为原型进行设计和排版，然后就两人一起进行原型的开发和设计，谢了128个页面总共，所有页面之间都是可以交互的。但是仍然还是有一些页面没有开发出来或者舍弃了。毕竟是参加比赛，所以事后也没再做了。</p>
+<blockquote>
+<p>因为目前的实习工作不需要使用这个，所以我就发现一般技术和产品进行工作，有一些不和其实大部分就是产品的原型没有设计清除，导致开发的时候不知道如何来实现，产品也没考虑到开发的难点，怎么样来解决方便，所以看的出来如果团队原型设计效率够快的话，一个高保真的原型交互是有多重要，会节省很多开发和产品打交道的时间！</p>
+</blockquote>
+
+      
     </div>
 
-    <div id="maximizePanelContainer">
-        <iframe id="expandFrame" src="resources/expand.html" width="100%" height="100%" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+    <div>
+      
+        
+
+      
+    </div>
+<div align="center">
+  
+    <div class="copyright">
+    <p><span>
+    <b>本文地址：</b><a href="/axure/" title="个人业余爱好作品——Axure原型设计（项目开源）">http://www.cduyzh.com/axure/</a><br/><b>转载请注明出处，谢谢！</b>
+    </span></p>
+    </div>
+  
+</div>
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yang ZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Yang ZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
     </div>
 
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Axure/" rel="tag"># Axure</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/review-hexo/" rel="next" title="结合hexo和github开发静态个人博客感想">
+                <i class="fa fa-chevron-left"></i> 结合hexo和github开发静态个人博客感想
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/myVideo/" rel="prev" title="个人业务爱好作品——大学期间视频作品">
+                个人业务爱好作品——大学期间视频作品 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+          
+          </div>
+          
+
+
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTMxOC81ODg2"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/yzh.jpg"
+               alt="Yang ZiHao" />
+          <p class="site-author-name" itemprop="name">Yang ZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cduyzh" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/cduyzh" target="_blank" title="segmentfault">
+                  
+                    <i class="fa fa-fw fa-scribd"></i>
+                  
+                  segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/5a63ae89baa9" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yang-zi-hao-cheng-du-da-xue" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=450311265&site=qq&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3290722423/" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="next" target="_blank">next</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://qqdie.com/" title="QQdie" target="_blank">QQdie</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=86 src="//music.163.com/outchain/player?type=2&id=103301&auto=0&height=66"></iframe>
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目仓库"><span class="nav-number">2.</span> <span class="nav-text">项目仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github仓库"><span class="nav-number">2.1.</span> <span class="nav-text">github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线预览"><span class="nav-number">2.2.</span> <span class="nav-text">在线预览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目简介"><span class="nav-number">3.</span> <span class="nav-text">项目简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#登录注册"><span class="nav-number">3.1.</span> <span class="nav-text">登录注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他页面"><span class="nav-number">3.2.</span> <span class="nav-text">其他页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-tint"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang ZiHao</span>
+</div>
+
+
+
+<script>
+ host3 = window.location.href;
+  chinadomai3 = "http://www.cduyzh.com/";  
+  if (host3.indexOf(chinadomain3)!=-1)  {
+
+  (function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+                                      }
+</script>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TxBSdzFliqxOpec29xEd8pO5-gzGzoHsz", "5rH911Nhs9V7AWFjEYqe8Bz7");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  <a href="https://github.com/cduyzh"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
 </body>
+
 </html>
