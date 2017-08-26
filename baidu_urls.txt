@@ -1,1 +1,1 @@
-http://www.cduyzh.com/JS-intermediate-train/
+http://www.cduyzh.com/webpack-gulp/

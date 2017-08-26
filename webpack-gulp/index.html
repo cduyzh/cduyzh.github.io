@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Axure," />
+  <meta name="keywords" content="JS,webpack,gulp," />
 
 
 
@@ -91,32 +91,21 @@
 
 
 
-<meta name="description" content="前言这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。">
-<meta name="keywords" content="Axure">
+<meta name="description" content="前言众所周知目前比较火的工具就是gulp和webpack，但webpack和gulp却有所不同，本人两者的底层研究不是很深，所以本篇只做入门，只介绍各自环境下的环境配置和对应能实现的效果。">
+<meta name="keywords" content="JS,webpack,gulp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人业余爱好作品——Axure原型设计（项目开源）">
-<meta property="og:url" content="http://www.cduyzh.com/axure/index.html">
+<meta property="og:title" content="gulp和webpack入门介绍">
+<meta property="og:url" content="http://www.cduyzh.com/webpack-gulp/index.html">
 <meta property="og:site_name" content="Water Sister&#39;s Blog">
-<meta property="og:description" content="前言这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。">
+<meta property="og:description" content="前言众所周知目前比较火的工具就是gulp和webpack，但webpack和gulp却有所不同，本人两者的底层研究不是很深，所以本篇只做入门，只介绍各自环境下的环境配置和对应能实现的效果。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-1.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/%E5%8E%9F%E5%9E%8B%E8%8D%89%E5%9B%BE.JPG">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-2.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-3.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-4.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-5.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-6.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-7.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-8.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-9.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-10.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-11.png">
-<meta property="og:image" content="http://img.cduyzh.com/images/axure-12.png">
-<meta property="og:updated_time" content="2017-07-10T14:23:59.908Z">
+<meta property="og:image" content="http://img.cduyzh.com/images/gulp.png">
+<meta property="og:image" content="http://img.cduyzh.com/images/webpack.png">
+<meta property="og:updated_time" content="2017-08-26T13:11:38.936Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人业余爱好作品——Axure原型设计（项目开源）">
-<meta name="twitter:description" content="前言这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。">
-<meta name="twitter:image" content="http://img.cduyzh.com/images/axure-1.png">
+<meta name="twitter:title" content="gulp和webpack入门介绍">
+<meta name="twitter:description" content="前言众所周知目前比较火的工具就是gulp和webpack，但webpack和gulp却有所不同，本人两者的底层研究不是很深，所以本篇只做入门，只介绍各自环境下的环境配置和对应能实现的效果。">
+<meta name="twitter:image" content="http://img.cduyzh.com/images/gulp.png">
 
 
 
@@ -167,12 +156,12 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <link rel="canonical" href="http://www.cduyzh.com/axure/"/>
+  <link rel="canonical" href="http://www.cduyzh.com/webpack-gulp/"/>
 
 
 
 
-  <title> 个人业余爱好作品——Axure原型设计（项目开源） | Water Sister's Blog </title>
+  <title> gulp和webpack入门介绍 | Water Sister's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -389,7 +378,7 @@ var OriginTitile = document.title;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/axure/">
+    <link itemprop="mainEntityOfPage" href="http://www.cduyzh.com/webpack-gulp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang ZiHao">
@@ -410,7 +399,7 @@ var OriginTitile = document.title;
             
             
               
-                个人业余爱好作品——Axure原型设计（项目开源）
+                gulp和webpack入门介绍
               
             
           </h2>
@@ -425,8 +414,8 @@ var OriginTitile = document.title;
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:07:06+08:00">
-                2017-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T18:42:54+08:00">
+                2017-08-26
               </time>
             
 
@@ -448,8 +437,8 @@ var OriginTitile = document.title;
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">technology</span>
                   </a>
                 </span>
 
@@ -465,7 +454,7 @@ var OriginTitile = document.title;
 
           
           
-             <span id="/axure/" class="leancloud_visitors" data-flag-title="个人业余爱好作品——Axure原型设计（项目开源）">
+             <span id="/webpack-gulp/" class="leancloud_visitors" data-flag-title="gulp和webpack入门介绍">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -490,7 +479,7 @@ var OriginTitile = document.title;
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      654 字
+                      4,102 字
                     </span>
               
 
@@ -506,7 +495,7 @@ var OriginTitile = document.title;
                     <span class="post-meta-item-text">阅读时长</span>
                   
                     <span title="阅读时长" }}">
-                      2 分钟
+                      16 分钟
                     </span>
               
             </div>
@@ -525,19 +514,198 @@ var OriginTitile = document.title;
       
 
       
-        <p><img src="http://img.cduyzh.com/images/axure-1.png" alt="axure"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个作品是在2016年（我大二）的时候参加一个全国外包比赛完成的，最终团队拿了全国二等奖并获得了企业2W的中标奖金。整个原型页面大概有120个页面不重复的，总共是128个。<br><a id="more"></a></p>
-<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><h3 id="github仓库"><a href="#github仓库" class="headerlink" title="github仓库"></a>github仓库</h3><p>因为为了方便查看，也为了照顾没有装axure的人，所以导成了html的文件，如果有需要源文件的可以联系我。<br>github仓库链接：<a href="https://github.com/cduyzh/AxureProject-WebApp" target="_blank" rel="external">AxureProject-WebApp</a></p>
-<h3 id="在线预览"><a href="#在线预览" class="headerlink" title="在线预览"></a>在线预览</h3><p>我把项目也托管在我博客的服务器上，也可以预览，如果没法预览就请自行前去仓库下载到本地浏览。</p>
-<p>在线浏览地址<a href="http://www.cduyzh.com/Axure-project">AxureProject-WebApp-online</a></p>
-<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>我是直接把作品地址和在线查看地址放出来了，作品简介放后面，因为我不想让伸手党方便点。</p>
-<p>项目是从草稿原型，再到最后的高保真原型界面交互。</p>
-<p><img src="http://img.cduyzh.com/images/%E5%8E%9F%E5%9E%8B%E8%8D%89%E5%9B%BE.JPG" alt="axure"></p>
-<h3 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h3><p>登录注册在原型中，用到了数据的判断不过是写死的，顶多就是拿来做做原型效果，用处不大。<br><img src="http://img.cduyzh.com/images/axure-2.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-3.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-4.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-5.png" alt="axure"><br>可以看到我设置了判断的，所以axure确实能做出很多很棒的效果，这在开发中能节省技术和产品的沟通时间。</p>
-<h3 id="其他页面"><a href="#其他页面" class="headerlink" title="其他页面"></a>其他页面</h3><p>我发现页面是真的多，我就节选几个，大家觉得感兴趣就去前面提供的地址浏览和下载。<br><img src="http://img.cduyzh.com/images/axure-6.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-7.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-8.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-9.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-10.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-11.png" alt="axure"><br><img src="http://img.cduyzh.com/images/axure-12.png" alt="axure"></p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>其实只是为了展示作品，而且使用这个软件大多都是产品经理、运营等，当时为了参加比赛临时学的，还好有团队有UI来为原型进行设计和排版，然后就两人一起进行原型的开发和设计，谢了128个页面总共，所有页面之间都是可以交互的。但是仍然还是有一些页面没有开发出来或者舍弃了。毕竟是参加比赛，所以事后也没再做了。</p>
+        <p><img src="http://img.cduyzh.com/images/gulp.png" alt="gulp"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知目前比较火的工具就是<a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">gulp</a>和<a href="https://doc.webpack-china.org/" target="_blank" rel="external">webpack</a>，但webpack和gulp却有所不同，本人两者的底层研究不是很深，所以本篇只做入门，只介绍各自环境下的环境配置和对应能实现的效果。</p>
+<a id="more"></a>
+<h2 id="各自特性和特点"><a href="#各自特性和特点" class="headerlink" title="各自特性和特点"></a>各自特性和特点</h2><h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><blockquote>
+<p>gulp是前端开发过程中对代码进行构建的工具，是自动化项目的构建利器；她不仅能对网站资源进行优化，而且在开发过程中很多重复的任务能够使用正确的工具自动完成；使用她，我们不仅可以很愉快的编写代码，而且大大提高我们的工作效率。</p>
+</blockquote>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript/coffee/sass/less/html/image/css 等文件的的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。在实现上，她借鉴了Unix操作系统的管道（pipe）思想，<strong>前一级的输出，直接变成后一级的输入</strong>，使得在操作上非常简单。</p>
+<h4 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h4><p>在学习前，先谈谈大致使用gulp的步骤，给读者以初步的认识。首先当然是安装nodejs，通过nodejs的npm全局安装和项目安装gulp，其次在项目里安装所需要的gulp插件，然后新建gulp的配置文件gulpfile.js并写好配置信息（定义gulp任务），最后通过命令提示符运行gulp任务即可。</p>
 <blockquote>
-<p>因为目前的实习工作不需要使用这个，所以我就发现一般技术和产品进行工作，有一些不和其实大部分就是产品的原型没有设计清除，导致开发的时候不知道如何来实现，产品也没考虑到开发的难点，怎么样来解决方便，所以看的出来如果团队原型设计效率够快的话，一个高保真的原型交互是有多重要，会节省很多开发和产品打交道的时间！</p>
+<p>安装nodejs -&gt; 全局安装gulp -&gt; 项目安装gulp以及gulp插件 -&gt; 配置gulpfile.js -&gt; 运行任务</p>
+</blockquote>
+<ol>
+<li>安装nodejs</li>
+</ol>
+<p>1.1. 说明：gulp是基于nodejs，理所当然需要安装nodejs；</p>
+<p>1.2. 安装：打开nodejs官网，点击硕大的绿色Download按钮，它会根据系统信息选择对应版本（.msi文件）。然后像安装QQ一样安装它就可以了（安装路径随意）。</p>
+<ol>
+<li>使用命令行（如果你熟悉命令行，可以直接跳到第3步）</li>
+</ol>
+<p>2.1. 说明：什么是命令行？命令行在OSX是终端（Terminal），在windows是命令提示符（Command Prompt）；</p>
+<p>2.2. 注：之后操作都是在windows系统下；</p>
+<p>2.3. 简单介绍gulp在使用过程中常用命令，打开命令提示符执行下列命令（打开方式：window + r 输入cmd回车）：</p>
+<p>node -v查看安装的nodejs版本，出现版本号，说明刚刚已正确安装nodejs。PS：未能出现版本号，请尝试注销电脑重试；</p>
+<p>npm -v查看npm的版本号，npm是在安装nodejs时一同安装的nodejs包管理器，那它有什么用呢？稍后解释；</p>
+<p>cd定位到目录，用法：cd + 路径 ；</p>
+<p>dir列出文件列表；</p>
+<p>cls清空命令提示符窗口内容。</p>
+<ol>
+<li>npm介绍</li>
+</ol>
+<p>3.1. 说明：npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）；</p>
+<p>3.2. 使用npm安装插件：命令提示符执行npm install <name> [-g] [–save-dev]；</name></p>
+<p>3.2.1. <name>：node插件名称。例：npm install gulp-less –save-dev</name></p>
+<p>3.2.2. -g：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用；</p>
+<p>3.2.3. –save：将保存配置信息至package.json（package.json是nodejs项目配置文件）；</p>
+<p>3.2.4. -dev：保存至package.json的devDependencies节点，不指定-dev将保存至dependencies节点；一般保存在dependencies的像这些express/ejs/body-parser等等。</p>
+<p>3.2.5. 为什么要保存至package.json？因为node插件包相对来说非常庞大，所以不加入版本管理，将配置信息写入package.json并将其加入版本管理，其他开发者对应下载即可（命令提示符执行npm install，则会根据package.json下载所有需要的包，npm install –production只下载dependencies节点的包）。</p>
+<p>3.3. 使用npm卸载插件：npm uninstall <name> [-g] [–save-dev]  PS：不要直接删除本地插件包</name></p>
+<p>3.3.1. 删除全部插件：npm uninstall gulp-less gulp-uglify gulp-concat ……???太麻烦</p>
+<p>3.3.2. 借助rimraf：npm install rimraf -g 用法：rimraf node_modules</p>
+<p>3.4. 使用npm更新插件：npm update <name> [-g] [–save-dev]</name></p>
+<p>3.4.1. 更新全部插件：npm update [–save-dev]</p>
+<p>3.5. 查看npm帮助：npm help</p>
+<p>3.6. 当前目录已安装插件：npm list</p>
+<p>PS：npm安装插件过程：从<a href="http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），解决办法往下看↓↓↓↓↓↓。" target="_blank" rel="external">http://registry.npmjs.org下载对应的插件包（该网站服务器位于国外，所以经常下载缓慢或出现异常），解决办法往下看↓↓↓↓↓↓。</a><br>4、选装cnpm</p>
+<p>4.1. 说明：因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了，所以我们乐于分享的淘宝团队干了这事。32个！来自官网：“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”；</p>
+<p>4.2. 官方网址：<a href="http://npm.taobao.org；" target="_blank" rel="external">http://npm.taobao.org；</a></p>
+<p>4.3. 安装：命令提示符执行npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org；" target="_blank" rel="external">https://registry.npm.taobao.org；</a>  注意：安装完后最好查看其版本号cnpm -v或关闭命令提示符重新打开，安装完直接使用有可能会出现错误；</p>
+<p>注：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）。</p>
+<ol>
+<li>全局安装gulp</li>
+</ol>
+<p>5.1. 说明：全局安装gulp目的是为了通过她执行gulp任务；</p>
+<p>5.2. 安装：命令提示符执行cnpm install gulp -g；</p>
+<p>5.3. 查看是否正确安装：命令提示符执行gulp -v，出现版本号即为正确安装。</p>
+<ol>
+<li>新建package.json文件<br>6.1. 说明：package.json是基于nodejs项目必不可少的配置文件，它是存放在项目根目录的普通json文件；</li>
+</ol>
+<p>6.2. 它是这样一个json文件（注意：json文件内是不能写注释的，复制下列内容请删除注释）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;test&quot;,   //项目名称（必须）</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,   //项目版本（必须）</div><div class="line">  &quot;description&quot;: &quot;This is for study gulp project !&quot;,   //项目描述（必须）</div><div class="line">  &quot;homepage&quot;: &quot;&quot;,   //项目主页</div><div class="line">  &quot;repository&quot;: &#123;    //项目资源库</div><div class="line">    &quot;type&quot;: &quot;git&quot;,</div><div class="line">    &quot;url&quot;: &quot;https://git.oschina.net/xxxx&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;author&quot;: &#123;    //项目作者信息</div><div class="line">    &quot;name&quot;: &quot;surging&quot;,</div><div class="line">    &quot;email&quot;: &quot;surging2@qq.com&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;license&quot;: &quot;ISC&quot;,    //项目许可协议</div><div class="line">  &quot;devDependencies&quot;: &#123;    //项目依赖的插件</div><div class="line">    &quot;gulp&quot;: &quot;^3.8.11&quot;,</div><div class="line">    &quot;gulp-less&quot;: &quot;^3.0.0&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>本地安装gulp插件</li>
+</ol>
+<p>7.1. 安装：定位目录命令后提示符执行cnpm install –save-dev；</p>
+<p>7.2. 本示例以gulp-less为例（编译less文件），命令提示符执行cnpm install gulp-less –save-dev；<br>7.3. 将会安装在node_modules的gulp-less目录下，该目录下有一个gulp-less的使用帮助文档README.md；</p>
+<p>7.4. 为了能正常使用，我们还得本地安装gulp：cnpm install gulp –save-dev；</p>
+<blockquote>
+<p>PS：细心的你可能会发现，我们全局安装了gulp，项目也安装了gulp，全局安装gulp是为了执行gulp任务，本地安装gulp则是为了调用gulp插件的功能。</p>
+</blockquote>
+<ol>
+<li>新建gulpfile.js文件（重要）</li>
+</ol>
+<p>8.1、说明：gulpfile.js是gulp项目的配置文件，是位于项目根目录的普通js文件（其实将gulpfile.js放入其他文件夹下亦可）。</p>
+<p>8.2. 它大概是这样一个js文件（更多插件配置请查看这里）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//导入工具包 require(&apos;node_modules里对应模块&apos;)</div><div class="line">var gulp = require(&apos;gulp&apos;), //本地安装gulp所用到的地方</div><div class="line">    less = require(&apos;gulp-less&apos;);</div><div class="line"> </div><div class="line">//定义一个testLess任务（自定义任务名称）</div><div class="line">gulp.task(&apos;testLess&apos;, function () &#123;</div><div class="line">    gulp.src(&apos;src/less/index.less&apos;) //该任务针对的文件</div><div class="line">        .pipe(less()) //该任务调用的模块</div><div class="line">        .pipe(gulp.dest(&apos;src/css&apos;)); //将会在src/css下生成index.css</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">gulp.task(&apos;default&apos;,[&apos;testLess&apos;, &apos;elseTask&apos;]); //定义默认任务 elseTask为其他任务，该示例没有定义elseTask任务</div><div class="line"> </div><div class="line">//gulp.task(name[, deps], fn) 定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数</div><div class="line">//gulp.src(globs[, options]) 执行任务处理的文件  globs：处理的文件路径(字符串或者字符串数组) </div><div class="line">//gulp.dest(path[, options]) 处理完后文件生成路径</div></pre></td></tr></table></figure>
+<p>9、运行gulp</p>
+<p>9.1、说明：命令提示符执行gulp 任务名称；</p>
+<p>9.2、编译less：命令提示符执行gulp testLess；</p>
+<p>9.3、当执行gulp default或gulp将会调用default任务里的所有任务[‘testLess’,’elseTask’]。</p>
+<ol>
+<li>总结</li>
+</ol>
+<ul>
+<li>安装nodejs；</li>
+<li></li>
+<li>新建package.json文件；</li>
+<li></li>
+<li>全局和本地安装gulp；</li>
+<li></li>
+<li>安装gulp插件；</li>
+<li></li>
+<li>新建gulpfile.js文件；</li>
+<li></li>
+<li>通过命令提示符运行gulp任务。</li>
+</ul>
+<blockquote>
+<p>作为入门只介绍最基础的使用方法，如想进一步提升自己的自动化构建环境，可参考gulp官方给出的例子，根据自己的需求自定义一套自动化流程环境，如有需要我可以额外写一篇文章介绍自己的gulp和webpack配置以及注意点。</p>
+</blockquote>
+<h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><p><img src="http://img.cduyzh.com/images/webpack.png" alt="webpack"></p>
+<blockquote>
+<p>webpack为”模块化管理”和”打包工具”，它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等。 </p>
+</blockquote>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p><strong>代码拆分</strong></p>
+<p>Webpack 有两种组织模块依赖的方式，同步(默认)和异步（高级）。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包。</p>
+<p><strong>Loader</strong></p>
+<p>Webpack 本身只能处理原生的 JavaScript 模块，但是 “loader 转换器”可以将各种类型的资源转换成 JavaScript 模块。这样，任何资源都可以成为 Webpack 可以处理的模块。</p>
+<p><strong>智能解析</strong></p>
+<p>Webpack 有一个智能解析器，几乎可以处理任何第三方库，无论它们的模块形式是CommonJS、 AMD 还是普通的 JS 文件。甚至在加载依赖的时候，允许使用动态表达式 require(“./templates/“ + name + “.jade”)。</p>
+<p><strong>插件系统</strong></p>
+<p>Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基于这个插件系统运行的，还可以开发和使用开源的 Webpack 插件，来满足各式各样的需求。</p>
+<p><strong>快速运行</strong></p>
+<p>Webpack 使用异步 I/O （NodeJs）和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译。</p>
+<h4 id="快速入门-1"><a href="#快速入门-1" class="headerlink" title="快速入门"></a>快速入门</h4><ol>
+<li>全局安装webpack （安装webpack命令）</li>
+</ol>
+<p>安装： npm i webpack -g //全局安装 测试： webpack version 只需要安装一次；</p>
+<ol>
+<li>本地安装</li>
+</ol>
+<p>全局安装相当于只是安装了webpack命令，如果需要在我们的项目中使用， 那么还需要本地安装（项目中安装） 安装：npm i webpack –save-dev 安装稳定版本（大多都是最新版） npm i webpack@2.1.0-beta.11 –save-dev </p>
+<ol>
+<li>简单使用</li>
+</ol>
+<p>1)新建项目（文件夹） npm init 初始化package.json包配置文件 </p>
+<p>2)本地安装 npm i webpack –save-dev //保存到包配置文件中</p>
+<p>3)新建模块 scripts 文件夹（命明任意） a.js<br>b.js index.html</p>
+<p>4)命令行打包 webpack 源文件 输出文件 webpack a.js bundle.js a.js 主文件(入口文件，第一个被页面加载的文件） bundle.js 打包后的文件(文件内容包含a.js和a.js依赖的所有文件)</p>
+<p>5)页面使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;scripts/bundle.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>注：后面可以用HtmlWebpackPlugin来自动将打包后的js引入，目前只做初步了解，以后有机会再讲。</p>
+<ol>
+<li>webpack配置文件</li>
+</ol>
+<p><strong>webpack.config.js</strong></p>
+<p>webpack提供了配置文件，我们可以把webpack后面的参数放到配置文件中，之后直接使用webpack命令执行。关于这个的初始化模版，可以参考下我这个(摘取于官方中文文档)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">//入口文件</div><div class="line">  entry: &apos;./foo.js&apos;,</div><div class="line">//输出目录和文件  </div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, &apos;dist&apos;),</div><div class="line">    filename: &apos;foo.bundle.js&apos;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注：多页面应用和多入口文件请参考webpack官方中文文档里有详解，我在此不再拷贝过来。</p>
+</blockquote>
+<ol>
+<li>运行webpack命令</li>
+</ol>
+<p>最简单的就是直接 使用指令：webpack</p>
+<p>由于webpack其实还有很多可以添加配置指令，所以一般都把对应的脚本指令放到packjson文件，如下是我的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">        &quot;dev&quot;: &quot;webpack-dev-server --hot --watch --progress --profile --colors &quot;,</div><div class="line">        &quot;build&quot;: &quot;webpack -p --colors --watch&quot;,</div><div class="line">        &quot;start&quot;: &quot;webpack-dev-server --open&quot;,</div><div class="line">        &quot;clean&quot;: &quot;npm cache clean -f&quot;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
+<h4 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h4><blockquote>
+<p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！</p>
+</blockquote>
+<ol>
+<li>loader模块加载器</li>
+</ol>
+<p>webpack原生仅支持JavaScript模块加载（require(‘/xxx.js’)），如果需要提供其他的模块加载器，那么我们就必须进行安装。 如果直接通过require去加载非js文件，那么会报错。 You may need an appropriate loader to handle this file type.（提示差加载器） Cannot resolve module ‘style-loader’（没有安装模块。指定加载器，没有安装）</p>
+<ol>
+<li>style模块加载器</li>
+</ol>
+<p>css-loader:css文件加载器； style-loader: style文件加载器；</p>
+<p>npm install css-loader style-loader –save-dev来安装这些loader。</p>
+<p>使用模块加载器，你还需要在webpack.config.js中进行配置。</p>
+<p>styles/a.css body{ background: pink; } scripts/a.js //导入css模块 require(“../styles/a.css”);</p>
+<ol>
+<li>less模块加载器</li>
+</ol>
+<p>less是CSS 预处理语言,使用less可以提高编写css效率，webpack中也可以对less模块加载。 安装：npm install less less-loader –save-dev</p>
+<p>styles/myless.less @color: #00ff0f; h1,h2{ color: @color; }</p>
+<p>scripts/a.js //导入myless.less模块。 require(“../styles/myless.less”); 执行命令webpack,开始打包。</p>
+<ol>
+<li>url资源加载器</li>
+</ol>
+<p>url-loader对图片的加载器，将采用如果图片小可以采用base64（内嵌在js中）。 file-loader：对大图片，默认不（推荐）会嵌入js，所以这个文件会直接拷贝到输出目录，需要使用时，直接通过路径来使用。file-loader就是用来识别文件（在服务器上）的地址</p>
+<p>var image = require(‘../images/xxxx.jpg’); console.log(image);</p>
+<blockquote>
+<p>注：其他加载器请参考官方文档了解并使用如：html-loader、babel-loader等</p>
+</blockquote>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p><strong>1. webpack-dev-server</strong></p>
+<p>webpack-dev-server是webpack中常用的工具，它是一个服务器,基于express，并且提供热加载功能，方便我们开发。</p>
+<p>安装webpack-dev-server</p>
+<p>npm install webpack-dev-server -g npm install webpack-dev-server //本地安装</p>
+<p>使用webpack-dev-server</p>
+<p>webpack-dev-server服务器启动后，默认使用iframe帮我们自动刷新。 执行webpack-dev-server –hot –inline; –hot 采用热部署，不用F5就可以刷新页面（AJAX）。 –inline无需刷新页面就可以更新(刷新的代码直接嵌套在我们的打包文件中)。</p>
+<p>或在配置文件里配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">devServer: &#123;</div><div class="line">        host: &quot;192.168.0.135&quot;,</div><div class="line">        //压缩代码</div><div class="line">        compress: false,</div><div class="line">        contentBase: [path.join(__dirname, &quot;dist&quot;), path.join(__dirname, &quot;src&quot;)],</div><div class="line">        port: 9000,</div><div class="line">        watchContentBase: true</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>具体的参数和如何设置请查看官方文档的解释</p>
+</blockquote>
+<p><strong>2. extract-text-webpack-plugin 提取css</strong></p>
+<p>webpack中所有资源（css/img/js）都看为模块，所以如果一个js中依赖的css,默认情况下会打包到模块中。 extract-text-webpack-plugin 插件可以把css提取到一个文件，然后通过link引入这个文件即可。 extract-text-webpack-plugin是一个第三方的插件，所以使用之前先要安装。 安装：npm i extract-text-webpack-plugin –save-dev </p>
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const extractSCSS = new ExtractTextPlugin(&quot;css/styles.css&quot;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">                test: /\.scss$/,</div><div class="line">                use: extractSCSS.extract(&#123;</div><div class="line">                    fallback: &quot;style-loader&quot;,</div><div class="line">                    //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来</div><div class="line">                    use: [&quot;css-loader&quot;, &quot;sass-loader&quot;]</div><div class="line">                &#125;)</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">        extractSCSS,</div><div class="line">    ],</div></pre></td></tr></table></figure>
+<blockquote>
+<p>基本的介绍到这，如有一些概念拿不准请去官方文档看，一些进阶的玩法和整体的所有配置，以后有机会可以出一篇作为文章，贴出我自己的配置文件以及注意事项。</p>
 </blockquote>
 
       
@@ -553,7 +721,7 @@ var OriginTitile = document.title;
   
     <div class="copyright">
     <p><span>
-    <b>本文地址：</b><a href="/axure/" title="个人业余爱好作品——Axure原型设计（项目开源）">http://www.cduyzh.com/axure/</a><br/><b>转载请注明出处，谢谢！</b>
+    <b>本文地址：</b><a href="/webpack-gulp/" title="gulp和webpack入门介绍">http://www.cduyzh.com/webpack-gulp/</a><br/><b>转载请注明出处，谢谢！</b>
     </span></p>
     </div>
   
@@ -591,7 +759,11 @@ var OriginTitile = document.title;
       
         <div class="post-tags">
           
-            <a href="/tags/Axure/" rel="tag"># Axure</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+            <a href="/tags/gulp/" rel="tag"># gulp</a>
           
         </div>
       
@@ -604,8 +776,8 @@ var OriginTitile = document.title;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/review-hexo/" rel="next" title="结合hexo和github开发静态个人博客感想">
-                <i class="fa fa-chevron-left"></i> 结合hexo和github开发静态个人博客感想
+              <a href="/JS-intermediate-train/" rel="next" title="W3Cschool——中级脚本算法题">
+                <i class="fa fa-chevron-left"></i> W3Cschool——中级脚本算法题
               </a>
             
           </div>
@@ -613,10 +785,6 @@ var OriginTitile = document.title;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/myVideo/" rel="prev" title="个人业务爱好作品——大学期间视频作品">
-                个人业务爱好作品——大学期间视频作品 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -864,7 +1032,7 @@ var OriginTitile = document.title;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目仓库"><span class="nav-number">2.</span> <span class="nav-text">项目仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github仓库"><span class="nav-number">2.1.</span> <span class="nav-text">github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线预览"><span class="nav-number">2.2.</span> <span class="nav-text">在线预览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目简介"><span class="nav-number">3.</span> <span class="nav-text">项目简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#登录注册"><span class="nav-number">3.1.</span> <span class="nav-text">登录注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他页面"><span class="nav-number">3.2.</span> <span class="nav-text">其他页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各自特性和特点"><span class="nav-number">2.</span> <span class="nav-text">各自特性和特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">2.1.</span> <span class="nav-text">gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">2.1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速入门"><span class="nav-number">2.1.2.</span> <span class="nav-text">快速入门</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack"><span class="nav-number">2.2.</span> <span class="nav-text">webpack</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速入门-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载器"><span class="nav-number">2.2.3.</span> <span class="nav-text">加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">2.2.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
