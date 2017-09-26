@@ -10,42 +10,45 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./layui/css/layui.css" media="all">
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .img-input-inline div {
+            width: 120px;
+            height: 160px;
+            background-color: #455;
+            border-radius: 4px;
+            border: width;
+            border: 1px solid #e6e6e6;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="  navbar-fixed-top pmd-navbar z-depth">
-
         <div class="logo fl">
             <img style="float: left;padding:10px 0 0 10px;width: 80px;" src="./images/反白.png" alt="">
             <p>甘孜林业综合管控云平台</p>
         </div>
-
         <div class="fr tools-menu tc">
             <ul>
-
                 <li><i><img src="./images/user.png" alt=""></i> admin，欢迎您登陆</li>
                 <li>
                     <a href="">
                         <i><img src="./images/code.png" alt=""></i> 修改密码
                     </a>
-
                 </li>
                 <li>
                     <a href="">
                         <i><img src="./images/download.png" alt=""></i> 下载使用手册
                     </a>
-
                 </li>
                 <li>
                     <a href="">
                         <i><img src="./images/exit.png" alt=""></i> 安全退出
                     </a>
-
                 </li>
             </ul>
         </div>
     </nav>
-
     <section>
         <aside class="main-sidebar">
             <section class="sidebar">
@@ -116,9 +119,7 @@
                         <li class="active">信息管理</li>
                     </ul>
                 </div>
-
                 <div style="position: relative;" class="w100">
-
                     <div class="content-title">
                         <span>添加护林员</span>
                     </div>
@@ -128,7 +129,7 @@
                 </div>
                 <div class="w100 bg-f0">
                     <div class="w500">
-                        <form style="margin-bottom: 60px;    padding-bottom: 40px;" class="layui-form add-form" action="">
+                        <form style="margin-bottom: 60px;    padding-bottom: 40px;" class="layui-form add-form" action="#" enctype="multipart/form-data">
 
                             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
                                 <legend>基本信息</legend>
@@ -189,9 +190,9 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">近期照片：</label>
                                 <div class="img-input-inline">
-                                    <input type="file" id="upload_file" style="display: none;" onchange="change();">
+                                    <input type="file" id="upload_file" style="display: none;">
                                     <input class="layui-input" lay-verify="imgRequired" type="text" style="display: none;" id="upload_file_tmp" readonly="readonly">
-                                    <img id="img-view" src="#" alt="">
+                                    <img id="img-view" src="" alt="">
                                     <button type="button" class="file btn-green " id="select_file" onclick="upload_file.click();">  
                                         上传图片
                                     </button>
@@ -301,8 +302,37 @@
     <script src="./js/nav.js"></script>
     <script src="./layui/layui.js" charset="utf-8"></script>
     <script src="./js/main.js"></script>
+    <script>
+        window.onload = function() {
+            var img_view = document.getElementById("img-view")
+            var img_input = document.getElementById("upload_file")
+            img_input.addEventListener('change', function() {
+                console.log(1);
+                // 清除背景图片:
+                img_view.src = '11';
 
-
+                // 获取File引用:
+                var file = img_input.files[0];
+                // 获取File信息:
+                if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+                    layer.msg('图片格式不正确', {
+                        time: 2000,
+                        icon: 2,
+                    });
+                    return;
+                }
+                // 读取文件:
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var data = e.target.result; // 'data:image/jpeg;base64,/9j/4AAQSk...(base64编码)...'            
+                    console.log(data);
+                    img_view.src = data;
+                };
+                // 以DataURL的形式读取文件:
+                reader.readAsDataURL(file);
+            });
+        }
+    </script>
 </body>
 
 </html>
