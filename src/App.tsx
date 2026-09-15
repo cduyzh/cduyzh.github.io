@@ -1,6 +1,6 @@
+import { Suspense, lazy } from 'react';
 import SmoothScroll from './components/SmoothScroll';
 import CustomCursor from './components/CustomCursor';
-import SpatialCanvas from './components/SpatialCanvas';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,12 +9,23 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
+const SpatialCanvas = lazy(() => import('./components/SpatialCanvas'));
+
 export default function App() {
   return (
     <SmoothScroll>
       <div className="relative min-h-screen bg-[#fbf9f5] text-stone-900 selection:bg-[#c85a32] selection:text-white overflow-x-hidden">
         {/* Continuous Spatial 3D Canvas (Follows Scroll Progress & Cursor across all sections) */}
-        <SpatialCanvas />
+        <Suspense
+          fallback={
+            <div
+              className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50 bg-[radial-gradient(ellipse_at_70%_30%,rgba(200,90,50,0.1),transparent_70%)]"
+              aria-hidden="true"
+            />
+          }
+        >
+          <SpatialCanvas />
+        </Suspense>
 
         {/* Custom Interactive Smooth Cursor (Auto-disabled on touch & reduced-motion) */}
         <CustomCursor />

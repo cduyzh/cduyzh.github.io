@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { getPublicProjects } from '../data/projects';
 import { Project } from '../types';
 import ProjectCard from './ProjectCard';
-import ProjectModal from './ProjectModal';
 import { Layers } from 'lucide-react';
+
+const ProjectModal = lazy(() => import('./ProjectModal'));
 
 export default function ProjectsSection() {
   const publicProjects = getPublicProjects();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(null);
+  const [modalActivated, setModalActivated] = useState(false);
 
   // Maximum items shown on the main page
   const HOMEPAGE_LIMIT = 8;
@@ -24,6 +26,7 @@ export default function ProjectsSection() {
         const target = publicProjects.find((p) => p.slug === slug);
         if (target) {
           setSelectedProject(target);
+          setModalActivated(true);
         }
       }
     };
@@ -35,6 +38,7 @@ export default function ProjectsSection() {
 
   const handleOpenProject = (project: Project, triggerEl?: HTMLElement | null) => {
     setSelectedProject(project);
+    setModalActivated(true);
     if (triggerEl) {
       setTriggerElement(triggerEl);
     }
@@ -109,12 +113,16 @@ export default function ProjectsSection() {
         )}
       </div>
 
-      {/* Case Study Detail Modal */}
-      <ProjectModal
-        project={selectedProject}
-        triggerElement={triggerElement}
-        onClose={handleCloseProject}
-      />
+      {/* Case Study Detail Modal (chunk loaded on first open) */}
+      {modalActivated && (
+        <Suspense fallback={null}>
+          <ProjectModal
+            project={selectedProject}
+            triggerElement={triggerElement}
+            onClose={handleCloseProject}
+          />
+        </Suspense>
+      )}
     </section>
   );
 }
