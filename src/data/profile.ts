@@ -8,6 +8,7 @@ export const profileData: ProfileData = {
     alt: 'cduyzh 的人物形象立绘：水族馆蓝调光影下的侧脸肖像'
   },
   domain: 'www.cduyzh.top',
+  beian: '蜀ICP备2026054840号-1',
   title: 'Web 前端开发 · AI 应用 · 独立项目',
   subtitle: '做产品，也做一些有意思的东西。',
   roles: [

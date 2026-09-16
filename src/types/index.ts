@@ -44,6 +44,7 @@ export interface ProfileData {
     alt: string;
   };
   domain: string;
+  beian: string;
   title: string;
   subtitle: string;
   roles: string[];
