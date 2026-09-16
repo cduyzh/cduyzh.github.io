@@ -39,6 +39,10 @@ export interface SocialLink {
 export interface ProfileData {
   name: string;
   handle: string;
+  avatar: {
+    src: string;
+    alt: string;
+  };
   domain: string;
   title: string;
   subtitle: string;

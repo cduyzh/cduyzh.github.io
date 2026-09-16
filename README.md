@@ -2,6 +2,10 @@
 
 > 做产品，也做一些有意思的东西。
 
+<p align="center">
+  <img src="public/assets/avatar-cduyzh.png" width="180" alt="cduyzh 的人物形象立绘" />
+</p>
+
 ## 关于我
 
 我是 cduyzh，一名 Web 前端开发者，常驻成都。

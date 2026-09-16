@@ -3,6 +3,10 @@ import { ProfileData } from '../types';
 export const profileData: ProfileData = {
   name: 'CDUYZH',
   handle: 'cduyzh',
+  avatar: {
+    src: '/assets/avatar-cduyzh.png',
+    alt: 'cduyzh 的人物形象立绘：水族馆蓝调光影下的侧脸肖像'
+  },
   domain: 'www.cduyzh.top',
   title: 'Web 前端开发 · AI 应用 · 独立项目',
   subtitle: '做产品，也做一些有意思的东西。',
