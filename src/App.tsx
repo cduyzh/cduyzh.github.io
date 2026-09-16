@@ -14,18 +14,21 @@ const SpatialCanvas = lazy(() => import('./components/SpatialCanvas'));
 export default function App() {
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-[#fbf9f5] text-stone-900 selection:bg-[#c85a32] selection:text-white overflow-x-hidden">
+      <div className="relative min-h-screen bg-paper text-ink selection:bg-clay selection:text-paper-raised overflow-x-hidden">
         {/* Continuous Spatial 3D Canvas (Follows Scroll Progress & Cursor across all sections) */}
         <Suspense
           fallback={
             <div
-              className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50 bg-[radial-gradient(ellipse_at_70%_30%,rgba(200,90,50,0.1),transparent_70%)]"
+              className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50 bg-[radial-gradient(ellipse_at_70%_30%,rgba(181,80,42,0.1),transparent_70%)]"
               aria-hidden="true"
             />
           }
         >
           <SpatialCanvas />
         </Suspense>
+
+        {/* 全页纸纹：压在内容与导航之上，作为统一的一层胶片颗粒 */}
+        <div className="paper-texture fixed inset-0 z-[70] pointer-events-none" aria-hidden="true" />
 
         {/* Custom Interactive Smooth Cursor (Auto-disabled on touch & reduced-motion) */}
         <CustomCursor />

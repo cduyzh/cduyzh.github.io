@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Code2, Sparkles, Wrench, MapPin } from 'lucide-react';
+import { profileData } from '../data/profile';
 
 export default function About() {
-  const [avatarSrc, setAvatarSrc] = useState('/assets/avatar-cduyzh.png');
-  const fallbackAvatar = 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop';
-
   const focusPoints = [
     {
       icon: Code2,
@@ -27,12 +24,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full py-20 sm:py-24 md:py-28 bg-[#f4f2ec]/85 backdrop-blur-md text-stone-900 border-t border-b border-stone-200/80"
+      className="veil relative w-full py-20 sm:py-24 md:py-28 text-ink"
     >
       <div className="relative max-w-5xl mx-auto px-6 sm:px-10 md:px-12">
         {/* Section Marker */}
         <div className="flex items-center gap-3 mb-8 sm:mb-10">
-          <span className="text-xs font-mono tracking-widest text-[#c85a32] font-semibold">
+          <span className="text-xs font-mono tracking-widest text-clay font-semibold">
             01 / 关于我
           </span>
           <div className="h-[1px] w-10 bg-stone-300" />
@@ -61,24 +58,24 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="p-6 sm:p-8 rounded-2xl bg-white/85 border border-stone-200/90 shadow-xs backdrop-blur-xs flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-7"
           >
-            {/* Visual Avatar / Workspace Vignette */}
-            <div className="relative shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-stone-300/80 bg-stone-100 shadow-xs group">
-              <img
-                src={avatarSrc}
-                alt="cduyzh 个人工作台与肖像"
-                width={160}
-                height={160}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                onError={() => {
-                  if (avatarSrc !== fallbackAvatar) {
-                    setAvatarSrc(fallbackAvatar);
-                  }
-                }}
-              />
-              <div className="pointer-events-none absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors" />
-            </div>
+            {/* 人物形象立绘 */}
+            <figure className="shrink-0 flex flex-col items-center sm:items-start gap-2.5">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-stone-300/80 bg-stone-100 shadow-xs group">
+                <img
+                  src={profileData.avatar.src}
+                  alt={profileData.avatar.alt}
+                  width={480}
+                  height={480}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.04] transition-transform duration-500"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/20" />
+              </div>
+              <figcaption className="text-[10px] font-mono tracking-wider text-stone-500">
+                人物形象 · {profileData.handle}
+              </figcaption>
+            </figure>
 
             {/* Intro Copy */}
             <div className="flex-1 flex flex-col gap-3 text-center sm:text-left">
@@ -89,13 +86,13 @@ export default function About() {
               {/* Status Meta Chips */}
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs font-mono text-stone-500">
                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-stone-700 font-medium">
-                  <MapPin size={12} className="text-[#c85a32]" />
+                  <MapPin size={12} className="text-clay" />
                   <span>中国 · 成都</span>
                 </span>
                 <span className="px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-stone-700 font-medium">
                   Web 界面与全栈探索
                 </span>
-                <span className="px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-[#c85a32] font-medium">
+                <span className="px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-clay font-medium">
                   自用工具落地
                 </span>
               </div>
@@ -113,7 +110,7 @@ export default function About() {
                 className="p-5 rounded-xl bg-white/60 border border-stone-200/80 text-left flex flex-col justify-start hover:border-stone-300 transition-colors shadow-2xs"
               >
                 <div className="flex items-center gap-2.5 text-stone-900 font-display font-bold text-sm sm:text-base mb-1.5">
-                  <span className="p-1.5 rounded-lg bg-stone-100 text-[#c85a32]">
+                  <span className="p-1.5 rounded-lg bg-stone-100 text-clay">
                     <Icon size={16} />
                   </span>
                   <span>{point.title}</span>

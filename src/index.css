@@ -1,33 +1,46 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-display: 'Plus Jakarta Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-serif: 'Noto Serif SC', Georgia, serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --bg-warm: #fbf9f5;
-    --text-primary: #1c1917;
-  }
+@theme {
+  /* 纸与墨：暖米白基底，避免纯白的廉价感 */
+  --color-paper: #f6f3ec;
+  --color-paper-raised: #fffdf8;
+  --color-paper-sunk: #eee9de;
 
+  /* 文字层级 */
+  --color-ink: #1a1613;
+  --color-ink-2: #4b443a;
+  --color-ink-3: #867d6f;
+
+  /* 单一强调色：陶土橙收敛后的版本，全站唯一 */
+  --color-clay: #b5502a;
+  --color-sage: #6d8878;
+
+  --font-display: 'Plus Jakarta Sans', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Noto Serif SC', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
   html {
     font-family: var(--font-body);
-    background-color: #fbf9f5;
-    color: #1c1917;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
     scroll-behavior: smooth;
   }
 
   body {
     overflow-x: hidden;
-    background-color: #fbf9f5;
+    background-color: var(--color-paper);
+  }
+
+  ::selection {
+    background-color: var(--color-clay);
+    color: var(--color-paper-raised);
   }
 }
 
 .font-serif-sc {
-  font-family: 'Noto Serif SC', Georgia, serif;
-}
-
-.font-display {
-  font-family: 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
+  font-family: var(--font-serif);
 }
 
 .font-mono-code {
@@ -35,7 +48,69 @@
 }
 
 .font-body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
+}
+
+/* --------------------------------------------------------------------------
+   分区遮罩：内容区需要可读性，但 3D 背景必须贯穿整页。
+   两端透明、中段实色 —— 分区交界处因此不会出现横向接缝。
+   不使用 backdrop-blur：模糊会让背后的形体变成一坨脏灰。
+   -------------------------------------------------------------------------- */
+
+.veil {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(246, 243, 236, 0) 0%,
+    rgba(246, 243, 236, 0.86) 14%,
+    rgba(246, 243, 236, 0.86) 86%,
+    rgba(246, 243, 236, 0) 100%
+  );
+}
+
+.veil-strong {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(246, 243, 236, 0) 0%,
+    rgba(243, 239, 230, 0.93) 12%,
+    rgba(243, 239, 230, 0.93) 88%,
+    rgba(246, 243, 236, 0) 100%
+  );
+}
+
+/* 联系区偏暖：遮罩本身带一点陶土色温，形成「黄昏」收束 */
+.veil-dusk {
+  background-image:
+    radial-gradient(120% 80% at 78% 100%, rgba(181, 80, 42, 0.07) 0%, rgba(181, 80, 42, 0) 60%),
+    linear-gradient(
+      to bottom,
+      rgba(246, 243, 236, 0) 0%,
+      rgba(244, 238, 229, 0.9) 16%,
+      rgba(240, 232, 221, 0.94) 88%,
+      rgba(238, 233, 222, 1) 100%
+    );
+}
+
+/* 视觉过渡段：让照片上下缘羽化淡出，而不是硬切一堵黑墙 */
+.feather-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+}
+
+/* 细分割线：全站统一的「编辑排版」语言 */
+.hairline {
+  border-color: rgba(26, 22, 19, 0.12);
 }
 
 /* Subtle paper texture overlay */
@@ -43,34 +118,19 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.028'/%3E%3C/svg%3E");
 }
 
-/* Light Glassmorphism */
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(28, 25, 23, 0.08);
-}
-
-.glass-nav-light {
-  background: rgba(251, 249, 245, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #fbf9f5;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6d3cd;
-  border-radius: 3px;
+  background: rgba(26, 22, 19, 0.18);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b5b0a8;
+  background: rgba(26, 22, 19, 0.32);
 }
 
 /* Smooth text rendering */

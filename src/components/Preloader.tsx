@@ -75,7 +75,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             </div>
             <div className="w-full h-[2px] bg-stone-200 relative overflow-hidden rounded-full">
               <motion.div
-                className="absolute top-0 left-0 bottom-0 bg-[#c85a32] rounded-full"
+                className="absolute top-0 left-0 bottom-0 bg-clay rounded-full"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: 'easeOut', duration: 0.15 }}
               />

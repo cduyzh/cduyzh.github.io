@@ -49,18 +49,12 @@ export default function Hero() {
         className="my-auto w-full max-w-5xl mx-auto flex flex-col justify-center items-start z-10 py-10 md:py-14"
       >
         {/* Role tags */}
-        <div className="flex flex-wrap items-center gap-2 text-xs font-mono tracking-wider text-stone-500 mb-3 sm:mb-4">
-          <span className="px-2.5 py-0.5 rounded-md bg-white/80 border border-stone-200/70 text-stone-800 font-medium backdrop-blur-xs">
-            Web 前端开发
-          </span>
-          <span className="text-stone-300">/</span>
-          <span className="px-2.5 py-0.5 rounded-md bg-white/80 border border-stone-200/70 text-stone-800 font-medium backdrop-blur-xs">
-            AI 应用
-          </span>
-          <span className="text-stone-300">/</span>
-          <span className="px-2.5 py-0.5 rounded-md bg-white/80 border border-stone-200/70 text-stone-800 font-medium backdrop-blur-xs">
-            独立工具
-          </span>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] sm:text-xs font-mono tracking-[0.16em] text-ink-3 mb-4 sm:mb-5">
+          <span className="text-clay font-semibold">Web 前端开发</span>
+          <span className="w-px h-3 bg-ink/15" />
+          <span>AI 应用</span>
+          <span className="w-px h-3 bg-ink/15" />
+          <span>独立工具</span>
         </div>
 
         {/* Oversized Brand Typography */}
@@ -86,7 +80,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollTo('projects')}
-            className="px-6 py-3 rounded-full bg-stone-900 text-stone-100 font-semibold hover:bg-[#c85a32] transition-colors duration-200 flex items-center gap-2 shadow-xs group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+            className="px-6 py-3 rounded-full bg-stone-900 text-stone-100 font-semibold hover:bg-clay transition-colors duration-200 flex items-center gap-2 shadow-xs group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
           >
             <span>浏览近期作品</span>
             <ArrowDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
@@ -95,7 +89,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollTo('about')}
-            className="px-6 py-3 rounded-full border border-stone-300 bg-white/80 text-stone-800 hover:bg-white hover:border-stone-400 transition-[background-color,border-color] duration-200 backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+            className="px-6 py-3 rounded-full border border-stone-300 bg-white/80 text-stone-800 hover:bg-white hover:border-stone-400 transition-[background-color,border-color] duration-200 backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
           >
             关于我
           </button>
@@ -103,7 +97,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollTo('contact')}
-            className="px-4 py-3 text-stone-600 hover:text-[#c85a32] transition-colors flex items-center gap-1 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+            className="px-4 py-3 text-stone-600 hover:text-clay transition-colors flex items-center gap-1 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
           >
             <span>取得联系</span>
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -122,7 +116,7 @@ export default function Hero() {
         <button
           type="button"
           onClick={() => scrollTo('about')}
-          className="flex items-center gap-1.5 text-stone-600 hover:text-stone-900 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+          className="flex items-center gap-1.5 text-stone-600 hover:text-stone-900 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
         >
           <span>向下浏览</span>
           <ArrowDown size={13} className="text-stone-400 group-hover:text-stone-900 transition-colors" />

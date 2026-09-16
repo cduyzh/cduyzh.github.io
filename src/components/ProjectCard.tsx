@@ -13,7 +13,7 @@ interface ProjectCardProps {
 const statusStyles: Record<ProjectStatus, { bg: string; text: string; dot: string; glow: string }> = {
   '已上线': { bg: 'bg-emerald-50/90 border-emerald-200', text: 'text-emerald-800', dot: 'bg-emerald-500', glow: 'group-hover:border-emerald-300' },
   '内测中': { bg: 'bg-teal-50/90 border-teal-200', text: 'text-teal-800', dot: 'bg-teal-500', glow: 'group-hover:border-teal-300' },
-  '开发中': { bg: 'bg-amber-50/90 border-amber-200', text: 'text-amber-900', dot: 'bg-[#c85a32]', glow: 'group-hover:border-amber-300' },
+  '开发中': { bg: 'bg-amber-50/90 border-amber-200', text: 'text-amber-900', dot: 'bg-clay', glow: 'group-hover:border-amber-300' },
   '研究中': { bg: 'bg-sky-50/90 border-sky-200', text: 'text-sky-900', dot: 'bg-sky-500', glow: 'group-hover:border-sky-300' },
   '构思中': { bg: 'bg-stone-100/90 border-stone-200', text: 'text-stone-700', dot: 'bg-stone-400', glow: 'group-hover:border-stone-300' }
 };
@@ -76,7 +76,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
-        className="group relative flex flex-col justify-between h-full bg-white/90 backdrop-blur-md rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(200,90,50,0.08)] hover:border-stone-300 transition-[border-color,box-shadow] duration-300 overflow-hidden select-none"
+        className="group relative flex flex-col justify-between h-full bg-white/90 backdrop-blur-md rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(181,80,42,0.08)] hover:border-stone-300 transition-[border-color,box-shadow] duration-300 overflow-hidden select-none"
       >
         {/* Dynamic Specular Glass Glare Layer */}
         {isHovered && (
@@ -126,7 +126,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
               <button
                 type="button"
                 onClick={handleCardClick}
-                className="text-left hover:text-[#c85a32] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32] rounded-xs"
+                className="text-left hover:text-clay transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay rounded-xs"
               >
                 {project.title}
               </button>
@@ -157,7 +157,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
             ref={triggerButtonRef}
             type="button"
             onClick={handleCardClick}
-            className="inline-flex items-center gap-1.5 text-stone-900 hover:text-[#c85a32] font-semibold transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32] rounded-xs"
+            className="inline-flex items-center gap-1.5 text-stone-900 hover:text-clay font-semibold transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay rounded-xs"
             aria-haspopup="dialog"
           >
             <span>查看项目档案</span>

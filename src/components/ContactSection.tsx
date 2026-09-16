@@ -48,7 +48,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative w-full py-20 sm:py-28 md:py-32 bg-[#ece9e2]/85 backdrop-blur-md text-stone-900 border-t border-stone-300/80">
+    <section id="contact" className="veil-dusk relative w-full py-20 sm:py-28 md:py-32 text-ink">
       {/* Toast Notification with aria-live="polite" */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {copiedItem && `已复制 ${copiedItem} 到剪贴板`}
@@ -85,7 +85,7 @@ export default function ContactSection() {
 
       <div className="max-w-5xl mx-auto px-6 sm:px-10 md:px-12">
         {/* Section Tag */}
-        <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-[#c85a32] font-semibold mb-6">
+        <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-clay font-semibold mb-6">
           <span>03 / 联系方式</span>
           <span>·</span>
           <span>保持交流</span>
@@ -113,7 +113,7 @@ export default function ContactSection() {
           <div className="inline-flex flex-wrap items-center gap-2 sm:gap-3 p-2 pr-4 rounded-2xl sm:rounded-full bg-white border border-stone-300/80 shadow-xs">
             <a
               href={`mailto:${contactData.email}`}
-              className="px-5 py-2.5 rounded-full bg-stone-900 text-stone-100 font-medium text-xs font-mono hover:bg-[#c85a32] transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+              className="px-5 py-2.5 rounded-full bg-stone-900 text-stone-100 font-medium text-xs font-mono hover:bg-clay transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
             >
               <Mail size={14} />
               <span>发送邮件</span>
@@ -122,7 +122,7 @@ export default function ContactSection() {
             <button
               type="button"
               onClick={() => handleCopy(contactData.email, '邮箱地址')}
-              className="text-xs sm:text-sm font-mono text-stone-700 hover:text-stone-950 flex items-center gap-2 transition-colors py-1.5 px-3 rounded-full hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+              className="text-xs sm:text-sm font-mono text-stone-700 hover:text-stone-950 flex items-center gap-2 transition-colors py-1.5 px-3 rounded-full hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
               title="点击复制邮箱地址"
             >
               <span>{contactData.email}</span>
@@ -151,10 +151,10 @@ export default function ContactSection() {
                     key={social.name}
                     type="button"
                     onClick={() => handleCopy(social.copyValue!, `${social.name} (${social.copyValue})`)}
-                    className="p-4 sm:p-5 rounded-2xl bg-white/85 hover:bg-white border border-stone-200 hover:border-stone-400 shadow-xs hover:shadow-md transition-[border-color,box-shadow,background-color] duration-200 text-left flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+                    className="p-4 sm:p-5 rounded-2xl bg-white/85 hover:bg-white border border-stone-200 hover:border-stone-400 shadow-xs hover:shadow-md transition-[border-color,box-shadow,background-color] duration-200 text-left flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-stone-100 text-stone-700 group-hover:text-[#c85a32] group-hover:bg-[#c85a32]/10 transition-colors">
+                      <div className="p-2.5 rounded-xl bg-stone-100 text-stone-700 group-hover:text-clay group-hover:bg-clay/10 transition-colors">
                         {getIcon(social.icon || '')}
                       </div>
                       <div>
@@ -180,10 +180,10 @@ export default function ContactSection() {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-4 sm:p-5 rounded-2xl bg-white/85 hover:bg-white border border-stone-200 hover:border-stone-400 shadow-xs hover:shadow-md transition-[border-color,box-shadow,background-color] duration-200 flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+                  className="p-4 sm:p-5 rounded-2xl bg-white/85 hover:bg-white border border-stone-200 hover:border-stone-400 shadow-xs hover:shadow-md transition-[border-color,box-shadow,background-color] duration-200 flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-stone-100 text-stone-700 group-hover:text-[#c85a32] group-hover:bg-[#c85a32]/10 transition-colors">
+                    <div className="p-2.5 rounded-xl bg-stone-100 text-stone-700 group-hover:text-clay group-hover:bg-clay/10 transition-colors">
                       {getIcon(social.icon || '')}
                     </div>
                     <div>
@@ -195,7 +195,7 @@ export default function ContactSection() {
                       </div>
                     </div>
                   </div>
-                  <ArrowUpRight size={15} className="text-stone-400 group-hover:text-[#c85a32] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight size={15} className="text-stone-400 group-hover:text-clay group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               );
             })}

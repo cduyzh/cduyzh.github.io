@@ -54,12 +54,12 @@ export default function ProjectsSection() {
   const hasMoreThanLimit = publicProjects.length > HOMEPAGE_LIMIT;
 
   return (
-    <section id="projects" className="relative w-full py-20 sm:py-28 md:py-32 bg-[#f7f5f0]/85 backdrop-blur-md text-stone-900 border-b border-stone-200/80">
+    <section id="projects" className="veil-strong relative w-full py-20 sm:py-28 md:py-32 text-ink">
       <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-stone-300/70 pb-6 mb-10 sm:mb-14 gap-6">
           <div>
-            <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-[#c85a32] font-semibold mb-3">
+            <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-clay font-semibold mb-3">
               <span>02 / 作品与探索</span>
               <span>·</span>
               {/* Dynamic Project Count */}
@@ -100,7 +100,7 @@ export default function ProjectsSection() {
               <button
                 type="button"
                 onClick={() => setDisplayCount((prev) => prev + HOMEPAGE_LIMIT)}
-                className="px-8 py-3.5 rounded-full bg-stone-900 text-white hover:bg-[#c85a32] transition-colors font-mono text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+                className="px-8 py-3.5 rounded-full bg-stone-900 text-white hover:bg-clay transition-colors font-mono text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
               >
                 查看更多项目 ({publicProjects.length - displayCount})
               </button>

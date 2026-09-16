@@ -14,7 +14,7 @@ export const projectCovers = {
           <stop offset="100%" stop-color="#f0ebe1"/>
         </linearGradient>
         <linearGradient id="terracotta" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#c85a32"/>
+          <stop offset="0%" stop-color="#b5502a"/>
           <stop offset="100%" stop-color="#e07a5f"/>
         </linearGradient>
       </defs>
@@ -26,12 +26,12 @@ export const projectCovers = {
       <path d="M 400 80 A 160 160 0 0 1 556 200" fill="none" stroke="url(#terracotta)" stroke-width="8" stroke-linecap="round"/>
       
       <!-- Moon Phase Crescent -->
-      <path d="M 400 190 A 50 50 0 0 1 400 290 A 35 35 0 0 0 400 190" fill="#c85a32" opacity="0.85"/>
-      <circle cx="400" cy="240" r="50" fill="none" stroke="#c85a32" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 400 190 A 50 50 0 0 1 400 290 A 35 35 0 0 0 400 190" fill="#b5502a" opacity="0.85"/>
+      <circle cx="400" cy="240" r="50" fill="none" stroke="#b5502a" stroke-width="1.5" opacity="0.3"/>
 
       <!-- Days Indicator Ring Points -->
-      <circle cx="400" cy="80" r="5" fill="#c85a32"/>
-      <circle cx="556" cy="200" r="4" fill="#c85a32"/>
+      <circle cx="400" cy="80" r="5" fill="#b5502a"/>
+      <circle cx="556" cy="200" r="4" fill="#b5502a"/>
       <circle cx="490" cy="350" r="3" fill="#a8a29e"/>
       <circle cx="310" cy="350" r="3" fill="#a8a29e"/>
       <circle cx="244" cy="200" r="3" fill="#a8a29e"/>
@@ -40,7 +40,7 @@ export const projectCovers = {
       <g transform="translate(180, 360)">
         <rect width="440" height="76" rx="16" fill="#ffffff" stroke="#e7e2d8" stroke-width="1.5"/>
         <circle cx="42" cy="38" r="18" fill="#fdf0ec"/>
-        <path d="M 36 38 C 36 33 48 33 48 38 C 48 43 42 47 42 47 C 42 47 36 43 36 38 Z" fill="#c85a32" opacity="0.9"/>
+        <path d="M 36 38 C 36 33 48 33 48 38 C 48 43 42 47 42 47 C 42 47 36 43 36 38 Z" fill="#b5502a" opacity="0.9"/>
         <text x="76" y="32" font-family="sans-serif" font-size="13" font-weight="600" fill="#292524">伴侣关怀提醒 · 预计 3 天后进入经期</text>
         <text x="76" y="52" font-family="sans-serif" font-size="11" fill="#78716c">“今天可以准备温水与暖宝宝，注意休息~”</text>
       </g>
@@ -137,7 +137,7 @@ export const projectCovers = {
       <!-- Quarter Indicators -->
       <g font-family="monospace" font-size="12" font-weight="700" fill="#8c8273">
         <text x="140" y="235">2026 Q2</text>
-        <circle cx="170" cy="250" r="6" fill="#c85a32"/>
+        <circle cx="170" cy="250" r="6" fill="#b5502a"/>
         
         <text x="320" y="235">2026 Q3</text>
         <circle cx="350" cy="250" r="6" fill="#44403c"/>
@@ -152,8 +152,8 @@ export const projectCovers = {
       <!-- Game Milestone Card 1 -->
       <g transform="translate(100, 100)">
         <rect width="180" height="90" rx="12" fill="#ffffff" stroke="#e0d9cc" stroke-width="1.5"/>
-        <line x1="70" y1="90" x2="70" y2="144" stroke="#c85a32" stroke-width="1.5" stroke-dasharray="2 3"/>
-        <text x="16" y="26" font-family="monospace" font-size="10" font-weight="bold" fill="#c85a32">MAY 2026 · TBD</text>
+        <line x1="70" y1="90" x2="70" y2="144" stroke="#b5502a" stroke-width="1.5" stroke-dasharray="2 3"/>
+        <text x="16" y="26" font-family="monospace" font-size="10" font-weight="bold" fill="#b5502a">MAY 2026 · TBD</text>
         <text x="16" y="48" font-family="sans-serif" font-size="13" font-weight="bold" fill="#292524">独立悬疑叙事新游</text>
         <rect x="16" y="60" width="46" height="18" rx="4" fill="#f5f0e6"/>
         <text x="24" y="73" font-family="monospace" font-size="9" fill="#57534e">Steam</text>
@@ -199,7 +199,7 @@ export const projectCovers = {
       <g transform="translate(80, 110)">
         <!-- Layer 1: Subject Token Block -->
         <rect x="0" y="0" width="280" height="74" rx="12" fill="#ffffff" stroke="#dcd5c7" stroke-width="1.5"/>
-        <text x="18" y="24" font-family="monospace" font-size="10" font-weight="bold" fill="#c85a32">TOKEN_01 // 主体设定</text>
+        <text x="18" y="24" font-family="monospace" font-size="10" font-weight="bold" fill="#b5502a">TOKEN_01 // 主体设定</text>
         <text x="18" y="50" font-family="monospace" font-size="13" fill="#292524">{ Subject: &quot;Architectural Interior&quot; }</text>
 
         <!-- Connecting Line -->
@@ -331,7 +331,7 @@ export const projectCovers = {
           <g transform="translate(0, 56)" font-family="monospace" font-size="10">
             <rect x="0" y="0" width="210" height="26" rx="6" fill="#faf6ef"/>
             <text x="10" y="17" fill="#78716c">Palette: </text>
-            <text x="65" y="17" font-weight="bold" fill="#c85a32">Warm Rice White / Terra</text>
+            <text x="65" y="17" font-weight="bold" fill="#b5502a">Warm Rice White / Terra</text>
 
             <rect x="0" y="32" width="210" height="26" rx="6" fill="#faf6ef"/>
             <text x="10" y="49" fill="#78716c">Consistency: </text>
@@ -343,7 +343,7 @@ export const projectCovers = {
           </g>
 
           <!-- Workflow Arrow Tag -->
-          <rect x="0" y="160" width="160" height="28" rx="14" fill="#c85a32" opacity="0.95"/>
+          <rect x="0" y="160" width="160" height="28" rx="14" fill="#b5502a" opacity="0.95"/>
           <text x="80" y="178" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#ffffff">生成统一规格卡片</text>
         </g>
       </g>

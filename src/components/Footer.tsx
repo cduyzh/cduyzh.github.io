@@ -7,10 +7,19 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#e7e4dc] border-t border-stone-300 text-stone-600 py-10 px-6 sm:px-10 md:px-12 text-xs font-mono select-none">
+    <footer className="w-full bg-paper-sunk hairline border-t text-ink-3 py-10 px-6 sm:px-10 md:px-12 text-xs font-mono select-none">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
         {/* Left */}
         <div className="flex items-center gap-2.5">
+          <img
+            src={profileData.avatar.src}
+            alt={profileData.avatar.alt}
+            width={480}
+            height={480}
+            loading="lazy"
+            decoding="async"
+            className="w-7 h-7 rounded-full object-cover object-center ring-1 ring-stone-400/60"
+          />
           <span className="font-display font-bold text-stone-900 text-sm">
             {profileData.name}
           </span>
@@ -25,7 +34,7 @@ export default function Footer() {
             href={`https://${profileData.domain}`}
             target="_blank"
             rel="noreferrer"
-            className="text-stone-900 font-medium hover:text-[#c85a32] transition-colors underline underline-offset-4"
+            className="text-stone-900 font-medium hover:text-clay transition-colors underline underline-offset-4"
           >
             {profileData.domain}
           </a>
@@ -43,6 +52,18 @@ export default function Footer() {
             <ArrowUp size={13} className="group-hover:-translate-y-0.5 transition-transform" />
           </button>
         </div>
+      </div>
+
+      {/* ICP filing */}
+      <div className="max-w-6xl mx-auto mt-6 pt-5 border-t border-stone-300/60 text-center">
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-stone-600 hover:text-clay transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-clay"
+        >
+          {profileData.beian}
+        </a>
       </div>
     </footer>
   );

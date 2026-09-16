@@ -94,7 +94,7 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
           {/* Top Sticky Bar */}
           <div className="sticky top-0 z-20 flex items-center justify-between px-6 sm:px-8 py-4 bg-[#faf8f4]/95 backdrop-blur-md border-b border-stone-200">
             <div className="flex items-center gap-2 text-xs font-mono text-stone-500">
-              <span className="text-[#c85a32] font-semibold">项目档案 0{project.id}</span>
+              <span className="text-clay font-semibold">项目档案 0{project.id}</span>
               <span>·</span>
               <span className="text-stone-400">/{project.slug}</span>
             </div>
@@ -103,7 +103,7 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
               ref={closeButtonRef}
               type="button"
               onClick={onClose}
-              className="p-1.5 rounded-full hover:bg-stone-200/80 text-stone-600 hover:text-stone-950 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+              className="p-1.5 rounded-full hover:bg-stone-200/80 text-stone-600 hover:text-stone-950 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
               aria-label="关闭项目档案"
             >
               <X size={20} />
@@ -114,7 +114,7 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
           <div className="overflow-y-auto p-6 sm:p-8 space-y-7">
             {/* Header & Title */}
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-[#c85a32] font-semibold mb-2">
+              <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-clay font-semibold mb-2">
                 <span>PROJECT DOSSIER</span>
                 <span>·</span>
                 <span>真实记录</span>
@@ -152,9 +152,9 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
               </div>
               <div>
                 <div className="text-stone-400 mb-1 flex items-center gap-1.5">
-                  <Clock size={13} className="text-[#c85a32]" /> 状态
+                  <Clock size={13} className="text-clay" /> 状态
                 </div>
-                <div className="text-[#c85a32] font-semibold">{project.status}</div>
+                <div className="text-clay font-semibold">{project.status}</div>
               </div>
             </div>
 
@@ -171,7 +171,7 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
             {/* Background & Purpose */}
             <div className="space-y-2 text-sm sm:text-base text-stone-700 leading-relaxed">
               <h3 className="font-display text-lg font-bold text-stone-900 flex items-center gap-2">
-                <Compass size={17} className="text-[#c85a32]" />
+                <Compass size={17} className="text-clay" />
                 <span>构思背景与探索重点</span>
               </h3>
               <p>{project.description}</p>
@@ -181,13 +181,13 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
             {project.highlights && project.highlights.length > 0 && (
               <div className="space-y-3">
                 <h3 className="font-display text-lg font-bold text-stone-900 flex items-center gap-2">
-                  <CheckCircle2 size={17} className="text-[#c85a32]" />
+                  <CheckCircle2 size={17} className="text-clay" />
                   <span>核心实践要点</span>
                 </h3>
                 <ul className="space-y-2">
                   {project.highlights.map((highlight, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-sm text-stone-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#c85a32] mt-2 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-clay mt-2 shrink-0" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -219,7 +219,7 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
                   href={project.demoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-stone-900 text-white font-medium text-xs font-mono hover:bg-[#c85a32] transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+                  className="px-5 py-2.5 rounded-full bg-stone-900 text-white font-medium text-xs font-mono hover:bg-clay transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
                 >
                   <span>访问在线演示</span>
                   <ExternalLink size={14} />
@@ -231,7 +231,7 @@ export default function ProjectModal({ project, triggerElement, onClose }: Proje
                   href={project.repoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-5 py-2.5 rounded-full border border-stone-300 bg-white text-stone-800 hover:bg-stone-100 transition-colors text-xs font-mono flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+                  className="px-5 py-2.5 rounded-full border border-stone-300 bg-white text-stone-800 hover:bg-stone-100 transition-colors text-xs font-mono flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
                 >
                   <Github size={14} />
                   <span>查看 GitHub 源码</span>

@@ -58,7 +58,7 @@ export default function VisualBreak({
     <div
       ref={containerRef}
       id={id}
-      className="relative w-full h-[55vh] sm:h-[65vh] md:h-[72vh] overflow-hidden flex items-center justify-center select-none bg-[#1c1917]"
+      className="feather-y relative w-full h-[55vh] sm:h-[65vh] md:h-[72vh] overflow-hidden flex items-center justify-center select-none bg-[#1c1917]"
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">

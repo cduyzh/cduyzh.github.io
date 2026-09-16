@@ -91,8 +91,8 @@ export default function CustomCursor() {
         animate={{
           width: cursorText ? 76 : isHovered ? 38 : 8,
           height: cursorText ? 76 : isHovered ? 38 : 8,
-          backgroundColor: cursorText ? 'rgba(28, 25, 23, 0.92)' : isHovered ? 'rgba(200, 90, 50, 0.12)' : 'rgba(28, 25, 23, 0.8)',
-          borderColor: isHovered && !cursorText ? 'rgba(200, 90, 50, 0.6)' : 'transparent',
+          backgroundColor: cursorText ? 'rgba(28, 25, 23, 0.92)' : isHovered ? 'rgba(181,80,42, 0.12)' : 'rgba(28, 25, 23, 0.8)',
+          borderColor: isHovered && !cursorText ? 'rgba(181,80,42, 0.6)' : 'transparent',
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 350 }}
         className={`rounded-full flex items-center justify-center backdrop-blur-[2px] transition-colors border ${
