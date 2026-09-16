@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
-import HeroThreeCanvas from './HeroThreeCanvas';
 import { profileData } from '../data/profile';
 
 export default function Hero() {
@@ -12,7 +11,7 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const textOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   const scrollTo = (id: string) => {
@@ -26,13 +25,10 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative w-full min-h-[92vh] sm:min-h-[96vh] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 select-none bg-[#fbf9f5]"
+      className="relative w-full min-h-[92vh] sm:min-h-[96vh] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 select-none bg-transparent"
     >
-      {/* Three.js Translucent Glass 3D Form (Single Controlled Motion Focus) */}
-      <HeroThreeCanvas />
-
-      {/* Gentle ambient light gradient overlay */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,rgba(254,243,199,0.25),transparent_60%)]" />
+      {/* Gentle ambient light radial gradient overlay */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,rgba(254,243,199,0.2),transparent_60%)]" />
 
       {/* Top Bar Spacer & Corner Meta */}
       <div className="pt-20 md:pt-14 w-full flex justify-between items-center text-xs font-mono text-stone-500 z-10">
@@ -40,7 +36,7 @@ export default function Hero() {
           <span className="w-2 h-2 rounded-full bg-emerald-500" />
           <span className="text-stone-700 font-medium tracking-wider">中国 · 成都</span>
         </div>
-        <div className="hidden sm:flex items-center gap-3 text-stone-500 border border-stone-200/90 px-3.5 py-1 rounded-full bg-white/75 backdrop-blur-md shadow-xs">
+        <div className="hidden sm:flex items-center gap-3 text-stone-500 border border-stone-200/90 px-3.5 py-1 rounded-full bg-white/80 backdrop-blur-md shadow-xs">
           <span className="text-stone-700 font-medium">常驻成都 · 探索新想法</span>
           <span className="text-stone-300">|</span>
           <span className="text-stone-500">{profileData.domain}</span>
@@ -54,17 +50,23 @@ export default function Hero() {
       >
         {/* Role tags */}
         <div className="flex flex-wrap items-center gap-2 text-xs font-mono tracking-wider text-stone-500 mb-3 sm:mb-4">
-          <span className="px-2.5 py-0.5 rounded-md bg-stone-100 text-stone-800 font-medium">Web 前端开发</span>
+          <span className="px-2.5 py-0.5 rounded-md bg-white/80 border border-stone-200/70 text-stone-800 font-medium backdrop-blur-xs">
+            Web 前端开发
+          </span>
           <span className="text-stone-300">/</span>
-          <span className="px-2.5 py-0.5 rounded-md bg-stone-100 text-stone-800 font-medium">AI 应用</span>
+          <span className="px-2.5 py-0.5 rounded-md bg-white/80 border border-stone-200/70 text-stone-800 font-medium backdrop-blur-xs">
+            AI 应用
+          </span>
           <span className="text-stone-300">/</span>
-          <span className="px-2.5 py-0.5 rounded-md bg-stone-100 text-stone-800 font-medium">独立工具</span>
+          <span className="px-2.5 py-0.5 rounded-md bg-white/80 border border-stone-200/70 text-stone-800 font-medium backdrop-blur-xs">
+            独立工具
+          </span>
         </div>
 
         {/* Oversized Brand Typography */}
         <h1
           id="hero-title"
-          className="font-display font-extrabold tracking-[-0.04em] text-stone-900 leading-[0.88] select-none text-[clamp(64px,12vw,180px)]"
+          className="font-display font-extrabold tracking-[-0.04em] text-stone-900 leading-[0.88] select-none text-[clamp(64px,12vw,180px)] drop-shadow-xs"
         >
           {profileData.name}
         </h1>
@@ -93,7 +95,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollTo('about')}
-            className="px-6 py-3 rounded-full border border-stone-300 bg-white/70 text-stone-800 hover:bg-stone-100 hover:border-stone-400 transition-[background-color,border-color] duration-200 backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
+            className="px-6 py-3 rounded-full border border-stone-300 bg-white/80 text-stone-800 hover:bg-white hover:border-stone-400 transition-[background-color,border-color] duration-200 backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c85a32]"
           >
             关于我
           </button>

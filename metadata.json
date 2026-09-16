@@ -1,6 +1,6 @@
 {
   "name": "CDUYZH - Creative Developer Portfolio",
-  "description": "cduyzh 的个人数字工作室与作品集。做产品，也做一些有意思的东西。Web 前端开发 · AI 应用 · 独立项目。",
+  "description": "cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。收录月来信、成都区级降雨气象、游戏发售前瞻雷达等独立项目。",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

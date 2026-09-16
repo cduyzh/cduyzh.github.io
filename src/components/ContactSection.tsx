@@ -48,7 +48,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative w-full py-20 sm:py-28 md:py-32 bg-[#ece9e2] text-stone-900 border-t border-stone-300/80">
+    <section id="contact" className="relative w-full py-20 sm:py-28 md:py-32 bg-[#ece9e2]/85 backdrop-blur-md text-stone-900 border-t border-stone-300/80">
       {/* Toast Notification with aria-live="polite" */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {copiedItem && `已复制 ${copiedItem} 到剪贴板`}

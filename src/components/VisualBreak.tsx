@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 interface VisualBreakProps {
   id?: string;
   imageSrc: string;
+  fallbackSrc?: string;
   imageAlt: string;
   quote: string;
   subtext?: string;
@@ -14,6 +15,7 @@ interface VisualBreakProps {
 export default function VisualBreak({
   id,
   imageSrc,
+  fallbackSrc,
   imageAlt,
   quote,
   subtext,
@@ -22,6 +24,11 @@ export default function VisualBreak({
 }: VisualBreakProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState(imageSrc);
+
+  useEffect(() => {
+    setCurrentSrc(imageSrc);
+  }, [imageSrc]);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -60,13 +67,18 @@ export default function VisualBreak({
           className="absolute inset-0 -z-20 w-full h-[120%] -top-[10%] will-change-transform"
         >
           <img
-            src={imageSrc}
+            src={currentSrc}
             alt={imageAlt}
             width={2000}
             height={1200}
             className="w-full h-full object-cover brightness-[0.7] contrast-105"
             loading="lazy"
             decoding="async"
+            onError={() => {
+              if (fallbackSrc && currentSrc !== fallbackSrc) {
+                setCurrentSrc(fallbackSrc);
+              }
+            }}
           />
           {/* Subtle cinematic gradient overlays */}
           <div className="absolute inset-0 bg-stone-950/40" />

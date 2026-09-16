@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Code2, Sparkles, Wrench } from 'lucide-react';
+import { Code2, Sparkles, Wrench, MapPin } from 'lucide-react';
 
 export default function About() {
+  const [avatarSrc, setAvatarSrc] = useState('/assets/avatar-cduyzh.png');
+  const fallbackAvatar = 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop';
+
   const focusPoints = [
     {
       icon: Code2,
@@ -23,7 +27,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full py-20 sm:py-24 md:py-28 bg-[#f4f2ec] text-stone-900 border-t border-b border-stone-200/80"
+      className="relative w-full py-20 sm:py-24 md:py-28 bg-[#f4f2ec]/85 backdrop-blur-md text-stone-900 border-t border-b border-stone-200/80"
     >
       <div className="relative max-w-5xl mx-auto px-6 sm:px-10 md:px-12">
         {/* Section Marker */}
@@ -49,17 +53,53 @@ export default function About() {
             关于我
           </motion.h2>
 
-          {/* User Exact Intro Paragraph */}
+          {/* User Exact Intro Paragraph with Visual Avatar Card */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="p-6 sm:p-8 rounded-2xl bg-white/80 border border-stone-200 shadow-xs backdrop-blur-xs"
+            className="p-6 sm:p-8 rounded-2xl bg-white/85 border border-stone-200/90 shadow-xs backdrop-blur-xs flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-7"
           >
-            <p className="text-base sm:text-lg md:text-xl text-stone-800 font-normal leading-relaxed tracking-normal">
-              我是 <span className="font-semibold text-stone-950">cduyzh</span>，一名 Web 前端开发者。平时除了工作，也喜欢把一些突然冒出来的想法做成真正可以使用的产品。最近比较关注 AI、Web 应用、自动化工具，以及一些解决自己实际需求的小项目。
-            </p>
+            {/* Visual Avatar / Workspace Vignette */}
+            <div className="relative shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-stone-300/80 bg-stone-100 shadow-xs group">
+              <img
+                src={avatarSrc}
+                alt="cduyzh 个人工作台与肖像"
+                width={160}
+                height={160}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                onError={() => {
+                  if (avatarSrc !== fallbackAvatar) {
+                    setAvatarSrc(fallbackAvatar);
+                  }
+                }}
+              />
+              <div className="pointer-events-none absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors" />
+            </div>
+
+            {/* Intro Copy */}
+            <div className="flex-1 flex flex-col gap-3 text-center sm:text-left">
+              <p className="text-base sm:text-lg text-stone-800 font-normal leading-relaxed tracking-normal">
+                我是 <span className="font-semibold text-stone-950">cduyzh</span>，一名 Web 前端开发者。平时除了工作，也喜欢把一些突然冒出来的想法做成真正可以使用的产品。最近比较关注 AI、Web 应用、自动化工具，以及一些解决自己实际需求的小项目。
+              </p>
+
+              {/* Status Meta Chips */}
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs font-mono text-stone-500">
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-stone-700 font-medium">
+                  <MapPin size={12} className="text-[#c85a32]" />
+                  <span>中国 · 成都</span>
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-stone-700 font-medium">
+                  Web 界面与全栈探索
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/70 text-[#c85a32] font-medium">
+                  自用工具落地
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -70,7 +110,7 @@ export default function About() {
             return (
               <div
                 key={point.title}
-                className="p-5 rounded-xl bg-white/50 border border-stone-200/70 text-left flex flex-col justify-start"
+                className="p-5 rounded-xl bg-white/60 border border-stone-200/80 text-left flex flex-col justify-start hover:border-stone-300 transition-colors shadow-2xs"
               >
                 <div className="flex items-center gap-2.5 text-stone-900 font-display font-bold text-sm sm:text-base mb-1.5">
                   <span className="p-1.5 rounded-lg bg-stone-100 text-[#c85a32]">

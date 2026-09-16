@@ -50,7 +50,7 @@ export default function ProjectsSection() {
   const hasMoreThanLimit = publicProjects.length > HOMEPAGE_LIMIT;
 
   return (
-    <section id="projects" className="relative w-full py-20 sm:py-28 md:py-32 bg-[#f7f5f0] text-stone-900 border-b border-stone-200/80">
+    <section id="projects" className="relative w-full py-20 sm:py-28 md:py-32 bg-[#f7f5f0]/85 backdrop-blur-md text-stone-900 border-b border-stone-200/80">
       <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-stone-300/70 pb-6 mb-10 sm:mb-14 gap-6">

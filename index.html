@@ -3,33 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CDUYZH - 做产品，也做一些有意思的东西</title>
-    <meta name="description" content="cduyzh 的个人数字工作室与作品集。Web 前端开发 · AI 应用 · 独立项目。" />
-    <meta name="keywords" content="cduyzh, Web前端开发, AI应用, 独立项目, Creative Developer, React, TypeScript, Three.js, 作品集" />
+
+    <!-- SEO Primary Meta Tags -->
+    <title>CDUYZH - 做产品，也做一些有意思的东西 | 独立开发与 Web 前端作品集</title>
+    <meta
+      name="description"
+      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 应用探索与自用产品落地。已收录月来信、成都区级降雨气象、游戏发售前瞻雷达等独立开发项目。"
+    />
+    <meta
+      name="keywords"
+      content="cduyzh, 独立开发, 独立产品人, Web前端开发, 前端工程师, AI应用, 成都独立开发, Creative Developer, React, TypeScript, Three.js, Tailwind CSS, 个人作品集, 月来信, 成都气象雷达, 提示词工作流, 交互设计"
+    />
     <meta name="author" content="cduyzh" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://www.cduyzh.top" />
+    <link rel="canonical" href="https://www.cduyzh.top/" />
 
-    <!-- OpenGraph / Social -->
-    <meta property="og:title" content="CDUYZH - 做产品，也做一些有意思的东西" />
-    <meta property="og:description" content="cduyzh 的个人数字工作室与作品集。Web 前端开发 · AI 应用 · 独立项目。" />
+    <!-- OpenGraph / Social Share Cards -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.cduyzh.top" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop" />
+    <meta property="og:site_name" content="CDUYZH 个人数字工作室" />
+    <meta property="og:title" content="CDUYZH - 做产品，也做一些有意思的东西" />
+    <meta
+      property="og:description"
+      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。"
+    />
+    <meta property="og:url" content="https://www.cduyzh.top/" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:image" content="https://www.cduyzh.top/assets/visual-manifesto-architecture.png" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1335" />
+    <meta property="og:image:alt" content="CDUYZH 个人作品集 - 建筑几何与极简光影" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CDUYZH - 做产品，也做一些有意思的东西" />
-    <meta name="twitter:description" content="cduyzh 的个人数字工作室与作品集。Web 前端开发 · AI 应用 · 独立项目。" />
+    <meta
+      name="twitter:description"
+      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。"
+    />
+    <meta name="twitter:image" content="https://www.cduyzh.top/assets/visual-manifesto-architecture.png" />
 
-    <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, Noto Serif SC, Inter -->
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://www.cduyzh.top/#person",
+            "name": "cduyzh",
+            "jobTitle": "Web 前端开发者 / 独立产品人",
+            "url": "https://www.cduyzh.top",
+            "image": "https://www.cduyzh.top/assets/avatar-cduyzh.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "成都",
+              "addressCountry": "CN"
+            },
+            "sameAs": [
+              "https://github.com/cduyzh"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.cduyzh.top/#website",
+            "url": "https://www.cduyzh.top/",
+            "name": "CDUYZH 个人数字工作室",
+            "description": "做产品，也做一些有意思的东西。Web 前端开发 · AI 应用 · 独立项目落地。",
+            "publisher": {
+              "@id": "https://www.cduyzh.top/#person"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e69f1b2a-f806-433b-be5a-2184ad1f2068"></script>
   </head>
   <body class="bg-[#fbf9f5] text-[#1c1917] selection:bg-[#c85a32] selection:text-white antialiased overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
