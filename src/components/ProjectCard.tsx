@@ -72,10 +72,10 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
           rotateY,
           transformStyle: 'preserve-3d'
         }}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-40px' }}
-        transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
+        initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, scale: 0.97 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.7, delay: (index % 2) * 0.15, ease: [0.22, 1, 0.36, 1] }}
         className="group relative flex flex-col justify-between h-full bg-white/90 backdrop-blur-md rounded-2xl border border-stone-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(181,80,42,0.08)] hover:border-stone-300 transition-[border-color,box-shadow] duration-300 overflow-hidden select-none"
       >
         {/* Dynamic Specular Glass Glare Layer */}

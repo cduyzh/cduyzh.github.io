@@ -7,7 +7,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-paper-sunk hairline border-t text-ink-3 py-10 px-6 sm:px-10 md:px-12 text-xs font-mono select-none">
+    <footer className="relative w-full bg-paper-sunk hairline border-t text-ink-3 py-10 px-6 sm:px-10 md:px-12 text-xs font-mono select-none">
+      {/* Ambient gradient glow for smooth transition */}
+      <div className="absolute -top-16 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#eee9de] pointer-events-none" aria-hidden />
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
         {/* Left */}
         <div className="flex items-center gap-2.5">

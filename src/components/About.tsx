@@ -26,6 +26,13 @@ export default function About() {
       id="about"
       className="veil relative w-full py-20 sm:py-24 md:py-28 text-ink"
     >
+      {/* Decorative watermark number */}
+      <div className="absolute top-8 right-8 sm:right-16 font-display text-[150px] sm:text-[200px] font-black text-stone-200/[0.04] leading-none select-none pointer-events-none" aria-hidden>
+        01
+      </div>
+      {/* Floating ambient gradient blobs */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(181,80,42,0.06),transparent_70%)] pointer-events-none" style={{ animation: 'float 8s ease-in-out infinite' }} aria-hidden />
+      <div className="absolute bottom-1/4 -right-20 w-60 h-60 rounded-full bg-[radial-gradient(circle,rgba(109,136,120,0.06),transparent_70%)] pointer-events-none" style={{ animation: 'float 10s ease-in-out infinite 2s' }} aria-hidden />
       <div className="relative max-w-5xl mx-auto px-6 sm:px-10 md:px-12">
         {/* Section Marker */}
         <div className="flex items-center gap-3 mb-8 sm:mb-10">
@@ -107,7 +114,7 @@ export default function About() {
             return (
               <div
                 key={point.title}
-                className="p-5 rounded-xl bg-white/60 border border-stone-200/80 text-left flex flex-col justify-start hover:border-stone-300 transition-colors shadow-2xs"
+                className="p-5 rounded-xl bg-white/60 border border-stone-200/80 text-left flex flex-col justify-start hover:border-stone-300 hover:shadow-[0_0_30px_rgba(181,80,42,0.08)] transition-all duration-300 shadow-2xs"
               >
                 <div className="flex items-center gap-2.5 text-stone-900 font-display font-bold text-sm sm:text-base mb-1.5">
                   <span className="p-1.5 rounded-lg bg-stone-100 text-clay">

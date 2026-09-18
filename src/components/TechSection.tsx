@@ -58,10 +58,14 @@ export default function TechSection() {
     <section
       ref={containerRef}
       id="capabilities"
-      className="relative w-full py-28 md:py-36 bg-[#08080a] text-zinc-100 overflow-hidden"
+      className="relative w-full py-28 md:py-36 bg-[#1a1613] text-stone-100 overflow-hidden"
     >
+      {/* Top gradient transition from paper to dark */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#06080b] to-transparent z-10 pointer-events-none" />
+      {/* Bottom gradient transition from dark to paper */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#eee9de] to-transparent z-10 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 mb-16">
-        <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-zinc-500 uppercase mb-3">
+        <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-stone-500 uppercase mb-3">
           <span>/ 03 — CAPABILITIES</span>
           <span>·</span>
           <span>TECHNICAL DNA</span>
@@ -75,7 +79,7 @@ export default function TechSection() {
         >
           TECHNICAL DOMAIN
         </motion.h2>
-        <p className="mt-4 text-base sm:text-lg text-zinc-400 font-light max-w-xl">
+        <p className="mt-4 text-base sm:text-lg text-stone-400 font-light max-w-xl">
           Crafting software at the intersection of rigorous systems engineering, fluid digital typography, and modern AI models.
         </p>
       </div>
@@ -84,12 +88,12 @@ export default function TechSection() {
       <div className="py-4 border-y border-white/[0.06] bg-white/[0.015] overflow-hidden whitespace-nowrap select-none my-6">
         <motion.div
           style={{ x: marqueeX1 }}
-          className="flex items-center gap-8 font-display font-black text-3xl sm:text-5xl md:text-6xl tracking-tight text-zinc-500/80 uppercase will-change-transform"
+          className="flex items-center gap-8 font-display font-black text-3xl sm:text-5xl md:text-6xl tracking-tight text-stone-500/80 uppercase will-change-transform"
         >
           {[...marqueeTech, ...marqueeTech, ...marqueeTech].map((tech, i) => (
-            <span key={i} className="flex items-center gap-8 hover:text-white transition-colors duration-300">
+            <span key={i} className="flex items-center gap-8 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-colors duration-300">
               <span>{tech}</span>
-              <span className="text-zinc-700 font-light text-2xl">—</span>
+              <span className="text-stone-700 font-light text-2xl">—</span>
             </span>
           ))}
         </motion.div>
@@ -99,12 +103,12 @@ export default function TechSection() {
       <div className="py-4 border-b border-white/[0.06] bg-white/[0.015] overflow-hidden whitespace-nowrap select-none mb-20">
         <motion.div
           style={{ x: marqueeX2 }}
-          className="flex items-center gap-8 font-display font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-tight text-zinc-600/70 uppercase will-change-transform"
+          className="flex items-center gap-8 font-display font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-tight text-stone-600/70 uppercase will-change-transform"
         >
           {[...marqueeTech.slice().reverse(), ...marqueeTech.slice().reverse(), ...marqueeTech.slice().reverse()].map((tech, i) => (
-            <span key={i} className="flex items-center gap-8 hover:text-zinc-300 transition-colors duration-300">
+            <span key={i} className="flex items-center gap-8 hover:text-stone-300 transition-colors duration-300">
               <span>{tech}</span>
-              <span className="text-zinc-800 font-light text-xl">/</span>
+              <span className="text-stone-800 font-light text-xl">/</span>
             </span>
           ))}
         </motion.div>
@@ -122,18 +126,18 @@ export default function TechSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className="p-7 rounded-2xl bg-zinc-900/30 border border-white/[0.06] hover:border-white/20 transition-all duration-300 flex flex-col justify-between"
+                className="p-7 rounded-2xl bg-stone-900/40 border border-white/[0.06] hover:border-white/20 hover:shadow-[0_0_30px_rgba(181,80,42,0.12)] transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-300 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-stone-300 mb-6">
                     <IconComponent size={20} />
                   </div>
                   <h3 className="font-display font-semibold text-lg text-white mb-4">
                     {cat.title}
                   </h3>
-                  <ul className="space-y-2.5 text-xs font-mono text-zinc-400">
+                  <ul className="space-y-2.5 text-xs font-mono text-stone-400">
                     {cat.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 hover:text-zinc-200 transition-colors">
+                      <li key={item} className="flex items-center gap-2 hover:text-stone-200 transition-colors">
                         <span className="w-1 h-1 rounded-full bg-zinc-600" />
                         <span>{item}</span>
                       </li>
@@ -141,7 +145,7 @@ export default function TechSection() {
                   </ul>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/[0.04] text-[10px] font-mono text-zinc-600">
+                <div className="mt-8 pt-4 border-t border-white/[0.04] text-[10px] font-mono text-stone-600">
                   READY FOR SCALE
                 </div>
               </motion.div>

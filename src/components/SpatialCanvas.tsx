@@ -1,85 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
-interface Keyframe {
-  progress: number;
-  posX: number;
-  posY: number;
-  posZ: number;
-  scale: number;
-  ringTilt: number;
-  glowOpacity: number;
-  glowHex: string;
-}
-
-/* 主体沿页面节奏在版心两侧交替停留：文字一侧留给遮罩，形体一侧留白 */
-const desktopKeyframes: Keyframe[] = [
-  { progress: 0.0, posX: 2.32, posY: -0.16, posZ: 0, scale: 0.96, ringTilt: 1.05, glowOpacity: 0.56, glowHex: '#f2e3d0' },
-  { progress: 0.22, posX: 2.2, posY: 0.6, posZ: -1.5, scale: 0.76, ringTilt: 0.78, glowOpacity: 0.36, glowHex: '#eee6d8' },
-  { progress: 0.45, posX: -1.6, posY: 0.25, posZ: -2.4, scale: 1.12, ringTilt: 1.42, glowOpacity: 0.62, glowHex: '#e8e4ea' },
-  { progress: 0.72, posX: 2.05, posY: -0.4, posZ: -2.0, scale: 0.88, ringTilt: 1.12, glowOpacity: 0.34, glowHex: '#eae5db' },
-  { progress: 1.0, posX: -1.7, posY: -0.45, posZ: -0.6, scale: 1.06, ringTilt: 0.68, glowOpacity: 0.72, glowHex: '#f4ddce' },
-];
-
-const mobileKeyframes: Keyframe[] = [
-  { progress: 0.0, posX: 0.98, posY: 1.5, posZ: -0.4, scale: 0.5, ringTilt: 1.05, glowOpacity: 0.4, glowHex: '#f2e3d0' },
-  { progress: 0.25, posX: -0.72, posY: 1.42, posZ: -1.6, scale: 0.44, ringTilt: 0.8, glowOpacity: 0.28, glowHex: '#eee6d8' },
-  { progress: 0.5, posX: 0.65, posY: -1.25, posZ: -1.8, scale: 0.66, ringTilt: 1.4, glowOpacity: 0.44, glowHex: '#e8e4ea' },
-  { progress: 0.75, posX: -0.6, posY: 1.2, posZ: -2.0, scale: 0.46, ringTilt: 1.1, glowOpacity: 0.26, glowHex: '#eae5db' },
-  { progress: 1.0, posX: 0.5, posY: -1.2, posZ: -0.8, scale: 0.6, ringTilt: 0.7, glowOpacity: 0.56, glowHex: '#f4ddce' },
-];
-
-function easeInOut(t: number) {
-  return (1 - Math.cos(t * Math.PI)) / 2;
-}
-
-function interpolateKeyframes(keyframes: Keyframe[], progress: number): Keyframe {
-  const p = Math.max(0, Math.min(1, progress));
-  if (p <= keyframes[0].progress) return keyframes[0];
-  const last = keyframes[keyframes.length - 1];
-  if (p >= last.progress) return last;
-
-  for (let i = 0; i < keyframes.length - 1; i++) {
-    const k1 = keyframes[i];
-    const k2 = keyframes[i + 1];
-    if (p < k1.progress || p > k2.progress) continue;
-
-    const eased = easeInOut((p - k1.progress) / (k2.progress - k1.progress));
-    const glow = new THREE.Color(k1.glowHex).lerp(new THREE.Color(k2.glowHex), eased);
-
-    return {
-      progress: p,
-      posX: THREE.MathUtils.lerp(k1.posX, k2.posX, eased),
-      posY: THREE.MathUtils.lerp(k1.posY, k2.posY, eased),
-      posZ: THREE.MathUtils.lerp(k1.posZ, k2.posZ, eased),
-      scale: THREE.MathUtils.lerp(k1.scale, k2.scale, eased),
-      ringTilt: THREE.MathUtils.lerp(k1.ringTilt, k2.ringTilt, eased),
-      glowOpacity: THREE.MathUtils.lerp(k1.glowOpacity, k2.glowOpacity, eased),
-      glowHex: '#' + glow.getHexString(),
-    };
-  }
-  return keyframes[0];
-}
-
-/* 柔光池与接触阴影共用一个径向渐变烘焙函数 */
-function createRadialTexture(stops: [number, string][]) {
-  const size = 256;
-  const canvas = document.createElement('canvas');
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return null;
-
-  const gradient = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-  for (const [offset, color] of stops) gradient.addColorStop(offset, color);
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, size, size);
-
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  return texture;
-}
 
 export default function SpatialCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -89,14 +9,13 @@ export default function SpatialCanvas() {
     const container = containerRef.current;
     if (!container) return;
 
+    const isMobile = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobileViewport = () => window.innerWidth < 768;
-    const isMobile = isMobileViewport();
 
     let renderer: THREE.WebGLRenderer;
     try {
       renderer = new THREE.WebGLRenderer({
-        antialias: !isMobile,
+        antialias: true,
         alpha: true,
         powerPreference: 'high-performance',
       });
@@ -105,155 +24,182 @@ export default function SpatialCanvas() {
       return;
     }
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 1.5));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.14;
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2('#06080b', 0.018);
 
-    /* 没有 HDR 资源，用程序化棚拍环境提供反射与折射的内容 —— 玻璃质感的关键 */
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    const envRT = pmrem.fromScene(new RoomEnvironment(), 0.04);
-    scene.environment = envRT.texture;
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+    // Position camera a bit higher and looking down slightly at the galaxy
+    camera.position.set(0, 8, 16);
+    camera.lookAt(0, 0, 0);
 
-    const camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.set(0, 0, 8);
+    const particleCount = isMobile ? 2500 : 6000;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    const sizes = new Float32Array(particleCount);
+    const randoms = new Float32Array(particleCount * 3);
 
-    const group = new THREE.Group();
-    scene.add(group);
+    const colorPalette = [
+      new THREE.Color('#b9ff62'), // acid lime
+      new THREE.Color('#d7ffb0'), // soft lime
+      new THREE.Color('#7fe5dd'), // ice cyan
+      new THREE.Color('#29414c'), // deep cyan dust
+      new THREE.Color('#b0c7ff'), // cool blue
+      new THREE.Color('#7fe5dd'), // cyan accent
+    ];
 
-    const glassGeo = new THREE.SphereGeometry(1.28, isMobile ? 40 : 96, isMobile ? 28 : 64);
-    const glassMat = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#fbf7f1'),
-      roughness: 0.02,
-      metalness: 0,
-      transmission: isMobile ? 0.72 : 1,
-      thickness: 1.15,
-      ior: 1.5,
-      clearcoat: 0.1,
-      clearcoatRoughness: 0.35,
-      iridescence: 0.06,
-      iridescenceIOR: 1.2,
-      attenuationColor: new THREE.Color('#e8cba9'),
-      attenuationDistance: 2.7,
-      specularIntensity: 0.22,
-      envMapIntensity: 0.5,
+    for (let i = 0; i < particleCount; i++) {
+      const i3 = i * 3;
+
+      // Galaxy spiral distribution
+      const radius = Math.random() * 18 + 1;
+      const armOffset = Math.random() > 0.5 ? 0 : Math.PI;
+      const spread = (Math.random() - 0.5) * (radius * 0.4);
+      const theta = radius * 0.4 + armOffset + spread;
+
+      const x = Math.cos(theta) * radius;
+      const z = Math.sin(theta) * radius;
+
+      // Core is thicker, edges are thinner
+      const y = (Math.random() - 0.5) * 5 * Math.pow((20 - radius) / 20, 2) + (Math.random() - 0.5);
+
+      positions[i3] = x;
+      positions[i3 + 1] = y;
+      positions[i3 + 2] = z;
+
+      const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+
+      // Core particles (smaller radius) are brighter and warmer
+      if (radius < 4 && Math.random() > 0.3) {
+         colors[i3] = 1.0;     // R
+         colors[i3 + 1] = 0.4; // G
+         colors[i3 + 2] = 0.1; // B
+      } else {
+         colors[i3] = color.r;
+         colors[i3 + 1] = color.g;
+         colors[i3 + 2] = color.b;
+      }
+
+      sizes[i] = Math.random() * 2.5 + 0.5;
+
+      randoms[i3] = Math.random();
+      randoms[i3 + 1] = Math.random();
+      randoms[i3 + 2] = Math.random();
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+    geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 3));
+
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        uTime: { value: 0 },
+        uScroll: { value: 0 },
+        uMouse: { value: new THREE.Vector2(0, 0) },
+        uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 1.5) }
+      },
+      vertexShader: `
+        uniform float uTime;
+        uniform float uScroll;
+        uniform vec2 uMouse;
+        uniform float uPixelRatio;
+
+        attribute float size;
+        attribute vec3 color;
+        attribute vec3 aRandom;
+
+        varying vec3 vColor;
+        varying float vAlpha;
+
+        void main() {
+          vColor = color;
+          vec3 pos = position;
+
+          // Organic fluid motion using sine waves
+          float noiseX = sin(pos.y * 0.5 + uTime * 0.2 + aRandom.x * 10.0) * 1.2;
+          float noiseY = cos(pos.x * 0.2 + uTime * 0.15 + aRandom.y * 10.0) * 1.5;
+          float noiseZ = sin(pos.x * 0.3 + uTime * 0.25 + aRandom.z * 10.0) * 1.2;
+
+          pos.x += noiseX;
+          pos.y += noiseY;
+          pos.z += noiseZ;
+
+          // Scroll interaction (parallax / lifting)
+          // As we scroll down, galaxy tilts and lifts slightly
+          pos.y += uScroll * 4.0;
+
+          // Mouse repulsion
+          // Convert mouse (-1 to 1) to world pos approximately
+          vec3 mouseWorld = vec3(uMouse.x * 20.0, 0.0, -uMouse.y * 20.0);
+          float dist = distance(pos.xz, mouseWorld.xz);
+          float maxDist = 6.0;
+
+          if (dist < maxDist) {
+            float force = (maxDist - dist) / maxDist;
+            vec2 dir = normalize(pos.xz - mouseWorld.xz);
+            pos.x += dir.x * force * 3.0;
+            pos.z += dir.y * force * 3.0;
+            pos.y -= force * 2.0; // push down
+
+            // Highlight color when repelled
+            vColor = mix(vColor, vec3(0.73, 1.0, 0.38), force * 0.8);
+          }
+
+          // Calculate opacity based on distance from center to fade out edges
+          float centerDist = length(pos.xz);
+          vAlpha = smoothstep(22.0, 0.0, centerDist);
+          // Pulse alpha over time
+          vAlpha *= 0.6 + 0.4 * sin(uTime * 1.2 + aRandom.x * 20.0);
+
+          vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+
+          // Size attenuation
+          gl_PointSize = size * uPixelRatio * (60.0 / -mvPosition.z);
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+      fragmentShader: `
+        varying vec3 vColor;
+        varying float vAlpha;
+
+        void main() {
+          // Circular particle
+          vec2 xy = gl_PointCoord.xy - vec2(0.5);
+          float ll = length(xy);
+          if (ll > 0.5) discard;
+
+          // Soft edge glow
+          float glow = smoothstep(0.5, 0.1, ll);
+
+          gl_FragColor = vec4(vColor, glow * vAlpha);
+        }
+      `,
       transparent: true,
-      opacity: isMobile ? 0.94 : 1,
-    });
-    const glass = new THREE.Mesh(glassGeo, glassMat);
-    glass.scale.set(1, 0.94, 1);
-    group.add(glass);
-
-    /* 内核：被玻璃折射后形成暖色焦点，而不是靠自发光糊一片 */
-    const coreGeo = new THREE.IcosahedronGeometry(0.13, 1);
-    const coreMat = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#9c3f1e'),
-      emissive: new THREE.Color('#b5502a'),
-      emissiveIntensity: 0.34,
-      roughness: 0.42,
-      metalness: 0.12,
-    });
-    const core = new THREE.Mesh(coreGeo, coreMat);
-    group.add(core);
-
-    /* 两道极细的金属环：替代原来那条塑料感粗甜甜圈 */
-    const ringMatA = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#c08a5a'),
-      metalness: 1,
-      roughness: 0.28,
-    });
-    const ringGeoA = new THREE.TorusGeometry(2.02, 0.006, 3, 260);
-    const ringA = new THREE.Mesh(ringGeoA, ringMatA);
-
-    const ringMatB = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#77907f'),
-      metalness: 0.95,
-      roughness: 0.32,
-      transparent: true,
-      opacity: 0.85,
-    });
-    const ringGeoB = new THREE.TorusGeometry(2.62, 0.004, 3, 300);
-    const ringB = new THREE.Mesh(ringGeoB, ringMatB);
-    ringB.rotation.x = 1.9;
-    ringB.rotation.z = 0.5;
-    group.add(ringA, ringB);
-
-    /* 氛围场：让玻璃有内容可折射，同时在纸面上留下柔和的暖色纵深 */
-    const atmoTexture = createRadialTexture([
-      [0, 'rgba(255,255,255,0.92)'],
-      [0.42, 'rgba(255,255,255,0.44)'],
-      [1, 'rgba(255,255,255,0)'],
-    ]);
-    const atmoGeo = new THREE.PlaneGeometry(19, 13);
-    const atmoMat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#eeddc6'),
-      transparent: true,
-      opacity: 0.36,
       depthWrite: false,
-      map: atmoTexture ?? undefined,
     });
-    const atmo = new THREE.Mesh(atmoGeo, atmoMat);
-    atmo.position.z = -6;
-    scene.add(atmo);
 
-    const glowTexture = createRadialTexture([
-      [0, 'rgba(255,255,255,0.95)'],
-      [0.28, 'rgba(255,255,255,0.42)'],
-      [0.62, 'rgba(255,255,255,0.1)'],
-      [1, 'rgba(255,255,255,0)'],
-    ]);
-    const glowGeo = new THREE.PlaneGeometry(9.5, 9.5);
-    const glowMat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#f2e3d0'),
-      transparent: true,
-      opacity: 0.5,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      map: glowTexture ?? undefined,
-    });
-    const glow = new THREE.Mesh(glowGeo, glowMat);
-    glow.position.z = -2.6;
-    scene.add(glow);
-
-    /* 接触阴影：形体下方一处极淡的压暗，去掉「漂浮玩具」的观感 */
-    const shadowTexture = createRadialTexture([
-      [0, 'rgba(88,72,54,0.5)'],
-      [0.55, 'rgba(88,72,54,0.13)'],
-      [1, 'rgba(88,72,54,0)'],
-    ]);
-    const shadowGeo = new THREE.PlaneGeometry(5.4, 3.2);
-    const shadowMat = new THREE.MeshBasicMaterial({
-      transparent: true,
-      opacity: 0.42,
-      depthWrite: false,
-      map: shadowTexture ?? undefined,
-    });
-    const shadow = new THREE.Mesh(shadowGeo, shadowMat);
-    shadow.position.set(0.4, -1.85, -2.2);
-    scene.add(shadow);
-
-    const keyLight = new THREE.DirectionalLight(0xfff2e2, 2.1);
-    keyLight.position.set(4.5, 5, 6);
-    scene.add(keyLight);
-
-    const rimLight = new THREE.DirectionalLight(0xcfe0e6, 1.5);
-    rimLight.position.set(-5, -2.5, -3);
-    scene.add(rimLight);
+    const particles = new THREE.Points(geometry, material);
+    // Tilt the galaxy slightly
+    particles.rotation.x = 0.2;
+    scene.add(particles);
 
     let isRunning = true;
     let isTabVisible = !document.hidden;
     let animationFrameId = 0;
+    const clock = new THREE.Clock();
 
+    // Target values for smooth interpolation
     let targetScroll = 0;
     let currentScroll = 0;
-    let pointerX = 0;
-    let pointerY = 0;
-    let easedX = 0;
-    let easedY = 0;
-    let intro = 0;
+    let targetMouseX = 0;
+    let targetMouseY = 0;
+    let currentMouseX = 0;
+    let currentMouseY = 0;
 
     const updateScroll = () => {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -264,47 +210,10 @@ export default function SpatialCanvas() {
 
     const handlePointerMove = (e: MouseEvent) => {
       if (prefersReducedMotion) return;
-      pointerX = (e.clientX / window.innerWidth - 0.5) * 2;
-      pointerY = (e.clientY / window.innerHeight - 0.5) * 2;
+      targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2;
     };
     window.addEventListener('mousemove', handlePointerMove, { passive: true });
-
-    const applyState = (elapsed: number) => {
-      const keyframes = isMobileViewport() ? mobileKeyframes : desktopKeyframes;
-      const state = interpolateKeyframes(keyframes, currentScroll);
-
-      /* 入场 1.2s 缓动，避免刷新时形体突然砸进来 */
-      const k = prefersReducedMotion ? 1 : Math.min(1, intro);
-      const eased = 1 - Math.pow(1 - k, 3);
-
-      group.position.set(
-        state.posX + easedX * 0.42,
-        state.posY - easedY * 0.36 + Math.sin(elapsed * 0.55) * 0.07,
-        state.posZ,
-      );
-      group.scale.setScalar(state.scale * (0.9 + eased * 0.1));
-      group.rotation.y = elapsed * 0.07 + easedX * 0.16 + currentScroll * Math.PI * 0.9;
-      group.rotation.x = easedY * 0.1 + Math.sin(elapsed * 0.4) * 0.03;
-
-      ringA.rotation.x = state.ringTilt + Math.sin(elapsed * 0.22) * 0.12;
-      ringA.rotation.z = elapsed * 0.11;
-      ringB.rotation.y = -elapsed * 0.075;
-
-      core.rotation.x = elapsed * 0.34;
-      core.rotation.y = elapsed * 0.42;
-
-      glowMat.opacity = state.glowOpacity * eased;
-      glowMat.color.set(state.glowHex);
-      glow.position.set(group.position.x * 0.72, group.position.y * 0.72, -2.6);
-      atmo.position.set(group.position.x * 0.45, group.position.y * 0.4, -6);
-      shadow.position.set(group.position.x + 0.4, group.position.y - 1.72, -2.2);
-      shadowMat.opacity = 0.42 * eased;
-
-      /* 相机做视差而非移动形体：透视变化比平移更像「空间」 */
-      camera.position.x += (easedX * 0.5 - camera.position.x) * 0.08;
-      camera.position.y += (-easedY * 0.38 - camera.position.y) * 0.08;
-      camera.lookAt(0, 0, 0);
-    };
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -312,27 +221,39 @@ export default function SpatialCanvas() {
       renderer.setSize(window.innerWidth, window.innerHeight);
       updateScroll();
       if (prefersReducedMotion) {
-        applyState(0);
         renderer.render(scene, camera);
       }
     };
     window.addEventListener('resize', handleResize);
 
-    const clock = new THREE.Clock();
-
-    function animate() {
+    const animate = () => {
       if (!isRunning) return;
       animationFrameId = requestAnimationFrame(animate);
 
       const elapsed = clock.getElapsedTime();
-      currentScroll += (targetScroll - currentScroll) * 0.055;
-      easedX += (pointerX * 0.5 - easedX) * 0.045;
-      easedY += (pointerY * 0.5 - easedY) * 0.045;
-      intro = Math.min(1, intro + 1 / 72);
 
-      applyState(elapsed);
+      // Smooth interpolation
+      currentScroll += (targetScroll - currentScroll) * 0.05;
+      currentMouseX += (targetMouseX - currentMouseX) * 0.08;
+      currentMouseY += (targetMouseY - currentMouseY) * 0.08;
+
+      material.uniforms.uTime.value = elapsed;
+      material.uniforms.uScroll.value = currentScroll;
+      material.uniforms.uMouse.value.set(currentMouseX, currentMouseY);
+
+      // Slowly rotate the whole galaxy
+      particles.rotation.y = elapsed * 0.04;
+
+      // Tilt based on scroll
+      particles.rotation.x = 0.2 + currentScroll * 0.5;
+
+      // Slight camera parallax
+      camera.position.x = currentMouseX * 3;
+      camera.position.y = 8 - currentScroll * 4 + currentMouseY * 2;
+      camera.lookAt(0, currentScroll * 2, 0);
+
       renderer.render(scene, camera);
-    }
+    };
 
     const handleVisibilityChange = () => {
       isTabVisible = !document.hidden;
@@ -348,8 +269,6 @@ export default function SpatialCanvas() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     if (prefersReducedMotion) {
-      intro = 1;
-      applyState(0);
       renderer.render(scene, camera);
     } else {
       animate();
@@ -366,25 +285,8 @@ export default function SpatialCanvas() {
         container.removeChild(renderer.domElement);
       }
 
-      glassGeo.dispose();
-      glassMat.dispose();
-      coreGeo.dispose();
-      coreMat.dispose();
-      ringGeoA.dispose();
-      ringMatA.dispose();
-      ringGeoB.dispose();
-      ringMatB.dispose();
-      glowGeo.dispose();
-      glowMat.dispose();
-      glowTexture?.dispose();
-      atmoGeo.dispose();
-      atmoMat.dispose();
-      atmoTexture?.dispose();
-      shadowGeo.dispose();
-      shadowMat.dispose();
-      shadowTexture?.dispose();
-      envRT.dispose();
-      pmrem.dispose();
+      geometry.dispose();
+      material.dispose();
       renderer.dispose();
     };
   }, []);
