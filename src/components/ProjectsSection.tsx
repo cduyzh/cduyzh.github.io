@@ -10,7 +10,6 @@ const ProjectModal = lazy(() => import('./ProjectModal'));
 export default function ProjectsSection() {
   const publicProjects = getPublicProjects();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(null);
   const [modalActivated, setModalActivated] = useState(false);
 
   // Maximum items shown on the main page
@@ -36,12 +35,9 @@ export default function ProjectsSection() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, [publicProjects]);
 
-  const handleOpenProject = (project: Project, triggerEl?: HTMLElement | null) => {
+  const handleOpenProject = (project: Project) => {
     setSelectedProject(project);
     setModalActivated(true);
-    if (triggerEl) {
-      setTriggerElement(triggerEl);
-    }
     window.history.replaceState(null, '', `#project-${project.slug}`);
   };
 
@@ -118,7 +114,6 @@ export default function ProjectsSection() {
         <Suspense fallback={null}>
           <ProjectModal
             project={selectedProject}
-            triggerElement={triggerElement}
             onClose={handleCloseProject}
           />
         </Suspense>

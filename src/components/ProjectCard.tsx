@@ -20,7 +20,6 @@ const statusStyles: Record<ProjectStatus, { bg: string; text: string; dot: strin
 
 export default function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const triggerButtonRef = useRef<HTMLButtonElement>(null);
   const statusConfig = statusStyles[project.status] || statusStyles['开发中'];
 
   // 3D Tilt & Lighting Physics
@@ -53,7 +52,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
   };
 
   const handleCardClick = () => {
-    onSelect(project, triggerButtonRef.current);
+    onSelect(project);
   };
 
   return (
@@ -62,8 +61,9 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleCardClick}
       style={{ perspective: 1100 }}
-      className="h-full"
+      className="h-full cursor-pointer"
     >
       <motion.article
         id={`project-card-${project.slug}`}
@@ -121,12 +121,13 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
               <span className="text-stone-400">{project.year}</span>
             </div>
 
-            {/* Semantic Title Button */}
+            {/* Semantic Title Button (keyboard-accessible trigger) */}
             <h3 className="font-display text-xl sm:text-2xl font-bold text-stone-900 tracking-tight leading-snug">
               <button
                 type="button"
-                onClick={handleCardClick}
+                onClick={(e) => { e.stopPropagation(); handleCardClick(); }}
                 className="text-left hover:text-clay transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay rounded-xs"
+                aria-haspopup="dialog"
               >
                 {project.title}
               </button>
@@ -151,18 +152,9 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
           </div>
         </div>
 
-        {/* Card Action Footer */}
+        {/* Card Action Footer (links only) */}
         <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 flex items-center justify-between border-t border-stone-100/90 mt-2 text-xs font-mono">
-          <button
-            ref={triggerButtonRef}
-            type="button"
-            onClick={handleCardClick}
-            className="inline-flex items-center gap-1.5 text-stone-900 hover:text-clay font-semibold transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay rounded-xs"
-            aria-haspopup="dialog"
-          >
-            <span>查看项目档案</span>
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+          <span aria-hidden="true" className="text-stone-500">点击卡片查看档案</span>
 
           <div className="flex items-center gap-3 text-stone-500">
             {project.demoUrl && (
@@ -170,6 +162,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
                 href={project.demoUrl}
                 target="_blank"
                 rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="hover:text-stone-900 transition-colors flex items-center gap-1"
                 title="访问在线演示"
                 aria-label={`访问 ${project.title} 在线演示`}
@@ -183,6 +176,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
                 href={project.repoUrl}
                 target="_blank"
                 rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="hover:text-stone-900 transition-colors flex items-center gap-1"
                 title="查看源码"
                 aria-label={`查看 ${project.title} GitHub 源码`}
