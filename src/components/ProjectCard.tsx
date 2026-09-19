@@ -1,6 +1,6 @@
 import { useRef, useState, type Key, type MouseEvent } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
-import { ArrowUpRight, Github, ExternalLink } from 'lucide-react';
+
 import { Project, ProjectStatus } from '../types';
 
 interface ProjectCardProps {
@@ -162,43 +162,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* Card Action Footer (links only) */}
-        <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 flex items-center justify-between border-t border-stone-100/90 mt-2 text-xs font-mono">
-          <span aria-hidden="true" className="text-stone-500">
-            {hasLink ? '点击访问页面' : ''}
-          </span>
-
-          <div className="flex items-center gap-3 text-stone-500">
-            {project.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-stone-900 transition-colors flex items-center gap-1"
-                title="访问在线演示"
-                aria-label={`访问 ${project.title} 在线演示`}
-              >
-                <span>演示</span>
-                <ExternalLink size={12} />
-              </a>
-            )}
-            {project.repoUrl && (
-              <a
-                href={project.repoUrl}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-stone-900 transition-colors flex items-center gap-1"
-                title="查看源码"
-                aria-label={`查看 ${project.title} GitHub 源码`}
-              >
-                <Github size={13} />
-                <span>源码</span>
-              </a>
-            )}
-          </div>
-        </div>
       </motion.article>
     </div>
   );
