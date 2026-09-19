@@ -1,50 +1,14 @@
-import { Suspense, lazy, useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { getPublicProjects } from '../data/projects';
-import { Project } from '../types';
 import ProjectCard from './ProjectCard';
-import { Layers } from 'lucide-react';
-
-const ProjectModal = lazy(() => import('./ProjectModal'));
 
 export default function ProjectsSection() {
   const publicProjects = getPublicProjects();
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [modalActivated, setModalActivated] = useState(false);
 
   // Maximum items shown on the main page
   const HOMEPAGE_LIMIT = 8;
   const [displayCount, setDisplayCount] = useState<number>(HOMEPAGE_LIMIT);
-
-  // Check URL hash on initial load for direct project links (e.g. #project-luna-note)
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash.startsWith('#project-')) {
-        const slug = hash.replace('#project-', '');
-        const target = publicProjects.find((p) => p.slug === slug);
-        if (target) {
-          setSelectedProject(target);
-          setModalActivated(true);
-        }
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [publicProjects]);
-
-  const handleOpenProject = (project: Project) => {
-    setSelectedProject(project);
-    setModalActivated(true);
-    window.history.replaceState(null, '', `#project-${project.slug}`);
-  };
-
-  const handleCloseProject = () => {
-    setSelectedProject(null);
-    window.history.replaceState(null, '', '#projects');
-  };
 
   const visibleProjects = publicProjects.slice(0, displayCount);
   const hasMoreThanLimit = publicProjects.length > HOMEPAGE_LIMIT;
@@ -84,7 +48,6 @@ export default function ProjectsSection() {
               key={project.id}
               project={project}
               index={index}
-              onSelect={handleOpenProject}
             />
           ))}
         </div>
@@ -108,16 +71,6 @@ export default function ProjectsSection() {
           </div>
         )}
       </div>
-
-      {/* Case Study Detail Modal (chunk loaded on first open) */}
-      {modalActivated && (
-        <Suspense fallback={null}>
-          <ProjectModal
-            project={selectedProject}
-            onClose={handleCloseProject}
-          />
-        </Suspense>
-      )}
     </section>
   );
 }

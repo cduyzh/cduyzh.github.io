@@ -7,7 +7,6 @@ interface ProjectCardProps {
   key?: Key;
   project: Project;
   index: number;
-  onSelect: (project: Project, triggerEl?: HTMLElement | null) => void;
 }
 
 const statusStyles: Record<ProjectStatus, { bg: string; text: string; dot: string; glow: string }> = {
@@ -18,7 +17,7 @@ const statusStyles: Record<ProjectStatus, { bg: string; text: string; dot: strin
   '构思中': { bg: 'bg-stone-100/90 border-stone-200', text: 'text-stone-700', dot: 'bg-stone-400', glow: 'group-hover:border-stone-300' }
 };
 
-export default function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const statusConfig = statusStyles[project.status] || statusStyles['开发中'];
 
@@ -52,8 +51,14 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
   };
 
   const handleCardClick = () => {
-    onSelect(project);
+    if (project.demoUrl) {
+      window.open(project.demoUrl, '_blank', 'noreferrer');
+    } else if (project.repoUrl) {
+      window.open(project.repoUrl, '_blank', 'noreferrer');
+    }
   };
+
+  const hasLink = !!(project.demoUrl || project.repoUrl);
 
   return (
     <div
@@ -63,7 +68,7 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
       onMouseLeave={handleMouseLeave}
       onClick={handleCardClick}
       style={{ perspective: 1100 }}
-      className="h-full cursor-pointer"
+      className={`h-full ${hasLink ? 'cursor-pointer' : 'cursor-default'}`}
     >
       <motion.article
         id={`project-card-${project.slug}`}
@@ -123,14 +128,19 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
 
             {/* Semantic Title Button (keyboard-accessible trigger) */}
             <h3 className="font-display text-xl sm:text-2xl font-bold text-stone-900 tracking-tight leading-snug">
-              <button
-                type="button"
-                onClick={(e) => { e.stopPropagation(); handleCardClick(); }}
-                className="text-left hover:text-clay transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay rounded-xs"
-                aria-haspopup="dialog"
-              >
-                {project.title}
-              </button>
+              {hasLink ? (
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); handleCardClick(); }}
+                  className="text-left hover:text-clay transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay rounded-xs"
+                >
+                  {project.title}
+                </button>
+              ) : (
+                <span className="text-stone-900">
+                  {project.title}
+                </span>
+              )}
             </h3>
 
             {/* One-sentence Summary */}
@@ -154,7 +164,9 @@ export default function ProjectCard({ project, index, onSelect }: ProjectCardPro
 
         {/* Card Action Footer (links only) */}
         <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-2 flex items-center justify-between border-t border-stone-100/90 mt-2 text-xs font-mono">
-          <span aria-hidden="true" className="text-stone-500">点击卡片查看档案</span>
+          <span aria-hidden="true" className="text-stone-500">
+            {hasLink ? '点击访问页面' : ''}
+          </span>
 
           <div className="flex items-center gap-3 text-stone-500">
             {project.demoUrl && (
