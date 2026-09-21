@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { contactData, socialsData } from '../data/socials';
-import { Mail, Check, Copy, ArrowUpRight, Github, MessageSquare, MapPin, AlertCircle } from 'lucide-react';
+import { Mail, Check, Copy, ArrowUpRight, Github, MessageSquare, MapPin, AlertCircle, BookHeart } from 'lucide-react';
 
 export default function ContactSection() {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
@@ -43,6 +43,7 @@ export default function ContactSection() {
       case 'Github': return <Github size={18} />;
       case 'MessageSquare': return <MessageSquare size={18} />;
       case 'Mail': return <Mail size={18} />;
+      case 'BookHeart': return <BookHeart size={18} />;
       default: return <ArrowUpRight size={18} />;
     }
   };
@@ -141,7 +142,7 @@ export default function ContactSection() {
             已确认的个人主页与触点
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {socialsData.map((social) => {
               const isCopy = social.isCopyable;
 

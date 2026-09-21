@@ -42,5 +42,6 @@
 技术探讨、独立项目交流与真诚的想法碰撞，都欢迎。
 
 - **Email**：cduyzh@gmail.com
-- **微信**：cduyzh_code
+- **微信**：cduyzh
+- **小红书**：cduyzh
 - **GitHub**：[@cduyzh](https://github.com/cduyzh)
