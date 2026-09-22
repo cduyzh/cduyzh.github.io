@@ -11,6 +11,28 @@ import { projectCovers } from './projectCovers';
  */
 export const projectsData: Project[] = [
   {
+    id: '09',
+    slug: 'cards-score',
+    title: '打牌记分',
+    summary: '各类牌局的随手记分助手：打牌记账、打牌计分、积分排行，一个小程序全管。',
+    description: '扑克、麻将、桌游、聚会都能开桌，多人建房、实时录入、自动结算、历史记录与积分排行；房主记分即时生效、断网可用，云端自动备份，不打扰打牌节奏——主打一个随性随记。',
+    status: '已上线',
+    cover: '/assets/cards-score-cover.jpg',
+    coverAlt: '打牌记分小程序封面图：包含扑克、麻将、桌游等元素与多人建房界面',
+    tags: ['微信小程序', '记分工具', '聚会桌游'],
+    year: '2026',
+    role: '独立开发',
+    technologies: ['微信小程序', '云开发', 'TypeScript'],
+    highlights: [
+      '多人实时记分同步，支持断网离线记分与自动恢复',
+      '极简操作路径，不打扰打牌节奏的主态控制',
+      '涵盖扑克、麻将等多种计分模式与排行榜结算'
+    ],
+    qrCode: '/assets/cards-score-qrcode.jpg',
+    featured: true,
+    visibility: 'public'
+  },
+  {
     id: '01',
     slug: 'hsr-archive',
     title: '终局竞速档案站',

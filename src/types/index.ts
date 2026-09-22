@@ -18,6 +18,7 @@ export interface Project {
   highlights?: string[];
   demoUrl?: string;
   repoUrl?: string;
+  qrCode?: string;
   featured?: boolean;
   visibility: ProjectVisibility;
   // Legacy aliases for backward compatibility if needed
