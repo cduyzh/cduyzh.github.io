@@ -77,7 +77,7 @@ run('npx', ['tsc', '--noEmit']);
 
 console.log('2/4 构建');
 rmSync(join(ROOT, 'dist'), { recursive: true, force: true });
-const buildOut = execFileSync('npx', ['vite', 'build'], { cwd: ROOT, encoding: 'utf8' });
+const buildOut = execFileSync('npm', ['run', 'build'], { cwd: ROOT, encoding: 'utf8' });
 const assets = [...buildOut.matchAll(/^(dist\/\S+\.(?:js|css))\s+([\d.,]+ kB)(?:\s+\| gzip:\s+([\d.,]+ kB))?$/gm)]
   .map(([, file, size, gzip]) => ({ file, size, gzip }));
 
