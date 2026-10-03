@@ -1,73 +1,22 @@
-import { Suspense, lazy } from 'react';
-import SmoothScroll from './components/SmoothScroll';
-import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import VisualBreak from './components/VisualBreak';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import SectionDivider from './components/SectionDivider';
-
-const SpatialCanvas = lazy(() => import('./components/SpatialCanvas'));
 
 export default function App() {
   return (
-    <SmoothScroll>
-      <div className="relative min-h-screen bg-paper text-ink selection:bg-clay selection:text-paper-raised overflow-x-hidden">
-        {/* Continuous Spatial 3D Canvas (Follows Scroll Progress & Cursor across all sections) */}
-        <Suspense
-          fallback={
-            <div
-              className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50 bg-[radial-gradient(ellipse_at_70%_30%,rgba(181,80,42,0.1),transparent_70%)]"
-              aria-hidden="true"
-            />
-          }
-        >
-          <SpatialCanvas />
-        </Suspense>
-
-        {/* 全页纸纹：压在内容与导航之上，作为统一的一层胶片颗粒 */}
-        <div className="paper-texture fixed inset-0 z-[70] pointer-events-none" aria-hidden="true" />
-
-        {/* Custom Interactive Smooth Cursor (Auto-disabled on touch & reduced-motion) */}
-        <CustomCursor />
-
-        {/* Fixed Top Navigation Bar */}
-        <Navbar />
-
-        {/* Main Content Sections:
-            1. Hero (Ambient 3D Silk Glass Orb)
-            2. 关于我 / About (3D Orb drifts to top right)
-            3. 空间过渡 / Visual Break (3D Ring deepens in center)
-            4. 最近做的一些东西 / Projects (3D Light frames the 2-col grid + cards have 3D tilt & glare)
-            5. 联系方式 / Contact (3D form anchors warm dusk glow)
-        */}
-        <main className="relative z-10 w-full">
-          <Hero />
-
-          <SectionDivider color="#b9ff62" />
-
-          <About />
-
-          <VisualBreak
-            id="visual-manifesto"
-            badge="构想与实践"
-            quote="把想法落地为真正可用之物。"
-            highlightWords={['落地', '可用之物']}
-            subtext="技术不仅是代码的堆叠，更是解决具体痛点与创造细腻交互体验的媒介。"
-          />
-
-          <SectionDivider color="#7fe5dd" />
-
-          <ProjectsSection />
-
-          <ContactSection />
-        </main>
-
-        <Footer />
-      </div>
-    </SmoothScroll>
+    <>
+      <a className="skip-link" href="#projects">跳到作品</a>
+      <Navbar />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -1,126 +1,74 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowDown, ArrowUpRight } from 'lucide-react';
-import { profileData } from '../data/profile';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValueEvent, useTransform } from 'motion/react';
+import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { projectsData } from '../data/projects';
+import { useScrollScene } from '../hooks/useScrollScene';
+
+const featuredProject = projectsData.find(project => project.slug === 'hsr-archive' && project.visibility === 'public')!;
+const sideProject = projectsData.find(project => project.slug === 'cards-score' && project.visibility === 'public')!;
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const { ref, progress, isCompact, isStatic, isShort } = useScrollScene();
+  const [introHidden, setIntroHidden] = useState(false);
+  const introHiddenRef = useRef(false);
+  const titleScale = useTransform(progress, [0, 0.28], [1, 0.92]);
+  const titleY = useTransform(progress, [0, 0.28], [0, -70]);
+  const titleOpacity = useTransform(progress, [0.06, 0.26], [1, 0]);
+  const productScale = useTransform(progress, [0, 0.55, 1], [0.88, 1, 1.04]);
+  const productY = useTransform(progress, [0, 0.55, 1], isCompact ? [24, -16, -24] : isShort ? [64, -70, -90] : [64, -110, -130]);
+  const productRotate = useTransform(progress, [0, 0.48], [-7, 0]);
+  const sideX = useTransform(progress, [0, 0.48], [28, 0]);
+  const sideY = useTransform(progress, [0, 0.48], [50, 0]);
+  const detailOpacity = useTransform(progress, [0.26, 0.42], [0, 1]);
+  const detailY = useTransform(progress, [0.26, 0.48], [36, 0]);
+  const hintOpacity = useTransform(progress, [0, 0.12], [1, 0]);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  // 只在可访问状态越过边界时更新 state，已淡出的链接不进入 Tab 顺序。
+  const updateIntroVisibility = (value: number) => {
+    const hidden = value >= 0.26;
+    if (hidden !== introHiddenRef.current) {
+      introHiddenRef.current = hidden;
+      setIntroHidden(hidden);
     }
   };
+  useMotionValueEvent(progress, 'change', updateIntroVisibility);
+  useEffect(() => updateIntroVisibility(progress.get()), [progress]);
 
   return (
-    <section
-      ref={containerRef}
-      id="hero"
-      className="relative w-full min-h-[92vh] sm:min-h-[96vh] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 select-none bg-transparent"
-    >
-      {/* Gentle ambient light radial gradient overlay */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,rgba(254,243,199,0.2),transparent_60%)]" />
-
-      {/* Top Bar Spacer & Corner Meta */}
-      <div className="pt-20 md:pt-14 w-full flex justify-between items-center text-xs font-mono text-stone-500 z-10">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
-          <span className="text-stone-700 font-medium tracking-wider">中国 · 成都</span>
-        </div>
-        <div className="hidden sm:flex items-center gap-3 text-stone-500 border border-stone-200/90 px-3.5 py-1 rounded-full bg-white/80 backdrop-blur-md shadow-xs">
-          <span className="text-stone-700 font-medium">常驻成都 · 探索新想法</span>
-          <span className="text-stone-300">|</span>
-          <span className="text-stone-500">{profileData.domain}</span>
-        </div>
-      </div>
-
-      {/* Centerpiece Hero Typography */}
-      <motion.div
-        style={{ y: textY, opacity: textOpacity }}
-        className="my-auto w-full max-w-5xl mx-auto flex flex-col justify-center items-start z-10 py-10 md:py-14"
-      >
-        {/* Role tags */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] sm:text-xs font-mono tracking-[0.16em] text-ink-3 mb-4 sm:mb-5">
-          <span className="text-clay font-semibold">Web 前端开发</span>
-          <span className="w-px h-3 bg-ink/15" />
-          <span>AI 应用</span>
-          <span className="w-px h-3 bg-ink/15" />
-          <span>独立工具</span>
-        </div>
-
-        {/* Oversized Brand Typography */}
-        <h1
-          id="hero-title"
-          className="font-display font-extrabold tracking-[-0.04em] text-stone-900 leading-[0.88] select-none text-[clamp(64px,12vw,180px)] drop-shadow-xs"
-        >
-          {profileData.name}
-        </h1>
-
-        {/* Subtitle & Core Message */}
-        <div className="mt-6 md:mt-7 max-w-2xl flex flex-col gap-2.5">
-          <p className="text-2xl sm:text-3xl md:text-4xl text-stone-800 font-semibold tracking-tight leading-snug">
-            做产品，也做一些有意思的东西。
-          </p>
-          <p className="text-sm md:text-base text-stone-600 font-normal leading-relaxed max-w-xl">
-            我是 cduyzh，专注于构建高质感数字体验与趁手工具。把闪现的想法敲成代码，做成真正能在浏览器或手机上使用的产品。
-          </p>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="mt-8 md:mt-9 flex flex-wrap items-center gap-3.5 text-xs font-medium">
-          <button
-            type="button"
-            onClick={() => scrollTo('projects')}
-            className="px-6 py-3 rounded-full bg-stone-900 text-stone-100 font-semibold hover:bg-clay transition-colors duration-200 flex items-center gap-2 shadow-xs group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-          >
-            <span>浏览近期作品</span>
-            <ArrowDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => scrollTo('about')}
-            className="px-6 py-3 rounded-full border border-stone-300 bg-white/80 text-stone-800 hover:bg-white hover:border-stone-400 transition-[background-color,border-color] duration-200 backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-          >
-            关于我
-          </button>
-
-          <button
-            type="button"
-            onClick={() => scrollTo('contact')}
-            className="px-4 py-3 text-stone-600 hover:text-clay transition-colors flex items-center gap-1 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-          >
-            <span>取得联系</span>
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
-        </div>
-      </motion.div>
-
-      {/* Bottom Corner Anchors */}
-      <div className="w-full flex justify-between items-end text-xs font-mono text-stone-500 z-10 pt-4 border-t border-stone-200/60">
-        <div className="flex items-center gap-3">
-          <span className="text-stone-400">www.cduyzh.top</span>
-          <span className="hidden sm:inline text-stone-300">/</span>
-          <span className="hidden sm:inline text-stone-500">DIGITAL STUDIO</span>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => scrollTo('about')}
-          className="flex items-center gap-1.5 text-stone-600 hover:text-stone-900 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-        >
-          <span>向下浏览</span>
-          <ArrowDown size={13} className="text-stone-400 group-hover:text-stone-900 transition-colors" />
-        </button>
+    <section ref={ref} id="hero" className={`hero-scene scroll-scene${isStatic ? ' scene-static' : ''}`} aria-labelledby="hero-title">
+      <div className="hero-stage pin-stage">
+        <div className="hero-glow" aria-hidden="true" />
+        <motion.div className="hero-intro" style={isStatic ? { scale: 1, y: 0, opacity: 1 } : { scale: titleScale, y: titleY, opacity: titleOpacity }}>
+          <p className="eyebrow hero-eyebrow"><span /> CDUYZH · 独立开发者</p>
+          <h1 id="hero-title">把想法，<br /><span>做成好用的日常。</span></h1>
+          <p className="hero-description">用代码探索可能，用设计打磨体验。<br className="mobile-break" />做产品，也做一些有意思的东西。</p>
+          <div className="hero-actions" inert={!isStatic && introHidden}>
+            <a className="button-primary" href="#projects">探索我的作品 <ArrowDown size={15} /></a>
+            <a className="text-link" href="#about">认识一下 <ChevronRight size={17} /></a>
+          </div>
+        </motion.div>
+        <motion.div className="hero-reveal" style={isStatic ? { opacity: 1, y: 0 } : { opacity: detailOpacity, y: detailY }}>
+          <p className="eyebrow">从灵感，到屏幕。</p>
+          <h2>认真做的东西，<br className="mobile-break" />用起来会不一样。</h2>
+          <p>从游戏数据到生活工具，让每个想法找到自己的形状。</p>
+        </motion.div>
+        <motion.div className="hero-product" style={isStatic ? { x: 0, y: 0, scale: 1, rotateX: 0 } : { x: '-50%', y: productY, scale: productScale, rotateX: productRotate }}>
+          <div className="product-window">
+            <div className="product-toolbar" aria-hidden="true"><span className="window-dots"><i /><i /><i /></span><span>cduyzh / selected work</span><ArrowUpRight size={13} /></div>
+            <img className="product-cover" src={featuredProject.cover} alt="终局竞速档案站项目封面" width={800} height={500} fetchPriority="high" />
+            <div className="product-window-footer"><span>{featuredProject.title}</span><span>DESIGNED & BUILT BY CDUYZH</span></div>
+          </div>
+          <motion.div className="product-companion" style={isStatic ? { x: 0, y: 0 } : { x: sideX, y: sideY }}>
+            <div className="companion-camera" aria-hidden="true" />
+            <div className="companion-heading"><span>小工具，大自在。</span><strong>{sideProject.title}</strong></div>
+            <img src={sideProject.cover} alt="打牌记分小程序项目封面" width={800} height={500} />
+            <div className="companion-caption">随手记分 · 专心享受牌局<span>微信小程序</span></div>
+            <div className="companion-home" aria-hidden="true" />
+          </motion.div>
+          <div className="product-note" aria-hidden="true"><span className="note-mark">✳</span><span>一点好奇心。<br /><strong>一些真实的作品。</strong></span></div>
+        </motion.div>
+        <div className="hero-bottom"><span>CHENGDU, CHINA</span><motion.span className="hero-scroll-hint" style={isStatic ? undefined : { opacity: hintOpacity }}>滚动，发现更多 <ArrowDown size={13} /></motion.span><span>IDEAS INTO REALITY</span></div>
+        <div className="scene-track" aria-hidden="true"><motion.div style={{ scaleX: isStatic ? 1 : progress }} /></div>
       </div>
     </section>
   );

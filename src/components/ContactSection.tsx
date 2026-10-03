@@ -1,224 +1,151 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, BookHeart, Check, Copy, Github, Mail, MessageSquare, X } from 'lucide-react';
 import { contactData, socialsData } from '../data/socials';
-import { Mail, Check, Copy, ArrowUpRight, Github, MessageSquare, MapPin, AlertCircle, BookHeart } from 'lucide-react';
+import './chrome.css';
+
+type CopyNotice = { kind: 'success' | 'error'; message: string };
+
+function fallbackCopy(text: string) {
+  const previousFocus = document.activeElement;
+  const input = document.createElement('textarea');
+  input.value = text;
+  input.readOnly = true;
+  input.tabIndex = -1;
+  input.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+  document.body.appendChild(input);
+  try {
+    input.select();
+    input.setSelectionRange(0, text.length);
+    if (!document.execCommand('copy')) throw new Error('Clipboard unavailable');
+  } finally {
+    input.remove();
+    if (previousFocus instanceof HTMLElement) previousFocus.focus({ preventScroll: true });
+  }
+}
+
+function SocialIcon({ name }: { name?: string }) {
+  switch (name) {
+    case 'Github': return <Github size={22} aria-hidden="true" />;
+    case 'Mail': return <Mail size={22} aria-hidden="true" />;
+    case 'MessageSquare': return <MessageSquare size={22} aria-hidden="true" />;
+    case 'BookHeart': return <BookHeart size={22} aria-hidden="true" />;
+    default: return <ArrowUpRight size={22} aria-hidden="true" />;
+  }
+}
 
 export default function ContactSection() {
+  const [notice, setNotice] = useState<CopyNotice | null>(null);
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
-  const [copyError, setCopyError] = useState<string | null>(null);
+  const noticeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mounted = useRef(true);
+  const copyRequest = useRef(0);
+
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+      if (noticeTimer.current !== null) clearTimeout(noticeTimer.current);
+    };
+  }, []);
 
   const handleCopy = async (text: string, label: string) => {
-    setCopyError(null);
+    const request = ++copyRequest.current;
+    if (noticeTimer.current !== null) clearTimeout(noticeTimer.current);
+    setNotice(null);
+    setCopiedItem(null);
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
         await navigator.clipboard.writeText(text);
-        setCopiedItem(label);
-        setTimeout(() => setCopiedItem(null), 2500);
-      } else {
-        // Fallback for non-secure contexts or older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.style.position = 'fixed';
-        textArea.style.opacity = '0';
-        document.body.appendChild(textArea);
-        textArea.select();
-        const success = document.execCommand('copy');
-        document.body.removeChild(textArea);
-
-        if (success) {
-          setCopiedItem(label);
-          setTimeout(() => setCopiedItem(null), 2500);
-        } else {
-          throw new Error('复制命令未获支持');
-        }
+      } catch {
+        if (!mounted.current || request !== copyRequest.current) return;
+        fallbackCopy(text);
       }
+      if (!mounted.current || request !== copyRequest.current) return;
+      setCopiedItem(label);
+      setNotice({ kind: 'success', message: `已复制${label}` });
+      noticeTimer.current = setTimeout(() => {
+        setCopiedItem(null);
+        setNotice(null);
+        noticeTimer.current = null;
+      }, 3000);
     } catch {
-      setCopyError(`复制失败，请手动选择文本复制：${text}`);
-      setTimeout(() => setCopyError(null), 4000);
-    }
-  };
-
-  const getIcon = (name: string) => {
-    switch (name) {
-      case 'Github': return <Github size={18} />;
-      case 'MessageSquare': return <MessageSquare size={18} />;
-      case 'Mail': return <Mail size={18} />;
-      case 'BookHeart': return <BookHeart size={18} />;
-      default: return <ArrowUpRight size={18} />;
+      if (!mounted.current || request !== copyRequest.current) return;
+      setNotice({ kind: 'error', message: `复制失败，请手动复制：${text}` });
     }
   };
 
   return (
-    <section id="contact" className="veil-dusk relative w-full py-20 sm:py-28 md:py-32 text-ink">
-      {/* Toast Notification with aria-live="polite" */}
-      <div aria-live="polite" aria-atomic="true" className="sr-only">
-        {copiedItem && `已复制 ${copiedItem} 到剪贴板`}
-        {copyError && copyError}
-      </div>
-
-      <AnimatePresence>
-        {copiedItem && (
-          <motion.div
-            initial={{ opacity: 0, y: 16, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 16, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-8 right-8 z-50 px-5 py-3 rounded-full bg-stone-900 text-stone-100 font-mono text-xs font-medium shadow-xl flex items-center gap-2.5 border border-stone-700"
-          >
-            <Check size={16} className="text-emerald-400" />
-            <span>已复制 {copiedItem} 到剪贴板</span>
-          </motion.div>
-        )}
-
-        {copyError && (
-          <motion.div
-            initial={{ opacity: 0, y: 16, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 16, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-8 right-8 z-50 px-5 py-3 rounded-full bg-red-900 text-red-100 font-mono text-xs font-medium shadow-xl flex items-center gap-2.5 border border-red-700"
-          >
-            <AlertCircle size={16} className="text-red-300" />
-            <span>{copyError}</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <div className="max-w-5xl mx-auto px-6 sm:px-10 md:px-12">
-        {/* Section Tag */}
-        <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-clay font-semibold mb-6">
-          <span>03 / 联系方式</span>
-          <span>·</span>
-          <span>保持交流</span>
-        </div>
-
-        {/* Big Statement Headline */}
-        <div className="max-w-2xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 leading-tight"
-          >
-            {contactData.headline}
-          </motion.h2>
-
-          <p className="mt-4 text-base sm:text-lg text-stone-700 font-normal leading-relaxed">
-            {contactData.subheadline}
-          </p>
-        </div>
-
-        {/* Direct Email Hero Pill */}
-        <div className="mt-8 sm:mt-10">
-          <div className="inline-flex flex-wrap items-center gap-2 sm:gap-3 p-2 pr-4 rounded-2xl sm:rounded-full bg-white border border-stone-300/80 shadow-xs">
-            <a
-              href={`mailto:${contactData.email}`}
-              className="px-5 py-2.5 rounded-full bg-stone-900 text-stone-100 font-medium text-xs font-mono hover:bg-clay transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-            >
-              <Mail size={14} />
-              <span>发送邮件</span>
+    <section id="contact" className="contact-section" aria-labelledby="contact-heading">
+      <div className="section-shell">
+        <div className="contact-intro">
+          <p className="eyebrow">保持联系</p>
+          <h2 id="contact-heading">{contactData.headline}<br /><span>一起把它做出来。</span></h2>
+          <p className="contact-description">{contactData.subheadline}</p>
+          <div className="contact-email-actions">
+            <a href={`mailto:${contactData.email}`} className="button-primary contact-email-send">
+              发送邮件 <ArrowUpRight size={17} aria-hidden="true" />
             </a>
-
             <button
               type="button"
-              onClick={() => handleCopy(contactData.email, '邮箱地址')}
-              className="text-xs sm:text-sm font-mono text-stone-700 hover:text-stone-950 flex items-center gap-2 transition-colors py-1.5 px-3 rounded-full hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-              title="点击复制邮箱地址"
+              className="contact-email-copy"
+              onClick={() => void handleCopy(contactData.email, '邮箱地址')}
+              aria-label={`复制邮箱地址 ${contactData.email}`}
             >
-              <span>{contactData.email}</span>
-              {copiedItem === '邮箱地址' ? (
-                <Check size={14} className="text-emerald-600" />
-              ) : (
-                <Copy size={14} className="text-stone-400" />
-              )}
+              {contactData.email}
+              {copiedItem === '邮箱地址' ? <Check size={15} aria-hidden="true" /> : <Copy size={15} aria-hidden="true" />}
             </button>
           </div>
         </div>
 
-        {/* Verified Channels Grid (GitHub, Email, WeChat) */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-stone-300/80">
-          <div className="text-xs font-mono text-stone-500 tracking-wider mb-5">
-            已确认的个人主页与触点
-          </div>
+        <div className="contact-channels" aria-label="个人主页与联系通道">
+          {socialsData.map((social) => {
+            const label = social.name === 'Email' ? '邮箱地址' : `${social.name}账号`;
+            const content = (
+              <>
+                <span className="contact-channel-icon"><SocialIcon name={social.icon} /></span>
+                <span className="contact-channel-content">
+                  <span className="contact-channel-name">{social.name}</span>
+                  <span className="contact-channel-handle">{social.handle}</span>
+                </span>
+                <span className="contact-channel-action">
+                  {social.isCopyable ? (
+                    copiedItem === label ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />
+                  ) : <ArrowUpRight size={18} aria-hidden="true" />}
+                </span>
+              </>
+            );
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {socialsData.map((social) => {
-              const isCopy = social.isCopyable;
-
-              if (isCopy && social.copyValue) {
-                return (
-                  <button
-                    key={social.name}
-                    type="button"
-                    onClick={() => handleCopy(social.copyValue!, `${social.name} (${social.copyValue})`)}
-                    className="p-4 sm:p-5 rounded-2xl bg-white/85 hover:bg-white border border-stone-200 hover:border-stone-400 shadow-xs hover:shadow-md transition-[border-color,box-shadow,background-color] duration-200 text-left flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-stone-100 text-stone-700 group-hover:text-clay group-hover:bg-clay/10 transition-colors">
-                        {getIcon(social.icon || '')}
-                      </div>
-                      <div>
-                        <div className="font-display font-bold text-stone-900 text-sm sm:text-base">
-                          {social.name}
-                        </div>
-                        <div className="text-xs font-mono text-stone-500 mt-0.5">
-                          {social.handle}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-xs font-mono text-stone-400 group-hover:text-stone-900 transition-colors flex items-center gap-1">
-                      <span>复制</span>
-                      <Copy size={12} />
-                    </div>
-                  </button>
-                );
-              }
-
-              return (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-4 sm:p-5 rounded-2xl bg-white/85 hover:bg-white border border-stone-200 hover:border-stone-400 shadow-xs hover:shadow-md transition-[border-color,box-shadow,background-color] duration-200 flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-stone-100 text-stone-700 group-hover:text-clay group-hover:bg-clay/10 transition-colors">
-                      {getIcon(social.icon || '')}
-                    </div>
-                    <div>
-                      <div className="font-display font-bold text-stone-900 text-sm sm:text-base">
-                        {social.name}
-                      </div>
-                      <div className="text-xs font-mono text-stone-500 mt-0.5">
-                        {social.handle}
-                      </div>
-                    </div>
-                  </div>
-                  <ArrowUpRight size={15} className="text-stone-400 group-hover:text-clay group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              );
-            })}
-          </div>
+            return social.isCopyable ? (
+              <button
+                key={social.name}
+                type="button"
+                className="contact-channel"
+                aria-label={`复制${social.name}：${social.copyValue ?? social.handle ?? ''}`}
+                disabled={!social.copyValue}
+                onClick={() => social.copyValue && void handleCopy(social.copyValue, label)}
+              >
+                {content}
+              </button>
+            ) : (
+              <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="contact-channel">
+                {content}
+              </a>
+            );
+          })}
         </div>
 
-        {/* Status Meta Box */}
-        <div className="mt-10 p-5 sm:p-6 rounded-2xl bg-white/90 border border-stone-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono text-stone-600">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <div>
-              <span className="font-semibold text-stone-900">当前状态：</span>
-              <span>{contactData.availability}</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-1.5 text-stone-500">
-            <MapPin size={13} className="text-stone-400" />
-            <span>中国 · 成都</span>
-          </div>
-        </div>
+        <p className="contact-availability"><span aria-hidden="true" />{contactData.availability}</p>
       </div>
+
+      <div className="contact-live-status" aria-live="polite" aria-atomic="true">{notice?.message ?? ''}</div>
+      {notice && (
+        <div className={`contact-notice contact-notice-${notice.kind}`}>
+          {notice.kind === 'success' && <Check size={17} aria-hidden="true" />}
+          <span>{notice.message}</span>
+          <button type="button" aria-label="关闭提示" onClick={() => setNotice(null)}><X size={16} aria-hidden="true" /></button>
+        </div>
+      )}
     </section>
   );
 }

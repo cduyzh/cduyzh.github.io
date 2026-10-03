@@ -1,75 +1,68 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
 import { getPublicProjects } from '../data/projects';
 import ProjectCard from './ProjectCard';
+import './projects.css';
+
+type ProjectFilter = 'all' | 'live' | 'exploring';
+
+const filters: { value: ProjectFilter; label: string }[] = [
+  { value: 'all', label: '全部作品' },
+  { value: 'live', label: '已上线' },
+  { value: 'exploring', label: '探索中' },
+];
 
 export default function ProjectsSection() {
+  const [activeFilter, setActiveFilter] = useState<ProjectFilter>('all');
   const publicProjects = getPublicProjects();
-
-  // Maximum items shown on the main page
-  const HOMEPAGE_LIMIT = 8;
-  const [displayCount, setDisplayCount] = useState<number>(HOMEPAGE_LIMIT);
-
-  const visibleProjects = publicProjects.slice(0, displayCount);
-  const hasMoreThanLimit = publicProjects.length > HOMEPAGE_LIMIT;
+  const visibleProjects = publicProjects.filter((project) => {
+    if (activeFilter === 'live') return project.status === '已上线';
+    if (activeFilter === 'exploring') return project.status !== '已上线';
+    return true;
+  });
 
   return (
-    <section id="projects" className="veil-strong relative w-full py-20 sm:py-28 md:py-32 text-ink">
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-12">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-stone-300/70 pb-6 mb-10 sm:mb-14 gap-6">
+    <section id="projects" className="projects-section" aria-labelledby="projects-title">
+      <div className="section-shell">
+        <header className="projects-header">
           <div>
-            <div className="flex items-center gap-3 text-xs font-mono tracking-widest text-clay font-semibold mb-3">
-              <span>02 / 作品与探索</span>
-              <span>·</span>
-              {/* Dynamic Project Count */}
-              <span>共收录 {publicProjects.length} 个公开项目</span>
-            </div>
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900"
-            >
-              最近做的一些东西
-            </motion.h2>
+            <p className="eyebrow">作品与探索</p>
+            <h2 id="projects-title">一些想法，<br />已经成为作品。</h2>
           </div>
+          <p className="projects-intro">
+            从自己的日常出发，把一个小小的念头，<br className="projects-desktop-break" />做成可以使用、值得打磨的东西。
+          </p>
+        </header>
 
-          <div className="max-w-md text-sm md:text-base text-stone-600 font-normal leading-relaxed">
-            从日常真实痛点与兴趣切入的自用工具与实验项目。聚焦清晰的功能架构、克制的排版美感与可靠的端侧体验。
+        <div className="projects-toolbar">
+          <div className="projects-filters" role="group" aria-label="按项目状态筛选">
+            {filters.map((filter) => (
+              <button
+                key={filter.value}
+                type="button"
+                aria-pressed={activeFilter === filter.value}
+                aria-controls="projects-list"
+                onClick={() => setActiveFilter(filter.value)}
+              >
+                {filter.label}
+              </button>
+            ))}
           </div>
+          <p className="projects-count" role="status" aria-live="polite" aria-atomic="true">
+            {visibleProjects.length} 个{activeFilter === 'all' ? '公开项目' : activeFilter === 'live' ? '已上线项目' : '探索中的项目'}
+          </p>
         </div>
 
-        {/* 2-Column Grid on Desktop, 1-Column on Mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+        <div id="projects-list" className="projects-grid">
           {visibleProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}
               index={index}
+              featured={index === 0 && activeFilter !== 'exploring'}
             />
           ))}
         </div>
-
-        {/* Only show '查看更多项目' when public projects exceed HOMEPAGE_LIMIT (8) */}
-        {hasMoreThanLimit && (
-          <div className="mt-12 text-center">
-            {displayCount < publicProjects.length ? (
-              <button
-                type="button"
-                onClick={() => setDisplayCount((prev) => prev + HOMEPAGE_LIMIT)}
-                className="px-8 py-3.5 rounded-full bg-stone-900 text-white hover:bg-clay transition-colors font-mono text-xs font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay"
-              >
-                查看更多项目 ({publicProjects.length - displayCount})
-              </button>
-            ) : (
-              <span className="text-xs font-mono text-stone-400">
-                已展示全部 {publicProjects.length} 个公开项目
-              </span>
-            )}
-          </div>
-        )}
+        <p className="projects-footnote">持续创造，也持续迭代。探索中的项目以当前真实阶段展示。</p>
       </div>
     </section>
   );
