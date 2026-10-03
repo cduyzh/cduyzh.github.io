@@ -360,5 +360,26 @@ export const projectCovers = {
       <text x="50" y="60" font-family="monospace" font-size="12" font-weight="600" fill="#78716c" letter-spacing="2">AVATAR PIPELINE // 06</text>
       <text x="50" y="80" font-family="sans-serif" font-size="14" font-weight="bold" fill="#292524">个人图像生成与人物卡片工作流</text>
     </svg>
+  `)}`,
+
+  // 10. 熊猫骑行实验室
+  pandaSvg: `data:image/svg+xml;utf8,${encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+      <defs>
+        <linearGradient id="bg-panda" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f6f8f4"/>
+          <stop offset="100%" stop-color="#e1e8e1"/>
+        </linearGradient>
+      </defs>
+      <rect width="800" height="500" fill="url(#bg-panda)"/>
+      <g transform="translate(400, 250)">
+        <circle cx="0" cy="0" r="120" fill="#176a55" opacity="0.1" />
+        <circle cx="0" cy="0" r="90" fill="#176a55" opacity="0.2" />
+        <circle cx="0" cy="0" r="60" fill="#176a55" opacity="0.3" />
+        <text x="0" y="10" font-family="sans-serif" font-size="24" font-weight="bold" fill="#143f33" text-anchor="middle">AI SVG PK</text>
+      </g>
+      <text x="50" y="60" font-family="monospace" font-size="12" font-weight="600" fill="#68756e" letter-spacing="2">PANDA LAB // 10</text>
+      <text x="50" y="80" font-family="sans-serif" font-size="14" font-weight="bold" fill="#17251f">熊猫骑行实验室 · AI 大模型 SVG 动画对比</text>
+    </svg>
   `)}`
 };

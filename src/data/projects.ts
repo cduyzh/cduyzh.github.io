@@ -201,6 +201,28 @@ export const projectsData: Project[] = [
     ],
     featured: false,
     visibility: 'public'
+  },
+  {
+    id: '10',
+    slug: 'panda-svg',
+    title: '熊猫骑行实验室',
+    summary: 'AI 大模型生成 SVG 动画能力 PK 对比 (Claude vs OpenAI vs 国产大模型)',
+    description: '用一道“熊猫骑自行车”题目，直观对比各大 AI 模型生成 SVG 动画的代码能力。涵盖 OpenAI GPT, Anthropic Claude, Google Gemini 等海外模型，以及 DeepSeek, 通义千问 Qwen, 智谱 GLM, Kimi, MiniMax 等国产大模型的终极 PK 对比。',
+    status: '已上线',
+    cover: projectCovers.pandaSvg,
+    coverAlt: '熊猫骑行实验室界面图：展示 AI 生成的 SVG 动画与模型对比',
+    tags: ['AI大模型', 'SVG动画', '代码生成', '评测对比'],
+    year: '2026',
+    role: '独立开发',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'AI生成'],
+    highlights: [
+      '直观对比各大 AI 模型生成 SVG 动画的代码能力',
+      '涵盖海外顶尖模型与国产主流大模型的终极 PK',
+      '无框架轻量级原生前端实现，沉浸式动画对比体验'
+    ],
+    demoUrl: 'https://panda.cduyzh.top/',
+    featured: true,
+    visibility: 'public'
   }
 ];
 
