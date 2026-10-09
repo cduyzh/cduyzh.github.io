@@ -227,8 +227,10 @@ export const projectsData: Project[] = [
 ];
 
 /**
- * 获取公开可见的项目列表（自动过滤 draft）
+ * 获取公开可见的项目列表（自动过滤 draft），按 ID 降序（即添加时间降序）排列
  */
 export const getPublicProjects = (): Project[] => {
-  return projectsData.filter((project) => project.visibility === 'public');
+  return projectsData
+    .filter((project) => project.visibility === 'public')
+    .sort((a, b) => Number(b.id) - Number(a.id));
 };

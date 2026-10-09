@@ -3,16 +3,15 @@ import { getPublicProjects } from '../data/projects';
 import ProjectCard from './ProjectCard';
 import './projects.css';
 
-type ProjectFilter = 'all' | 'live' | 'exploring';
+type ProjectFilter = 'live' | 'exploring';
 
 const filters: { value: ProjectFilter; label: string }[] = [
-  { value: 'all', label: '全部作品' },
   { value: 'live', label: '已上线' },
   { value: 'exploring', label: '探索中' },
 ];
 
 export default function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState<ProjectFilter>('all');
+  const [activeFilter, setActiveFilter] = useState<ProjectFilter>('live');
   const publicProjects = getPublicProjects();
   const visibleProjects = publicProjects.filter((project) => {
     if (activeFilter === 'live') return project.status === '已上线';
@@ -48,7 +47,7 @@ export default function ProjectsSection() {
             ))}
           </div>
           <p className="projects-count" role="status" aria-live="polite" aria-atomic="true">
-            {visibleProjects.length} 个{activeFilter === 'all' ? '公开项目' : activeFilter === 'live' ? '已上线项目' : '探索中的项目'}
+            {visibleProjects.length} 个{activeFilter === 'live' ? '已上线项目' : '探索中的项目'}
           </p>
         </div>
 
