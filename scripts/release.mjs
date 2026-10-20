@@ -82,7 +82,7 @@ const assets = [...buildOut.matchAll(/^(dist\/\S+\.(?:js|css))\s+([\d.,]+ kB)(?:
   .map(([, file, size, gzip]) => ({ file, size, gzip }));
 
 console.log('3/4 打包');
-const distFiles = run('find', ['dist', '-type', 'f']).split('\n').filter(Boolean);
+const distFiles = run('find', ['dist', '-type', 'f', '-not', '-name', '.DS_Store']).split('\n').filter(Boolean);
 if (!distFiles.includes('dist/index.html')) die('dist/index.html 不存在', '构建产物不完整，检查 vite 配置');
 
 const work = mkdtempSync(join(tmpdir(), 'release-'));
