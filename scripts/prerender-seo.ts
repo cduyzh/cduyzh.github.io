@@ -14,15 +14,16 @@ const publicProjects = projectsData.filter(p => p.visibility === 'public');
 const projectTitles = publicProjects.map(p => p.title).join(', ');
 const projectTags = Array.from(new Set(publicProjects.flatMap(p => p.tags || []))).join(', ');
 
-// 构建 SEO 的隐藏直出 HTML
+// 构建 SEO / GEO 友好的语义化首屏直出 HTML（供搜索引擎与 AI 爬虫直接解析，React 客户端水合后无缝替换）
 let seoHtml = `
-<div id="seo-static-content" style="display:none;" aria-hidden="true" class="sr-only">
+<div id="seo-static-content" class="seo-prerender-container">
   <header>
     <h1>${profileData.name} - ${profileData.title}</h1>
     <p>${profileData.bio.paragraphs.join(' ')}</p>
+    <p>常驻：${profileData.location} | 规范网址：<a href="https://${profileData.domain}">https://${profileData.domain}</a></p>
   </header>
   <main>
-    <h2>公开作品集与项目探索</h2>
+    <h2>公开作品集与独立项目</h2>
     <ul>
 `;
 
@@ -31,10 +32,11 @@ publicProjects.forEach(project => {
       <li>
         <article>
           <h3>${project.title}</h3>
-          <p>${project.summary}</p>
-          <p>${project.description}</p>
-          <p>技术栈: ${(project.technologies || []).join(', ')}</p>
-          <p>标签: ${(project.tags || []).join(', ')}</p>
+          <p><strong>项目概述：</strong>${project.summary}</p>
+          <p><strong>详细介绍：</strong>${project.description}</p>
+          <p><strong>技术栈：</strong>${(project.technologies || []).join(', ')}</p>
+          <p><strong>标签：</strong>${(project.tags || []).join(', ')}</p>
+          <p><strong>开发角色：</strong>${project.role || '独立开发'} (${project.year || '2026'})</p>
         </article>
       </li>`;
 });
