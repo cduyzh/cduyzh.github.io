@@ -3,7 +3,6 @@ import { SocialLink } from '../types';
 export const contactData = {
   email: 'cduyzh@gmail.com',
   domain: 'www.cduyzh.top',
-  wechat: 'cduyzh',
   headline: '有有趣的想法？',
   subheadline: '如果你也在做一些有意思的东西，欢迎交流探讨。',
   availability: '常驻成都 · 欢迎技术探讨、独立项目交流与真诚的想法碰撞。'
@@ -29,19 +28,15 @@ export const socialsData: SocialLink[] = [
     icon: 'Mail'
   },
   {
-    name: '微信',
-    handle: 'cduyzh',
-    url: '#',
-    isCopyable: true,
-    copyValue: 'cduyzh',
-    icon: 'MessageSquare'
+    name: 'X（推特）',
+    handle: '@cduyzh_top',
+    url: 'https://x.com/cduyzh_top',
+    icon: 'ArrowUpRight'
   },
   {
     name: '小红书',
     handle: 'cduyzh',
-    url: '#',
-    isCopyable: true,
-    copyValue: 'cduyzh',
-    icon: 'BookHeart'
+    url: 'https://www.xiaohongshu.com/user/profile/557001e6484fb6782b7f2fc2',
+    icon: 'ArrowUpRight'
   }
 ];

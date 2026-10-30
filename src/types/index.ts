@@ -1,9 +1,11 @@
-export type ProjectStatus = '构思中' | '研究中' | '开发中' | '内测中' | '已上线';
+export type ProjectStatus = '构思中' | '研究中' | '开发中' | '内测中' | '即将上线' | '已上线';
 export type ProjectVisibility = 'public' | 'draft';
+export type ProjectCategory = 'game' | 'mobile' | 'mac';
 
 export interface Project {
   id: string;
   slug: string;
+  category?: ProjectCategory;
   title: string;
   summary: string;
   description: string;

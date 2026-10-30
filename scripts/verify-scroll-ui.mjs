@@ -46,12 +46,20 @@ await withManagedBrowser(async ({ context, signal }) => {
   await page.waitForTimeout(1100);
   check('nav projects anchor',await page.locator('#projects').evaluate(el=>el.getBoundingClientRect().top>=60 && el.getBoundingClientRect().top<200));
   await page.screenshot({path:`${output}/desktop-projects.png`});
-  check('public projects',await page.locator('#projects-list article').count()===9);
-  await page.getByRole('button',{name:'已上线',exact:true}).click();
-  check('live filter',await page.locator('#projects-list article').count()===3);
-  await page.getByRole('button',{name:'探索中',exact:true}).click();
-  check('exploring filter',await page.locator('#projects-list article').count()===6);
-  await page.getByRole('button',{name:'全部作品',exact:true}).click();
+  const projects = page.locator('#projects-list article');
+  const initialCount = await projects.count();
+  check('project list limits initial results',initialCount > 0 && initialCount <= 6,initialCount);
+  check('research, ideation, and development projects are hidden',await projects.filter({hasText:/研究中|构思中|开发中/}).count()===0);
+  check('search and status controls are removed',await page.locator('.projects-search, .projects-status-filter').count()===0);
+  const more = page.getByRole('button',{name:'查看更多作品'});
+  if (await more.count()) {
+    await more.click();
+    const expandedCount = await projects.count();
+    check('show more expands results',expandedCount > initialCount,{initialCount,expandedCount});
+  }
+  await page.getByRole('button',{name:'游戏工具',exact:true}).click();
+  check('game category contains the agreed projects',await page.locator('#project-card-panda-svg').count()===1 && await page.locator('#project-card-hsr-archive').count()===1);
+  await page.getByRole('button',{name:'移动应用',exact:true}).click();
   await page.getByRole('button',{name:'扫码体验',exact:true}).click();
   check('QR dialog opens',await page.locator('dialog[open]').count()===1);
   await page.keyboard.press('Escape');

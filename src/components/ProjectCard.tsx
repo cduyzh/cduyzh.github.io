@@ -4,11 +4,9 @@ import type { Project } from '../types';
 interface ProjectCardProps {
   key?: Key;
   project: Project;
-  index: number;
-  featured?: boolean;
 }
 
-export default function ProjectCard({ project, index, featured = false }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
   const [showQrModal, setShowQrModal] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const projectUrl = project.demoUrl || project.repoUrl;
@@ -29,10 +27,10 @@ export default function ProjectCard({ project, index, featured = false }: Projec
   return (
     <article
       id={`project-card-${project.slug}`}
-      className={`projects-card${featured ? ' projects-card-featured' : ''}`}
+      className="projects-card"
       aria-labelledby={`project-title-${project.slug}`}
     >
-      <div className="projects-cover">
+      <div className={`projects-cover${project.slug === 'mac-translator' ? ' projects-cover-icon' : ''}`}>
         <img
           src={project.cover}
           alt={project.coverAlt || `${project.title}项目封面`}
@@ -41,7 +39,6 @@ export default function ProjectCard({ project, index, featured = false }: Projec
           loading="lazy"
           decoding="async"
         />
-        {!isLive && <span className="projects-cover-caption">概念与探索</span>}
       </div>
 
       <div className="projects-card-content">
@@ -53,9 +50,6 @@ export default function ProjectCard({ project, index, featured = false }: Projec
         </div>
         <h3 id={`project-title-${project.slug}`}>{project.title}</h3>
         <p className="projects-summary">{project.summary}</p>
-        {featured && project.highlights?.[0] && (
-          <p className="projects-highlight">{project.highlights[0]}</p>
-        )}
 
         <div className="projects-card-bottom">
           <p className="projects-tags" aria-label="项目类别">{project.tags.slice(0, 3).join(' / ')}</p>
@@ -69,9 +63,8 @@ export default function ProjectCard({ project, index, featured = false }: Projec
                 {project.demoUrl ? '打开项目' : '查看源码'} <span aria-hidden="true">↗</span>
               </a>
             ) : (
-              <span className="projects-in-progress">{project.role}</span>
+              <span className="projects-in-progress">{project.status === '即将上线' ? '敬请期待' : '持续完善中'}</span>
             )}
-            <span className="projects-card-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           </div>
         </div>
       </div>

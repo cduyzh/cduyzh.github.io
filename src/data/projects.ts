@@ -11,8 +11,25 @@ import { projectCovers } from './projectCovers';
  */
 export const projectsData: Project[] = [
   {
+    id: '11',
+    slug: 'mac-translator',
+    category: 'mac',
+    title: 'Mac 翻译软件',
+    summary: '随时从菜单栏唤出翻译面板，支持 Google 和 DeepSeek 翻译。',
+    description: '一款原生 macOS 翻译工具，支持原文与译文并排查看、语言选择及个人术语记忆。',
+    status: '即将上线',
+    cover: '/assets/mac-translator-icon.png',
+    coverAlt: 'Mac 翻译软件的应用图标',
+    tags: ['Mac 工具', '翻译', '菜单栏'],
+    year: '2026',
+    role: '独立开发',
+    technologies: ['Swift', 'SwiftUI', 'macOS'],
+    visibility: 'public'
+  },
+  {
     id: '09',
     slug: 'cards-score',
+    category: 'mobile',
     title: '打牌记分',
     summary: '各类牌局的随手记分助手：打牌记账、打牌计分、积分排行，一个小程序全管。',
     description: '扑克、麻将、桌游、聚会都能开桌，多人建房、实时录入、自动结算、历史记录与积分排行；房主记分即时生效、断网可用，云端自动备份，不打扰打牌节奏——主打一个随性随记。',
@@ -35,6 +52,7 @@ export const projectsData: Project[] = [
   {
     id: '01',
     slug: 'hsr-archive',
+    category: 'game',
     title: '星穹铁道竞速档案站｜终局配队与低金通关攻略',
     summary: '收录《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁的真实通关记录，支持按阵容、命座、光锥、金数及通关成绩筛选，轻松查找低金满星、0轮竞速配队与实战视频。',
     description: '收录《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁的真实通关记录，支持按阵容、命座、光锥、金数及通关成绩筛选，轻松查找低金满星、0轮竞速配队与实战视频。',
@@ -57,6 +75,7 @@ export const projectsData: Project[] = [
   {
     id: '02',
     slug: 'hsr-trend',
+    category: 'game',
     title: '崩坏：星穹铁道 · 终局血量膨胀趋势可视化',
     summary: '汇总《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁等终局玩法的历期怪物血量数据，通过交互式趋势图展示血量变化、环比涨幅与版本间的数值膨胀情况。支持查看各期详细数据，直观了解星铁终局难度的变化趋势。',
     description: '汇总《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁等终局玩法的历期怪物血量数据，通过交互式趋势图展示血量变化、环比涨幅与版本间的数值膨胀情况。支持查看各期详细数据，直观了解星铁终局难度的变化趋势。',
@@ -163,6 +182,7 @@ export const projectsData: Project[] = [
   {
     id: '07',
     slug: 'starrail-intel',
+    category: 'game',
     title: '星铁强敌弱点与战斗机制速查',
     summary: '崩坏：星穹铁道 混沌回忆与末日幻影强敌机制速查，整理弱点属性、韧性条与抗性数据。',
     description: '针对回合制高难关卡中 BOSS 技能机制繁复、抗性弱点记不准的问题，整理出的高效率资料速查工具。清晰罗列历代混沌回忆与深渊首领的属性弱点、韧性值、受控免疫及核心应对策略，辅助玩家快速调整配队阵容。',
@@ -205,6 +225,7 @@ export const projectsData: Project[] = [
   {
     id: '10',
     slug: 'panda-svg',
+    category: 'game',
     title: 'AI 大模型 SVG 动画能力大比拼：熊猫骑行实验室',
     summary: '实测 GPT、Claude、DeepSeek、Qwen 等主流 AI 大模型的 SVG 动画生成能力。',
     description: '用同一道“熊猫骑自行车”提示词，实测 GPT、Claude、DeepSeek、Qwen 等主流 AI 大模型的 SVG 动画生成能力。集中展示不同模型的实际作品，直观对比代码生成、画面表现与动画效果，看看谁的熊猫骑得更好！',

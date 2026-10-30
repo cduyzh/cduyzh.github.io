@@ -8,11 +8,11 @@
     <title>CDUYZH - 做产品，也做一些有意思的东西 | 独立开发与 Web 前端作品集</title>
     <meta
       name="description"
-      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 应用探索与自用产品落地。已收录打牌记分小程序、星穹铁道配速实验室、食间双人饮食规划、Panda SVG 画廊等独立开发项目。"
+      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 应用探索与自用高频工具落地。收录星穹铁道竞速档案站、星铁终局血量膨胀趋势可视化、打牌记分微信小程序、Panda SVG 动画实验室及 Mac 效率工具等独立作品。"
     />
     <meta
       name="keywords"
-      content="cduyzh, 独立开发, 独立产品人, Web前端开发, 前端工程师, AI应用, 成都独立开发, Creative Developer, React, TypeScript, Three.js, Tailwind CSS, 个人作品集, 打牌记分, 星穹铁道配速计算, 食间饮食助手, Panda SVG 画廊, 提示词工作流, 交互设计"
+      content="cduyzh, 独立开发, 独立产品人, Web前端开发, 前端工程师, AI应用, 成都独立开发, Creative Developer, React, TypeScript, Three.js, Tailwind CSS, 个人作品集, 打牌记分, 微信记分小程序, 牌局记账, 星穹铁道竞速, 星铁低金通关, 星铁血量膨胀, 混沌回忆配队, Panda SVG 画廊, 大模型SVG动画, Mac翻译软件, 交互设计"
     />
     <meta name="author" content="cduyzh" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -29,7 +29,7 @@
     <meta property="og:title" content="CDUYZH - 做产品，也做一些有意思的东西 | 独立开发与 Web 前端作品集" />
     <meta
       property="og:description"
-      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。涵盖打牌记分、HSR配速、食间饮食助手等独立作品。"
+      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。涵盖星铁竞速档案站、血量膨胀趋势看板、打牌记分小程序、Panda SVG 动画实验室等独立作品。"
     />
     <meta property="og:url" content="https://www.cduyzh.top/" />
     <meta property="og:locale" content="zh_CN" />
@@ -43,7 +43,7 @@
     <meta name="twitter:title" content="CDUYZH - 做产品，也做一些有意思的东西 | 独立开发与 Web 前端作品集" />
     <meta
       name="twitter:description"
-      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。"
+      content="cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。涵盖星铁竞速档案站、血量膨胀趋势看板、打牌记分小程序、Panda SVG 动画实验室等独立作品。"
     />
     <meta name="twitter:image" content="https://www.cduyzh.top/assets/visual-manifesto-architecture.png" />
 
@@ -52,6 +52,18 @@
       {
         "@context": "https://schema.org",
         "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://www.cduyzh.top/#profilepage",
+            "url": "https://www.cduyzh.top/",
+            "name": "CDUYZH - 独立开发与 Web 前端作品集",
+            "isPartOf": {
+              "@id": "https://www.cduyzh.top/#website"
+            },
+            "mainEntity": {
+              "@id": "https://www.cduyzh.top/#person"
+            }
+          },
           {
             "@type": "Person",
             "@id": "https://www.cduyzh.top/#person",
@@ -67,7 +79,18 @@
               "addressRegion": "四川",
               "addressCountry": "CN"
             },
-            "knowsAbout": ["React", "TypeScript", "Tailwind CSS", "Three.js", "AI Agent", "前端工程化", "独立开发"],
+            "knowsAbout": [
+              "React",
+              "Vue",
+              "TypeScript",
+              "Tailwind CSS",
+              "Three.js",
+              "macOS 原生开发",
+              "微信小程序开发",
+              "AI Agent",
+              "前端工程化",
+              "独立开发"
+            ],
             "sameAs": [
               "https://github.com/cduyzh"
             ]
@@ -88,29 +111,81 @@
                 "name": "打牌记分",
                 "applicationCategory": "UtilitiesApplication",
                 "operatingSystem": "WeChat Mini Program",
-                "description": "各类牌局的随手记分助手：多人建房、实时录入、自动结算与历史记录排行。"
+                "description": "各类牌局的随手记分助手：扑克、麻将、桌游聚会开桌，多人建房实时同步、断网离线记分可用、自动结算与历史积分排行。",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "CNY"
+                }
               },
               {
                 "@type": "WebApplication",
-                "name": "HSR 行动实验室",
-                "url": "https://hsr.cduyzh.top/",
+                "name": "星穹铁道竞速档案站｜终局配队与低金通关攻略",
+                "url": "https://hsr-archive.cduyzh.top/",
                 "applicationCategory": "GameApplication",
                 "operatingSystem": "Web",
-                "description": "崩坏星穹铁道全角色配速与排轴实验室，支持拉条机制精确计算与行动值模拟。"
+                "description": "收录《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁的真实通关记录，支持按阵容、命座、光锥、金数成本及轮次筛选低金满星与0轮竞速配队。"
               },
               {
                 "@type": "WebApplication",
-                "name": "食间 SHI JIAN",
-                "url": "https://shijian.cduyzh.top/",
-                "applicationCategory": "LifestyleApplication",
+                "name": "崩坏：星穹铁道 · 终局血量膨胀趋势可视化",
+                "url": "https://hsr-trend.cduyzh.top/",
+                "applicationCategory": "GameApplication",
                 "operatingSystem": "Web",
-                "description": "为川渝双人家庭安排午餐、晚餐与水果的轻量饮食规划备餐助手。"
+                "description": "汇总《崩坏：星穹铁道》历期混沌回忆、虚构叙事、末日幻影等终局玩法怪物血量数据，以交互式图表直观展示血量绝对值增长、环比涨幅与难度膨胀趋势。"
               },
               {
-                "@type": "CollectionPage",
-                "name": "Panda SVG 画廊",
+                "@type": "WebApplication",
+                "name": "AI 大模型 SVG 动画能力大比拼：熊猫骑行实验室",
                 "url": "https://panda.cduyzh.top/",
-                "description": "各大主流大模型绘制熊猫骑自行车 SVG 代码与视觉表现能力的横评画廊。"
+                "applicationCategory": "MultimediaApplication",
+                "operatingSystem": "Web",
+                "description": "用同一道“熊猫骑自行车”提示词，实测主流大模型（GPT、Claude、DeepSeek、Qwen等）生成原生 SVG 代码动画与空间推理表现的横评实验室。"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "Mac 翻译软件",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "macOS 14+",
+                "description": "原生 macOS 菜单栏轻量翻译工具，支持随时快捷呼出，原生支持 Google 与 DeepSeek 翻译引擎并排对比与术语记忆。"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.cduyzh.top/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "cduyzh 个人数字工作室收录了哪些代表性的独立开发项目？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "cduyzh 的公开作品集涵盖：1. 星穹铁道竞速档案站（hsr-archive.cduyzh.top，支持多赛季低金配队与0轮通关记录检索）；2. 终局血量膨胀趋势可视化（hsr-trend.cduyzh.top，多模式BOSS血量与环比涨幅数据看板）；3. 打牌记分微信小程序（断网可用、无广告的聚会扑克麻将记分工具）；4. 熊猫骑行实验室（panda.cduyzh.top，主流大模型 SVG 代码动画横评）；以及原生 macOS 菜单栏效率工具等。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "打牌记分微信小程序有什么特点？支持离线记分吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "打牌记分小程序专为朋友聚会、扑克、麻将、桌游等开桌记分场景设计。核心特点包括：全界面无干扰广告、支持房主与牌友多人建房扫码加入并实时同步；独创断网离线记分机制，在弱网或无网络环境下依然能流畅记分并在联网后自动同步云端；局终支持一键自动结算与历史对局积分排行榜。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "星穹铁道竞速档案站（hsr-archive）如何帮助玩家寻找低金通关配队？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "星穹铁道竞速档案站（https://hsr-archive.cduyzh.top/）系统收录混沌回忆、虚构叙事、末日幻影及异相仲裁的真实满星与竞速记录。玩家可以按限定金数成本（如0金、1金、2金平民队伍）、主副C阵容、辅助角色、星魂与光锥配置以及通关轮次进行多维复合检索，所有过滤条件均自动同步进 URL，方便直接复制分享给其他玩家。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "星穹铁道终局血量膨胀趋势看板（hsr-trend）的数据来源与功能是什么？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "星铁终局血量膨胀可视化看板（https://hsr-trend.cduyzh.top/）汇总了游戏历期各大终局模式的实际怪物数值，以统一统计口径计算总血量与版本间环比涨幅。基于轻量静态缓存驱动，支持二次秒开与移动端自适应，直观呈现不同版本的数值膨胀梯度。"
+                }
               }
             ]
           }
