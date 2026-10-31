@@ -196,8 +196,139 @@
     <!-- Umami Analytics -->
     <script defer src="https://umami.cduyzh.top/script.js" data-website-id="ffdf01d8-a8f8-4974-93fe-4539fb72a80c"></script>
     <script defer src="https://umami.cduyzh.top/recorder.js" data-website-id="ffdf01d8-a8f8-4974-93fe-4539fb72a80c"></script>
+
+    <!-- First-paint CSS: Zero JS dependency, Instant Loading Screen & Accessible SEO Clipping -->
+    <style>
+      /* 预渲染 SEO 内容：通过 W3C 规范无障碍裁剪隐藏，100% 保留在 DOM 树中供爬虫与 AI 模型解析，但在视觉上零像素占用 */
+      .seo-prerender-container {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
+      /* 静态首屏 Loading：匹配站点 Quiet Native 风格，零 JS 依赖，消除刷新时的文字跳闪与白屏 */
+      .initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f7;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      .initial-loader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 24px;
+        text-align: center;
+      }
+      .initial-loader-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+      }
+      .initial-loader-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #32864c;
+        box-shadow: 0 0 0 3px rgba(50, 134, 76, 0.16);
+        animation: initial-loader-pulse 1.8s ease-in-out infinite;
+      }
+      .initial-loader-brand {
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0.14em;
+        color: #1d1d1f;
+      }
+      .initial-loader-progress {
+        width: 130px;
+        height: 2px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        position: relative;
+      }
+      .initial-loader-bar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 40%;
+        border-radius: 999px;
+        background: #0071e3;
+        animation: initial-loader-slide 1.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      }
+      .initial-loader-tip {
+        font-size: 12px;
+        font-weight: 400;
+        color: #86868b;
+        letter-spacing: 0.02em;
+      }
+      @keyframes initial-loader-pulse {
+        0%, 100% { opacity: 0.8; transform: scale(0.96); }
+        50% { opacity: 1; transform: scale(1.08); box-shadow: 0 0 0 5px rgba(50, 134, 76, 0.22); }
+      }
+      @keyframes initial-loader-slide {
+        0% { left: -40%; width: 30%; }
+        50% { width: 55%; }
+        100% { left: 100%; width: 30%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .initial-loader-dot,
+        .initial-loader-bar {
+          animation: none;
+        }
+        .initial-loader-bar {
+          left: 0;
+          width: 100%;
+        }
+      }
+    </style>
+    <noscript>
+      <style>
+        #initial-loader { display: none !important; }
+        .seo-prerender-container {
+          position: static !important;
+          width: auto !important;
+          height: auto !important;
+          clip: auto !important;
+          overflow: visible !important;
+          white-space: normal !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
+    <!-- First-paint Loading Animation (React 挂载后平滑淡出并卸载) -->
+    <div id="initial-loader" class="initial-loader" aria-hidden="true">
+      <div class="initial-loader-content">
+        <div class="initial-loader-badge">
+          <span class="initial-loader-dot"></span>
+          <span class="initial-loader-brand">CDUYZH</span>
+        </div>
+        <div class="initial-loader-progress">
+          <div class="initial-loader-bar"></div>
+        </div>
+        <div class="initial-loader-tip">做产品，也做一些有意思的东西</div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
