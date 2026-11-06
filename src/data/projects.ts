@@ -14,16 +14,23 @@ export const projectsData: Project[] = [
     id: '11',
     slug: 'mac-translator',
     category: 'mac',
-    title: 'Mac 翻译软件',
+    title: '极译 AI（iTrans）',
     summary: '随时从菜单栏唤出翻译面板，支持 Google 和 DeepSeek 翻译。',
     description: '一款原生 macOS 翻译工具，支持原文与译文并排查看、语言选择及个人术语记忆。',
-    status: '即将上线',
+    status: '已上线',
     cover: '/assets/mac-translator-icon.png',
-    coverAlt: 'Mac 翻译软件的应用图标',
+    coverAlt: '极译 AI（iTrans）的应用图标',
     tags: ['Mac 工具', '翻译', '菜单栏'],
     year: '2026',
     role: '独立开发',
     technologies: ['Swift', 'SwiftUI', 'macOS'],
+    highlights: [
+      '原生 macOS 菜单栏驻留，快捷键即选即译与并排对比',
+      '支持自带 DeepSeek 与 Google 翻译引擎，零中转更隐私',
+      '支持个人本地术语记忆库与沉浸划词翻译'
+    ],
+    demoUrl: 'https://apps.cduyzh.top/iTrans/zh.html',
+    featured: true,
     visibility: 'public'
   },
   {
