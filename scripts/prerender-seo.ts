@@ -16,7 +16,7 @@ const projectTags = Array.from(new Set(publicProjects.flatMap(p => p.tags || [])
 
 // 构建 SEO / GEO 友好的语义化首屏直出 HTML（供搜索引擎与 AI 爬虫直接解析，React 客户端水合后无缝替换）
 let seoHtml = `
-<div id="seo-static-content" class="seo-prerender-container">
+<div id="seo-static-content" class="seo-prerender-container" style="position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; opacity: 0 !important; pointer-events: none !important;">
   <header>
     <h1>${profileData.name} - ${profileData.title}</h1>
     <p>${profileData.bio.paragraphs.join(' ')}</p>
