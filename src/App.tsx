@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -6,7 +7,9 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
-export default function App() {
+function AppContent() {
+  const { ui } = useLanguage();
+
   useEffect(() => {
     // 确保真实 DOM 节点挂载、字体与布局渲染就绪后，在双 rAF 帧后平滑淡出并卸载静态首屏 Loading
     const frameId = requestAnimationFrame(() => {
@@ -29,7 +32,7 @@ export default function App() {
 
   return (
     <>
-      <a className="skip-link" href="#projects">跳到作品</a>
+      <a className="skip-link" href="#projects">{ui.nav.skipToProjects}</a>
       <Navbar />
       <main id="main-content">
         <Hero />
@@ -41,3 +44,12 @@ export default function App() {
     </>
   );
 }
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  );
+}
+

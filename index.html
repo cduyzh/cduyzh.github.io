@@ -22,6 +22,9 @@
     <meta name="ICBM" content="30.6586, 104.0648" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href="https://www.cduyzh.top/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://www.cduyzh.top/" />
+    <link rel="alternate" hreflang="en" href="https://www.cduyzh.top/en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cduyzh.top/en.html" />
 
     <!-- OpenGraph / Social Share Cards -->
     <meta property="og:type" content="website" />
@@ -344,6 +347,44 @@
     </noscript>
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          var lang = null;
+          var pathname = window.location.pathname.toLowerCase();
+          if (pathname.indexOf('/en.html') !== -1 || pathname.endsWith('/en')) {
+            lang = 'en';
+          }
+          if (!lang) {
+            var params = new URLSearchParams(window.location.search);
+            var q = params.get('lang');
+            if (q === 'en' || q === 'zh') lang = q;
+          }
+          if (!lang) {
+            var saved = localStorage.getItem('cduyzh_preferred_lang');
+            if (saved === 'en' || saved === 'zh') lang = saved;
+          }
+          if (!lang) {
+            var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+            var isZh = false;
+            for (var i = 0; i < langs.length; i++) {
+              if (langs[i] && langs[i].toLowerCase().indexOf('zh') === 0) {
+                isZh = true;
+                break;
+              }
+            }
+            lang = isZh ? 'zh' : 'en';
+          }
+          if (lang === 'en') {
+            document.documentElement.lang = 'en';
+            window.__INITIAL_LANG__ = 'en';
+          } else {
+            document.documentElement.lang = 'zh-CN';
+            window.__INITIAL_LANG__ = 'zh';
+          }
+        } catch (e) {}
+      })();
+    </script>
     <!-- First-paint Loading Animation (React 挂载后平滑淡出并卸载) -->
     <div id="initial-loader" class="initial-loader" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; z-index: 999999; display: flex; align-items: center; justify-content: center; background-color: #f5f5f7;" aria-hidden="true">
       <div class="initial-loader-content">

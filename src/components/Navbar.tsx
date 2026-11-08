@@ -1,19 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 import { profileData } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import './chrome.css';
 
-const navItems = [
-  { label: '关于', id: 'about' },
-  { label: '作品', id: 'projects' },
-  { label: '联系', id: 'contact' },
-];
-
 export default function Navbar() {
+  const { lang, setLanguage, ui } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const mobileNavRef = useRef<HTMLElement>(null);
+
+  const navItems = [
+    { label: ui.nav.about, id: 'about' },
+    { label: ui.nav.projects, id: 'projects' },
+    { label: ui.nav.contact, id: 'contact' },
+  ];
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -62,18 +64,41 @@ export default function Navbar() {
       }}
     >
       <div className="section-shell chrome-bar">
-        <a id="nav-brand-logo" href="#hero" className="chrome-brand" aria-label="CDUYZH 首页" onClick={() => setMobileMenuOpen(false)}>
+        <a id="nav-brand-logo" href="#hero" className="chrome-brand" aria-label={ui.nav.brand} onClick={() => setMobileMenuOpen(false)}>
           <img src={profileData.avatar.src} alt="" width={28} height={28} decoding="async" />
           <span>CDUYZH</span>
         </a>
 
-        <nav aria-label="主导航" className="chrome-desktop-nav">
+        <nav aria-label={ui.nav.mainNavAria} className="chrome-desktop-nav">
           {navItems.map((item) => (
             <a key={item.id} id={`nav-link-${item.id}`} href={`#${item.id}`} className="chrome-nav-link">
               {item.label}
             </a>
           ))}
-          <a id="nav-hire-btn" href="#contact" className="chrome-cta">聊聊想法</a>
+
+          <div className="chrome-lang-segmented" role="group" aria-label="Language">
+            <button
+              type="button"
+              className={`chrome-lang-btn ${lang === 'en' ? 'active' : ''}`}
+              onClick={() => setLanguage('en')}
+              aria-pressed={lang === 'en'}
+              title="English"
+            >
+              EN
+            </button>
+            <span className="chrome-lang-divider" aria-hidden="true">/</span>
+            <button
+              type="button"
+              className={`chrome-lang-btn ${lang === 'zh' ? 'active' : ''}`}
+              onClick={() => setLanguage('zh')}
+              aria-pressed={lang === 'zh'}
+              title="中文"
+            >
+              中
+            </button>
+          </div>
+
+          <a id="nav-hire-btn" href="#contact" className="chrome-cta">{ui.nav.talk}</a>
         </nav>
 
         <button
@@ -81,7 +106,7 @@ export default function Navbar() {
           id="nav-mobile-toggle"
           type="button"
           className="chrome-menu-toggle"
-          aria-label={mobileMenuOpen ? '关闭导航菜单' : '打开导航菜单'}
+          aria-label={mobileMenuOpen ? ui.nav.closeMenu : ui.nav.menu}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMobileMenuOpen((open) => !open)}
@@ -103,7 +128,34 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a href="#contact" className="chrome-cta" onClick={closeMenuFromLink}>聊聊想法</a>
+
+          <div className="chrome-mobile-lang">
+            <span className="chrome-mobile-lang-label">
+              <Globe size={15} aria-hidden="true" />
+              Language
+            </span>
+            <div className="chrome-lang-segmented" role="group" aria-label="Language selection">
+              <button
+                type="button"
+                className={`chrome-lang-btn ${lang === 'en' ? 'active' : ''}`}
+                onClick={() => setLanguage('en')}
+                aria-pressed={lang === 'en'}
+              >
+                English
+              </button>
+              <span className="chrome-lang-divider" aria-hidden="true">/</span>
+              <button
+                type="button"
+                className={`chrome-lang-btn ${lang === 'zh' ? 'active' : ''}`}
+                onClick={() => setLanguage('zh')}
+                aria-pressed={lang === 'zh'}
+              >
+                中文
+              </button>
+            </div>
+          </div>
+
+          <a href="#contact" className="chrome-cta" onClick={closeMenuFromLink}>{ui.nav.talk}</a>
         </div>
       </nav>
     </header>

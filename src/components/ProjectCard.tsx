@@ -1,16 +1,18 @@
 import { useEffect, useRef, useState, type Key } from 'react';
-import type { Project } from '../types';
+import type { LocalizedProject } from '../types/i18n';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProjectCardProps {
   key?: Key;
-  project: Project;
+  project: LocalizedProject;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { ui, language } = useLanguage();
   const [showQrModal, setShowQrModal] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const projectUrl = project.demoUrl || project.repoUrl;
-  const isLive = project.status === '已上线';
+  const isLive = project.status === '已上线' || project.status === 'Live';
 
   useEffect(() => {
     if (!showQrModal || !dialogRef.current) return;
@@ -24,16 +26,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     };
   }, [showQrModal]);
 
+  const p = ui.projects;
+
   return (
     <article
       id={`project-card-${project.slug}`}
       className="projects-card"
       aria-labelledby={`project-title-${project.slug}`}
     >
-      <div className={`projects-cover${project.category === 'mac' || project.slug === 'mac-translator' ? ' projects-cover-icon' : ''}`}>
+      <div className={`projects-cover${project.category === 'mac' || project.slug === 'mac-translator' || project.slug === 'iscreenshot' ? ' projects-cover-icon' : ''}`}>
         <img
           src={project.cover}
-          alt={project.coverAlt || `${project.title}项目封面`}
+          alt={project.coverAlt || `${project.title}`}
           width={800}
           height={500}
           loading="lazy"
@@ -52,18 +56,28 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="projects-summary">{project.summary}</p>
 
         <div className="projects-card-bottom">
-          <p className="projects-tags" aria-label="项目类别">{project.tags.slice(0, 3).join(' / ')}</p>
+          <p className="projects-tags" aria-label={language === 'zh' ? '项目标签' : 'Project tags'}>
+            {project.tags.slice(0, 3).join(' / ')}
+          </p>
           <div className="projects-card-action">
             {project.qrCode ? (
               <button type="button" className="text-link" onClick={() => setShowQrModal(true)} aria-haspopup="dialog">
-                扫码体验 <span aria-hidden="true">↗</span>
+                {p.scanQr} <span aria-hidden="true">↗</span>
               </button>
             ) : projectUrl ? (
-              <a className="text-link" href={projectUrl} target="_blank" rel="noopener noreferrer" aria-label={`${project.demoUrl ? '访问' : '查看源码：'}${project.title}（新窗口打开）`}>
-                {project.demoUrl ? '打开项目' : '查看源码'} <span aria-hidden="true">↗</span>
+              <a
+                className="text-link"
+                href={projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.demoUrl ? p.openProject : p.viewSource}: ${project.title}`}
+              >
+                {project.demoUrl ? p.openProject : p.viewSource} <span aria-hidden="true">↗</span>
               </a>
             ) : (
-              <span className="projects-in-progress">{project.status === '即将上线' ? '敬请期待' : '持续完善中'}</span>
+              <span className="projects-in-progress">
+                {project.status === '即将上线' || project.status === 'Coming Soon' ? p.comingSoon : p.inProgress}
+              </span>
             )}
           </div>
         </div>
@@ -82,14 +96,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           data-lenis-prevent
         >
           <div className="projects-qr-content">
-            <button type="button" className="projects-qr-close" onClick={() => dialogRef.current?.close()} aria-label="关闭二维码">
+            <button
+              type="button"
+              className="projects-qr-close"
+              onClick={() => dialogRef.current?.close()}
+              aria-label={p.qrModalClose}
+            >
               <span aria-hidden="true">×</span>
             </button>
-            <p className="eyebrow">微信小程序</p>
+            <p className="eyebrow">{p.qrModalEyebrow}</p>
             <h3 id={`qr-title-${project.slug}`}>{project.title}</h3>
-            <p id={`qr-description-${project.slug}`}>打开微信，扫一扫，即可开始体验。</p>
-            <img src={project.qrCode} alt={`${project.title}小程序二维码`} width={288} height={288} />
-            <button type="button" className="button-primary" onClick={() => dialogRef.current?.close()}>完成</button>
+            <p id={`qr-description-${project.slug}`}>{p.qrModalDesc}</p>
+            <img src={project.qrCode} alt={`${project.title} QR code`} width={288} height={288} />
+            <button type="button" className="button-primary" onClick={() => dialogRef.current?.close()}>
+              {p.qrModalDone}
+            </button>
           </div>
         </dialog>
       )}

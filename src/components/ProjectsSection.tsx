@@ -1,29 +1,37 @@
 import { useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { getPublicProjects } from '../data/projects';
+import { useLanguage } from '../context/LanguageContext';
 import ProjectCard from './ProjectCard';
 import './projects.css';
 
 type ProjectCategory = 'all' | 'game' | 'mobile' | 'mac';
-
-const categories: { value: ProjectCategory; label: string }[] = [
-  { value: 'all', label: '全部作品' },
-  { value: 'game', label: '游戏工具' },
-  { value: 'mobile', label: '移动应用' },
-  { value: 'mac', label: 'Mac 工具' },
-];
 const PAGE_SIZE = 6;
-const projectPriority = (status: string) => status === '即将上线' ? 0 : status === '已上线' ? 1 : 2;
+
+const projectPriority = (status: string) => {
+  if (status === '即将上线' || status === 'Coming Soon') return 0;
+  if (status === '已上线' || status === 'Live') return 1;
+  return 2;
+};
 
 export default function ProjectsSection() {
+  const { ui, projects } = useLanguage();
   const [category, setCategory] = useState<ProjectCategory>('all');
   const reducedMotion = useReducedMotion();
   const [limit, setLimit] = useState(PAGE_SIZE);
-  const results = getPublicProjects().filter((project) => {
-    if (['研究中', '构思中', '开发中'].includes(project.status)) return false;
+
+  const categories: { value: ProjectCategory; label: string }[] = [
+    { value: 'all', label: ui.projects.categoryAll },
+    { value: 'game', label: ui.projects.categoryGame },
+    { value: 'mobile', label: ui.projects.categoryMobile },
+    { value: 'mac', label: ui.projects.categoryMac },
+  ];
+
+  const results = projects.filter((project) => {
+    if (['研究中', '构思中', '开发中', 'In Research', 'Concept', 'In Progress'].includes(project.status)) return false;
     if (category !== 'all' && project.category !== category) return false;
     return true;
   }).sort((a, b) => projectPriority(a.status) - projectPriority(b.status));
+
   const visibleProjects = results.slice(0, limit);
   const resetLimit = () => setLimit(PAGE_SIZE);
 
@@ -32,29 +40,58 @@ export default function ProjectsSection() {
       <div className="section-shell">
         <header className="projects-header">
           <div>
-            <p className="eyebrow">作品与探索</p>
-            <h2 id="projects-title">找到你需要的作品。</h2>
+            <p className="eyebrow">{ui.projects.eyebrow}</p>
+            <h2 id="projects-title">{ui.projects.heading}</h2>
           </div>
-          <p className="projects-intro">游戏工具、移动应用和 Mac 工具。<br className="projects-desktop-break" />从这里发现已经上线和即将上线的项目。</p>
+          <p className="projects-intro">
+            {ui.projects.description}
+          </p>
         </header>
 
         <div className="projects-toolbar">
-          <div className="projects-filters" role="group" aria-label="按作品分类筛选">
+          <div className="projects-filters" role="group" aria-label={ui.projects.filterGroupAria}>
             {categories.map((item) => (
-              <button key={item.value} type="button" aria-pressed={category === item.value} aria-controls="projects-list" onClick={() => { setCategory(item.value); resetLimit(); }}>
-                {category === item.value && <motion.span className="projects-filter-indicator" layoutId="project-category-indicator" transition={reducedMotion ? { duration: 0 } : { type: 'spring', stiffness: 440, damping: 34 }} aria-hidden="true" />}
+              <button
+                key={item.value}
+                type="button"
+                aria-pressed={category === item.value}
+                aria-controls="projects-list"
+                onClick={() => { setCategory(item.value); resetLimit(); }}
+              >
+                {category === item.value && (
+                  <motion.span
+                    className="projects-filter-indicator"
+                    layoutId="project-category-indicator"
+                    transition={reducedMotion ? { duration: 0 } : { type: 'spring', stiffness: 440, damping: 34 }}
+                    aria-hidden="true"
+                  />
+                )}
                 <span className="projects-filter-label">{item.label}</span>
               </button>
             ))}
           </div>
         </div>
+
         <div className="projects-results-bar">
-          <p className="projects-count" role="status" aria-live="polite" aria-atomic="true">{results.length} 个作品{results.length > limit ? ` · 已展示 ${visibleProjects.length} 个` : ''}</p>
+          <p className="projects-count" role="status" aria-live="polite" aria-atomic="true">
+            {results.length} {ui.projects.countLabel}
+            {results.length > limit ? ` · ${ui.projects.showingLabel} ${visibleProjects.length}` : ''}
+          </p>
         </div>
+
         <div id="projects-list" className="projects-grid" key={category}>
-          {visibleProjects.map((project) => <ProjectCard key={project.id} project={project} />)}
+          {visibleProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
-        {limit < results.length && <div className="projects-more"><button type="button" onClick={() => setLimit((current) => current + PAGE_SIZE)}>查看更多作品 <span aria-hidden="true">↓</span></button></div>}
+
+        {limit < results.length && (
+          <div className="projects-more">
+            <button type="button" onClick={() => setLimit((current) => current + PAGE_SIZE)}>
+              {ui.projects.loadMore} <span aria-hidden="true">↓</span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

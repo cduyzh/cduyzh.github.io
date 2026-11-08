@@ -28,9 +28,72 @@
 }
 
 .chrome-brand img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
-.chrome-desktop-nav { display: flex; align-items: center; gap: 32px; font-size: 12px; }
+.chrome-desktop-nav { display: flex; align-items: center; gap: 24px; font-size: 12px; }
 .chrome-nav-link { color: #515154; text-decoration: none; transition: color 160ms; }
 .chrome-nav-link:hover { color: #0066cc; }
+
+/* 语言选择分段控件 (Quiet Signal 风格，0.8px微光边框，微动效) */
+.chrome-lang-segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 6px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 0.8px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chrome-lang-segmented:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.chrome-lang-btn {
+  background: transparent;
+  border: 0;
+  padding: 4px 7px;
+  border-radius: 999px;
+  color: #6e6e73;
+  font-size: 11px;
+  font-weight: 550;
+  font-family: inherit;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 160ms ease;
+}
+.chrome-lang-btn:hover {
+  color: #1d1d1f;
+}
+.chrome-lang-btn.active {
+  background: #ffffff;
+  color: #0071e3;
+  font-weight: 650;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+}
+.chrome-lang-divider {
+  color: #c7c7cc;
+  font-size: 10px;
+  user-select: none;
+}
+.chrome-mobile-lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0 10px;
+  border-top: 1px solid rgba(29, 29, 31, 0.06);
+  margin-top: 8px;
+}
+.chrome-mobile-lang-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #6e6e73;
+  font-weight: 500;
+}
+
 .chrome-cta {
   display: inline-flex;
   justify-content: center;

@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValueEvent, useTransform } from 'motion/react';
 import { ArrowDown, ArrowUpRight, ChevronRight } from 'lucide-react';
-import { projectsData } from '../data/projects';
+import { useLanguage } from '../context/LanguageContext';
 import { useScrollScene } from '../hooks/useScrollScene';
 
-const featuredProject = projectsData.find(project => project.slug === 'hsr-archive' && project.visibility === 'public')!;
-const sideProject = projectsData.find(project => project.slug === 'cards-score' && project.visibility === 'public')!;
-
 export default function Hero() {
+  const { ui, projects } = useLanguage();
+  const featuredProject = projects.find(project => project.slug === 'hsr-archive') || projects[0];
+  const sideProject = projects.find(project => project.slug === 'cards-score') || projects[1];
+
   const { ref, progress, isCompact, isStatic, isShort } = useScrollScene();
   const [introHidden, setIntroHidden] = useState(false);
   const introHiddenRef = useRef(false);
@@ -39,35 +40,35 @@ export default function Hero() {
       <div className="hero-stage pin-stage">
         <div className="hero-glow" aria-hidden="true" />
         <motion.div className="hero-intro" style={isStatic ? { scale: 1, y: 0, opacity: 1 } : { scale: titleScale, y: titleY, opacity: titleOpacity }}>
-          <p className="eyebrow hero-eyebrow"><span /> CDUYZH · 独立开发者</p>
-          <h1 id="hero-title">把想法，<br /><span>做成好用的日常。</span></h1>
-          <p className="hero-description">用代码探索可能，用设计打磨体验。<br className="mobile-break" />做产品，也做一些有意思的东西。</p>
+          <p className="eyebrow hero-eyebrow"><span /> {ui.hero.eyebrow}</p>
+          <h1 id="hero-title">{ui.hero.titleLine1}<br /><span>{ui.hero.titleLine2}</span></h1>
+          <p className="hero-description">{ui.hero.description}</p>
           <div className="hero-actions" inert={!isStatic && introHidden}>
-            <a className="button-primary" href="#projects">探索我的作品 <ArrowDown size={15} /></a>
-            <a className="text-link" href="#about">认识一下 <ChevronRight size={17} /></a>
+            <a className="button-primary" href="#projects">{ui.hero.ctaPrimary} <ArrowDown size={15} /></a>
+            <a className="text-link" href="#about">{ui.hero.ctaSecondary} <ChevronRight size={17} /></a>
           </div>
         </motion.div>
         <motion.div className="hero-reveal" style={isStatic ? { opacity: 1, y: 0 } : { opacity: detailOpacity, y: detailY }}>
-          <p className="eyebrow">从灵感，到屏幕。</p>
-          <h2>认真做的东西，<br className="mobile-break" />用起来会不一样。</h2>
-          <p>从游戏数据到生活工具，让每个想法找到自己的形状。</p>
+          <p className="eyebrow">{ui.hero.revealEyebrow}</p>
+          <h2>{ui.hero.revealTitle}</h2>
+          <p>{ui.hero.revealDescription}</p>
         </motion.div>
         <motion.div className="hero-product" style={isStatic ? { x: 0, y: 0, scale: 1, rotateX: 0 } : { x: '-50%', y: productY, scale: productScale, rotateX: productRotate }}>
           <div className="product-window">
             <div className="product-toolbar" aria-hidden="true"><span className="window-dots"><i /><i /><i /></span><span>cduyzh / selected work</span><ArrowUpRight size={13} /></div>
-            <img className="product-cover" src={featuredProject.cover} alt="终局竞速档案站项目封面" width={800} height={500} fetchPriority="high" />
+            <img className="product-cover" src={featuredProject.cover} alt={featuredProject.coverAlt || featuredProject.title} width={800} height={500} fetchPriority="high" />
             <div className="product-window-footer"><span>{featuredProject.title}</span><span>DESIGNED & BUILT BY CDUYZH</span></div>
           </div>
           <motion.div className="product-companion" style={isStatic ? { x: 0, y: 0 } : { x: sideX, y: sideY }}>
             <div className="companion-camera" aria-hidden="true" />
-            <div className="companion-heading"><span>小工具，大自在。</span><strong>{sideProject.title}</strong></div>
-            <img src={sideProject.cover} alt="打牌记分小程序项目封面" width={800} height={500} />
-            <div className="companion-caption">随手记分 · 专心享受牌局<span>微信小程序</span></div>
+            <div className="companion-heading"><span>{ui.hero.companionBadge}</span><strong>{sideProject.title}</strong></div>
+            <img src={sideProject.cover} alt={sideProject.coverAlt || sideProject.title} width={800} height={500} />
+            <div className="companion-caption">{ui.hero.companionCaption}<span>WeChat Mini Program</span></div>
             <div className="companion-home" aria-hidden="true" />
           </motion.div>
-          <div className="product-note" aria-hidden="true"><span className="note-mark">✳</span><span>一点好奇心。<br /><strong>一些真实的作品。</strong></span></div>
+          <div className="product-note" aria-hidden="true"><span className="note-mark">✳</span><span>{ui.hero.noteLine1}<br /><strong>{ui.hero.noteLine2}</strong></span></div>
         </motion.div>
-        <div className="hero-bottom"><span>CHENGDU, CHINA</span><motion.span className="hero-scroll-hint" style={isStatic ? undefined : { opacity: hintOpacity }}>滚动，发现更多 <ArrowDown size={13} /></motion.span><span>IDEAS INTO REALITY</span></div>
+        <div className="hero-bottom"><span>CHENGDU, CHINA</span><motion.span className="hero-scroll-hint" style={isStatic ? undefined : { opacity: hintOpacity }}>{ui.hero.scrollHint} <ArrowDown size={13} /></motion.span><span>IDEAS INTO REALITY</span></div>
         <div className="scene-track" aria-hidden="true"><motion.div style={{ scaleX: isStatic ? 1 : progress }} /></div>
       </div>
     </section>
