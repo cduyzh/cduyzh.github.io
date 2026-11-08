@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="projects-card"
       aria-labelledby={`project-title-${project.slug}`}
     >
-      <div className={`projects-cover${project.slug === 'mac-translator' ? ' projects-cover-icon' : ''}`}>
+      <div className={`projects-cover${project.category === 'mac' || project.slug === 'mac-translator' ? ' projects-cover-icon' : ''}`}>
         <img
           src={project.cover}
           alt={project.coverAlt || `${project.title}项目封面`}

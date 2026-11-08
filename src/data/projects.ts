@@ -11,6 +11,29 @@ import { projectCovers } from './projectCovers';
  */
 export const projectsData: Project[] = [
   {
+    id: '12',
+    slug: 'iscreenshot',
+    category: 'mac',
+    title: '极速截屏（iScreenshot）',
+    summary: '随时从菜单栏唤出截屏，支持精准取色、长截图滚动拼接与专业画板美化。',
+    description: '一款轻量原生的 macOS 截图与标注工具，支持快捷键即时截屏、精准屏幕取色、长截图滚动拼接、多款渐变背景与柔和阴影美化，随时随地优雅出图。',
+    status: '已上线',
+    cover: '/assets/iscreenshot-icon.png',
+    coverAlt: '极速截屏（iScreenshot）的应用图标',
+    tags: ['Mac 工具', '截屏', '图片美化'],
+    year: '2026',
+    role: '独立开发',
+    technologies: ['Swift', 'SwiftUI', 'macOS'],
+    highlights: [
+      '原生 macOS 菜单栏驻留，快捷键极速截屏、取色与长截图',
+      '内置专业画板美化，多款渐变背景、阴影与圆角参数随心调',
+      '支持截屏即时标注、马赛克遮挡与一键保存或复制剪贴板'
+    ],
+    demoUrl: 'https://apps.cduyzh.top/iScreenshot/zh.html',
+    featured: true,
+    visibility: 'public'
+  },
+  {
     id: '11',
     slug: 'mac-translator',
     category: 'mac',
