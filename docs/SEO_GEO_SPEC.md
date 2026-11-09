@@ -43,7 +43,18 @@
 
 ---
 
-## 5. 发布与部署流程
+## 5. 发现层规范 (Sitemaps & LLMs Discovery)
+
+- **Sitemap 架构**：
+  - 根入口 `https://www.cduyzh.top/sitemap.xml` 采用标准 `<sitemapindex>`，集中索引主站双语映射集 (`/sitemap-pages.xml`) 以及各已上线子站 (`apps`, `hsr-archive`, `hsr-trend`, `hsr`, `panda`, `shijian`) 的独立 sitemap。
+  - 独立集合 `https://www.cduyzh.top/sitemap-pages.xml` 采用标准 `<urlset>`，通过 `<xhtml:link rel="alternate">` 完整互联中文页与英文页 (`/en.html`)。
+- **LLM 与 Agent 语义发现**：
+  - `/llms.txt`：符合 llmstxt.org 规范，提供工作室摘要、中英文入口、各子站与独立项目直接跳转链接与地理事实（四川成都）。
+  - `/llms-full.txt`：提供全站知识库、各站点与产品架构、技术栈规范与中英文常见问答（FAQ）。
+
+---
+
+## 6. 发布与部署流程
 
 1. 本地代码提交并推送到 `origin/main`。
 2. 运行发布命令：
