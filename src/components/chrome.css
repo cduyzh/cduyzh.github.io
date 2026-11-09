@@ -116,6 +116,17 @@
 .footer-section a:focus-visible { outline: 3px solid #0071e3; outline-offset: 5px; }
 
 .contact-section { position: relative; background: #f5f5f7; color: #1d1d1f; padding: 140px 0 64px; }
+.faq-section { background: #f5f5f7; color: #1d1d1f; padding: 24px 0 40px; }
+.faq-header { max-width: 760px; margin: 0 auto 28px; }
+.faq-header h2 { margin-top: 14px; font-size: clamp(28px, 3vw, 40px); font-weight: 650; letter-spacing: -0.04em; }
+.faq-list { max-width: 760px; margin: 0 auto; border-top: 1px solid #d2d2d7; }
+.faq-item { border-bottom: 1px solid #d2d2d7; }
+.faq-item summary { position: relative; padding: 20px 36px 20px 0; font-size: 16px; font-weight: 600; line-height: 1.5; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; position: absolute; right: 4px; top: 18px; color: #6e6e73; font-size: 22px; font-weight: 400; }
+.faq-item[open] summary::after { content: '−'; }
+.faq-item p { margin: 0; padding: 0 36px 22px 0; color: #6e6e73; font-size: 15px; line-height: 1.8; }
+.faq-item summary:focus-visible { outline: 3px solid #0071e3; outline-offset: 4px; border-radius: 4px; }
 .contact-intro { max-width: 800px; margin: 0 auto; text-align: center; }
 .contact-intro .eyebrow { margin-bottom: 24px; }
 .contact-intro h2 { margin: 0; font-size: clamp(40px, 5.4vw, 68px); font-weight: 650; letter-spacing: -0.06em; line-height: 1.16; }

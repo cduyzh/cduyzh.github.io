@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.cduyzh.top/sitemap.xml
+Sitemap: https://www.cduyzh.top/sitemap-pages.xml

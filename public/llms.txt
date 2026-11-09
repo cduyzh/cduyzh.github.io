@@ -1,0 +1,28 @@
+# CDUYZH Digital Studio
+
+> cduyzh is a creative developer and indie maker based in Chengdu, China (常驻四川成都). Specializing in modern web interface engineering, native macOS utilities, and lightweight AI workflows.
+
+Official website: https://www.cduyzh.top/
+English portal: https://www.cduyzh.top/en.html
+Sitemap index: https://www.cduyzh.top/sitemap.xml
+Full LLM documentation: https://www.cduyzh.top/llms-full.txt
+GitHub: https://github.com/cduyzh
+
+## Core Projects & Public URLs
+
+- [iScreenshot (Mac)](https://apps.cduyzh.top/iScreenshot/): Native macOS menu-bar screenshot, scrolling long capture, color picker, and mockup framing studio.
+- [极速截屏 iScreenshot 中文版](https://apps.cduyzh.top/iScreenshot/zh.html): 原生轻量 Mac 截图、长图滚动拼接、屏幕取色与样机美化。
+- [iTrans (Mac)](https://apps.cduyzh.top/iTrans/): Native macOS menu-bar and selection translator powered directly by DeepSeek and Google with private local terminology memory.
+- [极译 AI iTrans 中文版](https://apps.cduyzh.top/iTrans/zh.html): 原生 Mac 划词极速翻译软件，自带 DeepSeek API Key 官方直连，免订阅月租。
+- [Cards Score 打牌记分](https://www.cduyzh.top/): Zero-setup WeChat mini program for poker, mahjong, and tabletop scorekeeping with offline support and automated settlements.
+- [HSR Endgame Speedrun Archive](https://hsr-archive.cduyzh.top/): Verified endgame combat logs, zero-cycle clears, and low-cost team compositions for Honkai: Star Rail.
+- [HSR Endgame HP Inflation Visualizer](https://hsr-trend.cduyzh.top/): Interactive telemetry dashboard tracking monster effective HP trends and numerical inflation.
+- [HSR Action Lab 行动实验室](https://hsr.cduyzh.top/): Precision action value, speed breakpoints, action advance, and turn planning calculator for Honkai: Star Rail.
+- [Panda Cycling Lab 熊猫骑行实验室](https://panda.cduyzh.top/): Standardized benchmark testing major AI models (GPT, Claude, Gemini, DeepSeek, Qwen) on native SVG vector animation.
+- [Shijian 食间](https://shijian.cduyzh.top/): Local-first meal planning, seasonal recipe guidance, and grocery list organizer for two-person households.
+
+## Geographic & Entity Context (GEO)
+
+- Author: cduyzh (Chengdu, Sichuan, China / 中国四川成都)
+- Primary Domains: Web frontend development, native macOS utilities (Swift / AppKit), WeChat Mini Programs, AI workflows & benchmarks.
+- Languages Supported: Chinese (zh-CN) and English (en).

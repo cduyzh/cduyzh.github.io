@@ -1,0 +1,298 @@
+# CDUYZH Digital Studio — Complete LLM Knowledge Base
+
+> Comprehensive machine-readable documentation of projects, technical architectures, and public endpoints by cduyzh (Chengdu, Sichuan, China).
+
+Author: cduyzh
+Location: Chengdu, Sichuan, China (中国四川成都)
+Canonical URL: https://www.cduyzh.top/
+English Portal: https://www.cduyzh.top/en.html
+Sitemap Index: https://www.cduyzh.top/sitemap.xml
+GitHub Profile: https://github.com/cduyzh
+
+---
+
+## 1. Network Sites & Endpoints
+
+### CDUYZH 个人数字工作室 (www.cduyzh.top)
+- Host: https://www.cduyzh.top/
+- Sitemap: https://www.cduyzh.top/sitemap-pages.xml
+- LLM discovery: https://www.cduyzh.top/llms.txt
+- Chinese Description: 成都 Web 前端开发者 cduyzh 的中英文作品集，公开 Mac 原生工具、微信小程序、游戏数据站与 AI SVG 实验项目。
+- English Description: The bilingual portfolio of Chengdu-based frontend developer cduyzh, covering native Mac utilities, a WeChat mini program, game data tools, and AI SVG experiments.
+- Chinese Keywords: cduyzh, 成都独立开发, Web 前端作品集, AI 工具, Mac 原生工具
+- English Keywords: cduyzh, Chengdu developer, frontend portfolio, indie software, AI tools
+- Public URLs:
+  - https://www.cduyzh.top/
+  - https://www.cduyzh.top/en.html
+
+### cduyzh Mac 工具门户 (apps.cduyzh.top)
+- Host: https://apps.cduyzh.top/
+- Sitemap: https://apps.cduyzh.top/sitemap.xml
+- LLM discovery: https://apps.cduyzh.top/llms.txt
+- Chinese Description: 汇总 iScreenshot 极速截屏、iTrans 极译 AI 及其他 Mac 原生工具；已发布产品页提供中英文版本，未发布项目明确标注整理中。
+- English Description: A bilingual catalog of native Mac utilities, with published product pages for iScreenshot and iTrans and clearly marked forthcoming projects.
+- Chinese Keywords: Mac 工具, macOS 原生应用, 极速截屏, iScreenshot, 极译 AI, iTrans, 菜单栏翻译
+- English Keywords: Mac apps, native macOS utilities, iScreenshot, iTrans, menu bar translator, screen capture
+- Public URLs:
+  - https://apps.cduyzh.top/
+  - https://apps.cduyzh.top/zh.html
+  - https://apps.cduyzh.top/iScreenshot/
+  - https://apps.cduyzh.top/iScreenshot/zh.html
+  - https://apps.cduyzh.top/iTrans/
+  - https://apps.cduyzh.top/iTrans/zh.html
+
+### 星穹铁道行动实验室 (hsr.cduyzh.top)
+- Host: https://hsr.cduyzh.top/
+- Sitemap: https://hsr.cduyzh.top/sitemap.xml
+- LLM discovery: https://hsr.cduyzh.top/llms.txt
+- Chinese Description: 计算《崩坏：星穹铁道》的行动值、速度断点、拉条与排轴，并提供欢愉体系配速和回能推演。当前内容以中文为主。
+- English Description: A Chinese-language calculator for Honkai: Star Rail action value, speed breakpoints, action advance, turn planning, and Elation energy simulations.
+- Chinese Keywords: 星穹铁道, 行动值计算器, 速度断点, 拉条计算, 排轴, 花火配速, 欢愉体系
+- English Keywords: Honkai Star Rail, HSR speed calculator, action value, speed breakpoints, turn planning, Elation
+- Public URLs:
+  - https://hsr.cduyzh.top/
+  - https://hsr.cduyzh.top/elation/
+
+### 食间 · 双人饮食规划与备餐助手 (shijian.cduyzh.top)
+- Host: https://shijian.cduyzh.top/
+- Sitemap: https://shijian.cduyzh.top/sitemap.xml
+- LLM discovery: https://shijian.cduyzh.top/llms.txt
+- Chinese Description: 面向双人家庭的本地优先菜单规划、时令食材与家常菜参考、采购清单聚合工具。当前内容以中文为主，营养内容不替代医疗建议。
+- English Description: A Chinese-language, local-first meal planner for two-person households, with seasonal ingredients, home-style recipes, and consolidated shopping lists.
+- Chinese Keywords: 食间, 双人菜单, 饮食规划, 备餐助手, 买菜清单, 时令食材, 川渝家常菜
+- English Keywords: meal planning for two, menu planner, meal prep, shopping list, seasonal ingredients, local-first
+- Public URLs:
+  - https://shijian.cduyzh.top/
+
+### 星穹铁道竞速档案站 (hsr-archive.cduyzh.top)
+- Host: https://hsr-archive.cduyzh.top/
+- Sitemap: https://hsr-archive.cduyzh.top/sitemap.xml
+- LLM discovery: https://hsr-archive.cduyzh.top/llms.txt
+- Chinese Description: 收录混沌回忆、虚构叙事、末日幻影与异相仲裁的真实通关记录，可按阵容、星魂、光锥、限定金成本和成绩筛选。
+- English Description: A Chinese-language archive of verified Honkai: Star Rail endgame clears, filterable by team, eidolons, light cones, limited gold cost, and results.
+- Chinese Keywords: 星穹铁道竞速, 低金通关, 0T 配队, 混沌回忆, 虚构叙事, 末日幻影, 异相仲裁
+- English Keywords: HSR speedrun archive, low-cost clears, zero cycle, Memory of Chaos, Pure Fiction, Apocalyptic Shadow
+- Public URLs:
+  - https://hsr-archive.cduyzh.top/
+  - https://hsr-archive.cduyzh.top/archive/
+  - https://hsr-archive.cduyzh.top/articles/
+  - https://hsr-archive.cduyzh.top/faq/
+
+### 星穹铁道终局血量膨胀趋势 (hsr-trend.cduyzh.top)
+- Host: https://hsr-trend.cduyzh.top/
+- Sitemap: https://hsr-trend.cduyzh.top/sitemap.xml
+- Chinese Description: 按统一口径复算历期终局怪物总血量、环比变化和弱点构成，覆盖混沌回忆、虚构叙事、末日幻影与异相仲裁。
+- English Description: Chinese-language visualizations of recalculated endgame boss HP, period-over-period change, and weakness composition across Honkai: Star Rail modes.
+- Chinese Keywords: 星铁血量膨胀, 终局血量统计, 怪物总 HP, 数值膨胀, 版本趋势
+- English Keywords: HSR HP inflation, endgame HP trends, boss HP, Honkai Star Rail statistics
+- Public URLs:
+  - https://hsr-trend.cduyzh.top/trends/moc
+  - https://hsr-trend.cduyzh.top/trends/fiction
+  - https://hsr-trend.cduyzh.top/trends/doom
+  - https://hsr-trend.cduyzh.top/trends/peak
+
+### 熊猫骑行实验室 · AI SVG 动画画廊 (panda.cduyzh.top)
+- Host: https://panda.cduyzh.top/
+- Sitemap: https://panda.cduyzh.top/sitemap.xml
+- LLM discovery: https://panda.cduyzh.top/llms.txt
+- Chinese Description: 用统一的“熊猫骑自行车”提示词展示不同 AI 模型生成的原生 SVG 动画，保留原始输出并公开评分规则与检查边界。
+- English Description: A Chinese-language gallery comparing native SVG animations generated from the same panda-riding-a-bicycle prompt, with original outputs and a published scoring rubric.
+- Chinese Keywords: 熊猫骑自行车, AI SVG 动画, 大模型代码生成, 模型对比, Panda SVG Gallery
+- English Keywords: AI SVG animation, LLM code generation, model comparison, panda bicycle SVG, Panda SVG Gallery
+- Public URLs:
+  - https://panda.cduyzh.top/
+
+---
+
+## 2. Featured Projects Catalog
+
+### 极速截屏（iScreenshot） / iScreenshot
+- Category: mac
+- Status: 已上线 (Released)
+- Year: 2026
+- Role: 独立开发
+- Demo / Live URL: https://apps.cduyzh.top/iScreenshot/zh.html
+- Technologies: Swift, SwiftUI, macOS
+- Chinese Summary: 随时从菜单栏唤出截屏，支持精准取色、长截图滚动拼接与专业画板美化。
+- English Summary: Instant menu bar screen capture, screen color pipette, smart stitching, and gradient canvas framing.
+- Chinese Highlights:
+  - 原生 macOS 菜单栏驻留，快捷键极速截屏、取色与长截图
+  - 内置专业画板美化，多款渐变背景、阴影与圆角参数随心调
+  - 支持截屏即时标注、马赛克遮挡与一键保存或复制剪贴板
+
+### 极译 AI（iTrans） / iTrans
+- Category: mac
+- Status: 已上线 (Released)
+- Year: 2026
+- Role: 独立开发
+- Demo / Live URL: https://apps.cduyzh.top/iTrans/zh.html
+- Technologies: Swift, SwiftUI, macOS
+- Chinese Summary: 随时从菜单栏唤出翻译面板，支持 Google 和 DeepSeek 翻译。
+- English Summary: Native menu bar translator powered by DeepSeek and Google with zero intermediate hops.
+- Chinese Highlights:
+  - 原生 macOS 菜单栏驻留，快捷键即选即译与并排对比
+  - 支持自带 DeepSeek 与 Google 翻译引擎，零中转更隐私
+  - 支持个人本地术语记忆库与沉浸划词翻译
+
+### 打牌记分 / Cards Score
+- Category: mobile
+- Status: 已上线 (Released)
+- Year: 2026
+- Role: 独立开发
+- Technologies: 微信小程序, 云开发, TypeScript
+- Chinese Summary: 各类牌局的随手记分助手：打牌记账、打牌计分、积分排行，一个小程序全管。
+- English Summary: A minimalist scorekeeper and settlement companion for card and board game nights.
+- Chinese Highlights:
+  - 多人实时记分同步，支持断网离线记分与自动恢复
+  - 极简操作路径，不打扰打牌节奏的主态控制
+  - 涵盖扑克、麻将等多种计分模式与排行榜结算
+
+### 星穹铁道竞速档案站｜终局配队与低金通关攻略 / HSR Speedrun Archive
+- Category: game
+- Status: 已上线 (Released)
+- Year: 2026
+- Role: 独立开发与前端实现
+- Demo / Live URL: https://hsr-archive.cduyzh.top/
+- Technologies: Vue 3, TypeScript, Vite, Pinia, Tailwind CSS
+- Chinese Summary: 收录《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁的真实通关记录，支持按阵容、命座、光锥、金数及通关成绩筛选，轻松查找低金满星、0轮竞速配队与实战视频。
+- English Summary: Combat logs, low-cost zero-cycle run tracking, and endgame boss analytics for Honkai: Star Rail.
+- Chinese Highlights:
+  - 多模式多赛季检索工作台，筛选条件同步进 URL 可直接分享
+  - 环境统计面板展示角色/光锥使用率与队伍组合分布
+  - 自助投稿系统含自动查重、成本自动计算与草稿本地保存
+
+### 崩坏：星穹铁道 · 终局血量膨胀趋势可视化 / HSR Endgame HP Inflation Visualizer
+- Category: game
+- Status: 已上线 (Released)
+- Year: 2026
+- Role: 独立开发与数据分析
+- Demo / Live URL: https://hsr-trend.cduyzh.top/
+- Technologies: Vue 3, TypeScript, Vite, ECharts, Tailwind CSS
+- Chinese Summary: 汇总《崩坏：星穹铁道》混沌回忆、虚构叙事、末日幻影及异相仲裁等终局玩法的历期怪物血量数据，通过交互式趋势图展示血量变化、环比涨幅与版本间的数值膨胀情况。
+- English Summary: Interactive telemetry dashboard visualizing boss HP inflation and scaling trends across Honkai: Star Rail versions.
+- Chinese Highlights:
+  - 四模式统一统计口径，看板上直接显示总 HP 与环比涨幅
+  - 本地缓存驱动，首次加载边算边出图表，二次访问秒开
+  - 移动端适配，窄屏下长标签组件内横向滚动
+
+### AI 大模型 SVG 动画能力大比拼：熊猫骑行实验室 / Panda Cycling Lab: LLM SVG Animation Arena
+- Category: game
+- Status: 已上线 (Released)
+- Year: 2026
+- Role: 独立开发
+- Demo / Live URL: https://panda.cduyzh.top/
+- Technologies: HTML, CSS, JavaScript, AI生成
+- Chinese Summary: 实测 GPT、Claude、DeepSeek、Qwen 等主流 AI 大模型的 SVG 动画生成能力。
+- English Summary: Side-by-side benchmark testing GPT, Claude, DeepSeek, and Qwen on declarative SVG vector animation.
+- Chinese Highlights:
+  - 用同一提示词实测主流大模型 SVG 动画生成
+  - 集中展示并直观对比代码生成、画面表现与动画效果
+  - 无框架轻量级原生前端实现，沉浸式动画对比体验
+
+### 月来信 / Luna Note
+- Category: mobile
+- Status: 开发中 (In Development)
+- Year: 2026
+- Role: 产品构思与独立开发
+- Technologies: React, TypeScript, Tailwind CSS, IndexedDB, PWA
+- Chinese Summary: 专注隐私的经期规律记录与伴侣关怀提醒工具，以温和克制的设计守护身心节奏。
+- English Summary: Privacy-first menstrual cycle tracking and mindful partner care notifications with on-device encryption.
+- Chinese Highlights:
+  - 端侧本地加密存储，经期生理数据严格保留在用户设备内
+  - 轻量化周期环形视图，直观呈现生理期与预测关键节点
+  - 伴侣轻提醒方案，提供温和、非侵入式的状态通知与关怀建议
+
+### 成都区级降雨与精细网格气象 / Chengdu Micro-Grid Precipitation Radar
+- Category: mobile
+- Status: 开发中 (In Development)
+- Year: 2026
+- Role: 数据整理与前端研发
+- Technologies: TypeScript, Canvas / WebGL, 气象数据接口, GeoJSON
+- Chinese Summary: 面向成都及周边区县的精细化网格降水与雷达云图速览，聚焦超局地短时天气。
+- English Summary: Hyper-local weather visualization tracking convective cloud clusters across Chengdu municipal districts.
+- Chinese Highlights:
+  - 聚焦成都区县级精细化切片，直观呈现局地云团移动趋势
+  - 摒弃商业天气应用的冗余资讯流，专注于核心降水雷达与分钟刻度
+  - 针对高分辨率雷达切片实现轻量渲染管线
+
+### 未发售游戏前瞻与发售日聚合 / Upcoming Games Release Radar
+- Category: game
+- Status: 构思中 (Concept Phase)
+- Year: 2026
+- Role: 构思与数据抓取设计
+- Technologies: Next.js, TypeScript, Node.js 爬虫/聚合, Tailwind CSS
+- Chinese Summary: 追踪全球独立与主流作品的发售日更迭、平台排期与发售口碑前瞻聚合。
+- English Summary: Curated timeline tracking launch windows, platform milestones, and delay tracking for PC & consoles.
+- Chinese Highlights:
+  - 发售日变动动态追踪，直观标记延期与确定发售节点
+  - 多维度标签筛选（独立/3A、发布平台、引擎与发售季度）
+  - 个人期待清单与日历订阅导入导出
+
+### GPT Image 提示词工作库 / GPT Image Prompt Lab
+- Category: mobile
+- Status: 研究中 (Research)
+- Year: 2025
+- Role: 独立设计与工具沉淀
+- Technologies: React, TypeScript, LocalStorage, Tailwind CSS
+- Chinese Summary: 面向生成式图像的结构化提示词资产库，模块化沉淀艺术风格、镜头景别与光影配方。
+- English Summary: Modular prompt engineering library deconstructing styles, lighting recipes, and camera perspectives for generative imaging.
+- Chinese Highlights:
+  - 参数化提示词拼装，支持占位符与动态变量插值
+  - 分类标签化索引（光影、镜头、材质、画风体系）
+  - 本地快照导出，沉淀高可用高质量的生图配方
+
+### 星铁强敌弱点与战斗机制速查 / Star Rail Enemy Weakness & Toughness Index
+- Category: game
+- Status: 研究中 (Research)
+- Year: 2025
+- Role: 资料整理与前端实现
+- Technologies: React, TypeScript, 静态数据索引, Fuzzy Search
+- Chinese Summary: 崩坏：星穹铁道 混沌回忆与末日幻影强敌机制速查，整理弱点属性、韧性条与抗性数据。
+- English Summary: Fast-lookup compendium of boss elemental resistances, toughness bars, and crowd control immunities.
+- Chinese Highlights:
+  - 全 BOSS 属性抗性与韧性数值结构化一览
+  - 按弱点属性与版本周期快速筛选过滤
+  - 轻量纯静态架构，离线环境亦可毫秒级模糊检索
+
+### 人物立绘与角色卡片自动化工作流 / Character Portrait Pipeline
+- Category: mobile
+- Status: 研究中 (Research)
+- Year: 2025
+- Role: 工作流设计与前端管线
+- Technologies: TypeScript, Canvas, HTML-to-Image, SVG
+- Chinese Summary: 探索基于轻量 AI 工作流的角色立绘生成与统一规格人物设定卡片自动化管线。
+- English Summary: Automated generative workflow synthesizing stylized character portraits and uniform character profile cards.
+- Chinese Highlights:
+  - 标准化人物属性卡片排版模板，支持高分辨率导出
+  - 统一色调与材质质感管线，确保系列角色视觉一致性
+  - 前端即时微调布局，快速修正提示词与图文比例
+
+---
+
+## 3. Frequently Asked Questions (FAQ)
+
+### Q: cduyzh 是谁，公开作品包括哪些？ / Who is cduyzh and what is publicly available?
+**中文回答**：cduyzh 是常驻成都的 Web 前端开发者与独立开发者。公开作品包括 iScreenshot 极速截屏、iTrans 极译 AI、打牌记分微信小程序，以及星穹铁道数据工具和熊猫骑行 AI SVG 实验室。
+
+**English Answer**: cduyzh is a frontend and independent developer based in Chengdu, China. Public work includes iScreenshot, iTrans, the Cards Score WeChat mini program, Honkai: Star Rail data tools, and the Panda Cycling AI SVG Lab.
+
+### Q: iScreenshot 极速截屏适合哪些 Mac 场景？ / What can I do with iScreenshot on Mac?
+**中文回答**：iScreenshot 是原生 macOS 菜单栏工具，适合区域截图、滚动长截图、屏幕取色、截图样机美化与录屏。产品页提供中英文说明和下载入口。
+
+**English Answer**: iScreenshot is a native macOS menu-bar utility for region capture, scrolling screenshots, color picking, screenshot mockups, and screen recording. Its product page is available in Chinese and English.
+
+### Q: iTrans 极译 AI 如何处理翻译与隐私？ / How does iTrans handle translation and privacy?
+**中文回答**：iTrans 提供菜单栏与划词翻译、DeepSeek 自带 API Key、Google 翻译和本地术语记忆。待翻译文本会发送给所选翻译服务，并非完全离线；术语库保存在本机。
+
+**English Answer**: iTrans offers menu-bar and selection translation, DeepSeek with your own API key, Google Translate, and local terminology memory. Selected text is sent to the chosen translation provider; the glossary stays on your Mac.
+
+### Q: 星穹铁道工具站分别解决什么问题？ / What does each Honkai: Star Rail tool do?
+**中文回答**：竞速档案站检索真实终局通关配队；血量趋势站展示历期怪物总 HP 与膨胀变化；行动实验室计算行动值、速度断点、拉条和排轴。三个站当前均以中文内容为主。
+
+**English Answer**: The archive searches verified endgame team clears, the trend site visualizes boss HP changes, and Action Lab calculates action value, speed breakpoints, action advance, and turn plans. All three currently publish primarily Chinese content.
+
+### Q: 哪些页面支持中英文？ / Which pages are available in Chinese and English?
+**中文回答**：个人主站、Mac 工具门户、iScreenshot 与 iTrans 产品页提供独立中英文 URL。游戏数据站、熊猫骑行实验室和食间目前以中文为主；llms 文件提供双语项目摘要，不代表这些站已有完整英文页面。
+
+**English Answer**: The portfolio, Mac apps portal, iScreenshot, and iTrans product pages have separate Chinese and English URLs. The game data sites, Panda Cycling Lab, and Shijian are currently Chinese-first; bilingual llms summaries do not imply full English page coverage.
+

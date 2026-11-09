@@ -391,10 +391,10 @@ export const enUI: LocalizedUI = {
   },
   seo: {
     title: 'CDUYZH - Creative Developer & AI Tools Studio | Works Portfolio',
-    description: 'Personal digital studio and public portfolio of cduyzh. Creative developer crafting lightweight AI tools, native macOS apps (iScreenshot, iTrans), and high-frequency web utilities based in Chengdu.',
-    keywords: 'cduyzh, Creative Developer, Independent Developer, Frontend Engineer, AI Tools, macOS Utilities, iScreenshot, iTrans, React, TypeScript, Three.js, Tailwind CSS, Portfolio, Chengdu Developer, Web Applications',
+    description: 'Chengdu-based frontend developer cduyzh builds native Mac apps, AI workflows, and practical web tools. Explore iScreenshot, iTrans, and public indie projects.',
+    keywords: 'cduyzh, creative developer, indie developer, frontend engineer, Chengdu developer, AI tools, macOS utilities, iScreenshot, iTrans, React, TypeScript, portfolio',
     ogTitle: 'CDUYZH - Creative Developer & AI Tools Studio | Works Portfolio',
-    ogDescription: 'Personal digital studio and public portfolio of cduyzh. Creative developer crafting lightweight AI tools, native macOS apps (iScreenshot, iTrans), and high-frequency web utilities based in Chengdu.',
+    ogDescription: 'Chengdu-based frontend developer cduyzh builds native Mac apps, AI workflows, and practical web tools. Explore iScreenshot, iTrans, and public indie projects.',
     geoPlace: 'Chengdu'
   }
 };

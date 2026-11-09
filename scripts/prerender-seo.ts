@@ -3,15 +3,21 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { zhProfile, zhProjects, zhUI } from '../src/data/i18n/zh';
 import { enProfile, enProjects, enUI } from '../src/data/i18n/en';
+import { faqEntries } from '../src/data/faq';
+import { sitemapIndexEntries, networkSiteCatalog, canonicalHost } from '../src/data/discovery';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const publicDir = path.resolve(__dirname, '../public');
 const distDir = path.resolve(__dirname, '../dist');
 const distHtmlPath = path.resolve(distDir, 'index.html');
 const distEnHtmlPath = path.resolve(distDir, 'en.html');
 const distSitemapPath = path.resolve(distDir, 'sitemap.xml');
+const distSitemapPagesPath = path.resolve(distDir, 'sitemap-pages.xml');
 const distRobotsPath = path.resolve(distDir, 'robots.txt');
+const distLlmsPath = path.resolve(distDir, 'llms.txt');
+const distLlmsFullPath = path.resolve(distDir, 'llms-full.txt');
 
 if (!fs.existsSync(distHtmlPath)) {
   console.error('⚠️ dist/index.html 不存在，请先执行 vite build。');
@@ -20,11 +26,11 @@ if (!fs.existsSync(distHtmlPath)) {
 
 // 1. 生成中文版 SEO 静态直出 HTML
 let zhSeoHtml = `
-<div id="seo-static-content" class="seo-prerender-container" style="position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; opacity: 0 !important; pointer-events: none !important;">
+<div id="seo-static-content" class="seo-prerender-container">
   <header>
     <h1>${zhProfile.name} - ${zhProfile.title}</h1>
     <p>${zhProfile.bio.paragraphs.join(' ')}</p>
-    <p>常驻：${zhProfile.location} | 规范网址：<a href="https://${zhProfile.name.toLowerCase()}.top">https://www.cduyzh.top/</a></p>
+    <p>常驻：${zhProfile.location} | 规范网址：<a href="https://${canonicalHost}/">https://${canonicalHost}/</a></p>
   </header>
   <main>
     <h2>公开作品集与独立项目</h2>
@@ -48,17 +54,30 @@ zhProjects.forEach(project => {
 
 zhSeoHtml += `
     </ul>
+    <h2>常见问题与说明</h2>
+    <dl>
+`;
+
+faqEntries.forEach(entry => {
+  zhSeoHtml += `
+      <dt><strong>${entry.zh.question}</strong></dt>
+      <dd>${entry.zh.answer}</dd>
+`;
+});
+
+zhSeoHtml += `
+    </dl>
   </main>
 </div>
 `;
 
 // 2. 生成英文版 SEO 静态直出 HTML
 let enSeoHtml = `
-<div id="seo-static-content" class="seo-prerender-container" style="position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; opacity: 0 !important; pointer-events: none !important;">
+<div id="seo-static-content" class="seo-prerender-container">
   <header>
     <h1>${enProfile.name} - ${enProfile.title}</h1>
     <p>${enProfile.bio.paragraphs.join(' ')}</p>
-    <p>Location: ${enProfile.location} | Official Website: <a href="https://www.cduyzh.top/en.html">https://www.cduyzh.top/en.html</a></p>
+    <p>Location: ${enProfile.location} | Official Website: <a href="https://${canonicalHost}/en.html">https://${canonicalHost}/en.html</a></p>
   </header>
   <main>
     <h2>Featured Works & Indie Projects</h2>
@@ -82,6 +101,19 @@ enProjects.forEach(project => {
 
 enSeoHtml += `
     </ul>
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+`;
+
+faqEntries.forEach(entry => {
+  enSeoHtml += `
+      <dt><strong>${entry.en.question}</strong></dt>
+      <dd>${entry.en.answer}</dd>
+`;
+});
+
+enSeoHtml += `
+    </dl>
   </main>
 </div>
 `;
@@ -208,40 +240,14 @@ const enJsonLd = {
     {
       "@type": "FAQPage",
       "@id": "https://www.cduyzh.top/en.html#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are the core features of iScreenshot for Mac?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "iScreenshot (Fast Screenshot) is a lightweight native macOS menu-bar utility featuring instant shortcuts, precise color picking, scrolling long screenshots, and beautiful gradient backgrounds with soft shadows."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does iTrans AI provide privacy-first translation on macOS?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "iTrans resides in the macOS menu bar and supports native side-by-side translation powered directly by DeepSeek and Google Translate, with zero cloud middleman and local terminology storage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does Cards Score WeChat Mini Program do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cards Score is a zero-setup scorekeeping assistant for poker, mahjong, and board games with real-time multi-player room sync, offline support, and automatic round settlements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the Honkai: Star Rail Endgame Speedrun Archive?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The HSR Archive (https://hsr-archive.cduyzh.top/) curates genuine endgame speedruns and zero-cycle clears across Memory of Chaos, Pure Fiction, and Apocalyptic Shadow, filterable by limited gold cost and team lineups."
-          }
+      "mainEntity": faqEntries.map(entry => ({
+        "@type": "Question",
+        "name": entry.en.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": entry.en.answer
         }
-      ]
+      }))
     }
   ]
 };
@@ -268,9 +274,19 @@ enHtml = enHtml.replace('<div id="root"></div>', `<div id="root">${enSeoHtml}</d
 fs.writeFileSync(distEnHtmlPath, enHtml, 'utf-8');
 console.log('✅ 成功生成 dist/en.html (全英文版静态直出、Meta 与 JSON-LD Schema)');
 
-// ==================== C. 生成 dist/sitemap.xml ====================
 const today = new Date().toISOString().split('T')[0];
-const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+
+// ==================== C. 生成 sitemapindex 与 sitemap-pages.xml ====================
+const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapIndexEntries.map(loc => `  <sitemap>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>`).join('\n')}
+</sitemapindex>
+`;
+
+const sitemapPagesXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
@@ -294,15 +310,125 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 </urlset>
 `;
 
-fs.writeFileSync(distSitemapPath, sitemapXml.trim(), 'utf-8');
-console.log('✅ 成功生成 dist/sitemap.xml (包含双语多语言 alternate 映射)');
+fs.writeFileSync(distSitemapPath, sitemapIndexXml.trim() + '\n', 'utf-8');
+fs.writeFileSync(distSitemapPagesPath, sitemapPagesXml.trim() + '\n', 'utf-8');
+fs.writeFileSync(path.resolve(publicDir, 'sitemap.xml'), sitemapIndexXml.trim() + '\n', 'utf-8');
+fs.writeFileSync(path.resolve(publicDir, 'sitemap-pages.xml'), sitemapPagesXml.trim() + '\n', 'utf-8');
+console.log('✅ 成功生成 sitemap.xml (Sitemap Index) 与 sitemap-pages.xml (主站双语映射)');
 
 // ==================== D. 生成 dist/robots.txt ====================
 const robotsTxt = `User-agent: *
 Allow: /
 
 Sitemap: https://www.cduyzh.top/sitemap.xml
+Sitemap: https://www.cduyzh.top/sitemap-pages.xml
 `;
 
 fs.writeFileSync(distRobotsPath, robotsTxt, 'utf-8');
-console.log('✅ 成功生成 dist/robots.txt');
+fs.writeFileSync(path.resolve(publicDir, 'robots.txt'), robotsTxt, 'utf-8');
+console.log('✅ 成功生成 robots.txt');
+
+// ==================== E. 生成 llms.txt 与 llms-full.txt (GEO 语义发现文件) ====================
+const llmsTxt = `# CDUYZH Digital Studio
+
+> cduyzh is a creative developer and indie maker based in Chengdu, China (常驻四川成都). Specializing in modern web interface engineering, native macOS utilities, and lightweight AI workflows.
+
+Official website: https://www.cduyzh.top/
+English portal: https://www.cduyzh.top/en.html
+Sitemap index: https://www.cduyzh.top/sitemap.xml
+Full LLM documentation: https://www.cduyzh.top/llms-full.txt
+GitHub: https://github.com/cduyzh
+
+## Core Projects & Public URLs
+
+- [iScreenshot (Mac)](https://apps.cduyzh.top/iScreenshot/): Native macOS menu-bar screenshot, scrolling long capture, color picker, and mockup framing studio.
+- [极速截屏 iScreenshot 中文版](https://apps.cduyzh.top/iScreenshot/zh.html): 原生轻量 Mac 截图、长图滚动拼接、屏幕取色与样机美化。
+- [iTrans (Mac)](https://apps.cduyzh.top/iTrans/): Native macOS menu-bar and selection translator powered directly by DeepSeek and Google with private local terminology memory.
+- [极译 AI iTrans 中文版](https://apps.cduyzh.top/iTrans/zh.html): 原生 Mac 划词极速翻译软件，自带 DeepSeek API Key 官方直连，免订阅月租。
+- [Cards Score 打牌记分](https://www.cduyzh.top/): Zero-setup WeChat mini program for poker, mahjong, and tabletop scorekeeping with offline support and automated settlements.
+- [HSR Endgame Speedrun Archive](https://hsr-archive.cduyzh.top/): Verified endgame combat logs, zero-cycle clears, and low-cost team compositions for Honkai: Star Rail.
+- [HSR Endgame HP Inflation Visualizer](https://hsr-trend.cduyzh.top/): Interactive telemetry dashboard tracking monster effective HP trends and numerical inflation.
+- [HSR Action Lab 行动实验室](https://hsr.cduyzh.top/): Precision action value, speed breakpoints, action advance, and turn planning calculator for Honkai: Star Rail.
+- [Panda Cycling Lab 熊猫骑行实验室](https://panda.cduyzh.top/): Standardized benchmark testing major AI models (GPT, Claude, Gemini, DeepSeek, Qwen) on native SVG vector animation.
+- [Shijian 食间](https://shijian.cduyzh.top/): Local-first meal planning, seasonal recipe guidance, and grocery list organizer for two-person households.
+
+## Geographic & Entity Context (GEO)
+
+- Author: cduyzh (Chengdu, Sichuan, China / 中国四川成都)
+- Primary Domains: Web frontend development, native macOS utilities (Swift / AppKit), WeChat Mini Programs, AI workflows & benchmarks.
+- Languages Supported: Chinese (zh-CN) and English (en).
+`;
+
+let llmsFullTxt = `# CDUYZH Digital Studio — Complete LLM Knowledge Base
+
+> Comprehensive machine-readable documentation of projects, technical architectures, and public endpoints by cduyzh (Chengdu, Sichuan, China).
+
+Author: cduyzh
+Location: Chengdu, Sichuan, China (中国四川成都)
+Canonical URL: https://www.cduyzh.top/
+English Portal: https://www.cduyzh.top/en.html
+Sitemap Index: https://www.cduyzh.top/sitemap.xml
+GitHub Profile: https://github.com/cduyzh
+
+---
+
+## 1. Network Sites & Endpoints
+
+`;
+
+networkSiteCatalog.forEach(site => {
+  llmsFullTxt += `### ${site.zh.title} (${site.host})
+- Host: https://${site.host}/
+- Sitemap: ${site.sitemapUrl}
+${site.llmsUrl ? `- LLM discovery: ${site.llmsUrl}\n` : ''}- Chinese Description: ${site.zh.description}
+- English Description: ${site.en.description}
+- Chinese Keywords: ${site.zh.keywords.join(', ')}
+- English Keywords: ${site.en.keywords.join(', ')}
+- Public URLs:
+${site.pages.map(url => `  - ${url}`).join('\n')}
+
+`;
+});
+
+llmsFullTxt += `---
+
+## 2. Featured Projects Catalog
+
+`;
+
+zhProjects.forEach((p, idx) => {
+  const en = enProjects.find(e => e.id === p.id) || enProjects[idx];
+  llmsFullTxt += `### ${p.title} / ${en?.title || p.title}
+- Category: ${p.category}
+- Status: ${p.status} (${en?.status || 'Active'})
+- Year: ${p.year}
+- Role: ${p.role}
+${p.demoUrl ? `- Demo / Live URL: ${p.demoUrl}\n` : ''}- Technologies: ${(p.technologies || []).join(', ')}
+- Chinese Summary: ${p.summary}
+- English Summary: ${en?.summary || ''}
+- Chinese Highlights:
+${(p.highlights || []).map(h => `  - ${h}`).join('\n')}
+
+`;
+});
+
+llmsFullTxt += `---
+
+## 3. Frequently Asked Questions (FAQ)
+
+`;
+
+faqEntries.forEach(entry => {
+  llmsFullTxt += `### Q: ${entry.zh.question} / ${entry.en.question}
+**中文回答**：${entry.zh.answer}
+
+**English Answer**: ${entry.en.answer}
+
+`;
+});
+
+fs.writeFileSync(distLlmsPath, llmsTxt, 'utf-8');
+fs.writeFileSync(distLlmsFullPath, llmsFullTxt, 'utf-8');
+fs.writeFileSync(path.resolve(publicDir, 'llms.txt'), llmsTxt, 'utf-8');
+fs.writeFileSync(path.resolve(publicDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
+console.log('✅ 成功生成 llms.txt 与 llms-full.txt (GEO 知识库)');

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import ProjectsSection from './components/ProjectsSection';
+import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -38,6 +39,7 @@ function AppContent() {
         <Hero />
         <About />
         <ProjectsSection />
+        <FaqSection />
         <ContactSection />
       </main>
       <Footer />

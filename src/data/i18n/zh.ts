@@ -392,7 +392,7 @@ export const zhUI: LocalizedUI = {
   seo: {
     title: 'CDUYZH - 做产品，也做一些有意思的东西 | 独立开发与 Web 前端作品集',
     description: 'cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 应用探索与自用高频工具落地。收录极速截屏 iScreenshot、极译 AI iTrans 等 Mac 原生工具，以及打牌记分微信小程序、星穹铁道竞速档案站等独立作品。',
-    keywords: 'cduyzh, 独立开发, 独立产品人, Web前端开发, 前端工程师, AI应用, 成都独立开发, Creative Developer, React, TypeScript, Three.js, Tailwind CSS, 个人作品集, 极速截屏, iScreenshot, Mac截屏软件, 截图美化, 屏幕取色, 长截图, 极译 AI, iTrans, 打牌记分, 微信记分小程序, 牌局记账, 星穹铁道竞速, 星铁低金通关, 星铁血量膨胀, 混沌回忆配队, Panda SVG 画廊, 大模型SVG动画, Mac翻译软件, 交互设计',
+    keywords: 'cduyzh, 成都独立开发, Web 前端开发, 前端工程师, 个人作品集, AI 应用, Mac 原生工具, 极速截屏, iScreenshot, 极译 AI, iTrans, 打牌记分, 星穹铁道竞速, 星铁血量膨胀, Panda SVG 画廊',
     ogTitle: 'CDUYZH - 做产品，也做一些有意思的东西 | 独立开发与 Web 前端作品集',
     ogDescription: 'cduyzh 的个人数字工作室与公开作品集。常驻成都，专注 Web 界面工程、轻量 AI 工具与自用产品落地。涵盖极速截屏 iScreenshot、极译 AI iTrans、打牌记分小程序、星铁竞速档案站等独立作品。',
     geoPlace: '成都'
