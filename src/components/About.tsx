@@ -43,7 +43,7 @@ export default function About() {
               })}
             </div>
             <a href="#contact" className="text-link about-link">
-              {ui.about.cta} <ArrowUpRight size={16} />
+              {ui.about.chatLink} <ArrowUpRight size={16} />
             </a>
           </motion.div>
           <motion.figure className="about-portrait" style={staticLayout ? { y: 0 } : { y: portraitY }}>
@@ -57,14 +57,14 @@ export default function About() {
               style={staticLayout ? { scale: 1 } : { scale: portraitScale }}
             />
             <figcaption>
-              <span>{ui.about.quoteLine1}<br />{ui.about.quoteLine2}</span>
-              <small>{ui.about.quoteLocation}</small>
+              <span>{ui.about.portraitCaption}</span>
+              <small>{ui.about.portraitLocation}</small>
             </figcaption>
           </motion.figure>
         </div>
         <div className="about-footnote section-shell">
-          <span>{ui.about.footnote}</span>
-          <span>{ui.about.footnoteLabel}</span>
+          <span>{ui.about.footnoteMindset}</span>
+          <span>{ui.about.footnoteIndex}</span>
         </div>
         <div className="scene-track" aria-hidden="true">
           <motion.div style={{ scaleX: staticLayout ? 1 : progress }} />

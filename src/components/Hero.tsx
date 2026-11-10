@@ -44,14 +44,14 @@ export default function Hero() {
           <h1 id="hero-title">{ui.hero.titleLine1}<br /><span>{ui.hero.titleLine2}</span></h1>
           <p className="hero-description">{ui.hero.description}</p>
           <div className="hero-actions" inert={!isStatic && introHidden}>
-            <a className="button-primary" href="#projects">{ui.hero.ctaPrimary} <ArrowDown size={15} /></a>
-            <a className="text-link" href="#about">{ui.hero.ctaSecondary} <ChevronRight size={17} /></a>
+            <a className="button-primary" href="#projects">{ui.hero.exploreBtn} <ArrowDown size={15} /></a>
+            <a className="text-link" href="#about">{ui.hero.aboutBtn} <ChevronRight size={17} /></a>
           </div>
         </motion.div>
         <motion.div className="hero-reveal" style={isStatic ? { opacity: 1, y: 0 } : { opacity: detailOpacity, y: detailY }}>
           <p className="eyebrow">{ui.hero.revealEyebrow}</p>
           <h2>{ui.hero.revealTitle}</h2>
-          <p>{ui.hero.revealDescription}</p>
+          <p>{ui.hero.revealDesc}</p>
         </motion.div>
         <motion.div className="hero-product" style={isStatic ? { x: 0, y: 0, scale: 1, rotateX: 0 } : { x: '-50%', y: productY, scale: productScale, rotateX: productRotate }}>
           <div className="product-window">

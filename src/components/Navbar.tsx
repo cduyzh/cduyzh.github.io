@@ -64,7 +64,7 @@ export default function Navbar() {
       }}
     >
       <div className="section-shell chrome-bar">
-        <a id="nav-brand-logo" href="#hero" className="chrome-brand" aria-label={ui.nav.brand} onClick={() => setMobileMenuOpen(false)}>
+        <a id="nav-brand-logo" href="#hero" className="chrome-brand" aria-label={ui.nav.brandAria} onClick={() => setMobileMenuOpen(false)}>
           <img src={profileData.avatar.src} alt="" width={28} height={28} decoding="async" />
           <span>CDUYZH</span>
         </a>
@@ -98,7 +98,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <a id="nav-hire-btn" href="#contact" className="chrome-cta">{ui.nav.talk}</a>
+          <a id="nav-hire-btn" href="#contact" className="chrome-cta">{ui.nav.cta}</a>
         </nav>
 
         <button
@@ -106,7 +106,7 @@ export default function Navbar() {
           id="nav-mobile-toggle"
           type="button"
           className="chrome-menu-toggle"
-          aria-label={mobileMenuOpen ? ui.nav.closeMenu : ui.nav.menu}
+          aria-label={mobileMenuOpen ? ui.nav.closeMenuAria : ui.nav.openMenuAria}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMobileMenuOpen((open) => !open)}
@@ -155,7 +155,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a href="#contact" className="chrome-cta" onClick={closeMenuFromLink}>{ui.nav.talk}</a>
+          <a href="#contact" className="chrome-cta" onClick={closeMenuFromLink}>{ui.nav.cta}</a>
         </div>
       </nav>
     </header>

@@ -8,7 +8,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { ui, language } = useLanguage();
+  const { ui, lang } = useLanguage();
   const [showQrModal, setShowQrModal] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const projectUrl = project.demoUrl || project.repoUrl;
@@ -56,7 +56,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="projects-summary">{project.summary}</p>
 
         <div className="projects-card-bottom">
-          <p className="projects-tags" aria-label={language === 'zh' ? '项目标签' : 'Project tags'}>
+          <p className="projects-tags" aria-label={lang === 'zh' ? '项目标签' : 'Project tags'}>
             {project.tags.slice(0, 3).join(' / ')}
           </p>
           <div className="projects-card-action">

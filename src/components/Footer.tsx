@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="footer-topline">
           <a href="#hero" className="footer-brand">
             {profileData.name}
-            <span>{ui.footer.brandTagline}</span>
+            <span>{ui.footer.tagline}</span>
           </a>
           <a href="#hero" className="footer-back-top">
             {ui.footer.backToTop} <ArrowUp size={14} aria-hidden="true" />

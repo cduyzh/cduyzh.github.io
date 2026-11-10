@@ -20,10 +20,10 @@ export default function ProjectsSection() {
   const [limit, setLimit] = useState(PAGE_SIZE);
 
   const categories: { value: ProjectCategory; label: string }[] = [
-    { value: 'all', label: ui.projects.categoryAll },
-    { value: 'game', label: ui.projects.categoryGame },
-    { value: 'mobile', label: ui.projects.categoryMobile },
-    { value: 'mac', label: ui.projects.categoryMac },
+    { value: 'all', label: ui.projects.categories.all },
+    { value: 'game', label: ui.projects.categories.game },
+    { value: 'mobile', label: ui.projects.categories.mobile },
+    { value: 'mac', label: ui.projects.categories.mac },
   ];
 
   const results = projects.filter((project) => {
@@ -41,10 +41,10 @@ export default function ProjectsSection() {
         <header className="projects-header">
           <div>
             <p className="eyebrow">{ui.projects.eyebrow}</p>
-            <h2 id="projects-title">{ui.projects.heading}</h2>
+            <h2 id="projects-title">{ui.projects.title}</h2>
           </div>
           <p className="projects-intro">
-            {ui.projects.description}
+            {ui.projects.intro}
           </p>
         </header>
 
@@ -74,8 +74,7 @@ export default function ProjectsSection() {
 
         <div className="projects-results-bar">
           <p className="projects-count" role="status" aria-live="polite" aria-atomic="true">
-            {results.length} {ui.projects.countLabel}
-            {results.length > limit ? ` · ${ui.projects.showingLabel} ${visibleProjects.length}` : ''}
+            {ui.projects.countText(results.length, results.length > limit ? visibleProjects.length : undefined)}
           </p>
         </div>
 
@@ -88,7 +87,7 @@ export default function ProjectsSection() {
         {limit < results.length && (
           <div className="projects-more">
             <button type="button" onClick={() => setLimit((current) => current + PAGE_SIZE)}>
-              {ui.projects.loadMore} <span aria-hidden="true">↓</span>
+              {ui.projects.viewMore} <span aria-hidden="true">↓</span>
             </button>
           </div>
         )}

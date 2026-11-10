@@ -64,6 +64,8 @@ export interface LocalizedUI {
     openMenuAria: string;
     closeMenuAria: string;
     switchLangAria: string;
+    skipToProjects: string;
+    mainNavAria: string;
   };
   hero: {
     eyebrow: string;
@@ -79,6 +81,9 @@ export interface LocalizedUI {
     companionCaption: string;
     companionBadge: string;
     noteText: string;
+    noteLine1: string;
+    noteLine2: string;
+    scrollHint: string;
     bottomLocation: string;
     bottomHint: string;
     bottomTagline: string;
@@ -102,6 +107,7 @@ export interface LocalizedUI {
     eyebrow: string;
     title: string;
     intro: string;
+    filterGroupAria: string;
     categories: {
       all: string;
       game: string;
@@ -136,6 +142,9 @@ export interface LocalizedUI {
     copyError: string;
     copied: string;
     emailLabel: string;
+    copyEmailAria: string;
+    channelsAria: string;
+    availability: string;
   };
   footer: {
     tagline: string;

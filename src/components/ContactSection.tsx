@@ -91,10 +91,10 @@ export default function ContactSection() {
         <div className="contact-intro">
           <p className="eyebrow">{ui.contact.eyebrow}</p>
           <h2 id="contact-heading">
-            {ui.contact.headline}<br />
-            <span>{ui.contact.headlineSpan}</span>
+            {ui.contact.heading}<br />
+            <span>{ui.contact.headingHighlight}</span>
           </h2>
-          <p className="contact-description">{ui.contact.subheadline}</p>
+          <p className="contact-description">{ui.contact.description}</p>
           <div className="contact-email-actions">
             <a href={`mailto:${contactData.email}`} className="button-primary contact-email-send">
               {ui.contact.sendEmail} <ArrowUpRight size={17} aria-hidden="true" />
@@ -103,7 +103,7 @@ export default function ContactSection() {
               type="button"
               className="contact-email-copy"
               onClick={() => void handleCopy(contactData.email, emailLabel)}
-              aria-label={`${ui.contact.copyEmail} ${contactData.email}`}
+              aria-label={`${ui.contact.copyEmailAria} ${contactData.email}`}
             >
               {contactData.email}
               {copiedItem === emailLabel ? <Check size={15} aria-hidden="true" /> : <Copy size={15} aria-hidden="true" />}
@@ -134,7 +134,7 @@ export default function ContactSection() {
                 key={social.name}
                 type="button"
                 className="contact-channel"
-                aria-label={`${ui.contact.copyEmail} ${social.name}: ${social.copyValue ?? social.handle ?? ''}`}
+                aria-label={`${ui.contact.copyEmailAria} ${social.name}: ${social.copyValue ?? social.handle ?? ''}`}
                 disabled={!social.copyValue}
                 onClick={() => social.copyValue && void handleCopy(social.copyValue, label)}
               >

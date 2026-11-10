@@ -288,7 +288,9 @@ export const enUI: LocalizedUI = {
     brandAria: 'CDUYZH Home',
     openMenuAria: 'Open navigation menu',
     closeMenuAria: 'Close navigation menu',
-    switchLangAria: 'Switch to Chinese / 切换为中文'
+    switchLangAria: 'Switch to Chinese / 切换为中文',
+    skipToProjects: 'Skip to projects',
+    mainNavAria: 'Main navigation'
   },
   hero: {
     eyebrow: 'CDUYZH · INDIE MAKER & ENGINEER',
@@ -304,6 +306,9 @@ export const enUI: LocalizedUI = {
     companionCaption: 'Clean scorekeeping · Stay in the game',
     companionBadge: 'WeChat Mini Program',
     noteText: 'An inquisitive mind. A body of authentic work.',
+    noteLine1: 'An inquisitive mind.',
+    noteLine2: 'A body of authentic work.',
+    scrollHint: 'Scroll to explore',
     bottomLocation: 'CHENGDU, CHINA',
     bottomHint: 'Scroll to explore',
     bottomTagline: 'IDEAS INTO REALITY'
@@ -328,6 +333,7 @@ export const enUI: LocalizedUI = {
     eyebrow: 'CURATED WORKS & EXPERIMENTS',
     title: 'Find the tools you need.',
     intro: 'Gaming telemetry, mobile apps, and native macOS utilities. Discover released products and upcoming releases.',
+    filterGroupAria: 'Filter by category',
     categories: {
       all: 'All Works',
       game: 'Gaming Tools',
@@ -379,7 +385,10 @@ export const enUI: LocalizedUI = {
     copySuccess: 'Email address copied to clipboard',
     copyError: 'Copy failed. Please copy manually: ',
     copied: 'Copied',
-    emailLabel: 'Email Address'
+    emailLabel: 'Email Address',
+    copyEmailAria: 'Copy',
+    channelsAria: 'Profiles & Contact Channels',
+    availability: 'Open to creative collaborations, indie tool feedback, and engineering chats.'
   },
   footer: {
     tagline: 'Turning ideas into intuitive everyday craft.',

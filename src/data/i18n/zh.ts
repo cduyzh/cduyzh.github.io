@@ -288,7 +288,9 @@ export const zhUI: LocalizedUI = {
     brandAria: 'CDUYZH 首页',
     openMenuAria: '打开导航菜单',
     closeMenuAria: '关闭导航菜单',
-    switchLangAria: '切换为英文版 (Switch to English)'
+    switchLangAria: '切换为英文版 (Switch to English)',
+    skipToProjects: '跳转到作品区域',
+    mainNavAria: '主导航'
   },
   hero: {
     eyebrow: 'CDUYZH · 独立开发者',
@@ -304,6 +306,9 @@ export const zhUI: LocalizedUI = {
     companionCaption: '随手记分 · 专心享受牌局',
     companionBadge: '微信小程序',
     noteText: '一点好奇心。一些真实的作品。',
+    noteLine1: '一点好奇心。',
+    noteLine2: '一些真实的作品。',
+    scrollHint: '滚动，发现更多',
     bottomLocation: '中国 · 成都',
     bottomHint: '滚动，发现更多',
     bottomTagline: 'IDEAS INTO REALITY'
@@ -328,6 +333,7 @@ export const zhUI: LocalizedUI = {
     eyebrow: '作品与探索',
     title: '找到你需要的作品。',
     intro: '游戏工具、移动应用和 Mac 工具。从这里发现已经上线和即将上线的项目。',
+    filterGroupAria: '按作品分类筛选',
     categories: {
       all: '全部作品',
       game: '游戏工具',
@@ -379,7 +385,10 @@ export const zhUI: LocalizedUI = {
     copySuccess: '已复制邮箱地址',
     copyError: '复制失败，请手动复制：',
     copied: '已复制',
-    emailLabel: '邮箱地址'
+    emailLabel: '邮箱地址',
+    copyEmailAria: '复制',
+    channelsAria: '个人主页与联系通道',
+    availability: '目前开放探索性合作、独立工具反馈与技术交流。'
   },
   footer: {
     tagline: '把想法，变成日常。',
